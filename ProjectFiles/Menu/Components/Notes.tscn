@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpk0d3alxkvh"]
+
+[ext_resource type="Script" uid="uid://c42ldccx1ahmx" path="res://Menu/Components/CombatNoteText.gd" id="1_s1x5c"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Menu/MenuTheme.tres" id="1_xrhyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wheqh"]
+bg_color = Color(0.0431373, 0.0431373, 0.0470588, 0.741176)
+
+[node name="Notes" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 40)
+offset_right = 417.0
+offset_bottom = 53.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wheqh")
+script = ExtResource("1_s1x5c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019000001
+anchor_top = 0.132
+anchor_right = 0.97800004
+anchor_bottom = 0.84900004
+offset_left = 0.076999664
+offset_top = 0.004000187
+offset_right = 0.17398071
+offset_bottom = 0.002998352
+theme = ExtResource("1_xrhyx")
+theme_override_font_sizes/normal_font_size = 20
+text = "You Dodge The Attack"
+vertical_alignment = 1

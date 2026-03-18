@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://txt7vga1nosl"]
+
+[ext_resource type="Texture2D" uid="uid://urri2kskumdv" path="res://Menu/CombatMenu/Sprites/CombatMenuBackground.png" id="1_j4wqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8e0d"]
+bg_color = Color(0.0431373, 0.0431373, 0.0470588, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.301961, 0.254902, 0.121569, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2e1f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0q6x"]
+modulate_color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcrv1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1lco"]
+texture = ExtResource("1_j4wqp")
+
+[resource]
+Button/colors/icon_focus_color = Color(0.497472, 0.497474, 0.497475, 1)
+Button/colors/icon_pressed_color = Color(0.497472, 0.497474, 0.497475, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_s8e0d")
+Button/styles/focus = SubResource("StyleBoxTexture_t2e1f")
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxTexture_f0q6x")
+Button/styles/pressed = SubResource("StyleBoxTexture_rcrv1")
+Panel/styles/panel = SubResource("StyleBoxTexture_e1lco")

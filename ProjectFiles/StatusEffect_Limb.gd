@@ -1,0 +1,1 @@
+class_name StatusEffect_Limb extends StatusEffect

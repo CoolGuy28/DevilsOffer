@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b41n2wk5axnq2"]
+
+[ext_resource type="Script" uid="uid://dkhxteorngsox" path="res://Tilemaps/Scripts/Interactable_Door.gd" id="1_23n5b"]
+[ext_resource type="Texture2D" uid="uid://bk30qiinljvpx" path="res://Tilemaps/Props/Door/PrisonDoor.png" id="1_ysphb"]
+[ext_resource type="Script" uid="uid://bohx8klfsuwu" path="res://Tilemaps/Scripts/Lock.gd" id="3_r6ekv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(62, 37)
+
+[node name="Door" type="StaticBody2D" node_paths=PackedStringArray("lock")]
+y_sort_enabled = true
+disable_mode = 1
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_23n5b")
+lock = NodePath("Lock")
+metadata/_custom_type_script = "uid://dkhxteorngsox"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 27)
+texture = ExtResource("1_ysphb")
+offset = Vector2(0, -59)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="Lock" type="Node" parent="."]
+script = ExtResource("3_r6ekv")
+useKeyText = Array[String](["Key"])
+pickedLockText = Array[String](["The door opens"])
+lockedText = Array[String](["The door remains locked"])
+pickLockable = true
+metadata/_custom_type_script = "uid://bohx8klfsuwu"

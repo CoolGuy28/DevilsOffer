@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=4 format=3 uid="uid://7idq4hx3bl07"]
+
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="1_16apc"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Item_Equippable.gd" id="2_5vwg1"]
+
+[sub_resource type="Resource" id="Resource_7nygs"]
+script = ExtResource("1_16apc")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[resource]
+script = ExtResource("2_5vwg1")
+equippedStats = SubResource("Resource_7nygs")
+itemName = "Frostbitten Flesh"
+description = "Your body temperature lowers while holding this flesh. Cold damage is increased."
+itemTags = Array[String](["Equipment", "Accessory"])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

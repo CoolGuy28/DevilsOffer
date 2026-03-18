@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://6r463mvdbt30"]
+
+[ext_resource type="Script" uid="uid://dkhxteorngsox" path="res://Tilemaps/Scripts/Interactable_Door.gd" id="1_qyhxy"]
+[ext_resource type="Texture2D" uid="uid://bk30qiinljvpx" path="res://Tilemaps/Props/Door/PrisonDoor.png" id="2_diwqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(62, 37)
+
+[node name="Door" type="StaticBody2D" node_paths=PackedStringArray("lock")]
+y_sort_enabled = true
+disable_mode = 1
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_qyhxy")
+lock = NodePath("")
+interacted = true
+metadata/_custom_type_script = "uid://dkhxteorngsox"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, 27)
+texture = ExtResource("2_diwqk")
+offset = Vector2(-1, -59)
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f5ljr")

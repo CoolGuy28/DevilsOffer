@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1q1qjdsj6nch"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Tilemaps/Scripts/Interactable.gd" id="1_o2js5"]
+[ext_resource type="Texture2D" uid="uid://c5froohytl0jd" path="res://Tilemaps/Props/DungeonBed/DungeonBed_Horizontal.png" id="2_qylnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgjo2"]
+size = Vector2(117, 45)
+
+[node name="DungeonBedHor" type="StaticBody2D"]
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_o2js5")
+interactText = Array[String](["A dingy bed for rotting prisoners"])
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, -19)
+texture = ExtResource("2_qylnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_jgjo2")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://boroi3t0iwvp1"]
+
+[ext_resource type="Script" uid="uid://cq3713aua1jnn" path="res://Entity/Enemy/Enemy.gd" id="1_6cnq6"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="2_j2waa"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Skill.gd" id="3_j2waa"]
+[ext_resource type="Texture2D" uid="uid://kivcxyb7hsny" path="res://icon.svg" id="3_pjpyo"]
+[ext_resource type="PackedScene" uid="uid://dtrhlfot28jfe" path="res://Entity/Enemy/AppleDevil/BattleUI.tscn" id="4_72kpv"]
+[ext_resource type="PackedScene" uid="uid://cn7fwslw3fiuy" path="res://Entity/Components/HurtBox.tscn" id="5_8wxji"]
+
+[sub_resource type="Resource" id="Resource_dnqcu"]
+script = ExtResource("2_j2waa")
+stats = Array[int]([3, -3, 4, 0])
+AC = 12
+MC = 10
+moveSpeed = 1.0
+actionCount = 1
+bonusActionCount = 1
+skillBonus = 5
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_ngi6m"]
+script = ExtResource("2_j2waa")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx7gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coq8p"]
+size = Vector2(96, 97)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coq8p"]
+radius = 68.0556
+
+[node name="AppleDevil" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 17
+script = ExtResource("1_6cnq6")
+baseStats = SubResource("Resource_dnqcu")
+adjustedStats = SubResource("Resource_ngi6m")
+metadata/_custom_type_script = "uid://cq3713aua1jnn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1.25)
+texture = ExtResource("3_pjpyo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wx7gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_coq8p")
+
+[node name="BattleUI" parent="." instance=ExtResource("4_72kpv")]
+visible = false
+
+[node name="HurtBox" parent="." instance=ExtResource("5_8wxji")]
+collision_layer = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_coq8p")

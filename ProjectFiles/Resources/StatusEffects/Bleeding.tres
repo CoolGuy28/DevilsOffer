@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StatusEffect_Bleed" load_steps=3 format=3 uid="uid://b67xhgppdmxq2"]
+
+[ext_resource type="Script" uid="uid://dpuqkr3u6fi2y" path="res://StatusEffect_Bleed.gd" id="1_m5754"]
+[ext_resource type="Texture2D" uid="uid://bny3mcj4kqeia" path="res://Resources/StatusEffects/Sprites/Bleeding.png" id="2_4bpj4"]
+
+[resource]
+script = ExtResource("1_m5754")
+sprite = ExtResource("2_4bpj4")
+metadata/_custom_type_script = "uid://dpuqkr3u6fi2y"

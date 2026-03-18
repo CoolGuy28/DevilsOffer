@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://2bxgb54tcf7f"]
+
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="1_jnrwc"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Item_Equippable.gd" id="1_ouveg"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Skill.gd" id="2_7nygs"]
+
+[sub_resource type="Resource" id="Resource_7nygs"]
+script = ExtResource("1_jnrwc")
+AC = 1
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[resource]
+script = ExtResource("1_ouveg")
+equippedStats = SubResource("Resource_7nygs")
+itemName = "Leather Vest"
+description = "A light bodyvest to slightly help brush off sword slashes while remaining nimble."
+itemTags = Array[String](["Equipment", "Body"])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

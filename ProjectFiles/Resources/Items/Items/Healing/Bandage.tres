@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=4 format=3 uid="uid://q6wqajwj381o"]
+
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Action.gd" id="1_1w8dp"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Item_Usable.gd" id="1_s1t26"]
+
+[sub_resource type="Resource" id="Resource_f207d"]
+script = ExtResource("1_1w8dp")
+actionName = "Bandage"
+targetType = 2
+dieCount = 0
+damageDie = 0
+healOnHit = true
+healDieCount = 1
+healDie = 4
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"
+
+[resource]
+script = ExtResource("1_s1t26")
+action = SubResource("Resource_f207d")
+bonusAction = true
+itemName = "Bandage"
+itemTags = Array[String](["Healing"])
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

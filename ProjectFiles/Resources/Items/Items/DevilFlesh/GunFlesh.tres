@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=4 format=3 uid="uid://c0lgtx4fh65bt"]
+
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="1_mjfx4"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Item_Equippable.gd" id="2_m1hxf"]
+
+[sub_resource type="Resource" id="Resource_7nygs"]
+script = ExtResource("1_mjfx4")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[resource]
+script = ExtResource("2_m1hxf")
+equippedStats = SubResource("Resource_7nygs")
+itemName = "Gun Flesh"
+description = "Mighty flesh where even a small part can increase greatly strengthen a devils powers"
+itemTags = Array[String](["Equipment", "Accessory"])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

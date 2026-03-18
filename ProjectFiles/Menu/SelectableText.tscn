@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh6jkfy7235uy"]
+
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Menu/MenuTheme.tres" id="1_lr5d2"]
+[ext_resource type="Texture2D" uid="uid://cc1yo8wn66a5n" path="res://Menu/OverworldMenu/Sprites/TextSelect.png" id="2_0ojyd"]
+[ext_resource type="Script" uid="uid://8xaxwp50as8l" path="res://SelectableText.gd" id="2_c2ots"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ots"]
+texture = ExtResource("2_0ojyd")
+
+[node name="SelectableText" type="RichTextLabel"]
+custom_minimum_size = Vector2(50, 30)
+anchors_preset = -1
+anchor_right = 0.062000003
+anchor_bottom = 0.05
+offset_right = 0.3999977
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme = ExtResource("1_lr5d2")
+text = "dsad"
+scroll_active = false
+autowrap_trim_flags = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("2_c2ots")
+metadata/_custom_type_script = "uid://8xaxwp50as8l"
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_c2ots")

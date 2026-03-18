@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://doiqv7skncp6o"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Tilemaps/Scripts/Interactable.gd" id="1_ivgfu"]
+[ext_resource type="Texture2D" uid="uid://bklgwe2mug274" path="res://Tilemaps/Props/RitualTable/RitualTable.png" id="2_ji88i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(104, 59)
+
+[node name="RitualTable" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_ivgfu")
+interactText = Array[String](["An ornate stone bench"])
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(32, 21)
+texture = ExtResource("2_ji88i")
+offset = Vector2(0, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 2.5)
+shape = SubResource("RectangleShape2D_iv3xd")

@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://6q62pgau4d4g"]
+
+[ext_resource type="Script" uid="uid://6glc6145h1bw" path="res://Entity/Player/Player.gd" id="1_4ntmi"]
+[ext_resource type="Resource" uid="uid://bnttcvn315w6y" path="res://Resources/Actions/UnarmedAttack.tres" id="2_7skvd"]
+[ext_resource type="PackedScene" uid="uid://b42813luxoe28" path="res://Entity/Components/HitBox.tscn" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://j2wquyy448wy" path="res://Entity/Player/Sprites/Girl_spritesheet.png" id="2_gwnis"]
+[ext_resource type="PackedScene" uid="uid://d4qy3lmnp5lc" path="res://Menu/CombatMenu/CombatMenu.tscn" id="2_k53q1"]
+[ext_resource type="Texture2D" uid="uid://cye1dmikvutdv" path="res://Menu/OverworldMenu/Sprites/MenuBackground.png" id="4_00tjw"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="4_gwnis"]
+[ext_resource type="PackedScene" uid="uid://b8u3op0ii3ioy" path="res://Entity/Components/stat_component.tscn" id="5_fhl08"]
+[ext_resource type="Script" uid="uid://b5be53du7vgsy" path="res://Menu/OverworldMenu/OverworldMenu.gd" id="5_x3vf3"]
+[ext_resource type="Script" uid="uid://bq3jd2vd8sld6" path="res://Menu/OverworldUI.gd" id="6_apopc"]
+[ext_resource type="Texture2D" uid="uid://urri2kskumdv" path="res://Menu/CombatMenu/Sprites/CombatMenuBackground.png" id="6_x3vf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
+size = Vector2(53, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3vf3"]
+size = Vector2(15, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btcbx"]
+size = Vector2(77, 61)
+
+[node name="Player" type="CharacterBody2D"]
+process_mode = 3
+y_sort_enabled = true
+collision_mask = 16
+script = ExtResource("1_4ntmi")
+mainHand = ExtResource("2_7skvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 38.5)
+shape = SubResource("RectangleShape2D_gwnis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 35)
+texture = ExtResource("2_gwnis")
+offset = Vector2(0, -35)
+vframes = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CombatMenu" parent="Camera2D" instance=ExtResource("2_k53q1")]
+process_mode = 3
+visible = false
+
+[node name="OverworldMenu" type="Sprite2D" parent="Camera2D"]
+process_mode = 3
+visible = false
+z_index = 5
+texture = ExtResource("4_00tjw")
+script = ExtResource("5_x3vf3")
+
+[node name="OverworldUI" type="Node2D" parent="Camera2D"]
+z_index = 4
+script = ExtResource("6_apopc")
+
+[node name="TextBox" type="Sprite2D" parent="Camera2D/OverworldUI"]
+position = Vector2(0, 211)
+texture = ExtResource("6_x3vf3")
+
+[node name="InteractionText" type="RichTextLabel" parent="Camera2D/OverworldUI/TextBox"]
+offset_left = -224.0
+offset_top = -36.0
+offset_right = 216.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "x xxzvxzxvz"
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="InteractRange" type="Area2D" parent="."]
+position = Vector2(1, 39)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+position = Vector2(-1, 28.25)
+shape = SubResource("RectangleShape2D_x3vf3")
+debug_color = Color(3.85046e-07, 0.713521, 0.830853, 0.42)
+
+[node name="HitBox" parent="." instance=ExtResource("2_btcbx")]
+collision_layer = 17
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0.5, 38.5)
+shape = SubResource("RectangleShape2D_btcbx")
+
+[node name="BaseStatComponent" parent="." instance=ExtResource("5_fhl08")]
+stats = Array[int]([3, 3, 3, 3])
+
+[node name="AdjustedStatComponent" type="Node" parent="."]
+script = ExtResource("4_gwnis")
+
+[connection signal="close" from="Camera2D/OverworldMenu" to="." method="OpenOverworld"]
+[connection signal="close" from="Camera2D/OverworldUI" to="." method="OpenOverworld"]
+[connection signal="Hit" from="HitBox" to="." method="_on_hit_box_hit"]

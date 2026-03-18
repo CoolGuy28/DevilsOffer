@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://cg8nnf1xf8tcj"]
+
+[ext_resource type="Texture2D" uid="uid://kivcxyb7hsny" path="res://icon.svg" id="1_djt6l"]
+[ext_resource type="Script" uid="uid://cq3713aua1jnn" path="res://Entity/Enemy/Enemy.gd" id="1_ht5kn"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Entity/Components/StatComponent.gd" id="2_4hyh4"]
+[ext_resource type="PackedScene" uid="uid://cn7fwslw3fiuy" path="res://Entity/Components/HurtBox.tscn" id="3_50t83"]
+[ext_resource type="PackedScene" uid="uid://drqohx56yc21t" path="res://Entity/Enemy/Guard/GuardUI.tscn" id="5_50t83"]
+
+[sub_resource type="Resource" id="Resource_dnqcu"]
+script = ExtResource("2_4hyh4")
+stats = Array[int]([7, 0, -1, 2])
+AC = 12
+MC = 9
+actionCount = 2
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_ngi6m"]
+script = ExtResource("2_4hyh4")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx7gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coq8p"]
+size = Vector2(96, 97)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coq8p"]
+radius = 68.0556
+
+[node name="Enemy" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 17
+script = ExtResource("1_ht5kn")
+baseStats = SubResource("Resource_dnqcu")
+adjustedStats = SubResource("Resource_ngi6m")
+metadata/_custom_type_script = "uid://cq3713aua1jnn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1.25)
+texture = ExtResource("1_djt6l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wx7gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_coq8p")
+
+[node name="Enemy" parent="." instance=ExtResource("5_50t83")]
+visible = false
+
+[node name="HurtBox" parent="." instance=ExtResource("3_50t83")]
+collision_layer = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_coq8p")

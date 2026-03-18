@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq2hpef781674"]
+
+[ext_resource type="Texture2D" uid="uid://bny3mcj4kqeia" path="res://Resources/StatusEffects/Sprites/Bleeding.png" id="1_dd4l5"]
+
+[node name="StatusEffectSprite" type="Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dd4l5")

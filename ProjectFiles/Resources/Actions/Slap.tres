@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://d0rqkieqanrjd"]
+
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Action.gd" id="1_7wmaq"]
+
+[resource]
+script = ExtResource("1_7wmaq")
+actionName = "Seed Spit"
+dieCount = 4
+damageDie = 8
+statMod = 3
+damageType = 5
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

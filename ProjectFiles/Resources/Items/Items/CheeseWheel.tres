@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://1jep7q6mxgie"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Item.gd" id="1_c8aq4"]
+
+[resource]
+script = ExtResource("1_c8aq4")
+itemName = "Cheese Wheel"
+description = "A wheel of cheddar"
+itemTags = Array[String](["Food"])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

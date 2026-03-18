@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Action" load_steps=5 format=3 uid="uid://4hvj0b7jembv"]
+
+[ext_resource type="Script" uid="uid://cymhwr6r6lygf" path="res://StatusEffect.gd" id="1_g6n7h"]
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Action.gd" id="1_p8cd3"]
+[ext_resource type="Resource" uid="uid://dowrur0wumso6" path="res://Resources/StatusEffects/Poison.tres" id="2_iuhiy"]
+[ext_resource type="Resource" uid="uid://b67xhgppdmxq2" path="res://Resources/StatusEffects/Bleeding.tres" id="3_2aut0"]
+
+[resource]
+script = ExtResource("1_p8cd3")
+actionName = "Ritual Dagger"
+statMod = 1
+damageDie = 4
+damageType = 2
+applyStatusChance = Dictionary[ExtResource("1_g6n7h"), int]({
+ExtResource("2_iuhiy"): 100,
+ExtResource("3_2aut0"): 70
+})
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"
