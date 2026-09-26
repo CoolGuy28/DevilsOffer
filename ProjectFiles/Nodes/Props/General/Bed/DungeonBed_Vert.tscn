@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bey43tmit8o2a"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_wjsqr"]
+[ext_resource type="Texture2D" uid="uid://bm5okyxmc6qm0" path="res://Nodes/Props/General/Bed/DungeonBed_Vertical.png" id="2_edrxw"]
+[ext_resource type="Resource" uid="uid://whiq3ofs1qeq" path="res://Resources/Items/Items/Usables/Healing/TornSheet.tres" id="2_h5hff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgjo2"]
+size = Vector2(61, 124.5)
+
+[node name="DungeonBedHor" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_wjsqr")
+item = ExtResource("2_h5hff")
+amount = 1
+dialogueText = "Bed"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -50)
+texture = ExtResource("2_edrxw")
+offset = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, -3.25)
+shape = SubResource("RectangleShape2D_jgjo2")

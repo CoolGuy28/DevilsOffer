@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=8 format=3 uid="uid://b2bf8dyop21ad"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_bj2tg"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_a1mjm"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_buj3k"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_hyvnw"]
+
+[sub_resource type="Resource" id="Resource_6ja7g"]
+script = ExtResource("2_a1mjm")
+dCount = 0
+dDie = 0
+dBonus = 10
+dType = 6
+lifeSteal = true
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_8y0ev"]
+script = ExtResource("2_a1mjm")
+dDie = 8
+dType = 1
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_ruq83"]
+script = ExtResource("3_buj3k")
+critAction = Array[ExtResource("1_bj2tg")]([SubResource("Resource_6ja7g")])
+hitAction = Array[ExtResource("1_bj2tg")]([SubResource("Resource_8y0ev")])
+actionName = "Sword of Lifestealing"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_hyvnw")
+attackAction = SubResource("Resource_ruq83")
+equippableValue = 6
+itemName = "Sword of Lifestealing"
+description = "A longsword emitting an ethereal glow. Upon a crit the unlucky foe take 10 Psychic damage which you heal."
+metadata/_custom_type_script = "uid://basjibpr7ota1"

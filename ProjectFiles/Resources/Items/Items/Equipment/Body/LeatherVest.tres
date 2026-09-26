@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://2bxgb54tcf7f"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_nsumx"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="1_ouveg"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_sdkpx"]
+
+[sub_resource type="Resource" id="Resource_7o718"]
+script = ExtResource("1_nsumx")
+AC = 2
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("1_ouveg")
+equippedStats = SubResource("Resource_7o718")
+equippableValue = 2
+shortDescription = "Sturdy Vest.
++2 AC"
+itemName = "Leather Vest"
+description = "A lightweight bodyvest to help brush off sword slashes."
+itemTags = Array[int]([2])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

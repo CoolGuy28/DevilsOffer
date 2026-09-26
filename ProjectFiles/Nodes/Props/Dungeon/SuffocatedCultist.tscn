@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://804kce5gale2"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_1vnox"]
+[ext_resource type="Texture2D" uid="uid://bmw3dyrm7ixda" path="res://Sprites/Entity/PurpleMage/Overworld/PurpleMage_Dead.png" id="2_1vnox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gihqt"]
+size = Vector2(128, 51)
+
+[node name="SuffocatedCultist" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_1vnox")
+dialogueText = "DeadCultist"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 16)
+texture = ExtResource("2_1vnox")
+offset = Vector2(1, -47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_gihqt")

@@ -1,0 +1,4299 @@
+{
+	"version": 1,
+	"nodes": {
+		"/root/SceneRoot": {
+			"y_sort_enabled": true,
+			"scene_file_path": "res://Nodes/Maps/RootScene.tscn"
+		},
+		"/root/SceneRoot/GameScene": {
+			"y_sort_enabled": true,
+			"floors": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/DungeonRoot"
+					},
+					"t": 24,
+					"c": "Node2D"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/CatacombsRoot"
+					},
+					"t": 24,
+					"c": "Node2D"
+				}
+			],
+			"player": {
+				"node": "/root/SceneRoot/GameScene/Player"
+			},
+			"scene_file_path": "res://Nodes/Maps/GameScene.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/MeltingBars": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1248.0,
+					-544.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:PJail",
+			"leftText": true,
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/General/Door/MeltingPrisonBars.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/MeltingBars/P": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					130.0,
+					-273.0
+				]
+			}
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/MeltingBars/ShowWhenApproached": {
+			"y_sort_enabled": true,
+			"collision_layer": "i:19",
+			"collision_mask": "i:19",
+			"monitorable": false
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/DecayedHand": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					223.0,
+					-786.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://chpj1jb05or6y",
+				"path": "res://Resources/Items/Items/Equipment/DevilFlesh/AncientFlesh.tres"
+			},
+			"dialogueText": "s:AncientHand",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Dungeon/DecayedHand/DecayedHand.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Stick": {
+			"z_index": "i:-1",
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1091.0,
+					-811.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://uu7hnq1ijy71",
+				"path": "res://Resources/Items/Items/Weapons/SimpleWeapons/Stick.tres"
+			},
+			"dialogueText": "s:Stick",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Dungeon/Stick/Stick.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/RitualKnife": {
+			"z_index": "i:-1",
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-36.0,
+					105.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://bc4iwdc22j8h6",
+				"path": "res://Resources/Items/Items/Weapons/SimpleWeapons/RitualDagger.tres"
+			},
+			"dialogueText": "s:RitualDagger",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Dungeon/RitualKnife/RitualKnife.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/GiantCorpsePile": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1226.0,
+					57.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://knfaw4gb5ngh",
+				"path": "res://Resources/Items/Items/Keys/Lockpick.tres"
+			},
+			"amount": "i:2",
+			"dialogueText": "s:CorpsePile",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Dungeon/CorpsePile/GiantCorpsePile.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/WitheredChild": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-222.0,
+					-897.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"dialogueText": "s:WitheredChild",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Dungeon/WitheredChild/withered_child.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/PissBucket": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-552.0,
+					-872.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:PissBucket",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Dungeon/WitheredChild/piss_bucket.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/MeltedLockDoor": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1120.0,
+					-544.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:MeltedLockedDoor",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/SuffocatedCultist": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					542.0,
+					-458.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"dialogueText": "s:DeadCultist",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Dungeon/SuffocatedCultist.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Chest": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-819.0,
+					19.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Chest",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Chest/Chest.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Bookshelf": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					62.0,
+					-114.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://tlmrkl2no4x0",
+				"path": "res://Resources/Items/Items/Books/CombatManual.tres"
+			},
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Crate": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-160.0,
+					-113.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Barrel": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					208.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Barrel3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-96.0,
+					216.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Barrel2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					152.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/LootedBarrel": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					96.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/LootedBarrel2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-160.0,
+					160.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/LootedBarrel3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-160.0,
+					216.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Bed": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-280.0,
+					-864.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://whiq3ofs1qeq",
+				"path": "res://Resources/Items/Items/Usables/Healing/TornSheet.tres"
+			},
+			"amount": "i:1",
+			"dialogueText": "s:Bed",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Bed/DungeonBed_Hor.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/DungeonBedHor2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1120.0,
+					-856.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://whiq3ofs1qeq",
+				"path": "res://Resources/Items/Items/Usables/Healing/TornSheet.tres"
+			},
+			"amount": "i:1",
+			"dialogueText": "s:Bed",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Bed/DungeonBed_Hor.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/DungeonBedHor3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-544.0,
+					32.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://whiq3ofs1qeq",
+				"path": "res://Resources/Items/Items/Usables/Healing/TornSheet.tres"
+			},
+			"amount": "i:1",
+			"dialogueText": "s:Bed",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Bed/DungeonBed_Vert.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Crate2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1376.0,
+					-104.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Crate3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1376.0,
+					-48.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Barrel4": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1064.0,
+					-104.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/LootedBarrel4": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1048.0,
+					-48.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Barrel5": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1056.0,
+					208.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Door": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-288.0,
+					-544.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"lock": {
+				"node": "/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Door/Lock"
+			},
+			"dialogueText": "s:Door",
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/PrisonDoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Door2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-608.0,
+					-160.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"lock": {
+				"node": "/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Door2/Lock"
+			},
+			"dialogueText": "s:Door",
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/PrisonDoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Door3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					288.0,
+					-544.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"unlocked": true,
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Door",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/PrisonDoor_Open.tscn"
+		},
+		"/root/SceneRoot/GameScene/DungeonRoot/Tilemaps/SavedLayer/Guard": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					152.0,
+					-80.0
+				]
+			},
+			"disable_mode": "i:2",
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"baseStats": {
+				"res": "-9223371878159086726"
+			},
+			"adjustedStats": {
+				"res": "-9223371878142309535"
+			},
+			"currentBloodLevel": "i:100",
+			"firstLoad": false,
+			"metadata/_custom_type_script": "s:uid://cq3713aua1jnn",
+			"scene_file_path": "res://Nodes/Entity/Enemy/Guard/Guard.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					288.0,
+					-288.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"dialogueText": "s:WallGrave",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					544.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					-288.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:2",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_3.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					608.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:2",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_3.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					736.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole6": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					672.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"dialogueText": "s:WallGrave",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole7": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1120.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:2",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_3.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/CorpseHole8": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1184.0,
+					-416.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"dialogueText": "s:WallGrave",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/SacrificialCircle": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1056.0,
+					448.0
+				]
+			},
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"dialogueText": "s:RitualCircle",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/sacrificial_circle.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/EntranceRoom/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1088.0,
+					288.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/Bookshelf": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1128.0,
+					-360.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/Crate": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-736.0,
+					-368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/Barrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-672.0,
+					-8.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/Barrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-616.0,
+					-40.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/LootedBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-696.0,
+					32.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/Barrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-736.0,
+					-32.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/PurpleMage": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-848.0,
+					-152.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"relationshipType": "s:Sea",
+			"baseStats": {
+				"res": "-9223371859771258091"
+			},
+			"adjustedStats": {
+				"res": "-9223371859754480838"
+			},
+			"currentBloodLevel": "i:100",
+			"firstLoad": false,
+			"metadata/_custom_type_script": "s:uid://cq3713aua1jnn",
+			"scene_file_path": "res://Nodes/Entity/Enemy/PurpleMage/purple_mage.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/StatueRoom/BlindArcher": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1040.0,
+					-216.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"relationshipType": "s:Sea",
+			"baseStats": {
+				"res": "-9223371858999505306"
+			},
+			"adjustedStats": {
+				"res": "-9223371858982728089"
+			},
+			"statusImmunities": [
+				{
+					"v": "i:2",
+					"t": 2
+				},
+				{
+					"v": "i:7",
+					"t": 2
+				}
+			],
+			"currentBloodLevel": "i:100",
+			"firstLoad": false,
+			"metadata/_custom_type_script": "s:uid://cq3713aua1jnn",
+			"scene_file_path": "res://Nodes/Entity/Enemy/BlindArcher/blind_archer.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Coffin": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					64.0,
+					432.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://b0ch0cykwi2fo",
+				"path": "res://Resources/Items/LootTable/Coffin.tres"
+			},
+			"dialogueText": "s:Coffin",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/coffin.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Coffin2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					224.0,
+					432.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://b0ch0cykwi2fo",
+				"path": "res://Resources/Items/LootTable/Coffin.tres"
+			},
+			"dialogueText": "s:Coffin",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/coffin.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Coffin3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					384.0,
+					432.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://b0ch0cykwi2fo",
+				"path": "res://Resources/Items/LootTable/Coffin.tres"
+			},
+			"dialogueText": "s:Coffin",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/coffin.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					672.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/PrisonDoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					513.0,
+					1024.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					33.0,
+					923.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					88.0,
+					952.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					96.0,
+					1000.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel6": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					400.0,
+					1000.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel8": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					800.0,
+					848.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel9": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					800.0,
+					792.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel10": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					800.0,
+					736.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel7": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					448.0,
+					1032.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Barrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					542.0,
+					976.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/LootedBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					576.0,
+					1040.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/LootedBarrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					32.0,
+					720.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/LootedBarrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					350.0,
+					1240.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/LootedBarrel5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					408.0,
+					1192.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/LootedBarrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					97.0,
+					720.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Crate": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					464.0,
+					969.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Crate2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					120.0,
+					888.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/Crate3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					736.0,
+					832.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/ButterflyStatue": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1120.0,
+					1688.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:ButterflyStatue",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/butterfly_statue.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/ButterflyGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1120.0,
+					2056.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:ButterflyGrave",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/butterfly_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/DogGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-256.0,
+					1120.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:DogGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/dog_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/BearGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-48.0,
+					1832.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:BearGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/bear_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/PlagueGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-224.0,
+					1544.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:PlagueGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/plague_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/ChainGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					481.0,
+					1464.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:ChainGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/chain_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/BabyGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					552.0,
+					1936.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:BabyGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/baby_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/MaceGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					352.0,
+					2424.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:MaceGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/mace_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/DeadGarden/EmptyGrave": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					824.0,
+					1896.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:EmptyGrave",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/empty_grave.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1856.0,
+					32.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"lock": {
+				"node": "/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Door/Lock"
+			},
+			"dialogueText": "s:Door",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1696.0,
+					96.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1952.0,
+					96.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1896.0,
+					304.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2024.0,
+					304.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1624.0,
+					328.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf6": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1624.0,
+					208.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Bookshelf7": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1744.0,
+					208.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2080.0,
+					160.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/scroll_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel/Sprite2D": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					8.0
+				]
+			},
+			"texture": {
+				"uid": "uid://c3xk20x4pvv6q",
+				"path": "res://Sprites/Props/General/Barrel/ScrollBarrel.png"
+			},
+			"offset": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					-46.0
+				]
+			},
+			"hframes": "i:2"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2144.0,
+					368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/scroll_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel2/Sprite2D": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					8.0
+				]
+			},
+			"texture": {
+				"uid": "uid://c3xk20x4pvv6q",
+				"path": "res://Sprites/Props/General/Barrel/ScrollBarrel.png"
+			},
+			"offset": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					-46.0
+				]
+			},
+			"hframes": "i:2"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1632.0,
+					488.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/scroll_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/ScrollBarrel3/Sprite2D": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					8.0
+				]
+			},
+			"texture": {
+				"uid": "uid://c3xk20x4pvv6q",
+				"path": "res://Sprites/Props/General/Barrel/ScrollBarrel.png"
+			},
+			"offset": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					-46.0
+				]
+			},
+			"hframes": "i:2"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Crate": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2080.0,
+					536.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Crate2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2016.0,
+					536.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Vials_1": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1560.0,
+					400.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Vials_2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2400.0,
+					352.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Library/Vials_3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1888.0,
+					496.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/WoodenBed": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-736.0,
+					-1368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://whiq3ofs1qeq",
+				"path": "res://Resources/Items/Items/Usables/Healing/TornSheet.tres"
+			},
+			"amount": "i:1",
+			"dialogueText": "s:Bed",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Bed/WoodenBed_Hor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/Wardrobe": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-584.0,
+					-1392.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Wardrobe",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/wardrobe.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/Barrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-416.0,
+					-1248.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/Bedtable": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-744.0,
+					-1328.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:BedTable",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/bedtable.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/WeaponBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-480.0,
+					-1240.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/weapon_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/WeaponBarrel/Sprite2D": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					21.0
+				]
+			},
+			"texture": {
+				"uid": "uid://d2aa1i6hwtumu",
+				"path": "res://Sprites/Props/General/Barrel/WeaponBarrel.png"
+			},
+			"offset": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					-96.0
+				]
+			},
+			"hframes": "i:2"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Bedroom/BedroomSuccubus": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-693.0,
+					-1410.0
+				]
+			},
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"dialogueText": "s:BedSuccubus",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Lust/bed_succubus.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/PetruRoom/Petru": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1280.0,
+					-1128.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:Petru",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/petru.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/PetruRoom/Bookshelf": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1440.0,
+					-1128.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/PetruRoom/Bookshelf2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1184.0,
+					-1128.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Bookshelf",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/Bookshelf.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/LeftHall/ChurchBell": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1848.0,
+					-880.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:ChurchBell",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Catacombs/church_bell.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/LeftHall/FlowerFiend": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2056.0,
+					136.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:FlowerFiend",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/FlowerRoom/flower_fiend.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1696.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"dialogueText": "s:WallGrave",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1760.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1888.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:2",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_3.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1952.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2016.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:WallGrave",
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/CorpseHole6": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1824.0,
+					-864.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dck1w5iwbwnlo",
+				"path": "res://Resources/Items/LootTable/Grave.tres"
+			},
+			"dialogueText": "s:WallGrave",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://cf708ybgms0hs",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2208.0,
+					-1312.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/PrisonDoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/Body": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2472.0,
+					-408.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/body_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/Body3": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2888.0,
+					-368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/body_3.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/Body4": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2768.0,
+					-248.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/body_4.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/BonePile": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1696.0,
+					-760.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/bone_pile_2x2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/BonePile2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1664.0,
+					-720.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/bone_pile_2x2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/Chest": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2704.0,
+					-1008.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Chest",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Chest/Chest.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/RightHall/DismemberedHand": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					2448.0,
+					-320.0
+				]
+			},
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://chpj1jb05or6y",
+				"path": "res://Resources/Items/Items/Equipment/DevilFlesh/AncientFlesh.tres"
+			},
+			"dialogueText": "s:DismemberedHand",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Dead/dismembered_hand.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Oven": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2296.0,
+					-872.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:Oven",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Kitchen/oven.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/MetalGrate": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2072.0,
+					-1328.0
+				]
+			},
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"dialogueText": "s:MetalGrate",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Kitchen/metal_grate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/MeatRack": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2584.0,
+					-1368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:MeatRack",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Kitchen/meat_rack.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/HumanMeatRack": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2336.0,
+					-1368.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:HumanMeatRack",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Kitchen/human_meat_rack.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/CuttingBoard": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2744.0,
+					-720.0
+				]
+			},
+			"collision_layer": "i:32",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://cqrouk8prx30v",
+				"path": "res://Resources/Items/Items/Weapons/SimpleWeapons/MeatCleaver.tres"
+			},
+			"dialogueText": "s:MeatCleaver",
+			"metadata/_custom_type_script": "s:uid://ca8w3o56r3ktd",
+			"scene_file_path": "res://Nodes/Props/Catacombs/Kitchen/cutting_board.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Barrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2144.0,
+					-464.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Barrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2144.0,
+					-520.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Barrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2144.0,
+					-576.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Barrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2592.0,
+					-1000.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Barrel5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2592.0,
+					-944.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/LootedBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2144.0,
+					-792.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/LootedBarrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2592.0,
+					-880.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Crate": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2848.0,
+					-632.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Crate2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2144.0,
+					-648.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Crate3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2384.0,
+					-872.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://dlof765yus4wy",
+				"path": "res://Resources/Items/LootTable/Crate.tres"
+			},
+			"dialogueText": "s:Crate",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Crate/Crate.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Vials_2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2392.0,
+					-1000.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Chest": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2184.0,
+					-1160.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Chest",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Chest/Chest.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Kitchen/Body2": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2032.0,
+					-1160.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"scene_file_path": "res://Nodes/Props/General/Dead/body_5.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BoneHall/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-3584.0,
+					-1568.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2176.0,
+					-2144.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Bug": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1950.0,
+					-2525.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"dialogueText": "s:Bug",
+			"metadata/_custom_type_script": "s:uid://dkh67rsuc8k35",
+			"scene_file_path": "res://Nodes/Props/Catacombs/bug.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/WoodenBed": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2272.0,
+					-2568.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"item": {
+				"uid": "uid://whiq3ofs1qeq",
+				"path": "res://Resources/Items/Items/Usables/Healing/TornSheet.tres"
+			},
+			"amount": "i:1",
+			"dialogueText": "s:Bed",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Bed/WoodenBed_Hor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Bedtable": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2281.0,
+					-2528.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:BedTable",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/bedtable.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Bedtable2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2281.0,
+					-2641.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:BedTable",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/bedtable.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Barrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2280.0,
+					-2684.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Vials_1": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2057.0,
+					-2661.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Vials_2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2202.0,
+					-2496.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_2.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Wardrobe": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2168.0,
+					-2672.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Wardrobe",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Furniture/wardrobe.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Vials_3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1992.0,
+					-2720.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://by7ahsrq14ldo",
+				"path": "res://Resources/Items/LootTable/Vials.tres"
+			},
+			"dialogueText": "s:Vials",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Potions/vials_1.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Barrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1696.0,
+					-2584.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1784.0,
+					-2664.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1696.0,
+					-2664.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Barrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1768.0,
+					-2512.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel3": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1752.0,
+					-2464.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1808.0,
+					-2464.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/ScrollBarrel": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1832.0,
+					-2624.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/scroll_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/ScrollBarrel/Sprite2D": {
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					8.0
+				]
+			},
+			"texture": {
+				"uid": "uid://c3xk20x4pvv6q",
+				"path": "res://Sprites/Props/General/Barrel/ScrollBarrel.png"
+			},
+			"offset": {
+				"type": "Vector2",
+				"args": [
+					0.0,
+					-46.0
+				]
+			},
+			"hframes": "i:2"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel5": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2088.0,
+					-2312.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel6": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2272.0,
+					-2336.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel7": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2224.0,
+					-2384.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/LootedBarrel8": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2080.0,
+					-2376.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"spriteFrame": "i:1",
+			"dialogueText": "s:Barrel",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/looted_barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Barrel4": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2280.0,
+					-2408.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Barrel",
+			"playInteractSFX": true,
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Barrel/barrel.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/BugRoom/Chest": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-2216.0,
+					-2688.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:32",
+			"lootTable": {
+				"uid": "uid://d3k6hfyp3f3i",
+				"path": "res://Resources/Items/LootTable/Barrel.tres"
+			},
+			"dialogueText": "s:Chest",
+			"metadata/_custom_type_script": "s:uid://uuy6um6h4dwl",
+			"scene_file_path": "res://Nodes/Props/General/Chest/Chest.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/MothTerritory/Door2": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					1664.0,
+					-1632.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:Door",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/CatacombsRoot/Tilemaps/Exit/Door": {
+			"visible": false,
+			"y_sort_enabled": true,
+			"position": {
+				"type": "Vector2",
+				"args": [
+					-1280.0,
+					-3168.0
+				]
+			},
+			"collision_layer": "i:48",
+			"collision_mask": "i:48",
+			"dialogueText": "s:HandDoor",
+			"interacted": true,
+			"metadata/_custom_type_script": "s:uid://dkhxteorngsox",
+			"scene_file_path": "res://Nodes/Props/General/Door/woodendoor.tscn"
+		},
+		"/root/SceneRoot/GameScene/Player": {
+			"process_mode": "i:3",
+			"y_sort_enabled": true,
+			"collision_mask": "i:16",
+			"currentHealth": "i:30",
+			"inspiration": "i:1",
+			"baseStats": {
+				"res": "-9223371960786876946"
+			},
+			"adjustedStats": {
+				"res": "-9223371925940598878"
+			},
+			"currentBloodLevel": "i:100",
+			"firstLoad": false,
+			"scene_file_path": "res://Nodes/Entity/Player/player.tscn"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerInventory": {
+			"items": {
+				"{\"v\":{\"uid\":\"uid://q6wqajwj381o\",\"path\":\"res://Resources/Items/Items/Usables/Healing/Bandage.tres\"},\"t\":24,\"c\":\"Resource\"}": {
+					"v": "i:2",
+					"t": 2
+				},
+				"{\"v\":{\"uid\":\"uid://duq3wsv4xfib3\",\"path\":\"res://Resources/Items/Items/Usables/Healing/Bonesaw.tres\"},\"t\":24,\"c\":\"Resource\"}": {
+					"v": "i:1",
+					"t": 2
+				},
+				"{\"v\":{\"uid\":\"uid://dona3cs6n41us\",\"path\":\"res://Resources/Items/Items/Usables/Damage/PoisonDart.tres\"},\"t\":24,\"c\":\"Resource\"}": {
+					"v": "i:3",
+					"t": 2
+				},
+				"{\"v\":{\"uid\":\"uid://bhjr1wxpfyjbx\",\"path\":\"res://Resources/Items/Items/Weapons/AdvancedWeapons/Longsword.tres\"},\"t\":24,\"c\":\"Resource\"}": {
+					"v": "i:1",
+					"t": 2
+				}
+			},
+			"weapons": [
+				{
+					"v": {
+						"uid": "uid://bibjge16de14v",
+						"path": "res://Resources/Items/Items/Weapons/SimpleWeapons/RustyKitchenKnife.tres"
+					},
+					"t": 24,
+					"c": "Resource"
+				},
+				{
+					"v": null,
+					"t": 0
+				}
+			],
+			"accessories": [
+				{
+					"v": {
+						"uid": "uid://bt8vmymv77yb",
+						"path": "res://Resources/Items/Items/Equipment/Body/RattyClothes.tres"
+					},
+					"t": 24,
+					"c": "Resource"
+				},
+				{
+					"v": null,
+					"t": 0
+				},
+				{
+					"v": null,
+					"t": 0
+				},
+				{
+					"v": null,
+					"t": 0
+				}
+			]
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody": {
+			"bodyStats": {
+				"res": "-9223371925470836801"
+			},
+			"bodyParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Head"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Arm"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Arm"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Leg"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Leg"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"organs": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Eye"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Lung"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Heart"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Liver"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Right Kidney"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Left Kidney"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"metadata/_custom_type_script": "s:uid://oannisb4dgab"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs": {
+
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Head": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://dfbl8digsjymd",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Head.tres"
+			},
+			"currentHitPoints": "i:35",
+			"destroyedTexturePath": "s:Limbs/Natural/Head",
+			"vital": true,
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Head"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Arm"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Arm"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Leg"
+					},
+					"t": 24,
+					"c": "Node"
+				},
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Leg"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://cijnjg0c584g0",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Torso.tres"
+			},
+			"currentHitPoints": "i:40",
+			"destroyedTexturePath": "s:Limbs/Natural/Torso",
+			"vital": true,
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Arm": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://d4aqwq68f813c",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Arm.tres"
+			},
+			"currentHitPoints": "i:15",
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Arm": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://d4aqwq68f813c",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Arm.tres"
+			},
+			"currentHitPoints": "i:15",
+			"leftPart": true,
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Right Leg": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://7ef1oie8itai",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Leg.tres"
+			},
+			"currentHitPoints": "i:15",
+			"destroyedStatChange": {
+				"res": "-9223371925454059584"
+			},
+			"destroyedTexturePath": "s:Limbs/Destroyed/Leg_Destroyed",
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Left Leg": {
+			"adjacentParts": [
+				{
+					"v": {
+						"node": "/root/SceneRoot/GameScene/Player/PlayerBody/Limbs/Torso"
+					},
+					"t": 24,
+					"c": "Node"
+				}
+			],
+			"bodypartResource": {
+				"uid": "uid://7ef1oie8itai",
+				"path": "res://Resources/Bodyparts/Limbs/Natural/Leg.tres"
+			},
+			"currentHitPoints": "i:15",
+			"destroyedStatChange": {
+				"res": "-9223371925437282367"
+			},
+			"destroyedTexturePath": "s:Limbs/Destroyed/Leg_Destroyed",
+			"leftPart": true,
+			"metadata/_custom_type_script": "s:uid://c6wkafovtq7d2"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs": {
+
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Eye": {
+			"bodypartResource": {
+				"uid": "uid://bdfrl86cj3j14",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Eye.tres"
+			},
+			"currentHitPoints": "i:5",
+			"destroyedStatChange": {
+				"res": "-9223371925420505150"
+			},
+			"destroyedTexturePath": "s:Organs/Destroyed/Eye_Destroyed",
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Lung": {
+			"bodypartResource": {
+				"uid": "uid://dt7ykgvahdf3f",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Lung.tres"
+			},
+			"currentHitPoints": "i:16",
+			"destroyedStatChange": {
+				"res": "-9223371925403727933"
+			},
+			"destroyedTexturePath": "s:Organs/Destroyed/Lung_Destroyed",
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Heart": {
+			"bodypartResource": {
+				"uid": "uid://bo0e7xdvp3kcd",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Heart.tres"
+			},
+			"currentHitPoints": "i:24",
+			"destroyedTexturePath": "s:Organs/Destroyed/Heart_Destroyed",
+			"vital": true,
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Liver": {
+			"bodypartResource": {
+				"uid": "uid://cy8qsv2t3iucl",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Liver.tres"
+			},
+			"currentHitPoints": "i:14",
+			"destroyedTexturePath": "s:Organs/Destroyed/Liver_Destroyed",
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Right Kidney": {
+			"bodypartResource": {
+				"uid": "uid://c5spjrbetahwg",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Kidney.tres"
+			},
+			"currentHitPoints": "i:8",
+			"destroyedStatChange": {
+				"res": "-9223371925386950716"
+			},
+			"destroyedTexturePath": "s:Organs/Destroyed/Kidney_Destroyed",
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/PlayerBody/Organs/Left Kidney": {
+			"bodypartResource": {
+				"uid": "uid://c5spjrbetahwg",
+				"path": "res://Resources/Bodyparts/Organs/Natural/Kidney.tres"
+			},
+			"currentHitPoints": "i:8",
+			"destroyedStatChange": {
+				"res": "-9223371925370173499"
+			},
+			"destroyedTexturePath": "s:Organs/Destroyed/Kidney_Destroyed",
+			"leftPart": true,
+			"metadata/_custom_type_script": "s:uid://byi70ptd67jfg"
+		},
+		"/root/SceneRoot/GameScene/Player/relation_manager": {
+			"playerName": "s:Moira",
+			"metadata/_custom_type_script": "s:uid://bc5x8amt0bt0k"
+		}
+	},
+	"resources": {
+		"-9223371878159086726": {
+			"stats": [
+				{
+					"v": "i:5",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:8",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"stateBonus": "i:3",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371878142309535": {
+			"stats": [
+				{
+					"v": "i:5",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:7",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"stateBonus": "i:3",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371859771258091": {
+			"stats": [
+				{
+					"v": "i:7",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:8",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371859754480838": {
+			"stats": [
+				{
+					"v": "i:7",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:7",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371858999505306": {
+			"stats": [
+				{
+					"v": "i:7",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:8",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371858982728089": {
+			"stats": [
+				{
+					"v": "i:7",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:-1",
+					"t": 2
+				},
+				{
+					"v": "i:2",
+					"t": 2
+				}
+			],
+			"AC": "i:10",
+			"MC": "i:7",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://bcqsb1lxsctlf",
+				"path": "res://Nodes/Entity/Components/StatComponent.gd"
+			}
+		},
+		"-9223371960786876946": {
+			"maxHealth": "i:50",
+			"physicalDmgMult": "f:1.0",
+			"occultDmgMult": "f:1.0",
+			"coldDmgMult": "f:1.0",
+			"torchStrength": "f:1.0",
+			"statusImmunities": [
+				{
+					"v": "i:14",
+					"t": 2
+				}
+			],
+			"guardDamageReduction": "i:1",
+			"AC": "i:8",
+			"MC": "i:8",
+			"legs": "i:2",
+			"moveSpeed": "f:1.0",
+			"crawlSpeed": "f:0.3",
+			"sprintSpeed": "f:1.6",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"stateBonus": "i:2",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925940598878": {
+			"maxHealth": "i:50",
+			"physicalDmgMult": "f:1.0",
+			"occultDmgMult": "f:1.0",
+			"coldDmgMult": "f:1.0",
+			"torchStrength": "f:1.0",
+			"statusImmunities": [
+				{
+					"v": "i:14",
+					"t": 2
+				}
+			],
+			"guardDamageReduction": "i:1",
+			"AC": "i:9",
+			"MC": "i:9",
+			"legs": "i:2",
+			"moveSpeed": "f:1.0",
+			"crawlSpeed": "f:0.3",
+			"sprintSpeed": "f:1.6",
+			"actionCount": "i:1",
+			"bonusActionCount": "i:1",
+			"stateBonus": "i:2",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925470836801": {
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925454059584": {
+			"AC": "i:-3",
+			"legs": "i:-1",
+			"moveSpeed": "f:-0.25",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925437282367": {
+			"AC": "i:-3",
+			"legs": "i:-1",
+			"moveSpeed": "f:-0.25",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925420505150": {
+			"stateBonus": "i:-4",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925403727933": {
+			"permaExhaustion": "i:3",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925386950716": {
+			"maxBlood": "i:-25",
+			"dmgResist": {
+				"{\"v\":\"i:5\",\"t\":2}": {
+					"v": "i:1",
+					"t": 2
+				}
+			},
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		},
+		"-9223371925370173499": {
+			"maxBlood": "i:-25",
+			"stats": [
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				},
+				{
+					"v": "i:0",
+					"t": 2
+				}
+			],
+			"dmgResist": {
+
+			},
+			"script": {
+				"uid": "uid://pfdljcj84wxm",
+				"path": "res://StatComponent_Player.gd"
+			}
+		}
+	}
+}

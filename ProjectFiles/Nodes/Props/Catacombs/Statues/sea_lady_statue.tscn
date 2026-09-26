@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c253eu1dmrrx7"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_qu75k"]
+[ext_resource type="Texture2D" uid="uid://bcv1ktxcjnqvc" path="res://Sprites/Props/General/Furniture/BedTable.png" id="2_s0bh1"]
+[ext_resource type="Texture2D" uid="uid://bqgxb5ne1r147" path="res://Sprites/Props/Catacombs/SeaLadyStatue/SeaLadyStatue_1.png" id="3_ygra1"]
+[ext_resource type="Texture2D" uid="uid://m13w4ja16bnp" path="res://Sprites/Props/Catacombs/SeaLadyStatue/SeaLadyStatue_2.png" id="4_oax4d"]
+[ext_resource type="Texture2D" uid="uid://jw1c6smw8v0o" path="res://Sprites/Props/Catacombs/SeaLadyStatue/SeaLadyStatue_3.png" id="5_umevc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5kfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ygra1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oax4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_umevc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SeaLadyStatue" type="StaticBody2D"]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_qu75k")
+dialogueText = "SeaLadyStatue"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, -15)
+texture = ExtResource("2_s0bh1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 103)
+sprite_frames = SubResource("SpriteFrames_m5kfy")
+autoplay = "default"
+frame_progress = 0.78205484
+offset = Vector2(1, -103)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, 68, -62, 80, -82, 104, -39, 128, 54, 126, 85, 108, 74, 84, 42, 68)

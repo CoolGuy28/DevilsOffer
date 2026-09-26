@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dftvgeb4enrap"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_vpjg8"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="2_vpjg8"]
+[ext_resource type="Texture2D" uid="uid://b6qyl1vrxiqc5" path="res://Nodes/Props/General/Chest/Chest.png" id="3_dqh3v"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="5_q58hd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(64, 46.5)
+
+[node name="Chest" type="StaticBody2D" node_paths=PackedStringArray("lock") groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_vpjg8")
+lootTable = ExtResource("2_vpjg8")
+lock = NodePath("")
+dialogueText = "Chest"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, 21)
+texture = ExtResource("3_dqh3v")
+offset = Vector2(1, -21)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 4.75)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_q58hd")

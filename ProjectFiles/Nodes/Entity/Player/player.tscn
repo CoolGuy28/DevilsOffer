@@ -1,0 +1,929 @@
+[gd_scene load_steps=114 format=3 uid="uid://6q62pgau4d4g"]
+
+[ext_resource type="Script" uid="uid://6glc6145h1bw" path="res://Nodes/Entity/Player/Player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://j2wquyy448wy" path="res://Sprites/Entity/Player/Girl_spritesheet.png" id="2_gwnis"]
+[ext_resource type="PackedScene" uid="uid://d4qy3lmnp5lc" path="res://Nodes/Menu/CombatMenu/CombatMenu.tscn" id="2_k53q1"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="2_lj4m2"]
+[ext_resource type="Resource" uid="uid://bqsxbaka2d2kx" path="res://Nodes/Entity/Player/DefaultPlayerStats.tres" id="2_runaw"]
+[ext_resource type="Texture2D" uid="uid://bccq3x04ysli3" path="res://LightTexture.png" id="3_g1r4u"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="3_hkdd6"]
+[ext_resource type="PackedScene" uid="uid://cajclmaq0ox8v" path="res://Nodes/Menu/OverworldMenu/OverworldMenu.tscn" id="6_ghdcn"]
+[ext_resource type="Texture2D" uid="uid://dbsq4tplrj63w" path="res://Sprites/Entity/Player/Magician_dead.png" id="7_u1o7w"]
+[ext_resource type="Script" uid="uid://byrkf8kjdftqn" path="res://Nodes/Entity/Player/EntityAnimController.gd" id="8_c8657"]
+[ext_resource type="Texture2D" uid="uid://dv4s28cstonao" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_down_1.png" id="9_0bvdd"]
+[ext_resource type="Texture2D" uid="uid://cg5lcgxheewyc" path="res://Sprites/Entity/Player/Idle/IdlePlayer_down_1.png" id="9_k0t3g"]
+[ext_resource type="Texture2D" uid="uid://bwr1oay623oc8" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_down_2.png" id="10_u3k43"]
+[ext_resource type="Texture2D" uid="uid://bbqsng1yxp7vb" path="res://Sprites/Entity/Player/Idle/IdlePlayer_down_2.png" id="10_uc78f"]
+[ext_resource type="Texture2D" uid="uid://bc2l628gvhdla" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_down_3.png" id="11_ctkt3"]
+[ext_resource type="Texture2D" uid="uid://dm4ofpdc2xxga" path="res://Sprites/Entity/Player/Idle/IdlePlayer_down_3.png" id="11_rwlcm"]
+[ext_resource type="Script" uid="uid://cp184wfeofaty" path="res://Nodes/Entity/Player/AbilityCheckManager.gd" id="11_wty2p"]
+[ext_resource type="Texture2D" uid="uid://6vw0go82285u" path="res://Sprites/Entity/Player/Idle/IdlePlayer_right_1.png" id="12_iprw7"]
+[ext_resource type="Texture2D" uid="uid://drhqpnjb35afb" path="res://Sprites/Entity/Player/Idle/IdlePlayer_left_1.png" id="12_nphvd"]
+[ext_resource type="Texture2D" uid="uid://beuuon1bob13i" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_down_4.png" id="12_qcfbo"]
+[ext_resource type="Script" uid="uid://clwny8qj0h0eq" path="res://Nodes/Entity/Player/PlayerInventory.gd" id="12_vhflw"]
+[ext_resource type="Script" uid="uid://cxe6vsmgdqeqm" path="res://Nodes/Menu/3DDie/Scripts/AbilityCheck_DiceRoller.gd" id="13_3abr6"]
+[ext_resource type="Texture2D" uid="uid://ddqm7cw53kegx" path="res://Nodes/Menu/3DDie/Sprites/RollScore.png" id="13_ljdv1"]
+[ext_resource type="Texture2D" uid="uid://cf1o14g6nppjn" path="res://Sprites/Entity/Player/Idle/IdlePlayer_right_2.png" id="13_nphvd"]
+[ext_resource type="Texture2D" uid="uid://d10tftivjasgj" path="res://Sprites/Entity/Player/Idle/IdlePlayer_left_2.png" id="13_qgstm"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="14_ff4qf"]
+[ext_resource type="Texture2D" uid="uid://bw5dyfv2x2v2w" path="res://Sprites/Entity/Player/Idle/IdlePlayer_left_3.png" id="14_fqabr"]
+[ext_resource type="Texture2D" uid="uid://b4frynbkaj6fc" path="res://Sprites/Entity/Player/Idle/IdlePlayer_right_3.png" id="14_qgstm"]
+[ext_resource type="Texture2D" uid="uid://7r6et03d72vn" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Soul.png" id="15_eggcg"]
+[ext_resource type="Texture2D" uid="uid://d1rwrcwnhvp6y" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_1.png" id="15_fqabr"]
+[ext_resource type="Texture2D" uid="uid://tumyhp4w1fsd" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_2.png" id="16_0q30f"]
+[ext_resource type="Texture2D" uid="uid://cxdnb4mfn2j4g" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Int.png" id="16_8l768"]
+[ext_resource type="Texture2D" uid="uid://bmd13wny6wfgt" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_1.png" id="16_n6bsm"]
+[ext_resource type="Texture2D" uid="uid://c7lodyldxa7qf" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Perc.png" id="17_al5gi"]
+[ext_resource type="Texture2D" uid="uid://nml0eud82f17" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_3.png" id="17_cxvol"]
+[ext_resource type="Texture2D" uid="uid://5hpj28bem2p5" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_2.png" id="17_lrbcj"]
+[ext_resource type="Texture2D" uid="uid://bbniqk5qpb7hp" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_3.png" id="18_4vyhe"]
+[ext_resource type="Texture2D" uid="uid://dre7nwkgn555c" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Str.png" id="18_qpjtw"]
+[ext_resource type="Texture2D" uid="uid://uxtuq2hak6ba" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Dex.png" id="19_qn7d7"]
+[ext_resource type="Texture2D" uid="uid://d2q74ttbp4757" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_4.png" id="19_rndu7"]
+[ext_resource type="Script" uid="uid://oannisb4dgab" path="res://Resources/Bodyparts/Scripts/PlayerBody.gd" id="21_hkdd6"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="22_175b5"]
+[ext_resource type="Script" uid="uid://c6wkafovtq7d2" path="res://Resources/Bodyparts/Scripts/PlayerBodyLimb.gd" id="22_v33f3"]
+[ext_resource type="Texture2D" uid="uid://b1i4tg0cbnvpl" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_1.png" id="23_6rvnm"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="23_g1r4u"]
+[ext_resource type="Texture2D" uid="uid://ovoqsqdjr4fg" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_2.png" id="24_84yig"]
+[ext_resource type="Texture2D" uid="uid://r2laxfb6sucs" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_3.png" id="25_648un"]
+[ext_resource type="Resource" uid="uid://bt8vmymv77yb" path="res://Resources/Items/Items/Equipment/Body/RattyClothes.tres" id="25_r8d8k"]
+[ext_resource type="Texture2D" uid="uid://vx2aosic41xg" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_4.png" id="26_bwgel"]
+[ext_resource type="PackedScene" uid="uid://d1s0d7r7fbsud" path="res://Nodes/Menu/3DDie/D20PhysicsRoll.tscn" id="27_tfwu5"]
+[ext_resource type="Texture2D" uid="uid://bc4wrinmm4d6n" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_1.png" id="30_a11ye"]
+[ext_resource type="Texture2D" uid="uid://oao4wpfdre7d" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_2.png" id="31_qhotk"]
+[ext_resource type="Texture2D" uid="uid://6gis7omln5hx" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_3.png" id="32_piqgi"]
+[ext_resource type="Texture2D" uid="uid://bru3dewpw3dm2" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_4.png" id="33_650lp"]
+[ext_resource type="Resource" uid="uid://dfbl8digsjymd" path="res://Resources/Bodyparts/Limbs/Natural/Head.tres" id="33_qpjtw"]
+[ext_resource type="Resource" uid="uid://cijnjg0c584g0" path="res://Resources/Bodyparts/Limbs/Natural/Torso.tres" id="34_qn7d7"]
+[ext_resource type="Resource" uid="uid://d4aqwq68f813c" path="res://Resources/Bodyparts/Limbs/Natural/Arm.tres" id="35_oosj2"]
+[ext_resource type="Resource" uid="uid://7ef1oie8itai" path="res://Resources/Bodyparts/Limbs/Natural/Leg.tres" id="36_n0gdt"]
+[ext_resource type="Resource" uid="uid://c5spjrbetahwg" path="res://Resources/Bodyparts/Organs/Natural/Kidney.tres" id="37_f3utc"]
+[ext_resource type="Resource" uid="uid://dt7ykgvahdf3f" path="res://Resources/Bodyparts/Organs/Natural/Lung.tres" id="38_rfo2f"]
+[ext_resource type="Script" uid="uid://reuyc16fiq4c" path="res://Nodes/Entity/Player/game_ui.gd" id="39_n6bsm"]
+[ext_resource type="Texture2D" uid="uid://deanxh8mh75iy" path="res://Sprites/CutsceneSprites/PJail/PStare_1.png" id="40_lrbcj"]
+[ext_resource type="Script" uid="uid://byi70ptd67jfg" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart.gd" id="43_88acc"]
+[ext_resource type="Resource" uid="uid://bdfrl86cj3j14" path="res://Resources/Bodyparts/Organs/Natural/Eye.tres" id="43_j1j43"]
+[ext_resource type="Resource" uid="uid://bo0e7xdvp3kcd" path="res://Resources/Bodyparts/Organs/Natural/Heart.tres" id="47_88acc"]
+[ext_resource type="Resource" uid="uid://cy8qsv2t3iucl" path="res://Resources/Bodyparts/Organs/Natural/Liver.tres" id="49_hwgvk"]
+[ext_resource type="Script" uid="uid://dfec0ajewgnig" path="res://Nodes/Entity/Components/hit_box.gd" id="50_ctkt3"]
+[ext_resource type="Resource" uid="uid://bibjge16de14v" path="res://Resources/Items/Items/Weapons/SimpleWeapons/RustyKitchenKnife.tres" id="54_fawaq"]
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="57_jh4nb"]
+[ext_resource type="Resource" uid="uid://q6wqajwj381o" path="res://Resources/Items/Items/Usables/Healing/Bandage.tres" id="58_x4i7w"]
+[ext_resource type="Resource" uid="uid://duq3wsv4xfib3" path="res://Resources/Items/Items/Usables/Healing/Bonesaw.tres" id="59_x4i7w"]
+[ext_resource type="Resource" uid="uid://dona3cs6n41us" path="res://Resources/Items/Items/Usables/Damage/PoisonDart.tres" id="60_3crn1"]
+[ext_resource type="Resource" uid="uid://bhjr1wxpfyjbx" path="res://Resources/Items/Items/Weapons/AdvancedWeapons/Longsword.tres" id="61_0bvdd"]
+[ext_resource type="Script" uid="uid://bc5x8amt0bt0k" path="res://relation_manager.gd" id="68_7ti0u"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="68_d4sq4"]
+[ext_resource type="AudioStream" uid="uid://br1b8cub7xit3" path="res://SFX/Player/Walking/footstep_tile2.ogg" id="69_7rkwv"]
+[ext_resource type="AudioStream" uid="uid://cr5320i2umtp3" path="res://SFX/Player/BeginCombat.wav" id="70_7ti0u"]
+[ext_resource type="AudioStream" uid="uid://gxuo1piq0n6f" path="res://SFX/Player/DeathSFX.wav" id="71_fawaq"]
+
+[sub_resource type="Resource" id="Resource_4vyhe"]
+script = ExtResource("2_lj4m2")
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcfbo"]
+radius = 18.027756
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7skvd"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhflw"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiw37"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj4m2"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(0, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb64r"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(64, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pvm4"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkdd6"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(0, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qndt7"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(64, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf8yw"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(128, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo8dx"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(0, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqswv"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(64, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghdcn"]
+atlas = ExtResource("2_gwnis")
+region = Rect2(128, 128, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo8dx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_u1o7w")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7skvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhflw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiw37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhflw")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0bvdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u3k43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ctkt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qcfbo")
+}],
+"loop": true,
+"name": &"Down_Crawl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qcfbo")
+}],
+"loop": true,
+"name": &"Down_Crawl_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_k0t3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uc78f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rwlcm")
+}],
+"loop": true,
+"name": &"Down_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7skvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhflw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiw37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhflw")
+}],
+"loop": true,
+"name": &"Down_Sprint",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj4m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb64r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pvm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb64r")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_n6bsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lrbcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4vyhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rndu7")
+}],
+"loop": true,
+"name": &"Left_Crawl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_rndu7")
+}],
+"loop": true,
+"name": &"Left_Crawl_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_nphvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qgstm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fqabr")
+}],
+"loop": true,
+"name": &"Left_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj4m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb64r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pvm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb64r")
+}],
+"loop": true,
+"name": &"Left_Sprint",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkdd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf8yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndt7")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_6rvnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_84yig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_648un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_bwgel")
+}],
+"loop": true,
+"name": &"Right_Crawl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_bwgel")
+}],
+"loop": true,
+"name": &"Right_Crawl_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_iprw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nphvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qgstm")
+}],
+"loop": true,
+"name": &"Right_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkdd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf8yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndt7")
+}],
+"loop": true,
+"name": &"Right_Sprint",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo8dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqswv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghdcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqswv")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_a11ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qhotk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_piqgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_650lp")
+}],
+"loop": true,
+"name": &"Up_Crawl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_a11ye")
+}],
+"loop": true,
+"name": &"Up_Crawl_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_fqabr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0q30f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cxvol")
+}],
+"loop": true,
+"name": &"Up_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo8dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqswv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghdcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqswv")
+}],
+"loop": true,
+"name": &"Up_Sprint",
+"speed": 7.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vyhe"]
+bg_color = Color(0, 0, 0, 0.7137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfwu5"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
+[sub_resource type="Animation" id="Animation_eggcg"]
+resource_name = "AddMod"
+length = 0.3705
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(0.75785816, 1, 0.43527535),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.88, 1.88), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8l768"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al5gi"]
+_data = {
+&"AddMod": SubResource("Animation_eggcg"),
+&"RESET": SubResource("Animation_8l768")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1r4u"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_tfwu5"]
+resource_name = "CombatTransition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.43333334, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 2.2973967, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g1r4u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ving8"]
+resource_name = "SceneTransition"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wty2p"]
+_data = {
+&"CombatTransition": SubResource("Animation_tfwu5"),
+&"RESET": SubResource("Animation_g1r4u"),
+&"SceneTransition": SubResource("Animation_ving8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3vf3"]
+size = Vector2(9, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctkt3"]
+radius = 23.0
+
+[sub_resource type="Resource" id="Resource_lj4m2"]
+script = ExtResource("2_lj4m2")
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_hkdd6"]
+script = ExtResource("2_lj4m2")
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_u1o7w"]
+script = ExtResource("2_lj4m2")
+AC = -3
+legs = -1
+moveSpeed = -0.25
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_x3b1d"]
+script = ExtResource("2_lj4m2")
+AC = -3
+legs = -1
+moveSpeed = -0.25
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_ctkt3"]
+script = ExtResource("2_lj4m2")
+stateBonus = -4
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_qcfbo"]
+script = ExtResource("2_lj4m2")
+permaExhaustion = 3
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_n6bsm"]
+script = ExtResource("2_lj4m2")
+maxBlood = -25
+dmgResist = Dictionary[int, int]({
+5: 1
+})
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[sub_resource type="Resource" id="Resource_lrbcj"]
+script = ExtResource("2_lj4m2")
+maxBlood = -25
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[node name="Player" type="CharacterBody2D" groups=["saveable"]]
+process_mode = 3
+y_sort_enabled = true
+collision_mask = 16
+script = ExtResource("1_4ntmi")
+baseStats = ExtResource("2_runaw")
+adjustedStats = SubResource("Resource_4vyhe")
+
+[node name="PlayerLight" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.6784314)
+texture = ExtResource("3_g1r4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_qcfbo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 9)
+sprite_frames = SubResource("SpriteFrames_eo8dx")
+animation = &"Up_Sprint"
+autoplay = "Down_Idle"
+offset = Vector2(0, -54)
+script = ExtResource("8_c8657")
+dirMovement = true
+crawlMovement = true
+sprintMovement = true
+metadata/_custom_type_script = "uid://byrkf8kjdftqn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+zoom = Vector2(0.9, 0.9)
+
+[node name="UI" type="CanvasLayer" parent="Camera2D"]
+
+[node name="CombatMenu" parent="Camera2D/UI" instance=ExtResource("2_k53q1")]
+visible = false
+
+[node name="GameUI" type="Control" parent="Camera2D/UI"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("39_n6bsm")
+
+[node name="ScenePanel" type="PanelContainer" parent="Camera2D/UI/GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vyhe")
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/UI/GameUI/ScenePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 95
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 95
+theme_override_constants/margin_bottom = 170
+
+[node name="Panel" type="TextureRect" parent="Camera2D/UI/GameUI/ScenePanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("40_lrbcj")
+expand_mode = 1
+
+[node name="OverworldMenu" parent="Camera2D/UI" instance=ExtResource("6_ghdcn")]
+visible = false
+
+[node name="SavingThrowManager" type="Panel" parent="Camera2D/UI"]
+visible = false
+z_index = 200
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfwu5")
+script = ExtResource("11_wty2p")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Camera2D/UI/SavingThrowManager"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 640.0
+
+[node name="SubViewport" type="SubViewport" parent="Camera2D/UI/SavingThrowManager/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(800, 640)
+render_target_update_mode = 0
+
+[node name="D20PhysicsRoll" parent="Camera2D/UI/SavingThrowManager/SubViewportContainer/SubViewport" instance=ExtResource("27_tfwu5")]
+script = ExtResource("13_3abr6")
+
+[node name="RollScore" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager"]
+position = Vector2(400, 259)
+texture = ExtResource("13_ljdv1")
+
+[node name="Score" type="RichTextLabel" parent="Camera2D/UI/SavingThrowManager/RollScore"]
+anchors_preset = -1
+anchor_left = 0.163
+anchor_top = 0.49100003
+anchor_right = 0.832
+anchor_bottom = 0.87900007
+offset_left = -97.948
+offset_top = -159.62901
+offset_right = -98.07201
+offset_bottom = -159.40103
+pivot_offset = Vector2(65, 62)
+theme = ExtResource("14_ff4qf")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "12"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/UI/SavingThrowManager/RollScore/Score"]
+libraries = {
+&"": SubResource("AnimationLibrary_al5gi")
+}
+
+[node name="DC" type="RichTextLabel" parent="Camera2D/UI/SavingThrowManager/RollScore"]
+anchors_preset = -1
+anchor_left = 0.24300002
+anchor_top = 0.16100001
+anchor_right = 0.75000006
+anchor_bottom = 0.35900003
+offset_left = -97.628006
+offset_top = -159.35901
+offset_right = -98.000015
+offset_bottom = -159.52101
+theme = ExtResource("14_ff4qf")
+bbcode_enabled = true
+text = "Difficulty
+10"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RollMods" type="HBoxContainer" parent="Camera2D/UI/SavingThrowManager/RollScore"]
+anchors_preset = -1
+anchor_left = -0.45400003
+anchor_top = 1.011
+anchor_right = 1.4590001
+anchor_bottom = 1.1960001
+offset_left = -98.01599
+offset_top = -159.509
+offset_right = -97.96402
+offset_bottom = -155.52402
+alignment = 1
+
+[node name="PentacleRunes" type="Control" parent="Camera2D/UI/SavingThrowManager"]
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 319.0
+offset_right = 400.0
+offset_bottom = 319.0
+
+[node name="Soul" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager/PentacleRunes"]
+position = Vector2(0, -67)
+texture = ExtResource("15_eggcg")
+
+[node name="Air" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager/PentacleRunes"]
+position = Vector2(-64, -19)
+texture = ExtResource("16_8l768")
+
+[node name="Water" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager/PentacleRunes"]
+position = Vector2(64, -19)
+texture = ExtResource("17_al5gi")
+
+[node name="Earth" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager/PentacleRunes"]
+position = Vector2(-44, 55)
+texture = ExtResource("18_qpjtw")
+
+[node name="Fire" type="Sprite2D" parent="Camera2D/UI/SavingThrowManager/PentacleRunes"]
+position = Vector2(44, 55)
+texture = ExtResource("19_qn7d7")
+
+[node name="SceneTransition" type="Panel" parent="Camera2D/UI"]
+modulate = Color(1, 1, 1, 0)
+z_index = 500
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 29.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1r4u")
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneTransitionAnim" type="AnimationPlayer" parent="Camera2D/UI/SceneTransition"]
+libraries = {
+&"": SubResource("AnimationLibrary_wty2p")
+}
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+visible = false
+position = Vector2(-0.5, 31)
+shape = SubResource("RectangleShape2D_x3vf3")
+debug_color = Color(3.85046e-07, 0.713521, 0.830853, 0.42)
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+script = ExtResource("50_ctkt3")
+metadata/_custom_type_script = "uid://dfec0ajewgnig"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_ctkt3")
+
+[node name="PlayerInventory" type="Node" parent="." groups=["saveable"]]
+script = ExtResource("12_vhflw")
+equippedWeapons = Array[ExtResource("22_175b5")]([ExtResource("54_fawaq"), null])
+equippedAccessory = Array[ExtResource("23_g1r4u")]([ExtResource("25_r8d8k"), null, null, null])
+inventoryStats = SubResource("Resource_lj4m2")
+items = Dictionary[ExtResource("57_jh4nb"), int]({
+ExtResource("58_x4i7w"): 2,
+ExtResource("59_x4i7w"): 1,
+ExtResource("60_3crn1"): 3,
+ExtResource("61_0bvdd"): 1
+})
+
+[node name="PlayerBody" type="Node" parent="." node_paths=PackedStringArray("bodyParts", "organs") groups=["saveable"]]
+script = ExtResource("21_hkdd6")
+bodyStats = SubResource("Resource_hkdd6")
+bodyParts = [NodePath("Limbs/Head"), NodePath("Limbs/Torso"), NodePath("Limbs/Right Arm"), NodePath("Limbs/Left Arm"), NodePath("Limbs/Right Leg"), NodePath("Limbs/Left Leg")]
+organs = [NodePath("Organs/Eye"), NodePath("Organs/Lung"), NodePath("Organs/Heart"), NodePath("Organs/Liver"), NodePath("Organs/Right Kidney"), NodePath("Organs/Left Kidney")]
+metadata/_custom_type_script = "uid://oannisb4dgab"
+
+[node name="Limbs" type="Node" parent="PlayerBody" groups=["saveable"]]
+
+[node name="Head" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Torso")]
+bodypartResource = ExtResource("33_qpjtw")
+destroyedTexturePath = "Limbs/Natural/Head"
+vital = true
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Torso" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Head"), NodePath("../Right Arm"), NodePath("../Left Arm"), NodePath("../Right Leg"), NodePath("../Left Leg")]
+bodypartResource = ExtResource("34_qn7d7")
+destroyedTexturePath = "Limbs/Natural/Torso"
+vital = true
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Right Arm" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Torso")]
+bodypartResource = ExtResource("35_oosj2")
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Left Arm" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Torso")]
+bodypartResource = ExtResource("35_oosj2")
+leftPart = true
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Right Leg" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Torso")]
+bodypartResource = ExtResource("36_n0gdt")
+destroyedStatChange = SubResource("Resource_u1o7w")
+destroyedTexturePath = "Limbs/Destroyed/Leg_Destroyed"
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Left Leg" type="Node" parent="PlayerBody/Limbs" node_paths=PackedStringArray("adjacentParts") groups=["saveable"]]
+script = ExtResource("22_v33f3")
+adjacentParts = [NodePath("../Torso")]
+bodypartResource = ExtResource("36_n0gdt")
+destroyedStatChange = SubResource("Resource_x3b1d")
+destroyedTexturePath = "Limbs/Destroyed/Leg_Destroyed"
+leftPart = true
+metadata/_custom_type_script = "uid://c6wkafovtq7d2"
+
+[node name="Organs" type="Node" parent="PlayerBody" groups=["saveable"]]
+
+[node name="Eye" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("43_j1j43")
+destroyedStatChange = SubResource("Resource_ctkt3")
+destroyedTexturePath = "Organs/Destroyed/Eye_Destroyed"
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="Lung" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("38_rfo2f")
+destroyedStatChange = SubResource("Resource_qcfbo")
+destroyedTexturePath = "Organs/Destroyed/Lung_Destroyed"
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="Heart" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("47_88acc")
+destroyedTexturePath = "Organs/Destroyed/Heart_Destroyed"
+vital = true
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="Liver" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("49_hwgvk")
+destroyedTexturePath = "Organs/Destroyed/Liver_Destroyed"
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="Right Kidney" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("37_f3utc")
+destroyedStatChange = SubResource("Resource_n6bsm")
+destroyedTexturePath = "Organs/Destroyed/Kidney_Destroyed"
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="Left Kidney" type="Node" parent="PlayerBody/Organs" groups=["saveable"]]
+script = ExtResource("43_88acc")
+bodypartResource = ExtResource("37_f3utc")
+destroyedStatChange = SubResource("Resource_lrbcj")
+destroyedTexturePath = "Organs/Destroyed/Kidney_Destroyed"
+leftPart = true
+metadata/_custom_type_script = "uid://byi70ptd67jfg"
+
+[node name="relation_manager" type="Node" parent="." groups=["saveable"]]
+script = ExtResource("68_7ti0u")
+playerName = "Marie Pescher"
+metadata/_custom_type_script = "uid://bc5x8amt0bt0k"
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("68_d4sq4")
+soundEffects = Dictionary[String, AudioStream]({
+"BeginCombat": ExtResource("70_7ti0u"),
+"Death": ExtResource("71_fawaq"),
+"StoneFootstep": ExtResource("69_7rkwv")
+})
+
+[connection signal="close" from="Camera2D/UI/OverworldMenu" to="." method="OpenOverworld"]
+[connection signal="EndD20Roll" from="Camera2D/UI/SavingThrowManager/SubViewportContainer/SubViewport/D20PhysicsRoll" to="Camera2D/UI/SavingThrowManager" method="EndDiceThrow"]
+[connection signal="Hit" from="HitBox" to="." method="BeginBattle"]

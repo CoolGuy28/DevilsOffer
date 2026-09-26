@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=3 format=3 uid="uid://bc4iwdc22j8h6"]
+
+[ext_resource type="Resource" uid="uid://4hvj0b7jembv" path="res://Resources/Actions/Weapons/Dagger.tres" id="1_lb42h"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="2_03phr"]
+
+[resource]
+script = ExtResource("2_03phr")
+attackAction = ExtResource("1_lb42h")
+equippableValue = 2
+itemName = "Ritual Dagger"
+description = "A strange knife used in occult ritual. It was used to carve the symbols beneath your eye."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

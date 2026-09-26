@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=3 format=3 uid="uid://cqrouk8prx30v"]
+
+[ext_resource type="Resource" uid="uid://b18h2pb7nuss" path="res://Resources/Actions/Weapons/MeatCleaver.tres" id="1_j241f"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="6_uwltw"]
+
+[resource]
+script = ExtResource("6_uwltw")
+attackAction = ExtResource("1_j241f")
+weaponType = 1
+equippableValue = 3
+itemName = "Meat Cleaver"
+description = "A bloodstained, kitchen meat cleaver."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

@@ -1,0 +1,202 @@
+[gd_scene load_steps=17 format=3 uid="uid://cy6srjw4v6kp4"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_7wca8"]
+[ext_resource type="Texture2D" uid="uid://dxrkeq7kjmr81" path="res://Nodes/Props/General/Door/MeltingBars.png" id="2_ft8m5"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="3_sruu3"]
+[ext_resource type="AudioStream" uid="uid://bm0x1plasntoe" path="res://SFX/Interactions/Gore_Wet_5.wav" id="4_uur88"]
+[ext_resource type="AudioStream" uid="uid://dosmov4hi25pv" path="res://SFX/Interactions/Cloths_rustling_2.wav" id="5_wdx12"]
+[ext_resource type="AudioStream" uid="uid://cb7aj6wl5lmfw" path="res://SFX/Interactions/Water_Boiling_4.wav" id="6_e68xc"]
+[ext_resource type="Texture2D" uid="uid://ddfb0w71bktqi" path="res://Sprites/IteractionIcon/InteractionIcon.png" id="7_e68xc"]
+[ext_resource type="Texture2D" uid="uid://7ehwk6odk4lx" path="res://Sprites/IteractionIcon/InteractionIcon_Glow.png" id="8_0bgcu"]
+[ext_resource type="Script" uid="uid://blfvoaksvhjij" path="res://Nodes/Props/General/Door/ShowWhenApproached.gd" id="8_2up5b"]
+[ext_resource type="Texture2D" uid="uid://0yemkpw3nbko" path="res://Sprites/Entity/P/P.png" id="9_0bgcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(62, 37)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2up5b"]
+radius = 112.44554
+
+[sub_resource type="Animation" id="Animation_nny7q"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionIconGlow:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InteractionIconGlow:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InteractionIconGlow:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InteractionIconGlow:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.64705884, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2up5b"]
+resource_name = "default"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionIconGlow:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0.083333336, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.4666667, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InteractionIconGlow:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0.083333336, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.4666667, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InteractionIconGlow:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0.083333336, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.4666667, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InteractionIconGlow:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(0.64705884, -0.24999371, 0.0013131929, 0.36666667, -0.0019260645, 0.3391486, -0.39999998, 0.00037312508, 0.29999995, 0.00037312508, 0.64705884, -0.33333325, -0.15491822, 0, 0),
+"times": PackedFloat32Array(0, 1.4666667, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jw5l"]
+_data = {
+&"RESET": SubResource("Animation_nny7q"),
+&"default": SubResource("Animation_2up5b")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2up5b"]
+size = Vector2(8, 35)
+
+[node name="MeltingBars" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 1
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_7wca8")
+dialogueText = "PJail"
+leftText = true
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 32)
+texture = ExtResource("2_ft8m5")
+offset = Vector2(0, -64)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_sruu3")
+soundEffects = Dictionary[String, AudioStream]({
+"Bleed": ExtResource("4_uur88"),
+"MeltMetal": ExtResource("6_e68xc"),
+"WalkOver": ExtResource("5_wdx12")
+})
+
+[node name="P" type="Node2D" parent="." groups=["saveable"]]
+y_sort_enabled = true
+position = Vector2(130, -273)
+
+[node name="P" type="Sprite2D" parent="P"]
+position = Vector2(-1, 0)
+texture = ExtResource("9_0bgcu")
+offset = Vector2(1, -50)
+
+[node name="ShowWhenApproached" type="Area2D" parent="." groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 19
+collision_mask = 19
+monitorable = false
+script = ExtResource("8_2up5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowWhenApproached"]
+position = Vector2(0, 37)
+shape = SubResource("CircleShape2D_2up5b")
+
+[node name="InteractionIcon" type="Sprite2D" parent="ShowWhenApproached"]
+y_sort_enabled = true
+position = Vector2(1, 34)
+texture = ExtResource("7_e68xc")
+offset = Vector2(0, -58)
+
+[node name="InteractionIconGlow" type="Sprite2D" parent="ShowWhenApproached/InteractionIcon"]
+modulate = Color(1, 1, 1, 0.64705884)
+position = Vector2(0, -1)
+texture = ExtResource("8_0bgcu")
+offset = Vector2(0, -54)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShowWhenApproached/InteractionIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_3jw5l")
+}
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="DoorSides" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-28, 11.5)
+shape = SubResource("RectangleShape2D_2up5b")
+
+[node name="DoorSides2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(22, 11)
+shape = SubResource("RectangleShape2D_2up5b")

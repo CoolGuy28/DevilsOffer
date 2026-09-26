@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cpuvbcoy53nlb"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_lbwsg"]
+
+[resource]
+script = ExtResource("1_lbwsg")
+itemName = "Medical Guide"
+description = "A book explaining common injuries."
+itemTags = Array[int]([4])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

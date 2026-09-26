@@ -1,0 +1,55 @@
+~ Overworld
+Apple Devil: ...
+- Talk
+	=> Talk
+- Pickpocket
+- Fight
+	do player.BeginBattle(self)
+- Leave
+	The poor mans screams are not your concern.
+=> END
+
+~ Talk
+Apple Devil: ...
+- What Are You?
+	Apple Devil: You come see me, a great beast clearly born in the pools of hell chewing a weak, helpless man, and you ask what I am?
+	Apple Devil: Clearly your intelligence fails you, now do not bother my meal unless you wish to be next.
+	=> Talk
+- Stop Eating Them [if player.GetStat(3) >= 0 && !interactions["Confronted"]]
+	set interactions["Confronted"] = true
+	Apple Devil: Wonderful, human morality your need to care for another...
+	Apple Devil: and yet I am not a man so why should it apply to me?
+	Apple Devil: Now let me ask you, this man wears robes of the sea, the ones who brought you here to die..
+	Apple Devil: So do you truly care what happens to him, or are they just empty platitudes?
+	- Yes, Let Him Go
+		Apple Devil: Magnificent, Fabulous, Stupendous...
+		Apple Devil: You are a prime example of your species.
+		Apple Devil: Now obviously I will not give up my meal just because of your words...
+		Apple Devil: But I would love to have a taste of your empathy if you'd like to make a deal.
+		set interactions["AllowContract"] = true
+		=> Talk
+	- No, Leave
+		Apple Devil: You are truly human.
+		=> Talk
+- Contract [if interactions["AllowContract"] == true]
+	Apple Devil: I offer you a contract. In exchange for a small slither of your emotional intelligence...
+	Apple Devil: I will give you my seed.
+	- Accept
+		if player.GetStat(3) >= 0
+			You are given an [color=red]Apple Seed[/color]!
+			=> Talk
+		else
+			You barely have anything left to offer, the deals off.
+			=> Talk
+	- Decline
+		Apple Devil: So be it.
+		=> Talk
+- I Will Eat You
+	Apple Devil: Curious, to have the gall to come across me consuming your fellow man and not care,
+	Apple Devil: But to threaten me? Perhaps you are a devil yourself...
+	Apple Devil: And while tearing you apart would be simple, consuming your vile soul is valueless...
+	Apple Devil: Now leave while I have my patience and do not bother me again.
+	do relation.SetAppleRep(-5)
+	=> END
+- Return
+	=> Overworld

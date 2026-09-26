@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Action_Save" load_steps=3 format=3 uid="uid://cc0rffdwky0k8"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_g701r"]
+[ext_resource type="Script" uid="uid://bh8nwwttfdirj" path="res://Action_Save.gd" id="2_h3teo"]
+
+[resource]
+script = ExtResource("2_h3teo")
+actionName = "Cyanide Seed"
+occultAction = true
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

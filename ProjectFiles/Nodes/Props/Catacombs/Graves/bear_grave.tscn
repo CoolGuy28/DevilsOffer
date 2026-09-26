@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://w76fn53busfh"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_bcf8e"]
+[ext_resource type="Texture2D" uid="uid://c3nt00sxlvrvp" path="res://Sprites/Props/Catacombs/Graves/BearGrave.png" id="2_enmkv"]
+
+[node name="BearGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_bcf8e")
+dialogueText = "BearGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-12, 1)
+texture = ExtResource("2_enmkv")
+offset = Vector2(12, -17)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-60, 6, -11, 22, 46, 19, 66, 13, 55, -4, 22, -15, -27, -16, -51, -8)

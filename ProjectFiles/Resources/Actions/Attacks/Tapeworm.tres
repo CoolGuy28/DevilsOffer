@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Action" load_steps=4 format=3 uid="uid://do2u1yd7gn3cj"]
+
+[ext_resource type="Script" uid="uid://cymhwr6r6lygf" path="res://Resources/StatusEffects/Scripts/StatusEffect.gd" id="1_iea0i"]
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Scripts/Action.gd" id="2_7527e"]
+[ext_resource type="AudioStream" uid="uid://dk6spo5w2w6t2" path="res://SFX/Enemies/Hiss.wav" id="2_vsgcc"]
+
+[resource]
+script = ExtResource("2_7527e")
+actionName = "Tapeworm"
+targetType = 1
+occultAttack = true
+critSound = Array[AudioStream]([ExtResource("2_vsgcc")])
+dieCount = 3
+damageDie = 12
+damageType = 2
+bnsDieCount = 1
+bnsDamageDie = 6
+bnsDamageType = 6
+saveActionMod = 0
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

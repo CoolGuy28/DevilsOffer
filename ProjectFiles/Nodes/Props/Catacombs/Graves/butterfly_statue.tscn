@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://hvceqnn5qu4j"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_5cesi"]
+[ext_resource type="Texture2D" uid="uid://bdagfohvkjguy" path="res://Sprites/Props/Catacombs/Graves/ButterflyStatue.png" id="2_o7mte"]
+[ext_resource type="Script" uid="uid://pvngekvmtunq" path="res://SpriteTextures.gd" id="3_o7mte"]
+
+[node name="ButterflyStatue" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_5cesi")
+dialogueText = "ButterflyStatue"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 47)
+texture = ExtResource("2_o7mte")
+offset = Vector2(-1, -81)
+script = ExtResource("3_o7mte")
+textures = Array[Texture2D]([ExtResource("2_o7mte")])
+metadata/_custom_type_script = "uid://pvngekvmtunq"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-89, -3, -98, 25, -58, 60, -48, 68, -31, 71, -10, 58, 14, 58, 31, 69, 45, 70, 58, 64, 100, 29, 94, -1, 76, -15, 53, -22, 13, -12, -15, -12, -41, -21, -69, -16)

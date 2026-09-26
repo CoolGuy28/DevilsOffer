@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerBodyPart_Resource" load_steps=2 format=3 uid="uid://dt7ykgvahdf3f"]
+
+[ext_resource type="Script" uid="uid://c5q5qk8j6bo76" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart_Resource.gd" id="1_4oj88"]
+
+[resource]
+script = ExtResource("1_4oj88")
+texturePath = "Organs/Natural/Lung"
+maxHP = 16
+metadata/_custom_type_script = "uid://c5q5qk8j6bo76"

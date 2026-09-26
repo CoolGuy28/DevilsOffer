@@ -1,0 +1,62 @@
+~ Combat
+You try talking some sense to the guard..
+- What is your origin?
+	Guard: . . .
+- Wait. We don't have to fight!
+	Guard: I am sorry small one.
+	Guard: I have given my all to lord . . .
+	Guard: Nothing but my diligence remains.
+- Please don't!
+	The guards eyes seem to show some sympathy.
+	Not enough to break his resolve..
+- Prepare to die.
+	You feel more courageous for saying that.
+	The guard looks saddened by what he must do.
+=> END
+
+~ Overworld
+if interacted == false:
+	Blind Archer: Your voice trembles slightly
+	Blind Archer: You are not where you belong are you little lamb
+	Blind Archer: But I suppose this is the path fate guided for you
+- Who are you?
+	Blind Archer: Just a simple traveller
+	=> Overworld
+- Blind?
+	Blind Archer: Yes, I removed my eyes myself
+	Blind Archer: For in some ways you can see more without your sight
+	Blind Archer: If you have any cloth on hand I could show you?
+	- Hand over cloth 
+		The blind man takes the cloth and fasions it into a simple blindfold
+	- Leave
+	=> Overworld
+- Fight
+	Blind Archer: If this is the end I was destined for so be it
+	do relation.SetSeaRep(-10)
+	set interacted = true
+	set allowFight = true
+	=> END
+- Leave
+=> END
+
+~ FindItem
+if item == null or amount <= 0
+	You find nothing.
+	=> END
+else
+	if amount == 1
+		You find a [color=red]{{item.itemName}}[/color]!
+	else
+		You find [color=red]{{amount}} {{item.itemName}}s.[/color]
+	do player.AddItem(item, amount)
+set looted = true
+=> END
+
+~ LootBody
+if looted == false
+	You search the blind mans pockets.
+	do GetLoot()
+	=> FindItem
+else
+	The blind holds nothing.
+=> END

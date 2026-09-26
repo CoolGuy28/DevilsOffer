@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://xqkf1k2rl4k2"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_faove"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="2_bwd5a"]
+[ext_resource type="Texture2D" uid="uid://cp5u4d5uaga7j" path="res://Sprites/Props/General/Barrel/Barrel.png" id="3_7g53j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(57, 37)
+
+[node name="LootedBarrel" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_faove")
+lootTable = ExtResource("2_bwd5a")
+dialogueText = "Barrel"
+interacted = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 9)
+texture = ExtResource("3_7g53j")
+offset = Vector2(0, -46)
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_f5ljr")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=24 format=3 uid="uid://bjhrby6nrse4b"]
+
+[ext_resource type="PackedScene" uid="uid://bu5getwnyslr5" path="res://Nodes/Props/General/Barrel/barrel.tscn" id="1_qub6v"]
+[ext_resource type="PackedScene" uid="uid://xqkf1k2rl4k2" path="res://Nodes/Props/General/Barrel/looted_barrel.tscn" id="2_n6lnu"]
+[ext_resource type="PackedScene" uid="uid://cq15mmwpypfo2" path="res://Nodes/Props/General/Crate/Crate.tscn" id="3_44uvb"]
+[ext_resource type="PackedScene" uid="uid://dftvgeb4enrap" path="res://Nodes/Props/General/Chest/Chest.tscn" id="4_ium22"]
+[ext_resource type="PackedScene" uid="uid://fjhqs0nvgj7d" path="res://Nodes/Props/General/Furniture/Bookshelf.tscn" id="5_n6lnu"]
+[ext_resource type="PackedScene" uid="uid://dxyt5mr5tbtlv" path="res://Nodes/Props/General/Barrel/weapon_barrel.tscn" id="6_avwnk"]
+[ext_resource type="PackedScene" uid="uid://b1q1qjdsj6nch" path="res://Nodes/Props/General/Bed/DungeonBed_Hor.tscn" id="6_dcfc7"]
+[ext_resource type="PackedScene" uid="uid://ba02wlwjv0fd" path="res://Nodes/Props/General/Barrel/scroll_barrel.tscn" id="7_8fgqx"]
+[ext_resource type="PackedScene" uid="uid://bey43tmit8o2a" path="res://Nodes/Props/General/Bed/DungeonBed_Vert.tscn" id="7_dx88m"]
+[ext_resource type="PackedScene" uid="uid://b41n2wk5axnq2" path="res://Nodes/Props/General/Door/PrisonDoor.tscn" id="8_gfq2l"]
+[ext_resource type="PackedScene" uid="uid://dsx7ea37no10h" path="res://Nodes/Props/General/Bed/WoodenBed_Hor.tscn" id="8_h4t72"]
+[ext_resource type="PackedScene" uid="uid://6r463mvdbt30" path="res://Nodes/Props/General/Door/PrisonDoor_Open.tscn" id="9_cjlw0"]
+[ext_resource type="PackedScene" uid="uid://beq05your0qjp" path="res://Nodes/Props/General/Furniture/bedtable.tscn" id="9_h4t72"]
+[ext_resource type="PackedScene" uid="uid://bo53bmtwbk0fm" path="res://Nodes/Props/General/Furniture/wardrobe.tscn" id="10_1eymt"]
+[ext_resource type="PackedScene" uid="uid://bl4fiyug8s8h4" path="res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn" id="13_6l7qo"]
+[ext_resource type="PackedScene" uid="uid://d2q4hh2raapt0" path="res://Nodes/Props/Catacombs/Graves/corpse_hole_2.tscn" id="14_ia1ca"]
+[ext_resource type="PackedScene" uid="uid://8n1itakn6g5n" path="res://Nodes/Props/Catacombs/Graves/corpse_hole_3.tscn" id="15_yeohm"]
+[ext_resource type="PackedScene" uid="uid://c45v03n3w0wuc" path="res://Nodes/Props/Catacombs/Graves/holy_grave.tscn" id="16_yeohm"]
+[ext_resource type="PackedScene" uid="uid://uitego32hlmx" path="res://Nodes/Props/Catacombs/Graves/coffin.tscn" id="17_jlj08"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dcfc7"]
+resource_name = "General"
+scenes/1/scene = ExtResource("1_qub6v")
+scenes/2/scene = ExtResource("2_n6lnu")
+scenes/3/scene = ExtResource("3_44uvb")
+scenes/4/scene = ExtResource("4_ium22")
+scenes/5/scene = ExtResource("5_n6lnu")
+scenes/6/scene = ExtResource("6_avwnk")
+scenes/7/scene = ExtResource("7_8fgqx")
+scenes/8/scene = ExtResource("8_gfq2l")
+scenes/9/scene = ExtResource("9_cjlw0")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_44uvb"]
+resource_name = "Furniture"
+scenes/1/scene = ExtResource("6_dcfc7")
+scenes/2/scene = ExtResource("7_dx88m")
+scenes/3/scene = ExtResource("8_h4t72")
+scenes/4/scene = ExtResource("9_h4t72")
+scenes/5/scene = ExtResource("5_n6lnu")
+scenes/6/scene = ExtResource("10_1eymt")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jlj08"]
+resource_name = "Graves"
+scenes/1/scene = ExtResource("13_6l7qo")
+scenes/2/scene = ExtResource("14_ia1ca")
+scenes/3/scene = ExtResource("15_yeohm")
+scenes/4/scene = ExtResource("16_yeohm")
+scenes/5/scene = ExtResource("17_jlj08")
+
+[sub_resource type="TileSet" id="TileSet_qjxmg"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetScenesCollectionSource_dcfc7")
+sources/1 = SubResource("TileSetScenesCollectionSource_44uvb")
+sources/2 = SubResource("TileSetScenesCollectionSource_jlj08")
+
+[node name="Savable" type="TileMapLayer"]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_qjxmg")
+rendering_quadrant_size = 64

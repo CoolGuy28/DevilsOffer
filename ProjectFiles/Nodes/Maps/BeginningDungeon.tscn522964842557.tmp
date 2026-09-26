@@ -1,0 +1,573 @@
+[gd_scene load_steps=48 format=4 uid="uid://b6jro48p853vn"]
+
+[ext_resource type="Script" uid="uid://dgx3je3tcwx6g" path="res://Nodes/Maps/Map.gd" id="1_abptm"]
+[ext_resource type="AudioStream" uid="uid://cvmvwmww4i3lo" path="res://SFX/Ambiance/Ambience_haunting_2.wav" id="2_rlwl4"]
+[ext_resource type="Texture2D" uid="uid://cnistkd7045l6" path="res://Nodes/Props/General/Torch/Torch_Unlit.png" id="2_tssh3"]
+[ext_resource type="AudioStream" uid="uid://ctafy8e2rllw" path="res://SFX/Ambiance/Ambience_haunting_3.wav" id="3_4h052"]
+[ext_resource type="PackedScene" uid="uid://k4y0pl5j1a5i" path="res://Nodes/Tilemaps/Tilemap.tscn" id="3_7goiu"]
+[ext_resource type="Texture2D" uid="uid://dfsms6am4lsbk" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_1.png" id="3_iw10k"]
+[ext_resource type="AudioStream" uid="uid://ctm47ljejcyev" path="res://SFX/Ambiance/Ambience_haunting_4.wav" id="4_ltagt"]
+[ext_resource type="Texture2D" uid="uid://do2jqivo2uu66" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_4.png" id="4_oi1qf"]
+[ext_resource type="AudioStream" uid="uid://bnlfyak03biur" path="res://SFX/Ambiance/Ambience_haunting_6.wav" id="5_0jmnm"]
+[ext_resource type="Texture2D" uid="uid://cisq0815gwue4" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_6.png" id="5_fxt2g"]
+[ext_resource type="AudioStream" uid="uid://bfdwi77oot6el" path="res://SFX/Ambiance/Ambient Yell.wav" id="6_c4e6n"]
+[ext_resource type="Texture2D" uid="uid://dvmpqwjgydlko" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_3.png" id="6_kf8ba"]
+[ext_resource type="Texture2D" uid="uid://c63t855c780bt" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_10.png" id="7_5s87i"]
+[ext_resource type="AudioStream" uid="uid://b42oy35bgdfhw" path="res://SFX/Ambiance/Creepy_ambience.wav" id="7_nu1uu"]
+[ext_resource type="Texture2D" uid="uid://b0g6gagvaw3yf" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_2.png" id="8_a0h1h"]
+[ext_resource type="AudioStream" uid="uid://wka40u6x4hlv" path="res://SFX/Ambiance/Creepy_ambience_6.wav" id="8_c7ygk"]
+[ext_resource type="AudioStream" uid="uid://crsnajeprbwa2" path="res://SFX/Ambiance/Creepy_ambience_7.wav" id="9_ecrit"]
+[ext_resource type="Texture2D" uid="uid://bq5yog11feeu1" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_8.png" id="9_i7vrl"]
+[ext_resource type="Texture2D" uid="uid://b4t6vm2cmgbsk" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_9.png" id="10_l6ugk"]
+[ext_resource type="Texture2D" uid="uid://u381hxtbbvgw" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_7.png" id="11_bymnv"]
+[ext_resource type="Texture2D" uid="uid://d4h1csotd27un" path="res://Sprites/WorldDecor/Bloodstains/Wallstains/Bloodstain_Wall_5.png" id="12_d0s66"]
+[ext_resource type="Texture2D" uid="uid://drjcacumyspor" path="res://Sprites/WorldDecor/Bloodstains/Bloodstains_Small.png" id="17_d6s2t"]
+[ext_resource type="Texture2D" uid="uid://bt2kah72a3pmc" path="res://Sprites/WorldDecor/Bloodstains/Blood/Bloodstain_3.png" id="17_yjp1t"]
+[ext_resource type="Texture2D" uid="uid://ba315euho1d4m" path="res://Sprites/WorldDecor/Bloodstains/Blood/Bloodstain_2.png" id="18_fktey"]
+[ext_resource type="Texture2D" uid="uid://qlr0ugl5xe7g" path="res://Sprites/WorldDecor/Natural/Rock_1.png" id="19_yvg45"]
+[ext_resource type="Texture2D" uid="uid://dkrxntq8qcq6w" path="res://Sprites/WorldDecor/Natural/SmallRock_1.png" id="20_n78ds"]
+[ext_resource type="Texture2D" uid="uid://bdap5en4l2mgb" path="res://Sprites/WorldDecor/Natural/SmallRock_2.png" id="21_pe8ru"]
+[ext_resource type="Texture2D" uid="uid://o31oq2kgoel2" path="res://Sprites/WorldDecor/Natural/Thing_1.png" id="22_e8lsn"]
+[ext_resource type="Texture2D" uid="uid://ch1d7uyaw38c1" path="res://Sprites/WorldDecor/Bones/Bone_2.png" id="22_l4vv2"]
+[ext_resource type="Texture2D" uid="uid://8ojf4cumrem3" path="res://Sprites/WorldDecor/Bones/Bone_3.png" id="23_pv43i"]
+[ext_resource type="Texture2D" uid="uid://cwld63abme44w" path="res://Sprites/WorldDecor/Bones/bones_1.png" id="23_vgmp2"]
+[ext_resource type="Texture2D" uid="uid://jqpbxil7lnb" path="res://Sprites/WorldDecor/Bones/skull_1.png" id="24_5um5w"]
+[ext_resource type="Texture2D" uid="uid://dp0vf0fkqquqx" path="res://Sprites/WorldDecor/Bones/Bone_1.png" id="24_c5726"]
+[ext_resource type="Texture2D" uid="uid://b1drfll5msyll" path="res://Sprites/WorldDecor/Bones/skull_2.png" id="25_0c4bk"]
+[ext_resource type="Texture2D" uid="uid://cnww7hd05ehbx" path="res://Sprites/WorldDecor/Bones/skull_3.png" id="26_uvach"]
+[ext_resource type="Texture2D" uid="uid://m4rq8v4iqme" path="res://Sprites/WorldDecor/Natural/SmallRock_3.png" id="31_rohnm"]
+[ext_resource type="Texture2D" uid="uid://c1dbb1m2uylg4" path="res://Sprites/WorldDecor/WoodScrap_1.png" id="32_u0gb0"]
+[ext_resource type="Texture2D" uid="uid://c66la6pmdp14l" path="res://Sprites/WorldDecor/Natural/Pebble_1.png" id="33_1hob7"]
+[ext_resource type="Texture2D" uid="uid://dnjl7ahdabhsv" path="res://Sprites/WorldDecor/WoodScrap_2.png" id="35_k5ps3"]
+[ext_resource type="Texture2D" uid="uid://tme0wvewi7cx" path="res://Sprites/WorldDecor/WoodScrap_3.png" id="36_lbjov"]
+[ext_resource type="PackedScene" uid="uid://e7wijvuwx5np" path="res://Nodes/Maps/Dungeons/prop_layer.tscn" id="39_yg0r1"]
+[ext_resource type="Texture2D" uid="uid://dgg3tep87u7i8" path="res://Sprites/WorldDecor/Natural/Pebble_2.png" id="47_kf8ba"]
+[ext_resource type="Texture2D" uid="uid://cywgmonyfcon1" path="res://Sprites/WorldDecor/Bloodstains/Blood/Bloodstain_4.png" id="51_5s87i"]
+[ext_resource type="Texture2D" uid="uid://g6gwpnlobp8k" path="res://Sprites/WorldDecor/Bloodstains/Blood/Bloodstain_1.png" id="52_a0h1h"]
+[ext_resource type="PackedScene" uid="uid://cg8nnf1xf8tcj" path="res://Nodes/Entity/Enemy/Guard/Guard.tscn" id="53_5s87i"]
+[ext_resource type="Texture2D" uid="uid://0yemkpw3nbko" path="res://Nodes/Entity/Enemy/Poverty/Poverty.png" id="64_c7ygk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw10k"]
+size = Vector2(38, 18)
+
+[node name="DungeonRoot" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_abptm")
+randAmbTimer = Vector2(0.3, 5.6)
+ambiance = Array[AudioStream]([ExtResource("2_rlwl4"), ExtResource("3_4h052"), ExtResource("4_ltagt"), ExtResource("5_0jmnm"), ExtResource("6_c4e6n"), ExtResource("7_nu1uu"), ExtResource("8_c7ygk"), ExtResource("9_ecrit")])
+
+[node name="Tilemaps" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="WallSprites" type="Node2D" parent="Tilemaps"]
+y_sort_enabled = true
+
+[node name="TorchUnlit" type="Sprite2D" parent="Tilemaps/WallSprites"]
+y_sort_enabled = true
+position = Vector2(356, -126)
+texture = ExtResource("2_tssh3")
+offset = Vector2(-1, -74)
+
+[node name="TorchUnlit2" type="Sprite2D" parent="Tilemaps/WallSprites"]
+y_sort_enabled = true
+position = Vector2(479, -511)
+texture = ExtResource("2_tssh3")
+offset = Vector2(1, -73)
+
+[node name="TorchUnlit3" type="Sprite2D" parent="Tilemaps/WallSprites"]
+y_sort_enabled = true
+position = Vector2(704, -575)
+texture = ExtResource("2_tssh3")
+offset = Vector2(1, -73)
+
+[node name="Blood" type="Node2D" parent="Tilemaps/WallSprites"]
+y_sort_enabled = true
+
+[node name="BloodstainWall1" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(679, -574)
+texture = ExtResource("3_iw10k")
+offset = Vector2(1, -49)
+
+[node name="BloodstainWall4" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-882, -890)
+texture = ExtResource("4_oi1qf")
+offset = Vector2(1, -61)
+
+[node name="BloodstainWall6" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-718, -1266)
+texture = ExtResource("5_fxt2g")
+offset = Vector2(-2, -33)
+
+[node name="BloodstainWall3" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-646, -510)
+texture = ExtResource("6_kf8ba")
+offset = Vector2(-2, -47.5)
+
+[node name="BloodstainWall10" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-660, -511)
+texture = ExtResource("7_5s87i")
+offset = Vector2(2, -85.5)
+
+[node name="BloodstainWall5" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-723, -886)
+texture = ExtResource("8_a0h1h")
+offset = Vector2(1, -27)
+
+[node name="BloodstainWall2" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-713, -892)
+texture = ExtResource("8_a0h1h")
+offset = Vector2(0, -66)
+
+[node name="BloodstainWall7" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-816, -1277)
+texture = ExtResource("3_iw10k")
+offset = Vector2(1, -46)
+
+[node name="BloodstainWall8" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(579, -509)
+texture = ExtResource("9_i7vrl")
+offset = Vector2(3, -42)
+
+[node name="BloodstainWall9" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(579, -511)
+texture = ExtResource("10_l6ugk")
+offset = Vector2(4, -17)
+
+[node name="BloodstainWall11" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(522, -511)
+texture = ExtResource("7_5s87i")
+offset = Vector2(2, -80)
+
+[node name="BloodstainWall12" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-901, -511)
+texture = ExtResource("11_bymnv")
+offset = Vector2(0, -56)
+
+[node name="BloodstainWall13" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-946, -511)
+texture = ExtResource("9_i7vrl")
+offset = Vector2(2, -32)
+
+[node name="BloodstainWall14" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-927, -511)
+texture = ExtResource("12_d0s66")
+offset = Vector2(-1, -51)
+
+[node name="BloodstainWall15" type="Sprite2D" parent="Tilemaps/WallSprites/Blood"]
+position = Vector2(-956.908, -511.21887)
+rotation = 0.9605554
+texture = ExtResource("12_d0s66")
+offset = Vector2(-21.673584, -17.484009)
+
+[node name="WallLayer" parent="Tilemaps" instance=ExtResource("3_7goiu")]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD9//v/AQAGAAUAAAD9//z/AQAGAAYAAAD9//3/AQAGAAcAAAD+//v/AQAHAAUAAAD+//z/AQAHAAYAAAD+//3/AQAHAAcAAAD///v/AQAIAAUAAAD///z/AQAIAAYAAAD///3/AQAIAAcAAAAAAPv/AQAJAAUAAAAAAPz/AQAJAAYAAAAAAP3/AQAJAAcAAAABAPv/AQAKAAUAAAABAPz/AQAKAAYAAAABAP3/AQAKAAcAAAACAPv/AQALAAUAAAACAPz/AQALAAYAAAACAP3/AQALAAcAAAADAPv/AQAMAAUAAAADAPz/AQAMAAYAAAADAP3/AQAMAAcAAAAEAPv/AQANAAUAAAAEAPz/AQANAAYAAAAEAP3/AQANAAcAAAAFAPv/AQAOAAUAAAAFAPz/AQAOAAYAAAAFAP3/AQAOAAcAAAAGAPv/AQAPAAcAAAAGAPz/AQAPAAcAAAAGAP3/AQAPAAcAAAAGAP7/AQAPAAcAAAAGAP//AQAPAAcAAAAGAAAAAQAPAAcAAAAGAAEAAQAPAAcAAAAGAAIAAQAPAAcAAAAGAAMAAQAPAAcAAAAGAAQAAQAPAAcAAAAFAAQAAQAPAAcAAAAEAAQAAQAPAAcAAAADAAQAAQAPAAcAAAACAAQAAQAPAAcAAAABAAQAAQAPAAcAAAAAAAQAAQAPAAcAAAD//wQAAQAPAAcAAAD+/wQAAQAPAAcAAAD9/wQAAQAPAAcAAAD8/wQAAQAPAAcAAAD8/wMAAQAPAAcAAAD8/wIAAQAPAAcAAAD8/wEAAQAPAAcAAAD8/wAAAQAPAAcAAAD8////AQAPAAcAAAD8//7/AQAPAAcAAAD8//3/AQAPAAcAAAD8//z/AQAPAAcAAAD8//v/AQAPAAcAAAAGAPr/AQAFAAAAAAAFAPr/AQAKAAAAAAAEAPr/AQAJAAAAAAADAPr/AQAJAAAAAAACAPr/AQAJAAAAAAABAPr/AQAJAAAAAAAAAPr/AQAJAAAAAAD///r/AQAJAAAAAAD+//r/AQAJAAAAAAD9//r/AQAJAAAAAAD8//r/AQAJAAAAAAAFAAMAAQAMAAQAAAAEAAMAAQAMAAQAAAADAAMAAQAMAAQAAAACAAMAAQAMAAQAAAABAAMAAQAMAAQAAAAAAAMAAQAMAAQAAAD//wMAAQAMAAQAAAD+/wMAAQAMAAQAAAD9/wMAAQAMAAQAAAABAPT/AQABAAAAAAABAPX/AQABAAEAAAABAPb/AQABAAIAAAABAPf/AQABAAMAAAACAPT/AQABAAAAAAACAPX/AQABAAEAAAACAPb/AQABAAIAAAACAPf/AQABAAMAAAADAPT/AQACAAAAAAADAPX/AQACAAEAAAADAPb/AQACAAIAAAADAPf/AQACAAMAAAAEAPT/AQADAAAAAAAEAPX/AQADAAEAAAAFAPT/AQAEAAAAAAAFAPX/AQAEAAEAAAAFAPb/AQAEAAIAAAAFAPf/AQAEAAMAAAAFAPj/AQAEAAQAAAAGAPT/AQAPAAAAAAAGAPX/AQAIAAEAAAAGAPb/AQAIAAIAAAAGAPf/AQAIAAMAAAAGAPj/AQAIAAQAAAAHAPT/AQAJAAAAAAAHAPX/AQAJAAEAAAAHAPb/AQAJAAIAAAAHAPf/AQAJAAMAAAAJAPT/AQAPAAAAAAAJAPX/AQAPAAEAAAAJAPb/AQAPAAIAAAAJAPf/AQAPAAMAAAAJAPj/AQAPAAQAAAAJAPn/AQAPAAUAAAAJAPr/AQAPAAYAAAAIAPX/AQAJAAEAAAAIAPb/AQAJAAIAAAAIAPf/AQAJAAMAAAAIAPT/AQAJAAAAAAAIAPr/AQAJAAAAAAAHAPr/AQAJAAAAAAAAAO//AQAAAAUAAAAAAPD/AQAAAAYAAAAAAPH/AQAAAAcAAAABAO//AQABAAUAAAABAPD/AQABAAYAAAABAPH/AQABAAcAAAACAO//AQACAAUAAAACAPD/AQACAAYAAAACAPH/AQACAAcAAAADAO//AQADAAUAAAADAPD/AQADAAYAAAADAPH/AQADAAcAAAAEAO//AQAEAAUAAAAEAPD/AQAEAAYAAAAEAPH/AQAEAAcAAAAFAO//AQAFAAUAAAAFAPD/AQAFAAYAAAAFAPH/AQAFAAcAAAAGAPP/AQAPAAAAAAAGAPL/AQAPAAAAAAAGAPH/AQAPAAAAAAAGAPD/AQAPAAAAAAAGAO//AQAPAAAAAAD//+//AQAPAAAAAAD///D/AQAPAAAAAAD///H/AQAPAAAAAAD///L/AQAPAAAAAAD///P/AQAPAAAAAAD///T/AQAPAAAAAAD///X/AQAKAAEAAAD///b/AQAKAAIAAAD///f/AQAKAAMAAAAAAPT/AQAAAAAAAAAAAPX/AQAAAAEAAAAAAPb/AQAAAAIAAAAAAPf/AQAAAAMAAAAAAPj/AQAAAAQAAAD///j/AQAKAAQAAAD9//X/AQAIAAEAAAD9//b/AQAIAAIAAAD9//f/AQAIAAMAAAD9//j/AQAIAAQAAAD+//T/AQAJAAAAAAD+//X/AQAJAAEAAAD+//b/AQAJAAIAAAD+//f/AQAJAAMAAAD8//X/AQAEAAEAAAD8//b/AQAEAAIAAAD8//f/AQAEAAMAAAD8//j/AQAEAAQAAAD5//T/AQABAAAAAAD5//X/AQABAAEAAAD5//b/AQABAAIAAAD5//f/AQABAAMAAAD6//T/AQACAAAAAAD6//X/AQACAAEAAAD6//b/AQACAAIAAAD6//f/AQACAAMAAAD7//T/AQADAAAAAAD7//X/AQADAAEAAAD8//T/AQAEAAAAAAD4//T/AQABAAAAAAD4//X/AQABAAEAAAD4//b/AQABAAIAAAD4//f/AQABAAMAAAD3//T/AQAAAAAAAAD3//X/AQAAAAEAAAD3//b/AQAAAAIAAAD3//f/AQAAAAMAAAD3//j/AQAAAAQAAAD9//T/AQAPAAAAAAD3/+//AQAAAAUAAAD3//D/AQAAAAYAAAD3//H/AQAAAAcAAAD4/+//AQABAAUAAAD4//D/AQABAAYAAAD4//H/AQABAAcAAAD5/+//AQACAAUAAAD5//D/AQACAAYAAAD5//H/AQACAAcAAAD6/+//AQADAAUAAAD6//D/AQADAAYAAAD6//H/AQADAAcAAAD7/+//AQAEAAUAAAD7//D/AQAEAAYAAAD7//H/AQAEAAcAAAD8/+//AQAFAAUAAAD8//D/AQAFAAYAAAD8//H/AQAFAAcAAAD2//X/AQAKAAEAAAD2//b/AQAKAAIAAAD2//f/AQAKAAMAAAD2//j/AQAKAAQAAAD1//X/AQAIAAEAAAD1//b/AQAIAAIAAAD1//f/AQAIAAMAAAD1//j/AQAIAAQAAAD0//T/AQANAAAAAAD0//X/AQANAAEAAAD0//b/AQANAAIAAAD0//f/AQANAAMAAAD0//j/AQANAAQAAAD0/+7/AQANAAAAAAD0/+//AQANAAEAAAD0//D/AQANAAIAAAD0//H/AQANAAMAAAD0//L/AQANAAQAAADy/+n/AQAFAAEAAADy/+r/AQAFAAIAAADy/+v/AQAFAAMAAADz/+n/AQAGAAEAAADz/+r/AQAGAAIAAAD0/+n/AQAHAAEAAAD0/+r/AQAHAAIAAAD0/+v/AQAHAAMAAADy/+z/AQAFAAQAAADz/+v/AQAGAAMAAAD0/+z/AQAHAAQAAADy/+7/AQALAAAAAADy/+//AQALAAEAAADy//D/AQALAAIAAADy//H/AQALAAMAAADy//L/AQALAAQAAADy//T/AQALAAAAAADy//X/AQALAAEAAADy//b/AQALAAIAAADy//f/AQALAAMAAADy//j/AQALAAQAAADx//X/AQAKAAEAAADx//b/AQAKAAIAAADx//f/AQAKAAMAAADx//j/AQAKAAQAAADw//X/AQAIAAEAAADw//b/AQAIAAIAAADw//f/AQAIAAMAAADw//j/AQAIAAQAAADr//T/AQABAAAAAADr//X/AQABAAEAAADr//b/AQABAAIAAADr//f/AQABAAMAAADs//T/AQABAAAAAADs//X/AQABAAEAAADt//T/AQACAAAAAADt//X/AQACAAEAAADt//b/AQACAAIAAADt//f/AQACAAMAAADu//T/AQADAAAAAADu//X/AQADAAEAAADv//T/AQAEAAAAAADv//X/AQAEAAEAAADv//b/AQAEAAIAAADv//f/AQAEAAMAAADv//j/AQAEAAQAAADq//T/AQAAAAAAAADq//X/AQAAAAEAAADq//b/AQAAAAIAAADq//f/AQAAAAMAAADq//j/AQAAAAQAAADp//j/AQAPAAAAAADp//f/AQAPAAAAAADp//b/AQAPAAAAAADp//X/AQAPAAAAAADp//T/AQAPAAAAAADq/+//AQAAAAgAAADq//D/AQAAAAkAAADq//H/AQAAAAoAAADr/+//AQABAAgAAADr//D/AQABAAkAAADr//H/AQABAAoAAADs/+//AQACAAgAAADs//D/AQACAAkAAADs//H/AQACAAoAAADt/+//AQADAAgAAADt//D/AQADAAkAAADt//H/AQADAAoAAADu/+//AQAEAAgAAADu//D/AQAEAAkAAADu//H/AQAEAAoAAADv/+//AQAFAAgAAADv//D/AQAFAAkAAADv//H/AQAFAAoAAADp//P/AQAPAAAAAADp//L/AQAPAAAAAADp//H/AQAPAAAAAADp//D/AQAPAAAAAADp/+//AQAPAAAAAADw//T/AQAPAAAAAADw//P/AQAPAAAAAADw//L/AQAPAAAAAADw//H/AQAPAAAAAADw//D/AQAPAAAAAADw/+//AQAPAAAAAADx//T/AQAPAAAAAADx//P/AQAPAAAAAADx//L/AQAPAAAAAADx//H/AQAPAAAAAADx//D/AQAPAAAAAADx/+//AQAPAAAAAADx/+7/AQAPAAAAAADx/+3/AQAPAAAAAADx/+z/AQAPAAAAAADx/+v/AQAPAAAAAADx/+r/AQAPAAAAAADx/+n/AQAPAAAAAAD1//T/AQAPAAAAAAD1//P/AQAPAAAAAAD1//L/AQAPAAAAAAD1//H/AQAPAAAAAAD1//D/AQAPAAAAAAD1/+//AQAPAAAAAAD1/+7/AQAPAAAAAAD1/+3/AQAPAAAAAAD1/+z/AQAPAAAAAAD1/+v/AQAPAAAAAAD1/+r/AQAPAAAAAAD1/+n/AQAPAAAAAAD2//T/AQAPAAAAAAD2//P/AQAPAAAAAAD2//L/AQAPAAAAAAD2//H/AQAPAAAAAAD2//D/AQAPAAAAAAD2/+//AQAPAAAAAAD9//P/AQAPAAAAAAD9//L/AQAPAAAAAAD9//H/AQAPAAAAAAD9//D/AQAPAAAAAAD9/+//AQAPAAAAAADx//r/AQAKAAAAAADy//r/AQAAAAAAAADy//v/AQAAAAEAAADy//z/AQAAAAIAAADy//3/AQAAAAMAAADz//r/AQABAAAAAADz//v/AQACAAEAAADz//z/AQACAAIAAADz//3/AQACAAMAAAD0//r/AQABAAAAAAD0//v/AQABAAEAAAD1//r/AQACAAAAAAD2//r/AQADAAAAAAD3//r/AQAEAAAAAAD4//r/AQAFAAAAAAD5//r/AQAGAAAAAAD6//r/AQAGAAAAAAD7//r/AQAGAAAAAADw//r/AQAFAAAAAADq//v/AQAJAAgAAADq//z/AQAJAAkAAADq//3/AQAJAAoAAADq//7/AQAJAAsAAADr//v/AQAKAAgAAADs//v/AQALAAgAAADt//v/AQAMAAgAAADu//v/AQANAAgAAADv//v/AQAOAAgAAADv//z/AQAOAAkAAADv//3/AQAOAAoAAADv//7/AQAOAAsAAAD0//z/AQABAAIAAAD0//3/AQABAAMAAADy//7/AQAAAAQAAAD1//v/AQACAAEAAAD1//z/AQACAAIAAAD1//3/AQACAAMAAAD3//v/AQAEAAEAAAD3//z/AQAEAAIAAAD3//3/AQAEAAMAAAD2//v/AQADAAEAAAD3//7/AQAEAAQAAADr//r/AQABAAAAAADs//r/AQABAAAAAADt//r/AQACAAAAAADu//r/AQADAAAAAADv//r/AQAEAAAAAADq//r/AQAAAAAAAADw//v/AQAPAAAAAADw//z/AQAPAAAAAADw//3/AQAPAAAAAADw//7/AQAPAAAAAADx//v/AQAPAAAAAADx//z/AQAPAAAAAADx//3/AQAPAAAAAADx//7/AQAPAAAAAADp//n/AQAPAAAAAADp//r/AQAPAAAAAADp//v/AQAPAAAAAADp//z/AQAPAAAAAADp//3/AQAPAAAAAADp//7/AQAPAAAAAADp////AQAPAAAAAADp/wQAAQAPAAAAAADp/wMAAQAPAAAAAADp/wIAAQAPAAAAAADp/wEAAQAPAAAAAADp/wAAAQAPAAAAAADq/wQAAQAPAAAAAADr/wQAAQAPAAAAAADs/wQAAQAPAAAAAADt/wQAAQAPAAAAAADu/wQAAQAPAAAAAADv/wQAAQAPAAAAAADw/wQAAQAPAAAAAADw/wMAAQAPAAAAAADw/wIAAQAPAAAAAADw/wEAAQAPAAAAAADw/wAAAQAPAAAAAADw////AQAPAAAAAADx////AQAPAAAAAADx/wAAAQAPAAAAAADx/wEAAQAPAAAAAADx/wIAAQAPAAAAAADy/wIAAQAPAAAAAADz/wIAAQAPAAAAAAD0/wIAAQAPAAAAAAD1/wIAAQAPAAAAAAD2/wIAAQAPAAAAAAD3/wIAAQAPAAAAAAD4/wIAAQAPAAAAAAD4/wEAAQAPAAAAAAD4/wAAAQAPAAAAAAD4////AQAPAAAAAAD4//7/AQAPAAAAAAD4//3/AQAPAAAAAAD4//z/AQAPAAAAAAD4//v/AQAPAAAAAAD5//v/AQAPAAAAAAD5//z/AQAPAAAAAAD5//3/AQAPAAAAAAD6//3/AQAPAAAAAAD7//3/AQAPAAAAAAD7//z/AQAPAAAAAAD7//v/AQAPAAAAAAD6//v/AQAPAAAAAAD6//z/AQAPAAAAAAAJAPv/AQAPAAAAAAAIAPv/AQAPAAAAAAAHAPv/AQAPAAAAAAAJAPz/AQAPAAAAAAAIAPz/AQAPAAAAAAAHAPz/AQAPAAAAAAAHAP3/AQAPAAAAAAAIAP3/AQAPAAAAAAAJAP3/AQAPAAAAAAD3/wEAAQAMAAQAAAD2/wEAAQAMAAQAAAD1/wEAAQAMAAQAAADz/wEAAQAMAAQAAAD0/wEAAQAMAAQAAADy/wEAAQAMAAQAAADv/wMAAQAMAAQAAADu/wMAAQAMAAQAAADt/wMAAQAMAAQAAADs/wMAAQAMAAQAAADr/wMAAQAMAAQAAADq/wMAAQAMAAQAAAD2//3/AAAAAAAACgD7//f/AAAAAAAACgAKAPb/AQAIAAMAAAAKAPX/AQAIAAIAAAALAPX/AQAKAAIAAAALAPT/AQAKAAEAAAAKAPT/AQAIAAEAAAAMAPT/AQALAAEAAAAKAPv/AQAPAAAAAAAKAPz/AQAPAAAAAAALAPz/AQAPAAAAAAAKAP3/AQAPAAAAAAALAP3/AQAPAAAAAAAKAPP/AQAIAAAAAAAKAPf/AQAIAAQAAAALAPP/AQAKAAAAAAALAPb/AQAKAAMAAAAMAPP/AQALAAAAAAAMAPX/AQALAAIAAAAMAPb/AQALAAMAAAAMAPf/AQALAAQAAAALAPf/AQAKAAQAAAA=")
+
+[node name="Decor" type="Node2D" parent="Tilemaps"]
+y_sort_enabled = true
+
+[node name="Bone" type="Node2D" parent="Tilemaps/Decor"]
+y_sort_enabled = true
+
+[node name="Skull1" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+y_sort_enabled = true
+position = Vector2(-543, -6)
+texture = ExtResource("24_5um5w")
+offset = Vector2(8, -33)
+
+[node name="Bone2" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-1053, 28)
+texture = ExtResource("22_l4vv2")
+
+[node name="Bone3" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-1075, -11)
+texture = ExtResource("23_pv43i")
+
+[node name="Bone1" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-1376, 71)
+texture = ExtResource("24_c5726")
+
+[node name="Bones1" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-1045, -1)
+texture = ExtResource("23_vgmp2")
+
+[node name="Bones2" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-856, -528)
+texture = ExtResource("23_vgmp2")
+
+[node name="Skull3" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-845, -516)
+texture = ExtResource("26_uvach")
+
+[node name="Skull2" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-741, -668)
+texture = ExtResource("25_0c4bk")
+
+[node name="Bone4" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-749, -670)
+texture = ExtResource("23_pv43i")
+
+[node name="Bone5" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-735, -472)
+rotation = 2.7008197
+texture = ExtResource("24_c5726")
+
+[node name="Bone6" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-982, -411)
+texture = ExtResource("23_pv43i")
+
+[node name="Bones3" type="Sprite2D" parent="Tilemaps/Decor/Bone"]
+position = Vector2(-870, -818)
+texture = ExtResource("23_vgmp2")
+
+[node name="Nat" type="Node2D" parent="Tilemaps/Decor"]
+y_sort_enabled = true
+
+[node name="Thing1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-719, -508)
+texture = ExtResource("22_e8lsn")
+
+[node name="SmallRock1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-741, -982)
+texture = ExtResource("20_n78ds")
+
+[node name="SmallRock2" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-731, -976)
+texture = ExtResource("21_pe8ru")
+
+[node name="SmallRock3" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-880, -1142)
+texture = ExtResource("31_rohnm")
+
+[node name="WoodScrap1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-876, -1206)
+texture = ExtResource("32_u0gb0")
+
+[node name="SmallRock4" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-846, -538)
+texture = ExtResource("31_rohnm")
+
+[node name="SmallRock5" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1343, -854)
+texture = ExtResource("21_pe8ru")
+offset = Vector2(2, -2)
+
+[node name="SmallRock6" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1254, -877)
+texture = ExtResource("31_rohnm")
+offset = Vector2(0, -3)
+
+[node name="Pebble1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1281, -895)
+texture = ExtResource("33_1hob7")
+offset = Vector2(3, -4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1371, -880)
+
+[node name="Rock1" type="Sprite2D" parent="Tilemaps/Decor/Nat/StaticBody2D"]
+texture = ExtResource("19_yvg45")
+offset = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tilemaps/Decor/Nat/StaticBody2D"]
+shape = SubResource("RectangleShape2D_iw10k")
+
+[node name="WoodScrap2" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1139, -825)
+texture = ExtResource("35_k5ps3")
+
+[node name="WoodScrap3" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1175, -890)
+texture = ExtResource("32_u0gb0")
+offset = Vector2(8, -15)
+
+[node name="WoodScrap4" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1121, -809)
+texture = ExtResource("36_lbjov")
+
+[node name="SmallRock7" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-180, -501)
+texture = ExtResource("21_pe8ru")
+
+[node name="SmallRock8" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-377, -347)
+texture = ExtResource("20_n78ds")
+
+[node name="SmallRock9" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-606, 67)
+texture = ExtResource("21_pe8ru")
+
+[node name="Pebble2" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-623, 64)
+texture = ExtResource("47_kf8ba")
+
+[node name="Pebble3" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-614, 59)
+texture = ExtResource("33_1hob7")
+
+[node name="Pebble4" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-13, -481)
+texture = ExtResource("33_1hob7")
+
+[node name="Pebble5" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-32, -495)
+texture = ExtResource("47_kf8ba")
+
+[node name="SmallRock10" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(22, -499)
+texture = ExtResource("20_n78ds")
+
+[node name="SmallRock11" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-726, -370)
+texture = ExtResource("31_rohnm")
+
+[node name="SmallRock12" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-538, -496)
+texture = ExtResource("20_n78ds")
+
+[node name="SmallRock13" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1377, -476)
+texture = ExtResource("21_pe8ru")
+
+[node name="SmallRock14" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1390, -466)
+texture = ExtResource("31_rohnm")
+
+[node name="Pebble6" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1394, -362)
+texture = ExtResource("47_kf8ba")
+
+[node name="Bone1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1322, -421)
+rotation = -0.21681345
+texture = ExtResource("24_c5726")
+
+[node name="Bone2" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-1308, -412.99994)
+rotation = 0.57623285
+texture = ExtResource("22_l4vv2")
+
+[node name="Bones1" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-462, -511)
+texture = ExtResource("23_vgmp2")
+offset = Vector2(0, -10)
+
+[node name="Pebble7" type="Sprite2D" parent="Tilemaps/Decor/Nat"]
+position = Vector2(-159, -411)
+texture = ExtResource("33_1hob7")
+
+[node name="PropLayer" parent="Tilemaps" instance=ExtResource("39_yg0r1")]
+
+[node name="FloorSprites" type="Node2D" parent="Tilemaps"]
+z_index = -1
+y_sort_enabled = true
+
+[node name="BloodstainsSmall" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(316, -512)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 6
+
+[node name="Bloodstain2" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(568, -424)
+texture = ExtResource("18_fktey")
+
+[node name="Bloodstain3" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-63, -56)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain4" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(233, -469)
+texture = ExtResource("51_5s87i")
+
+[node name="Bloodstain5" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-1138, -121)
+texture = ExtResource("18_fktey")
+
+[node name="Bloodstain6" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-1308, -33)
+texture = ExtResource("51_5s87i")
+
+[node name="Bloodstain7" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-888, -455)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain8" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-860, -926)
+texture = ExtResource("51_5s87i")
+
+[node name="Bloodstain9" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-733, -880)
+texture = ExtResource("18_fktey")
+
+[node name="Bloodstain10" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-748, -540)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain11" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-866, -608)
+texture = ExtResource("51_5s87i")
+
+[node name="Bloodstain1" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-879, -488)
+texture = ExtResource("52_a0h1h")
+
+[node name="Bloodstain12" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-824, -346)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain13" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-736, -997)
+texture = ExtResource("52_a0h1h")
+
+[node name="BloodstainsSmall7" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(20, -37)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 4
+
+[node name="BloodstainsSmall8" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-30, -8)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 6
+
+[node name="BloodstainsSmall9" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(195, -110)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 8
+
+[node name="BloodstainsSmall10" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(439, -382)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 12
+
+[node name="BloodstainsSmall11" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(721, -371)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 9
+
+[node name="BloodstainsSmall12" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(808, -526)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 9
+
+[node name="BloodstainsSmall13" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(692, -503)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="BloodstainsSmall14" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-762, -496)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="BloodstainsSmall15" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-888, -410)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="BloodstainsSmall16" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-900, -412)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 4
+
+[node name="BloodstainsSmall17" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-701, -452)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 3
+
+[node name="BloodstainsSmall18" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-756, -737)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 9
+
+[node name="BloodstainsSmall19" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-873, -809)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 7
+
+[node name="BloodstainsSmall20" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-1288, -152)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 6
+
+[node name="BloodstainsSmall21" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-1133, -207)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="BloodstainsSmall22" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(-1098, -170)
+texture = ExtResource("17_d6s2t")
+hframes = 5
+vframes = 3
+frame = 6
+
+[node name="Bloodstain14" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(826, -420)
+texture = ExtResource("51_5s87i")
+
+[node name="Bloodstain15" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(862, -385)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain16" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(931, -560)
+texture = ExtResource("52_a0h1h")
+
+[node name="Bloodstain17" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(912, -525)
+texture = ExtResource("17_yjp1t")
+
+[node name="Bloodstain18" type="Sprite2D" parent="Tilemaps/FloorSprites"]
+position = Vector2(758, -274)
+texture = ExtResource("52_a0h1h")
+
+[node name="FloorLayer2" parent="Tilemaps" instance=ExtResource("3_7goiu")]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAAAAwADAAUAAAAAAAEAAwADAAYAAAAAAAIAAwADAAcAAAABAAAAAwAEAAUAAAABAAEAAwAEAAYAAAABAAIAAwAEAAcAAAACAAAAAwAFAAUAAAACAAEAAwAFAAYAAAACAAIAAwAFAAcAAAADAAAAAwAGAAUAAAADAAEAAwAGAAYAAAADAAIAAwAGAAcAAAD+//7/AwAAAAAAAAD+////AwAAAAEAAAD///7/AwABAAAAAAD/////AwABAAEAAAD+/wEAAwAAAAIAAAD+/wIAAwAAAAMAAAD//wEAAwABAAIAAAD//wIAAwABAAMAAAACAPL/AwADAAIAAAACAPP/AwADAAMAAAADAPL/AwAEAAIAAAADAPP/AwAEAAMAAAADAPT/AwAEAAQAAAAEAPD/AwAFAAAAAAAEAPH/AwAFAAEAAAAEAPL/AwAFAAIAAAAEAPP/AwAFAAMAAAAEAPT/AwAFAAQAAAAFAPL/AwAGAAIAAAAFAPP/AwAGAAMAAAD6//L/AwAAAAQAAAD7//L/AwABAAQAAAD0////AwACAAQAAADy/wAAAwAAAAQAAADy/wEAAwAAAAUAAADz/wAAAwABAAQAAADz/wEAAwABAAUAAAD7//P/AwABAAUAAAD6//P/AwAAAAUAAAD4//X/AwABAAUAAAD4//T/AwABAAQAAAD3//X/AwAAAAUAAAD3//T/AwAAAAQAAAD6//b/AwACAAQAAAD5//r/BQABAAEAAAD6//r/BQABAAEAAAD5//v/BQABAAIAAAD4//r/BQABAAEAAAD5//n/BQABAAEAAAD7//r/BQABAAEAAAD6//v/BQAAAAAAAAD6//n/BQACAAIAAAD4//n/BQABAAEAAAD5//j/BQABAAAAAAD4//j/BQABAAAAAAD3//n/BQAAAAIAAAD4//v/BQACAAAAAAD3//r/BQABAAEAAAD3//v/BQABAAEAAAD2//r/BQAAAAIAAAD///j/BQABAAEAAAD7//n/BQABAAAAAAD7//v/BQABAAEAAAAAAPj/BQACAAEAAAD///n/BQABAAIAAAD///f/BQABAAAAAADq//n/BQABAAEAAADr//n/BQACAAIAAADq//r/BQABAAEAAADp//n/BQAAAAEAAADq//j/BQABAAAAAADr//r/BQABAAEAAADp//r/BQAAAAEAAADq//v/BQABAAEAAADs//r/BQACAAEAAADr//v/BQABAAEAAADs//v/BQACAAEAAADr//z/BQACAAAAAADq//z/BQABAAEAAADq//3/BQABAAEAAADp//z/BQAAAAEAAADp//v/BQAAAAEAAADr//3/BQACAAEAAADq//7/BQABAAIAAADp//3/BQAAAAEAAAD+//j/BQABAAEAAAD+//n/BQABAAIAAAD9//j/BQAAAAEAAAD+//f/BQABAAAAAAD8//r/BQABAAEAAAD9//r/BQACAAIAAAD8//v/BQABAAEAAAD8//n/BQABAAAAAAD9//v/BQABAAEAAAD+//v/BQABAAEAAAD9//z/BQABAAIAAAD8//z/BQABAAIAAAD7//z/BQABAAIAAAD+//z/BQABAAIAAAD+//r/BQABAAAAAAD///v/BQACAAEAAAD3//z/BQABAAEAAAD2//v/BQABAAEAAAD4//z/BQACAAEAAAD3//3/BQABAAIAAAD2//z/BQAAAAAAAAD1//v/BQAAAAEAAAA=")
+
+[node name="FloorLayer" parent="Tilemaps" instance=ExtResource("3_7goiu")]
+z_index = -2
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAAEAAQAGAAgAAAADAAIAAQAGAAgAAAADAAMAAQAGAAgAAAAEAAEAAQAGAAgAAAAEAAIAAQAGAAgAAAAEAAMAAQAGAAgAAAAFAAEAAQAGAAgAAAAFAAIAAQAGAAgAAAAFAAMAAQAGAAgAAAAAAAEAAQAGAAgAAAAAAAIAAQAGAAgAAAAAAAMAAQAGAAgAAAABAAEAAQAGAAgAAAABAAIAAQAGAAgAAAABAAMAAQAGAAgAAAACAAEAAQAGAAgAAAACAAIAAQAGAAgAAAACAAMAAQAGAAgAAAD9/wEAAQAGAAgAAAD9/wIAAQAGAAgAAAD9/wMAAQAGAAgAAAD+/wEAAQAGAAgAAAD+/wIAAQAGAAgAAAD+/wMAAQAGAAgAAAD//wEAAQAGAAgAAAD//wIAAQAGAAgAAAD//wMAAQAGAAgAAAD9//7/AQAGAAgAAAD9////AQAGAAgAAAD9/wAAAQAGAAgAAAD+//7/AQAGAAgAAAD+////AQAGAAgAAAD+/wAAAQAGAAgAAAD///7/AQAGAAgAAAD/////AQAGAAgAAAD//wAAAQAGAAgAAAAAAP7/AQAGAAgAAAAAAP//AQAGAAgAAAAAAAAAAQAGAAgAAAABAP7/AQAGAAgAAAABAP//AQAGAAgAAAABAAAAAQAGAAgAAAACAP7/AQAGAAgAAAACAP//AQAGAAgAAAACAAAAAQAGAAgAAAADAP7/AQAGAAgAAAADAP//AQAGAAgAAAADAAAAAQAGAAgAAAAEAP7/AQAGAAgAAAAEAP//AQAGAAgAAAAEAAAAAQAGAAgAAAAFAP7/AQAGAAgAAAAFAP//AQAGAAgAAAAFAAAAAQAGAAgAAAADAPj/AQAGAAgAAAADAPn/AQAGAAgAAAADAPr/AQAGAAgAAAAEAPj/AQAGAAgAAAAEAPn/AQAGAAgAAAAEAPr/AQAGAAgAAAAFAPj/AQAGAAgAAAAFAPn/AQAGAAgAAAAFAPr/AQAGAAgAAAADAPv/AQAGAAgAAAADAPz/AQAGAAgAAAADAP3/AQAGAAoAAAAEAPv/AQAGAAgAAAAEAPz/AQAGAAgAAAAEAP3/AQAHAAoAAAAFAPv/AQAGAAgAAAAFAPz/AQAGAAgAAAAFAP3/AQAIAAoAAAAGAPj/AQAGAAgAAAAGAPn/AQAGAAgAAAAGAPr/AQAGAAgAAAAHAPj/AQAGAAgAAAAHAPn/AQAGAAgAAAAHAPr/AQAGAAgAAAAIAPj/AQAGAAgAAAAIAPn/AQAGAAgAAAAIAPr/AQAGAAgAAAAJAPj/AQAHAAgAAAAJAPn/AQAHAAkAAAAJAPr/AQAGAAgAAAAAAPj/AQAGAAgAAAAAAPn/AQAGAAgAAAAAAPr/AQAGAAgAAAABAPj/AQAGAAgAAAABAPn/AQAGAAgAAAABAPr/AQAGAAgAAAACAPj/AQAGAAgAAAACAPn/AQAGAAgAAAACAPr/AQAGAAgAAAADAPX/AQAGAAgAAAADAPb/AQAGAAgAAAADAPf/AQAGAAgAAAAEAPX/AQAGAAgAAAAEAPb/AQAGAAgAAAAFAPX/AQAGAAgAAAAFAPb/AQAGAAgAAAAFAPf/AQAGAAgAAAADAPL/AQAGAAgAAAADAPP/AQAGAAgAAAADAPT/AQAGAAgAAAAEAPL/AQAGAAgAAAAEAPP/AQAGAAgAAAAEAPT/AQAGAAgAAAAFAPL/AQAGAAgAAAAFAPP/AQAGAAgAAAAFAPT/AQAGAAgAAAAAAPL/AQAGAAgAAAAAAPP/AQAGAAgAAAAAAPT/AQAGAAgAAAABAPL/AQAGAAgAAAABAPP/AQAGAAgAAAABAPT/AQAGAAgAAAACAPL/AQAGAAgAAAACAPP/AQAGAAgAAAACAPT/AQAGAAgAAAAAAPX/AQAGAAgAAAAAAPb/AQAGAAgAAAAAAPf/AQAGAAgAAAABAPX/AQAGAAgAAAABAPb/AQAGAAgAAAABAPf/AQAGAAgAAAACAPX/AQAGAAgAAAACAPb/AQAGAAgAAAACAPf/AQAGAAgAAAAEAPf/AQAGAAgAAAD9//j/AQAGAAgAAAD9//n/AQAGAAgAAAD9//r/AQAGAAgAAAD+//j/AQAGAAgAAAD+//n/AQAGAAgAAAD+//r/AQAGAAgAAAD///j/AQAGAAgAAAD///n/AQAGAAgAAAD///r/AQAGAAgAAAD6//j/AQAGAAgAAAD6//n/AQAGAAgAAAD6//r/AQAGAAgAAAD7//j/AQAGAAgAAAD7//n/AQAGAAgAAAD7//r/AQAGAAgAAAD8//j/AQAGAAgAAAD8//n/AQAGAAgAAAD8//r/AQAGAAgAAAD3//j/AQAGAAgAAAD3//n/AQAGAAgAAAD3//r/AQAGAAgAAAD4//j/AQAGAAgAAAD4//n/AQAGAAgAAAD4//r/AQAGAAgAAAD5//j/AQAGAAgAAAD5//n/AQAGAAgAAAD5//r/AQAGAAgAAAD0//j/AQAGAAgAAAD0//n/AQAGAAgAAAD0//r/AQAGAAgAAAD1//j/AQAGAAgAAAD1//n/AQAGAAgAAAD1//r/AQAGAAgAAAD2//j/AQAGAAgAAAD2//n/AQAGAAgAAAD2//r/AQAGAAgAAADx//j/AQAGAAgAAADx//n/AQAGAAgAAADx//r/AQAGAAgAAADy//j/AQAGAAgAAADy//n/AQAGAAgAAADy//r/AQAGAAgAAADz//j/AQAGAAgAAADz//n/AQAGAAgAAADz//r/AQAGAAgAAADu//j/AQAGAAgAAADu//n/AQAGAAgAAADu//r/AQAGAAgAAADv//j/AQAGAAgAAADv//n/AQAGAAgAAADv//r/AQAGAAgAAADw//j/AQAGAAgAAADw//n/AQAGAAgAAADw//r/AQAGAAgAAADr//j/AQAGAAgAAADr//n/AQAGAAgAAADr//r/AQAGAAgAAADs//j/AQAGAAgAAADs//n/AQAGAAgAAADs//r/AQAGAAgAAADt//j/AQAGAAgAAADt//n/AQAGAAgAAADt//r/AQAGAAgAAADr//X/AQAGAAgAAADr//b/AQAGAAgAAADr//f/AQAGAAgAAADs//X/AQAGAAgAAADs//b/AQAGAAgAAADs//f/AQAGAAgAAADt//X/AQAGAAgAAADt//b/AQAGAAgAAADt//f/AQAGAAgAAADr//L/AQAGAAgAAADr//P/AQAGAAgAAADr//T/AQAGAAgAAADs//L/AQAGAAgAAADs//P/AQAGAAgAAADs//T/AQAGAAgAAADt//L/AQAGAAgAAADt//P/AQAGAAgAAADt//T/AQAGAAgAAADu//L/AQAGAAgAAADu//P/AQAGAAgAAADu//T/AQAGAAgAAADv//L/AQAGAAgAAADv//P/AQAGAAgAAADv//T/AQAGAAgAAADw//L/AQAGAAgAAADw//P/AQAGAAgAAADw//T/AQAGAAgAAADu//X/AQAGAAgAAADu//b/AQAGAAgAAADu//f/AQAGAAgAAADv//X/AQAGAAgAAADv//b/AQAGAAgAAADv//f/AQAGAAgAAADw//X/AQAGAAgAAADw//b/AQAGAAgAAADw//f/AQAGAAgAAADx//X/AQAGAAgAAADx//b/AQAGAAgAAADx//f/AQAGAAgAAADy//X/AQAGAAgAAADy//b/AQAGAAgAAADy//f/AQAGAAgAAADz//X/AQAGAAgAAADz//b/AQAGAAgAAADz//f/AQAGAAgAAAD0//X/AQAGAAgAAAD0//b/AQAIAAkAAAD0//f/AQAIAAoAAAD1//X/AQAGAAgAAAD1//b/AQAGAAgAAAD1//f/AQAGAAgAAAD2//X/AQAGAAgAAAD2//b/AQAGAAgAAAD2//f/AQAGAAgAAAD0//L/AQAGAAgAAAD0//P/AQAGAAgAAAD0//T/AQAGAAgAAAD1//L/AQAGAAgAAAD1//P/AQAGAAgAAAD1//T/AQAGAAgAAAD2//L/AQAGAAgAAAD2//P/AQAGAAgAAAD2//T/AQAGAAgAAADx//L/AQAGAAgAAADx//P/AQAGAAgAAADx//T/AQAGAAgAAADy//L/AQAGAAgAAADy//P/AQAGAAgAAADy//T/AQAIAAkAAADz//L/AQAIAAkAAADz//P/AQAIAAoAAADz//T/AQAGAAgAAAD3//L/AQAGAAgAAAD3//P/AQAGAAgAAAD3//T/AQAGAAgAAAD4//L/AQAGAAgAAAD4//P/AQAGAAgAAAD4//T/AQAGAAgAAAD5//L/AQAGAAgAAAD5//P/AQAGAAgAAAD5//T/AQAGAAgAAAD6//L/AQAGAAgAAAD6//P/AQAGAAgAAAD6//T/AQAGAAgAAAD7//L/AQAGAAgAAAD7//P/AQAGAAgAAAD7//T/AQAGAAgAAAD8//L/AQAGAAgAAAD8//P/AQAGAAgAAAD8//T/AQAGAAgAAAD6//X/AQAGAAgAAAD6//b/AQAGAAgAAAD6//f/AQAGAAgAAAD7//X/AQAGAAgAAAD7//b/AQAGAAgAAAD7//f/AQAGAAgAAAD8//X/AQAGAAgAAAD8//b/AQAGAAgAAAD8//f/AQAGAAgAAAD3//X/AQAGAAgAAAD3//b/AQAGAAgAAAD3//f/AQAGAAgAAAD4//X/AQAGAAgAAAD4//b/AQAGAAgAAAD4//f/AQAGAAgAAAD5//X/AQAGAAgAAAD5//b/AQAGAAgAAAD5//f/AQAGAAgAAAD6//v/AQAGAAgAAAD6//z/AQAGAAgAAAD6//3/AQAGAAoAAAD7//v/AQAGAAgAAAD7//z/AQAGAAgAAAD7//3/AQAHAAoAAAD8//v/AQAGAAgAAAD8//z/AQAGAAgAAAD8//3/AQAIAAoAAAD9//v/AQAGAAgAAAD9//z/AQAGAAgAAAD9//3/AQAGAAoAAAD+//v/AQAGAAgAAAD+//z/AQAGAAgAAAD+//3/AQAHAAoAAAD///v/AQAGAAgAAAD///z/AQAGAAgAAAD///3/AQAIAAoAAAD1////AQAGAAgAAAD1/wAAAQAGAAgAAAD1/wEAAQAGAAgAAAD2////AQAGAAgAAAD2/wAAAQAGAAgAAAD2/wEAAQAGAAgAAAD3////AQAGAAgAAAD3/wAAAQAGAAgAAAD3/wEAAQAGAAgAAADy////AQAGAAgAAADy/wAAAQAGAAgAAADy/wEAAQAGAAgAAADz////AQAGAAgAAADz/wAAAQAGAAgAAADz/wEAAQAGAAgAAAD0////AQAGAAgAAAD0/wAAAQAGAAgAAAD0/wEAAQAGAAgAAADy//z/AQAGAAgAAADy//3/AQAGAAgAAADy//7/AQAGAAgAAADz//z/AQAGAAgAAADz//3/AQAGAAgAAADz//7/AQAGAAgAAAD0//z/AQAGAAgAAAD0//3/AQAGAAgAAAD0//7/AQAGAAgAAAD1//z/AQAGAAgAAAD1//3/AQAGAAgAAAD1//7/AQAGAAgAAAD2//z/AQAGAAgAAAD2//3/AQAGAAgAAAD2//7/AQAGAAgAAAD3//z/AQAGAAgAAAD3//3/AQAGAAgAAAD3//7/AQAGAAgAAAD1//v/AQAGAAgAAAD2//v/AQAGAAgAAAD3//v/AQAGAAgAAADy//v/AQAGAAgAAADz//v/AQAGAAgAAAD0//v/AQAGAAgAAADu/wIAAQAGAAgAAADu/wMAAQAGAAgAAADv/wIAAQAGAAgAAADv/wMAAQAGAAgAAADs/wIAAQAGAAgAAADs/wMAAQAGAAgAAADt/wIAAQAGAAgAAADt/wMAAQAGAAgAAADq/wIAAQAGAAgAAADq/wMAAQAGAAgAAADr/wIAAQAGAAgAAADr/wMAAQAGAAgAAADq/wAAAQAGAAgAAADq/wEAAQAGAAgAAADr/wAAAQAGAAgAAADr/wEAAQAGAAgAAADq//7/AQAGAAgAAADq////AQAGAAgAAADr//7/AQAGAAgAAADr////AQAGAAgAAADq//z/AQAGAAgAAADq//3/AQAGAAgAAADr//z/AQAGAAgAAADr//3/AQAGAAgAAADq//r/AQAGAAgAAADq//v/AQAGAAgAAADr//v/AQAGAAgAAADs//z/AQAGAAgAAADs//3/AQAGAAgAAADt//z/AQAGAAgAAADt//3/AQAGAAgAAADs//v/AQAGAAgAAADt//v/AQAGAAgAAADu//v/AQAGAAgAAADv//v/AQAGAAgAAADu//z/AQAGAAgAAADu//3/AQAGAAgAAADv//z/AQAGAAgAAADv//3/AQAGAAgAAADu//7/AQAGAAgAAADu////AQAGAAgAAADv//7/AQAGAAgAAADv////AQAGAAgAAADu/wAAAQAGAAgAAADu/wEAAQAGAAgAAADv/wAAAQAGAAgAAADv/wEAAQAGAAgAAADs/wAAAQAGAAgAAADs/wEAAQAGAAgAAADt/wAAAQAGAAgAAADt/wEAAQAGAAgAAADs//7/AQAGAAgAAADs////AQAGAAgAAADt//7/AQAGAAgAAADt////AQAGAAgAAADq//j/AQAGAAgAAADq//n/AQAGAAgAAADq//b/AQAGAAgAAADq//f/AQAGAAgAAADq//T/AQAGAAgAAADq//X/AQAGAAgAAADq//L/AQAGAAgAAADq//P/AQAGAAgAAADy/+//AQAGAAgAAADy//D/AQAGAAgAAADy//H/AQAGAAgAAADz/+//AQAGAAgAAADz//D/AQAGAAgAAADz//H/AQAGAAgAAAD0//D/AQAIAAoAAAD0//H/AQAGAAgAAADy/+z/AQAGAAgAAADy/+3/AQAIAAkAAADy/+7/AQAGAAgAAADz/+z/AQAGAAgAAADz/+3/AQAGAAgAAADz/+7/AQAGAAgAAAD0/+z/AQAIAAkAAAD0/+3/AQAIAAoAAAD0/+7/AQAGAAgAAAD4//v/AQAGAAgAAAD4//z/AQAGAAgAAAD5//v/AQAGAAgAAAD5//z/AQAGAAgAAAAAAPv/AQAGAAgAAAAAAPz/AQAGAAgAAAABAPv/AQAGAAgAAAABAPz/AQAGAAgAAAACAPv/AQAGAAgAAAACAPz/AQAGAAgAAAAGAPv/AQAGAAgAAAAGAPz/AQAGAAgAAAAHAPv/AQAGAAgAAAAHAPz/AQAGAAgAAAAIAPv/AQAGAAgAAAAIAPz/AQAGAAgAAADw//v/AQAGAAgAAADw//z/AQAGAAgAAADw//3/AQAGAAgAAADw//7/AQAGAAgAAADw////AQAGAAgAAADw/wAAAQAGAAgAAADw/wEAAQAGAAgAAADx//v/AQAGAAgAAADx//z/AQAGAAgAAADx//3/AQAGAAgAAADx//7/AQAGAAgAAADx////AQAGAAgAAADx/wAAAQAGAAgAAADx/wEAAQAGAAgAAAD1/+z/AQAGAAgAAAD1/+3/AQAGAAgAAAD1/+7/AQAGAAgAAAD1/+//AQAGAAgAAAD1//D/AQAGAAgAAAD1//H/AQAGAAgAAAAGAPb/AQAGAAgAAAAGAPf/AQAGAAgAAAAHAPf/AQAGAAgAAAAIAPf/AQAGAAgAAAAKAPr/AQAGAAgAAAAKAPj/AQAGAAgAAAAKAPn/AQAGAAgAAAAKAPf/AQAGAAgAAAALAPj/AQAGAAgAAAALAPn/AQAGAAgAAAALAPr/AQAGAAgAAAAMAPj/AQAGAAgAAAAMAPn/AQAGAAgAAAAMAPr/AQAGAAgAAAAKAPb/AQAGAAgAAAAKAPv/AQAGAAgAAAAKAPz/AQAGAAgAAAALAPb/AQAGAAgAAAALAPf/AQAGAAgAAAALAPv/AQAGAAgAAAALAPz/AQAGAAgAAAAMAPb/AQAGAAgAAAAMAPf/AQAGAAgAAAAMAPv/AQAGAAgAAAAMAPz/AQAGAAgAAAANAPb/AQAGAAgAAAANAPf/AQAGAAgAAAANAPj/AQAGAAgAAAANAPn/AQAGAAgAAAANAPr/AQAGAAgAAAANAPv/AQAGAAgAAAANAPz/AQAGAAgAAAAOAPb/AQAGAAgAAAAOAPf/AQAGAAgAAAAOAPj/AQAGAAgAAAAOAPn/AQAGAAgAAAAOAPr/AQAGAAgAAAAOAPv/AQAGAAgAAAAOAPz/AQAGAAgAAAAPAPb/AQAGAAgAAAAPAPf/AQAGAAgAAAAPAPj/AQAGAAgAAAAPAPn/AQAGAAgAAAAPAPr/AQAGAAgAAAAPAPv/AQAGAAgAAAAPAPz/AQAGAAgAAAAKAP3/AQAGAAgAAAALAP3/AQAGAAgAAAAMAP3/AQAGAAgAAAANAP3/AQAGAAgAAAAOAP3/AQAGAAgAAAAPAP3/AQAGAAgAAAAQAPb/AQAGAAgAAAAQAPf/AQAGAAgAAAAQAPj/AQAGAAgAAAAQAPn/AQAGAAgAAAAQAPr/AQAGAAgAAAAQAPv/AQAGAAgAAAAQAPz/AQAGAAgAAAAQAP3/AQAGAAgAAAAKAPX/AQAGAAgAAAALAPX/AQAGAAgAAAAMAPX/AQAGAAgAAAANAPX/AQAGAAgAAAAOAPX/AQAGAAgAAAAPAPX/AQAGAAgAAAAQAPX/AQAGAAgAAAARAPf/AQAGAAgAAAARAPj/AQAGAAgAAAARAPn/AQAGAAgAAAARAPr/AQAGAAgAAAARAPv/AQAGAAgAAAD0/+//AQAIAAkAAAA=")
+
+[node name="Guard" parent="Tilemaps" instance=ExtResource("53_5s87i")]
+position = Vector2(-805, -1134)
+
+[node name="Poverty" type="Sprite2D" parent="Tilemaps"]
+position = Vector2(-1050, -849)
+texture = ExtResource("64_c7ygk")
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]

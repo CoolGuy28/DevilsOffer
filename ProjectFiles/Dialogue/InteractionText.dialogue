@@ -1,0 +1,812 @@
+~ Empty
+No Text Added
+=> END
+
+~ FindItem
+if item == null or amount <= 0
+	You find nothing.
+	set interacted = true
+	=> END
+else
+	if amount == 1
+		You find a [color=red]{{item.itemName}}[/color]!
+	else
+		You find [color=red]{{amount}} {{item.itemName}}s.[/color]
+	do player.AddItem(item, amount)
+set interacted = true
+=> END
+
+~ Barrel
+if interacted == false
+	You look inside the barrel.
+	do GetLoot()
+	do ChangeSpriteFrame(1)
+	=> FindItem
+	set interacted = true
+else
+	This barrel is empty.
+=> END
+
+~ Crate
+if interacted == false
+	You open up the crate.
+	do GetLoot()
+	do ChangeSpriteFrame(1)
+	=> FindItem
+	set interacted = true
+else
+	This crate is empty.
+=> END
+
+~ Bookshelf
+if interacted == false
+	You search through the books.
+	do GetLoot()
+	=> FindItem
+	set interacted = true
+else
+	You find nothing of interest.
+=> END
+
+~ Wardrobe
+if interacted == false
+	You open up the wardrobe
+	do GetLoot()
+	=> FindItem
+else
+	You find nothing of interest.
+=> END
+
+~ BedTable
+if interacted == false
+	You open up the the bedtable drawer
+	do GetLoot()
+	=> FindItem
+else
+	You find nothing of interest.
+=> END
+
+~ Chest
+if interacted == false and lock != null and unlocked == false
+	do GetLoot()
+	The chest is locked.
+	- Pick the lock [if player.HasItem("Lockpick")]
+		do player.OpenLockCheck(lock.pickLockDC)
+		if player.GetSkillCheckSuccess() == true
+			set unlocked = true
+			do PlaySFX("LockpickSuccess")
+			You unlock the chest.
+			do ChangeSpriteFrame(1)
+			=> FindItem
+			set interacted = true
+		else
+			=> Chest
+	- Leave => END
+elif interacted == false
+	You look inside the chest.
+	do GetLoot()
+	do ChangeSpriteFrame(1)
+	=> FindItem
+	set interacted = true
+else
+	This chest is empty.
+=> END
+
+~ Vials
+if interacted == false
+	You search among the vials for anything useful.
+	do GetLoot()
+	do ChangeSpriteFrame(1)
+	=> FindItem
+else
+	Nothing to grab.
+=> END
+
+~ Door
+if lock != null
+	The door has a lock.
+	- Use a key [if player.HasItem(lock.GetKey())]
+		if lock.ExpendKey()
+			do player.RemoveItem(lock.GetKey())
+		set unlocked = true
+		do PlaySFX("Key")
+		You unlock the door.
+		do OpenDoor()
+	- Pick the lock [if lock.IsPickable() and player.HasItem("Lockpick")]
+		do player.OpenLockCheck(lock.pickLockDC)
+		if player.GetSkillCheckSuccess() == true
+			set unlocked = true
+			do PlaySFX("LockpickSuccess")
+			You unlock the door.
+			do OpenDoor()
+	- Leave => END
+=> END
+
+~ Bed
+A cheap wooden bed. It probably isn't a comfortable place to rest.
+- Tear Blanket [if interacted == false]
+	=> FindItem
+- Leave
+=> END
+
+~ RitualCircle
+You stand in the ritual circle
+- Short Rest => ShortRest
+- Summon Devil => SummonDevil
+- Leave => END
+
+~ ShortRest
+Nutrition-{{player.GetNutrition()}}\nExhaustion-{{player.GetExhaustion()}}\Resting Costs 50 Nutrition
+- Confirm
+	do player.RemoveNutrition(50)
+	do player.Heal(20, "Body")
+	do player.AdjustExhaustion(-2)
+	=> ShortRest
+- Return => RitualCircle
+=> END
+
+~ SummonDevil
+- Ancient Hand [if player.HasItem("Ancient Hand")]
+	=> PastDevil
+- Finger [if player.HasItem("Finger")]
+	=> Surgeon
+- Exit
+	=> RitualCircle
+=> END
+
+~ PastDevil
+if !relation.metPast
+	Past Devil: The past sucks, putrid, horrible..
+	A great, one armed devil looks over you
+	set relation.metPast = true
+if !relation.pastContract
+	Past Devil: You looking to gain my power? Just put your head into my hole already so I can read your past
+	- Y..Yes
+		Past Devil: mmhummmm mmhmmm
+		Past Devil: mmhummhm mmhm mmmmmmhummm
+		Past Devil: You want to hear it?
+		- Yes
+			Past Devil: You were born 19 years ago in a small coastal village name Etre in the midst of a flood.
+			Past Devil: Your mother drowned as she gave birth to you, born between a dead womans legs, and so you were labelled a bad omen since birth.
+			Past Devil: Your father saved you from the sea and took care of you until age 10, in which you walked in to find him stabbed to death, murdered in the kitchen.
+			Past Devil: Ever since then you lived on the outskirts of the town since no one wanted you around, your biggest interaction with other humans is collecting pay for picking potatoes from the local lord. 
+		- No
+		The devil seems to be in thought
+		Past Devil: Ok Ok I think your worth keeping around, I shall give you the power to save a memory in time,
+		Past Devil: and when your regrets begin to pile up you may load to return to that moment once again.
+		Past Devil: All I ask for in return is to keep a single moment from your past
+		Past Devil: Do we have a deal?
+		- Yes
+			set relation.pastContract = true
+		- No
+			Past Devil: You scared of something?
+			=> END
+	- No
+		Past Devil: You scared of something?
+		=> END
+else
+	Past Devil: You looking to save here?
+	- Save
+		do player.SaveGame()
+		=> RitualCircle
+	- Exit
+		=> RitualCircle
+=> END
+
+~ Surgeon
+if !relation.metSurgeon
+	???: Why hello dear, please do allow me to introduce myself
+	???: I do not have a specific name I go by but please feel free to call me the surgeon.
+	Surgeon: You are yet another poor struggler dragged down to this tomb by the sea cult and I simply wish to be a helpful hand.
+	Surgeon: In exchange for coin I will sew any bodypart you require back on, I am also always on the lookout to buy new organs.
+	set relation.metSurgeon = true
+Surgeon: Please feel free to ask anything
+- Talk
+	- Why?
+		{{player.GetName()}}: Why are you a devil willing to help me?
+		Surgeon: Well I used to quite like tearing the poor scared sacrifices down here asunder
+		Surgeon: But I found it ruined the quality of the bodyparts,
+		Surgeon: simply negotiating with you desperate folk is much more profitable.
+		=> Surgeon
+	- Risk?
+		{{player.GetName()}}: How risky is your medical procedures?
+		Surgeon: I'm hurt you even need to ask. My methods are 100% reliable, I would put it on contract that you will not die on my table.
+		=> Surgeon
+	- Cult?
+		{{player.GetName()}}: Are you connected to the cult?
+		Surgeon: Not at all, I would be surprised if they even know I'm around
+		Surgeon: I simply find their methods "unprofessional", I do get a lot more deals when they operate in my viscinity though.
+		=> Surgeon
+- Install Part
+	=> Surgeon
+- Sell Organs
+	=> Surgeon
+- Leave
+	Surgeon: Goodbye, do hope we can make another deal, another time
+	=> RitualCircle
+=> END
+
+~ Mushroom
+You pick a [color=red]White Mushroom[/color]!
+=> END
+
+~ Torch
+The torch flickers bright in the darkness.
+- Create Torch [if player.HasItem("Stick")]
+	You hold up a stick to the flame
+	You gain a [color=red]Torch[/color]!
+	do player.RemoveItem("Stick")
+	do player.AddItemPath("Weapons/SimpleWeapons/Torch")
+- Touch
+	You burn your hand
+- Leave
+=> END
+
+~ EndDemo
+Beyond here a noxious smell so strong you can taste wafts over you.
+The sewer lies in your future.
+Unfortunately it is not part of this playtest.
+Thank you for playing :)
+- Continue the dungeons
+- Return to Menu
+	do GameManager.LoadMenu()
+=> END
+
+#======================================================================#
+#                            Dungeon
+#======================================================================#
+
+~ RitualTable
+A cold marble slab, now coated in a fresh layer of your blood.
+=> END
+
+~ RitualDagger
+A dagger sits in a pool of blood. This carved the symbol in your face.
+You pick up the ritual dagger.
+do PlaySFX("Interact")
+=> END
+
+~ Match
+You pick up a small match from the floor.
+=> END
+
+~ Stick
+You pick up a wooden stick.
+=> END
+
+~ CorpsePile
+A tower of grotesque naked bodies left to decompose.
+if interacted == false
+	A rotten hand clutches something that shines.
+	=> FindItem
+=> END
+
+~ WitheredChild
+A pale malnourished child sits completely still.
+if interacted == false
+	Child: I appreciate opening the cage but leave me here.
+	Child: Death is a far sweeter peace then what happens if they catch me out.
+	set interacted = true
+else
+	Child: Let me rot here.
+=> END
+
+~ PissBucket
+The bucket is filled to the brim with weeks of piss and feces.
+if interacted == false
+	Looking at this overflowing bucket you do not wish to wait for death in these dirty dungeons.
+	You must escape.
+	You feel [color=red]Inspired[/color]!
+	do player.AdjustInspiration(1)
+	set interacted = true
+=> END
+
+~ MeltedLockedDoor
+The lock is welded shut. There's no way to open this.
+=> END
+
+~ DungeonMetalSign
+Preparation Room
+=> END
+
+~ DeadCultist
+This man is deceased.
+His windpipe is crushed.
+=> END
+
+~ AncientHand
+An old withered severed hand.
+Its ancient skin flakes to dust as you carefully pick it up.
+=> END
+
+~ PJail
+if interacted == true:
+	=> END
+do player.SetAnimationPanel("PJail/PSit")
+Through the jail bars you see a small girl, no older than 8, sitting looking at you.
+- Call to her
+	do PlaySFX("WalkOver")
+	=> PJailStare
+- Ignore
+=> END
+
+~ PJailStare
+do player.SetAnimationPanel("PJail/PStare")
+She stares.
+- Who are you?
+	She holds out her closed hands
+	She opens them revealing nothing inside
+	=> PJailStare
+- Are you ok?
+	She points towards your arm
+	- Reach in
+		do player.SetAnimationPanel("PJail/PBite")
+		do PlaySFX("Bleed")
+		The small girl bites into your arm
+		do player.AdjustBlood(-13)
+		She drinks the flowing blood
+		- Owwwiee
+		- Arghhhh
+		- Yeep
+		She stops drinking and grabs the metal bars of the cage.
+		do player.SetAnimationPanel("PJail/PBars")
+		do PlaySFX("MeltMetal")
+		do ChangeSpriteFrame(1)
+		do set_collision_layer_value(5, false)
+		do DeactivateChild(3)
+		do DeactivateChild(4)
+		Within her hands the metal melts with an orange glow.
+		do player.HideAnimationPanel()
+		There now stands a hole through the bars, and before you can say anything the child disappears into the dark.
+		You pick up a small match from the ground.
+		set interacted = true
+		=> END
+	- Ignore
+		=> PJailStare
+- Where are your parents?
+	She makes an X with her fingers
+	=> PJailStare
+- Leave
+=> END
+
+~ DungeonTunnel
+You get on all fours and crawl through the cramped rock.
+do SceneSwitcher.openScene.LoadMap(1, -64, -20)
+=> END
+
+#======================================================================#
+#                            Catacombs
+#======================================================================#
+
+~ TunnelCatacombs
+You get on all fours and crawl through the cramped rock.
+do SceneSwitcher.openScene.LoadMap(0, -1313, -891)
+=> END
+
+~ WallGrave
+if interacted == false
+	You search the body in the grave.
+	do BreakGrave(player, 1)
+	do GetLoot()
+	=> FindItem
+else
+	The grave contains nothing of value.
+=> END
+
+~ MetalSignSealedDoor
+As Mandated By The Holy Rainmaster Pierre Marin:
+In response to the growing numbers of devils lured in by the stench of death the catacombs is henceforth sealed permanently.
+If you somehow found yourself on the wrong side of this gate, be aware, there is no exit.
+Your sacrifice serves the city of Larselle
+=> END
+
+~ SeaLadyStatue
+A feminine statue standing in a pool of salt water.
+=> END
+
+~ Petru
+if interacted == false
+	You step close to the old lady sitting on a pillow.
+	???: Hello dear, you seem new are you not?
+	???: You may call me Petru, and now you?
+	- Greet Her
+		Petru: What a lovely name indeed {{player.GetName()}}
+		Petru: I do hope you get along well here
+	- Fake Name
+		Petru: Oh please dear, do not try to fool me.
+	- Stay Silent
+		Petru: Oh silent one do not fear when you are around me
+		Petru: I am but a friend to the saddened souls who find their way to this church
+	set interacted = true
+- Talk
+	=> PetruTalk
+- Engrave [if interacted2]
+	Petru: Which strength would you like to attuned to?
+	- STR
+		Petru: And do you have the coin?
+		- Yes [if player.HasItem("Silver Coin", 15)]
+			Petru: Lay down then dear.
+			You lay on the cold stone floor as the old womans knife carves through your skin.
+		- No
+			Petru: Then, my dear, I'm afraid to say that you are not yet ready for such a procedure.
+	- DEX
+		Petru: And do you have the coin?
+		- Yes [if player.HasItem("Silver Coin", 15)]
+			Petru: Lay down then dear.
+			You lay on the cold stone floor as the old womans knife carves through your skin.
+		- No
+			Petru: Then, my dear, I'm afraid to say that you are not yet ready for such a procedure.
+	- INT
+		Petru: And do you have the coin?
+		- Yes [if player.HasItem("Silver Coin", 15)]
+			Petru: Lay down then dear.
+			You lay on the cold stone floor as the old womans knife carves through your skin.
+		- No
+			Petru: Then, my dear, I'm afraid to say that you are not yet ready for such a procedure.
+	- WIS
+		Petru: Wondrous I knew we had kinship
+		Petru: And do you have the coin?
+		- Yes [if player.HasItem("Silver Coin", 15)]
+			Petru: Lay down then dear, and visualise the soft patter of rain.
+			You lay on the cold stone floor as the old womans knife carves through your skin.
+		- No
+			Petru: Then, my dear, I'm afraid to say that you are not yet ready for such a procedure.
+	=> Petru
+- Pickpocket [if !interacted4]
+	Petru: Do not test me dear
+- Kill [if !interacted3]
+	You put your hand against your weapons hilt, preparing to slay the poor woman.
+	Suddenly you are filled with an overwhelming sense of terror
+	You feel like harming this frail old woman is a mistake
+	set interacted3 = true
+	=> Petru
+- Exit
+=> END
+
+~ PetruTalk
+Petru: Yes dear?
+- What Do You Do?
+	Petru: I am the churche's teacher.
+	Petru: We take in all sorts of misled and lost youth and so I am here to show you guidance.
+	Petru: I also do all the churches engravings for 15 silver.
+	set interacted2 = true
+	=> PetruTalk
+- Engravings? [if interacted2]
+	Engravings are cuts in the flesh to strengthen the connection between soul and body.
+	That symbol you have for example connects your body to the leviathans' soul
+	Though the engravings I do simply strengthens the body in particular skills your soul admires.
+	=> PetruTalk
+- The Sea Cult?
+	Petru: The Sea Church rejects the corruption and sins plaguing the modern world and see working with devils, namely leviathan, as a necessary evil.
+	Petru: Soon the world will be cleansed of evil through a great flood and the surviving remnants will be blessed with a new world.
+	Petru: Do you believe in this vision?
+	- Yes
+	- No
+	Petru: I see.
+	=> PetruTalk
+- What Are You? [if interacted3]
+	Petru: I am but a teacher, nothing more.
+	=> PetruTalk
+- Return
+=> Petru
+
+~ BedSuccubus
+The succubus waves at you from the bed.
+Succubus: OOO Hello cute lil intruder breaking in without knocking, what brings you to my room
+Succubus: Well I mean it's my lady's room but she's out rn so thats neither here nor there.
+Succubus: I'm Nilia btw
+Nilia: ...
+Nilia: y'know your kinda cute even with a bleedin wound on your face, the madam might like you
+Nilia: Though you gotta help me out first
+Nilia: ...
+- Talk
+	=> BedSuccubusTalk
+- "Help"
+	=> BedSuccubus
+- Pickpocket
+	=> BedSuccubus
+- Kill
+	=> BedSuccubus
+- Leave
+=> END
+
+~ BedSuccubusTalk
+- Why Are You A Devil?
+	Nilia: "Gasp" How offensive
+	Nilia: You musn't ever ask a fine lady that
+	Nilia: ...
+	Nilia: Just kidding, it's just a boring story, I was just another common wrench and when the madam bought the brothel we had to make contracts with her to keep our jobs
+	Nilia: Not all bad tho I was already going to hell, atleast now I got the power to change my tits at will
+- Who Is The Madam?
+	Nilia: You don't know her huh? She's the devil of lust, owner of like a bajillion brothels including the one uptop
+	Nilia: You can summon her at the statue of desire if ya wanna ask to fix that facial scarring
+- Who Is Your Girlfriend?
+	Nilia: She's the assassin patrolling out the back
+	Nilia: Between you and me though she's also an ass
+	Nilia: But she also pays the best so guess I live on this bed now
+- Sea Cult?
+	Nilia: I ain't know nothn about that lot, except apparently they pay well based on Lyaane's stuff
+- Please Help Me Escape
+	Nilia: Sorry not my area of expertise, if I could leave this life too I would
+- Return
+	=> BedSuccubus
+=> BedSuccubusTalk
+
+~ ChurchBell
+A grand ornate church bell. It is engraved with symbols you cannot understand.
+- Lift it
+- Break it
+- Study it
+=> END
+
+# Garden Graves
+
+~ HolyGrave
+if interacted == false
+	An ornate marble casket, obviously owned by some high noble family.
+	Here lies Jean de Barcelles, taken by the great pestillence 1332-1349.
+	The grave is empty.
+else
+	The grave is empty.
+=> END
+
+~ Coffin
+if interacted == false
+	You break open the coffin.
+	do ChangeSpriteFrame(1)
+	do BreakGrave(player, 2)
+	do GetLoot()
+	=> FindItem
+else
+	The grave contains nothing of value.
+=> END
+
+~ DogGrave
+An emaciated and rotting dog is curled up in a ball.
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		Inside a worn wooden box lies a skinny teenage boy adorned in robes of the sea cult.
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> DogGrave
+- Leave
+=> END
+
+~ PlagueGrave
+if interacted
+	Two sticks sit apon a ruined grave.
+else
+	A birdlike skull mask sits atop this grave.
+- Take Mask [if !interacted]
+	You pick up the crow skull.
+	do player.AddItemPath("Equipment/Accessory/CrowSkull")
+	do BreakGrave(player, 5)
+	do ChangeSpriteFrame(1)
+	set interacted = true
+	=> PlagueGrave
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		Beneath the dirt lies a male corpse covered in stitches and bandages.
+		Something large penetrated his skull, likely killing him.
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> PlagueGrave
+- Leave
+=> END
+
+~ BearGrave
+A childrens toy bear hugs a dirt mound.
+- Rip Open Bear [if !interacted]
+	You gain an [color=red]Undeveloped Fetus[/color]!
+	do player.AddItemPath("Misc/UndevelopedFetus")
+	do BreakGrave(player, 5)
+	set interacted = true
+	=> BearGrave
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		Inside a box is a woman with a rusty knife in her stomach.
+		- Take The Knife
+			You gain a [color=red]Rusty Kitchen Knife[/color]!
+			do player.AddItemPath("Weapons/SimpleWeapons/RustyKitchenKnife")
+		- Leave
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> BearGrave
+- Leave
+=> END
+
+~ ChainGrave
+if interacted3
+	A pair of stone wings stand free.
+else
+	A pair of stone wings locked up in rusted metal chains.
+- Break Chains [if !interacted]
+	do player.OpenSkillCheck(10, 0)
+		if player.GetSkillCheckSuccess() == true
+			You break open the chains holding the stone wings.
+			You feel [color=red]Inspired[/color]!
+			do ChangeSpriteFrame(1)
+			do BreakGrave(player, 5)
+			do player.AdjustInspiration(1)
+			set interacted3 = true
+		if player.GetSkillCheckSuccess() == false
+			You strugle to break the chains.
+	set interacted = true
+	=> ChainGrave
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		Beneath the dirt is an iron cased coffin.
+		You are not strong enough to open it.
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> ChainGrave
+- Leave
+=> END
+
+~ MaceGrave
+if interacted
+	A mound of dirt.
+else
+	A clean prestine iron morningstar stands straight up in the soil.
+- Take Mace [if !interacted]
+	You gain a [color=red]Morningstar[/color]!
+	do player.AddItemPath("Weapons/AdvancedWeapons/Morningstar")
+	do ChangeSpriteFrame(1)
+	do BreakGrave(player, 5)
+	set interacted = true
+	=> MaceGrave
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		You find a large muscle bound man covered in old scars.
+		Around his mouth are crystals of salt.
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> MaceGrave
+- Leave
+=> END
+
+~ BabyGrave
+A crucified baby lies nailed to planks of wood.
+- Dig Up [if !interacted2]
+	if player.HasItem("Shovel")
+		Beneath the dirt you find a dead priest with his arms around a young naked woman.
+		The woman has copper horns nailed into her head.
+		do BreakGrave(player, 5)
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> BabyGrave
+- Leave
+=> END
+
+~ EmptyGrave
+A recently dug up hole. It seems big enough to fit you.
+=> END
+
+~ ButterflyGrave
+A stone sits apon packed dirt.
+- Read Stone
+	Here lies Ser Illias Brinaros
+	Vanquisher Of The Sea
+	=> ButterflyGrave
+- Dig Up Grave [if !interacted2]
+	if player.HasItem("Shovel")
+		You find no traces of anything ever being buried here.
+		set interacted2 = true
+	else
+		You cannot get through the tough stony soil.
+	=> ButterflyGrave
+- Leave
+=> END
+
+~ ButterflyStatue
+A stone statue depicting a butterfly.
+if !interacted
+	In its hands it holds out something
+	- Take The Charm
+		You pick up a gold chain holding a green glass butterfly.
+		if player.GetInventory().HasEquippedAccessory("Ancient Hand")
+			You hear a silent female voice in the back of your head.
+			"I wish for the first born"
+		do player.AddItemPath("Equipment/Accessory/ButterflyCharm")
+		set interacted = true
+	- Leave
+=> END
+
+# Kitchen
+
+~ MeatCleaver
+You pull the meat cleaver sitting in the cutting board.
+do PlaySFX("Interact")
+=> END
+
+~ MeatRack
+Massive skinned flesh of some large creature.
+=> END
+
+~ HumanMeatRack
+Bloodied and torn human bodies held by hooks
+They are cold to the touch and fresh for consumption.
+=> END
+
+~ DismemberedHand
+You pick up a dismembered arm from the ground.
+do PlaySFX("Interact")
+=> END
+
+~ Oven
+A cooking pot boils with a strange reddish colour over etherial purple flames.
+if interacted == false
+	set interacted = true
+	You see something shiny in the flames
+- Inspect Shiny Thing
+	set interacted2 = true
+	In the flames sits a golden scimitar constantly burning
+	It seems to be the source of these flames
+	if player.GetStat(2) >= 2
+		You recognise these purple flames may be the power of the legended Burning Devil
+		It's flames will not extinguish until it's fuel is consumed.
+	=> Oven
+- Grab the Scimitar [if interacted2 == true and interacted3 == false]
+	do player.OpenSkillCheck(14, 1)
+	set interacted3 = true
+	if player.GetSkillCheckSuccess() == true
+		Dodging the flames you grab the swords hilt, which is oddly cold, and pull it out.
+		do player.AddItemPath("Weapons/MagicWeapons/Flametongue")
+	if player.GetSkillCheckSuccess() == false
+		Your hand brushes the purple flames and catches alight.
+		You pull it from the oven and feel a heat stronger than you've ever experienced.
+		The purple flame continues to climb your arm.
+		- Wave Your Arm
+			The flame continues to climb your arm as you frantically wave it trying to put it out.
+		- Pour Water [if player.HasItem("Water Vial")]
+			The flame continues to burn and climb despite the water.
+		- Cut Off Arm [if player.GetBody().GetRandomArm() != null and player.HasItem("Bonesaw") or player.HasItem("Meat Cleaver")]
+			do player.OpenSkillCheck(10, 0)
+				if player.GetSkillCheckSuccess() == true
+					do player.GetBody().GetRandomArm().TakeDamage(999)
+					You manage to cut off your arm before the purple flame reaches something vital.
+					=> END
+				if player.GetSkillCheckSuccess() == false
+					You don't manage to cut free your arm before your entire body is engulfed by the flame.
+					Nothing you do can free you of the flame, you die here experiencing unimaginable pain.
+					do player.KillPlayer()
+					=> END
+	=> Oven
+- Taste Soup
+	You lather a spoonful into your open mouth and almost gag at the taste
+	Your tongue hurts and not from the heat.
+	=> Oven
+- Leave
+=> END
+
+~ MetalGrate
+	- Inspect
+		Metal bars cover a black pit
+		You cannot see the bottom
+	- Break Open [if interacted = false and interacted2 = false]
+		do player.OpenSkillCheck(16, 0)
+		set interacted = true
+		if player.GetSkillCheckSuccess() == true
+			set interacted2 = true
+			You manage to bend a small opening in the metal.
+		if player.GetSkillCheckSuccess() == false
+			You fail to make an opening.
+	- Melt Bars [if interacted2 = false and player.HasItem("Red Vial")]
+		set interacted2 = true
+		The bars melt away leaving a hole you may fit through.
+	- Jump Down [if interated2 == true]
+		You jump down into the void..
+		do SceneSwitcher.openScene.LoadMap(1, -64, -20)
+	- Leave
+=> END

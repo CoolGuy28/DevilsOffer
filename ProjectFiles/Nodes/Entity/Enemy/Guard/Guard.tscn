@@ -1,0 +1,114 @@
+[gd_scene load_steps=18 format=3 uid="uid://cg8nnf1xf8tcj"]
+
+[ext_resource type="Script" uid="uid://cq3713aua1jnn" path="res://Nodes/Entity/Enemy/Enemy.gd" id="1_ht5kn"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="2_4hyh4"]
+[ext_resource type="PackedScene" uid="uid://cn7fwslw3fiuy" path="res://Nodes/Entity/Components/HurtBox.tscn" id="3_50t83"]
+[ext_resource type="Texture2D" uid="uid://6djmaamn07gx" path="res://Sprites/Entity/Guard/Overworld/Guard_1.png" id="3_c8mmn"]
+[ext_resource type="Texture2D" uid="uid://bbn4goeywl22g" path="res://Sprites/Entity/Guard/Overworld/Guard_2.png" id="4_7bqol"]
+[ext_resource type="PackedScene" uid="uid://drqohx56yc21t" path="res://Nodes/Entity/Enemy/Guard/GuardUI.tscn" id="5_c200j"]
+[ext_resource type="Texture2D" uid="uid://bmw3dyrm7ixda" path="res://Sprites/Entity/PurpleMage/Overworld/PurpleMage_Dead.png" id="7_2elmm"]
+[ext_resource type="Script" uid="uid://byrkf8kjdftqn" path="res://Nodes/Entity/Player/EntityAnimController.gd" id="9_7bls4"]
+[ext_resource type="Resource" uid="uid://dp6whch05eaa2" path="res://Dialogue/Enemies/Guard.dialogue" id="11_7bls4"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="12_p8axr"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="13_y1ofr"]
+[ext_resource type="Script" uid="uid://bf6skbo2w0e8p" path="res://Nodes/Entity/Enemy/Guard/EnemyDialogue.gd" id="14_jxghx"]
+
+[sub_resource type="Resource" id="Resource_dnqcu"]
+script = ExtResource("2_4hyh4")
+stats = Array[int]([5, 0, -1, 2])
+AC = 10
+MC = 8
+actionCount = 1
+bonusActionCount = 1
+stateBonus = 3
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_7bls4"]
+script = ExtResource("2_4hyh4")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx7gv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2elmm")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c8mmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7bqol")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c8mmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7bqol")
+}],
+"loop": true,
+"name": &"Down_Idle",
+"speed": 1.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tl5s3"]
+radius = 28.217901
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bls4"]
+size = Vector2(220, 69)
+
+[node name="Guard" type="CharacterBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_ht5kn")
+baseStats = SubResource("Resource_dnqcu")
+adjustedStats = SubResource("Resource_7bls4")
+metadata/_custom_type_script = "uid://cq3713aua1jnn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, 40)
+sprite_frames = SubResource("SpriteFrames_wx7gv")
+animation = &"Down"
+autoplay = "Down_Idle"
+offset = Vector2(3, -85)
+script = ExtResource("9_7bls4")
+metadata/_custom_type_script = "uid://byrkf8kjdftqn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 26)
+shape = SubResource("CircleShape2D_tl5s3")
+
+[node name="Battle_UI" parent="." instance=ExtResource("5_c200j")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HurtBox" parent="." instance=ExtResource("3_50t83")]
+collision_layer = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, 24.5)
+shape = SubResource("RectangleShape2D_7bls4")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("13_y1ofr")
+
+[node name="EnemyDialogue" type="Node" parent="."]
+script = ExtResource("14_jxghx")
+dialogueFile = ExtResource("11_7bls4")
+lootTable = ExtResource("12_p8axr")
+
+[connection signal="Hit" from="HurtBox" to="." method="Interact"]

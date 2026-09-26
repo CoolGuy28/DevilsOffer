@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3pkfrnbp04yo"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_fbgsk"]
+[ext_resource type="Texture2D" uid="uid://bfo7ug7ssisao" path="res://Sprites/Props/Catacombs/Graves/EmptyGrave.png" id="2_s46g5"]
+
+[node name="EmptyGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_fbgsk")
+dialogueText = "EmptyGrave"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 31)
+texture = ExtResource("2_s46g5")
+offset = Vector2(0, -47)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, -21, -40, 10, -27, 36, -2, 45, 25, 32, 42, 7, 35, -51, 8, -66, -18, -63, -33, -49)

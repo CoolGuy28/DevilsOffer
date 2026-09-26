@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerBodyPart_Arm_Resource" load_steps=3 format=3 uid="uid://d4aqwq68f813c"]
+
+[ext_resource type="Script" uid="uid://bbwhafvbmfpl0" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart_Arm_Resource.gd" id="1_5023m"]
+[ext_resource type="Resource" uid="uid://bmwlmas2578k8" path="res://Resources/Actions/Weapons/UnarmedAttack.tres" id="2_x86do"]
+
+[resource]
+script = ExtResource("1_5023m")
+unarmedAttack = ExtResource("2_x86do")
+texturePath = "Limbs/Natural/Arm"
+leftRightVarients = true
+maxHP = 15
+metadata/_custom_type_script = "uid://bbwhafvbmfpl0"

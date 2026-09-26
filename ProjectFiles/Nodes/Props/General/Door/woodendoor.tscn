@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcw5achnr2jgr"]
+
+[ext_resource type="Script" uid="uid://dkhxteorngsox" path="res://Nodes/Tilemaps/Scripts/Interactable_Door.gd" id="1_lp8ji"]
+[ext_resource type="Texture2D" uid="uid://c3xq18x2vg4me" path="res://Sprites/Props/General/Doors/WoodenDoor.png" id="2_tfo7m"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="3_47782"]
+[ext_resource type="AudioStream" uid="uid://db1hrcpuoyqvr" path="res://SFX/Interactions/Gate Close.wav" id="4_ltpco"]
+[ext_resource type="AudioStream" uid="uid://dbto7t6ehhnja" path="res://SFX/Interactions/Lockpick_success.wav" id="5_o35pp"]
+[ext_resource type="AudioStream" uid="uid://b251tvbdfc07m" path="res://SFX/Interactions/Gate Open.wav" id="6_btwjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(62, 37)
+
+[node name="Door" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 1
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_lp8ji")
+dialogueText = "Door"
+interacted = true
+metadata/_custom_type_script = "uid://dkhxteorngsox"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(26, 35)
+texture = ExtResource("2_tfo7m")
+offset = Vector2(6, -37)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_47782")
+soundEffects = Dictionary[String, AudioStream]({
+"Close": ExtResource("4_ltpco"),
+"Key": ExtResource("5_o35pp"),
+"LockpickSuccess": ExtResource("5_o35pp"),
+"Open": ExtResource("6_btwjh")
+})

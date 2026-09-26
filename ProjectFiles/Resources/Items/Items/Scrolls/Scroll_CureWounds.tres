@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=2 format=3 uid="uid://conqpnnmiflg4"]
+
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="3_0r4v6"]
+
+[resource]
+script = ExtResource("3_0r4v6")
+itemName = "Cure Wounds Scroll"
+description = "A spell scroll that when performed repairs injuries your body has sustained."
+itemTags = Array[int]([5, 1])
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

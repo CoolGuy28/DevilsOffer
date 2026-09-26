@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=9 format=3 uid="uid://cbe2rysl18q2v"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_gtb3d"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_n1lv8"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="3_xq6ef"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="4_fagr5"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="5_monep"]
+
+[sub_resource type="Resource" id="Resource_gtb3d"]
+script = ExtResource("3_xq6ef")
+statusEffect = 14
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_n1lv8"]
+script = ExtResource("2_n1lv8")
+dCount = 2
+dDie = 10
+dType = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_xq6ef"]
+script = ExtResource("4_fagr5")
+abilityMod = 3
+critAction = Array[ExtResource("1_gtb3d")]([SubResource("Resource_gtb3d")])
+hitAction = Array[ExtResource("1_gtb3d")]([SubResource("Resource_n1lv8")])
+actionName = "Match"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("5_monep")
+action = SubResource("Resource_xq6ef")
+bonusAction = true
+itemName = "Match"
+description = "A small wood stick covered in char cloth. Lighting this will release it's stored energies."
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

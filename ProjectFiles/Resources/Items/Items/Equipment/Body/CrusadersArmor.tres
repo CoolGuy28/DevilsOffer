@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://bhpsj0vwyklnv"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_xk3s0"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_l7ha7"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_uud0u"]
+
+[sub_resource type="Resource" id="Resource_ufkkr"]
+script = ExtResource("1_xk3s0")
+AC = 4
+MC = 2
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("3_uud0u")
+equippedStats = SubResource("Resource_ufkkr")
+equippableValue = 6
+itemName = "Crusaders Armor"
+description = "Strong metal armour that has also been blessed by priests to protect against the unholy."
+itemTags = Array[int]([2])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

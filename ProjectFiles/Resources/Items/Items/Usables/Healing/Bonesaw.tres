@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=8 format=3 uid="uid://duq3wsv4xfib3"]
+
+[ext_resource type="Script" uid="uid://bsmtxatsfqje6" path="res://Action_Utility.gd" id="1_weulk"]
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="2_0c1gm"]
+[ext_resource type="Script" uid="uid://ctfkff0t1pqqf" path="res://AR_TakeLimbDamage.gd" id="3_gdfus"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="5_k3t2k"]
+
+[sub_resource type="Resource" id="Resource_weulk"]
+script = ExtResource("3_gdfus")
+damage = 50
+dType = 1
+metadata/_custom_type_script = "uid://ctfkff0t1pqqf"
+
+[sub_resource type="Resource" id="Resource_t1kt1"]
+script = ExtResource("1_weulk")
+useAction = Array[ExtResource("2_0c1gm")]([SubResource("Resource_weulk")])
+focus = "Limb"
+metadata/_custom_type_script = "uid://bsmtxatsfqje6"
+
+[sub_resource type="Resource" id="Resource_r5gtg"]
+script = ExtResource("1_weulk")
+metadata/_custom_type_script = "uid://bsmtxatsfqje6"
+
+[resource]
+script = ExtResource("5_k3t2k")
+action = SubResource("Resource_r5gtg")
+OOCAction = SubResource("Resource_t1kt1")
+OOCUseBodyMenu = true
+bonusAction = true
+reusable = true
+itemName = "Bonesaw"
+description = "A saw designed for cutting through flesh.   Use to amputate limbs."
+itemTags = Array[int]([1])
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

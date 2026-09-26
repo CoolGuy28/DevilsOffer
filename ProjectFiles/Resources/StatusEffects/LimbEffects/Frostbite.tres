@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatusEffect_Limb" load_steps=3 format=3 uid="uid://1comqvish3jv"]
+
+[ext_resource type="Script" uid="uid://ba3jljwm8cx7h" path="res://Resources/StatusEffects/Scripts/StatusEffect_Limb.gd" id="1_d04cc"]
+[ext_resource type="Texture2D" uid="uid://djw3l00pbi7j5" path="res://Resources/StatusEffects/Sprites/Freeze.png" id="2_0xpq7"]
+
+[resource]
+script = ExtResource("1_d04cc")
+sprite = ExtResource("2_0xpq7")
+tags = Array[String](["EndRound"])
+metadata/_custom_type_script = "uid://ba3jljwm8cx7h"

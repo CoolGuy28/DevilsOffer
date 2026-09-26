@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4hlgx1yifosw"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_lqvks"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="2_otel4"]
+[ext_resource type="AudioStream" uid="uid://dosmov4hi25pv" path="res://SFX/Interactions/Cloths_rustling_2.wav" id="3_ufkg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(48, 36)
+
+[node name="Interaction" type="StaticBody2D"]
+z_index = -1
+disable_mode = 2
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_lqvks")
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("2_otel4")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("3_ufkg6")
+})

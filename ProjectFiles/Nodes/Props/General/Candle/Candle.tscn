@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhy7x3b05vilp"]
+
+[ext_resource type="Texture2D" uid="uid://dyrb54k8msfgb" path="res://Nodes/Props/General/Candle/Candle.png" id="1_0m2fo"]
+[ext_resource type="Script" uid="uid://dkb7ru4f4un1n" path="res://RandSprite.gd" id="2_ynre6"]
+
+[node name="Candle" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(0, 17)
+texture = ExtResource("1_0m2fo")
+offset = Vector2(0, -17)
+hframes = 4
+vframes = 3
+frame = 2
+script = ExtResource("2_ynre6")

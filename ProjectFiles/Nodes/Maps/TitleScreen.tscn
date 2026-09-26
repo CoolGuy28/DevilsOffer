@@ -1,0 +1,168 @@
+[gd_scene load_steps=5 format=3 uid="uid://bua56e8ht56dx"]
+
+[ext_resource type="Script" uid="uid://c7ej3layjn1c" path="res://TitleScreen.gd" id="1_o2mjm"]
+[ext_resource type="Script" uid="uid://cw18wr07awfx5" path="res://Nodes/Menu/TitleScreen_CreatePlayerMenu.gd" id="2_pkt3q"]
+[ext_resource type="PackedScene" uid="uid://bh6jkfy7235uy" path="res://Nodes/Menu/Components/SelectableText.tscn" id="3_k1qu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoq7w"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_o2mjm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="TitleScreen" type="Panel" parent="Camera2D/CanvasLayer"]
+custom_minimum_size = Vector2(800, 640)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eoq7w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/TitleScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_top = -246.0
+offset_right = 144.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NewGame" type="MarginContainer" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/NewGame"]
+layout_mode = 2
+text = "New Game
+"
+
+[node name="LoadGame" type="MarginContainer" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/LoadGame"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="Quit" type="MarginContainer" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/Quit"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="CreatePlayerMenu" type="Control" parent="Camera2D/CanvasLayer" node_paths=PackedStringArray("createStatDisplays")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_pkt3q")
+createStatDisplays = [NodePath("HBoxContainer/PanelContainer/SelectableText2"), NodePath("HBoxContainer/PanelContainer2/SelectableText"), NodePath("HBoxContainer/PanelContainer3/SelectableText"), NodePath("HBoxContainer/PanelContainer4/SelectableText")]
+pointsAmount = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/CreatePlayerMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 146.0
+offset_top = 97.0
+offset_right = -146.0
+offset_bottom = -438.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectableText2" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer/PanelContainer" instance=ExtResource("3_k1qu3")]
+layout_mode = 2
+bbcode_enabled = true
+text = "STR"
+slotTitle = "STR: "
+
+[node name="PanelContainer2" type="PanelContainer" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectableText" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer/PanelContainer2" instance=ExtResource("3_k1qu3")]
+layout_mode = 2
+bbcode_enabled = true
+text = "DEX"
+slotTitle = "DEX: "
+
+[node name="PanelContainer3" type="PanelContainer" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectableText" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer/PanelContainer3" instance=ExtResource("3_k1qu3")]
+layout_mode = 2
+bbcode_enabled = true
+text = "INT"
+slotTitle = "INT: "
+
+[node name="PanelContainer4" type="PanelContainer" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectableText" parent="Camera2D/CanvasLayer/CreatePlayerMenu/HBoxContainer/PanelContainer4" instance=ExtResource("3_k1qu3")]
+layout_mode = 2
+bbcode_enabled = true
+text = "WIS"
+slotTitle = "WIS: "
+
+[node name="StartGame" type="Button" parent="Camera2D/CanvasLayer/CreatePlayerMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 324.0
+offset_top = 315.0
+offset_right = -299.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Begin"
+
+[node name="PointsDisplay" type="RichTextLabel" parent="Camera2D/CanvasLayer/CreatePlayerMenu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -145.0
+offset_bottom = 57.0
+grow_horizontal = 0
+text = "Points : 20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/NewGame/Button" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/LoadGame/Button" to="." method="_on_loadgame_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/TitleScreen/VBoxContainer/Quit/Button" to="." method="_on_quit_pressed"]
+[connection signal="Close" from="Camera2D/CanvasLayer/CreatePlayerMenu" to="." method="OpenTitleScreen"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/CreatePlayerMenu/StartGame" to="." method="_on_start_game_pressed"]

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://wntyln2n2uo5"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_npy23"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_kvtp0"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_unga4"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_2fno0"]
+
+[sub_resource type="Resource" id="Resource_ci2cb"]
+script = ExtResource("2_kvtp0")
+dType = 1
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_6kqg2"]
+script = ExtResource("3_unga4")
+hitAction = Array[ExtResource("1_npy23")]([SubResource("Resource_ci2cb")])
+actionName = "Handaxe"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_2fno0")
+attackAction = SubResource("Resource_6kqg2")
+weaponType = 1
+equippableValue = 2
+itemName = "Handaxe"
+description = "A small slightly blunt woodaxe."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

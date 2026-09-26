@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c86t42rdws6gn"]
+
+[node name="Text" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 16)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "Left Arm"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

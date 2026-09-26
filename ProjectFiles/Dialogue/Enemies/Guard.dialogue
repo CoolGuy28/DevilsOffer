@@ -1,0 +1,41 @@
+~ Combat
+You try talking some sense to the guard..
+- What is your origin?
+	Guard: . . .
+- Wait. We don't have to fight!
+	Guard: I am sorry small one.
+	Guard: I have given my all to lord . . .
+	Guard: Nothing but my diligence remains.
+- Please don't!
+	The guards eyes seem to show some sympathy.
+	Not enough to break his resolve..
+- Prepare to die.
+	You feel more courageous for saying that.
+	The guard looks saddened by what he must do.
+=> END
+
+~ Overworld
+Guard: Hello Friend
+=> END
+
+~ FindItem
+if item == null or amount <= 0
+	You find nothing.
+	=> END
+else
+	if amount == 1
+		You find a [color=red]{{item.itemName}}[/color]!
+	else
+		You find [color=red]{{amount}} {{item.itemName}}s.[/color]
+	do player.AddItem(item, amount)
+set looted = true
+=> END
+
+~ LootBody
+if looted == false
+	You search the guards possesions.
+	do GetLoot()
+	=> FindItem
+else
+	The guard has nothing.
+=> END

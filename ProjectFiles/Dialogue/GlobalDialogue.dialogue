@@ -1,0 +1,21 @@
+~ Interact
+What do you look at?
+- {{lookedAtInteractions[0].dialogueText}} [if lookedAtInteractions[0] != null]
+	set interactionsIndex = 0
+	do Interact()
+- {{lookedAtInteractions[1].dialogueText}} [if lookedAtInteractions[1] != null]
+	set interactionsIndex = 1
+	do Interact()
+- {{lookedAtInteractions[2].dialogueText}} [if lookedAtInteractions[2] != null]
+	set interactionsIndex = 2
+	do Interact()
+- {{lookedAtInteractions[3].dialogueText}} [if lookedAtInteractions[3] != null]
+	set interactionsIndex = 3
+	do Interact()
+- Exit
+=> END
+
+~ BrokenDeal
+You have broken a sacred deal with a devil.
+You feel a sharp pain in your chest.
+do player.GiveHeartAttack()

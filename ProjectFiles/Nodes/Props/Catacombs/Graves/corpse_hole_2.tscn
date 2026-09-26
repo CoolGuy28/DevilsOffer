@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2q4hh2raapt0"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_5aqj4"]
+[ext_resource type="Resource" uid="uid://dck1w5iwbwnlo" path="res://Resources/Items/LootTable/Grave.tres" id="2_5aqj4"]
+[ext_resource type="Texture2D" uid="uid://cip3vtrrpplsb" path="res://Sprites/Props/Catacombs/Graves/CorpseHole.png" id="3_7r4y6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(63, 19)
+
+[node name="CorpseHole" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_5aqj4")
+lootTable = ExtResource("2_5aqj4")
+dialogueText = "WallGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -6)
+texture = ExtResource("3_7r4y6")
+offset = Vector2(0, -89)
+hframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -13.5)
+shape = SubResource("RectangleShape2D_f5ljr")

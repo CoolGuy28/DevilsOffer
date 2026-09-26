@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=13 format=3 uid="uid://bibjge16de14v"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_sqp4h"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="2_etqsr"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="2_l5prr"]
+[ext_resource type="Script" uid="uid://d4f2wmg6dsywr" path="res://AR_BleedDamage.gd" id="3_iroqf"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="4_fk4qw"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="5_8x716"]
+
+[sub_resource type="Resource" id="Resource_xif0c"]
+script = ExtResource("2_l5prr")
+statusEffect = 11
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_mo1qt"]
+script = ExtResource("3_iroqf")
+dDie = 8
+dBonus = 2
+metadata/_custom_type_script = "uid://d4f2wmg6dsywr"
+
+[sub_resource type="Resource" id="Resource_syia6"]
+script = ExtResource("4_fk4qw")
+dDie = 4
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_7mske"]
+script = ExtResource("4_fk4qw")
+dCount = 2
+dDie = 4
+dType = 5
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_kflrv"]
+script = ExtResource("2_l5prr")
+statusEffect = 11
+applyStatusChance = 40
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_3y2px"]
+script = ExtResource("5_8x716")
+abilityMod = 1
+critAction = Array[ExtResource("1_sqp4h")]([SubResource("Resource_xif0c"), SubResource("Resource_mo1qt")])
+hitAction = Array[ExtResource("1_sqp4h")]([SubResource("Resource_syia6"), SubResource("Resource_7mske"), SubResource("Resource_kflrv")])
+actionName = "Rusty Knife"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("2_etqsr")
+attackAction = SubResource("Resource_3y2px")
+weaponType = 1
+equippableValue = 2
+itemName = "Rusty Kitchen Knife"
+description = "A strange knife used in occult ritual. It was used to carve the symbols beneath your eye."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

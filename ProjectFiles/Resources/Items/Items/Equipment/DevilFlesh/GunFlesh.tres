@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://c0lgtx4fh65bt"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_v2h6c"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="2_m1hxf"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_tt8in"]
+
+[sub_resource type="Resource" id="Resource_kmue5"]
+script = ExtResource("1_v2h6c")
+occultDmgMult = 1.0
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("2_m1hxf")
+equippedStats = SubResource("Resource_kmue5")
+equippableValue = 5
+shortDescription = "Occult damage is doubled."
+itemName = "Gun Flesh"
+description = "Flesh of a mysterious devil, full of raw power. Occult powers are strengthened."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://trvew51yjwt7"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_tiaqj"]
+[ext_resource type="Texture2D" uid="uid://belopk1veph3x" path="res://Sprites/Props/Catacombs/Kitchen/MeatRack.png" id="3_4guuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(213, 42)
+
+[node name="MeatRack" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_tiaqj")
+dialogueText = "MeatRack"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(83, 2)
+texture = ExtResource("3_4guuc")
+offset = Vector2(7, -101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(93.5, 1)
+shape = SubResource("RectangleShape2D_iv3xd")

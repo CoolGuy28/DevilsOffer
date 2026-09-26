@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerBodyPart_Resource" load_steps=2 format=3 uid="uid://7ef1oie8itai"]
+
+[ext_resource type="Script" uid="uid://c5q5qk8j6bo76" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart_Resource.gd" id="1_bcw43"]
+
+[resource]
+script = ExtResource("1_bcw43")
+texturePath = "Limbs/Natural/Leg"
+leftRightVarients = true
+maxHP = 15
+metadata/_custom_type_script = "uid://c5q5qk8j6bo76"

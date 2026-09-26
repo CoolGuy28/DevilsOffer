@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=3 format=3 uid="uid://dvfptepe20m10"]
+
+[ext_resource type="Resource" uid="uid://bijo1f8ufi322" path="res://Resources/Actions/Weapons/Warhammer.tres" id="1_8gk4w"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_p3cy1"]
+
+[resource]
+script = ExtResource("4_p3cy1")
+attackAction = ExtResource("1_8gk4w")
+equippableValue = 4
+itemName = "Warhammer"
+description = "The heavy hammer of the dungeon guard."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

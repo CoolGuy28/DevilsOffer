@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq35do51r532r"]
+
+[ext_resource type="Texture2D" uid="uid://b6lnak0h0f1ek" path="res://Nodes/Props/General/Mushroom/Mushrooms.png" id="2_vgscl"]
+[ext_resource type="Script" uid="uid://dkb7ru4f4un1n" path="res://RandSprite.gd" id="4_kn3x3"]
+
+[node name="WhiteMushroom" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(-1, 7)
+texture = ExtResource("2_vgscl")
+offset = Vector2(1, -7)
+hframes = 5
+vframes = 3
+script = ExtResource("4_kn3x3")

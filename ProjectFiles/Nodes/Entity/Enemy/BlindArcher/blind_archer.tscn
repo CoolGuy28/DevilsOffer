@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://vosudw6cec8c"]
+
+[ext_resource type="Script" uid="uid://cq3713aua1jnn" path="res://Nodes/Entity/Enemy/Enemy.gd" id="1_ieiw5"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="2_g8jgx"]
+[ext_resource type="Texture2D" uid="uid://djkw0ahllilds" path="res://Sprites/Entity/BlindArcher/Overworld/BlindArcher_Dead.png" id="3_0s177"]
+[ext_resource type="Texture2D" uid="uid://c1m0xarbs6dcd" path="res://Sprites/Entity/BlindArcher/Overworld/BlindArcher_Down_1.png" id="4_0s177"]
+[ext_resource type="Script" uid="uid://byrkf8kjdftqn" path="res://Nodes/Entity/Player/EntityAnimController.gd" id="5_nubqa"]
+[ext_resource type="PackedScene" uid="uid://drqohx56yc21t" path="res://Nodes/Entity/Enemy/Guard/GuardUI.tscn" id="6_hc5qt"]
+[ext_resource type="PackedScene" uid="uid://cn7fwslw3fiuy" path="res://Nodes/Entity/Components/HurtBox.tscn" id="7_xqf7f"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="8_xmxgy"]
+[ext_resource type="Script" uid="uid://bf6skbo2w0e8p" path="res://Nodes/Entity/Enemy/Guard/EnemyDialogue.gd" id="9_fauav"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="11_207vu"]
+
+[sub_resource type="Resource" id="Resource_dnqcu"]
+script = ExtResource("2_g8jgx")
+stats = Array[int]([7, 0, -1, 2])
+AC = 10
+MC = 8
+actionCount = 1
+bonusActionCount = 1
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_7bls4"]
+script = ExtResource("2_g8jgx")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx7gv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0s177")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0s177")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0s177")
+}],
+"loop": false,
+"name": &"Down_Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tl5s3"]
+radius = 21.213203
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7bls4"]
+radius = 32.035137
+
+[node name="BlindArcher" type="CharacterBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_ieiw5")
+relationshipType = "Sea"
+baseStats = SubResource("Resource_dnqcu")
+adjustedStats = SubResource("Resource_7bls4")
+metadata/_custom_type_script = "uid://cq3713aua1jnn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 33)
+sprite_frames = SubResource("SpriteFrames_wx7gv")
+animation = &"Down"
+offset = Vector2(0, -59)
+script = ExtResource("5_nubqa")
+metadata/_custom_type_script = "uid://byrkf8kjdftqn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 22)
+shape = SubResource("CircleShape2D_tl5s3")
+
+[node name="Battle_UI" parent="." instance=ExtResource("6_hc5qt")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HurtBox" parent="." instance=ExtResource("7_xqf7f")]
+collision_layer = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, 24.5)
+shape = SubResource("CircleShape2D_7bls4")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("8_xmxgy")
+
+[node name="EnemyDialogue" type="Node" parent="."]
+script = ExtResource("9_fauav")
+lootTable = ExtResource("11_207vu")
+
+[connection signal="Hit" from="HurtBox" to="." method="Interact"]

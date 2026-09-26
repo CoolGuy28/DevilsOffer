@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://kpvp5sk1twk4"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_igtpe"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_ukoye"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_iymko"]
+
+[sub_resource type="Resource" id="Resource_ufkkr"]
+script = ExtResource("1_igtpe")
+AC = 5
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("3_iymko")
+equippedStats = SubResource("Resource_ufkkr")
+equippableValue = 5
+itemName = "Plate Armor"
+description = "Strong metal plates surround you to aid against any weapon."
+itemTags = Array[int]([2])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

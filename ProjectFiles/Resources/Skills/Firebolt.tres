@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill_Action" load_steps=3 format=3 uid="uid://c1n0pgh6fq1cb"]
+
+[ext_resource type="Resource" uid="uid://bl1lo7rv0vlp0" path="res://Resources/Actions/Skills/Spells/Firebolt.tres" id="1_726v4"]
+[ext_resource type="Script" uid="uid://qj1xrqebma3" path="res://Resources/Actions/Scripts/Skill_Action.gd" id="2_ohcqb"]
+
+[resource]
+script = ExtResource("2_ohcqb")
+action = ExtResource("1_726v4")
+skillName = "Firebolt"
+skillDesc = "Summon a bolt of fire."
+metadata/_custom_type_script = "uid://qj1xrqebma3"

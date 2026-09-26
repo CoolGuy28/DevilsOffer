@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ur45v4rj7da"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_fu7tg"]
+
+[resource]
+script = ExtResource("1_fu7tg")
+itemName = "Fish"
+shortDescription = "A medium sized fish."
+description = "A medium sized fish. It looks fresh."
+itemTags = Array[int]([6])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

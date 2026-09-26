@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://beq05your0qjp"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_8utdm"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="2_jc7v4"]
+[ext_resource type="Texture2D" uid="uid://bcv1ktxcjnqvc" path="res://Sprites/Props/General/Furniture/BedTable.png" id="3_nk3ke"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_nk3ke"]
+[ext_resource type="AudioStream" uid="uid://ea28eyrre251" path="res://SFX/Interactions/Drawer_open_3.wav" id="5_05dpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(46, 42)
+
+[node name="Bedtable" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_8utdm")
+lootTable = ExtResource("2_jc7v4")
+dialogueText = "BedTable"
+playInteractSFX = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -15)
+texture = ExtResource("3_nk3ke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_iv3xd")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_nk3ke")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_05dpm")
+})

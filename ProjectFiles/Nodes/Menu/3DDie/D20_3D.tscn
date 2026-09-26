@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=4 uid="uid://bmubgwas7du85"]
+
+[ext_resource type="Script" uid="uid://fxx3sg6wfoc" path="res://Nodes/Menu/3DDie/Scripts/PhysicsD20.gd" id="1_l782e"]
+[ext_resource type="Material" uid="uid://bqamdpapd2sqm" path="res://Nodes/Menu/3DDie/Textures/RedD20Mat.tres" id="2_1qpvx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l782e"]
+friction = 3.0
+rough = true
+bounce = 0.3
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l782e"]
+_surfaces = [{
+"aabb": AABB(-0.850651, -0.95105654, -0.809017, 1.701302, 1.9021131, 1.618034),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAwAFAAIABAACAAUABgAFAAMABQAHAAQABwAFAAYACAAAAAQABAAHAAgACQABAAAACQAAAAgAAwABAAoAAQAJAAoACgAGAAMACwAIAAcACQAIAAsACwAHAAYACgAJAAsABgAKAAsA"),
+"name": "M_d20",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAHF4c7+sqqoxSS0wv0PE2b4AAAC/SS0wv0PE2b4AAAA/RMRZv0XE2T6sqqoxX5aGPkPE2b69G08/X5aGvkXE2T69G08/AAAAAHF4cz+sqqoxSS0wP0XE2T4AAAA/RMRZP0PE2b6sqqoxX5aGPkPE2b69G0+/X5aGvkXE2T69G0+/SS0wP0XE2T4AAAC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wiopf"]
+resource_name = "Dice_d20_LP_001"
+_surfaces = [{
+"aabb": AABB(-0.850651, -0.95105654, -0.809017, 1.701302, 1.9021131, 1.618034),
+"attribute_data": PackedByteArray("5VBKP/UpQz9+FRw/yngoP+RQSj+dxw0/mcTRPsp4KD+zHRc/nMcNP7IdFz/1KUM/F4R9P53HDT8XhH0/9SlDP7FITz/JeCg/ZbxWPk493D4B1cc+8NqmPgHVxz7Qzwg/fvkePAQSTz4v3UI+oJrIPTDdQj5Y65w+M91CPu7apj413UI+z88IP375HjxCPdw+skhPPwgSTz4ZhH0/qJrIPRmEfT9a65w+tR0XPxqEfT+cxNE+7dJiP7YdFz/CIUg/GYR9P8IhSD8ZhH0/GoR9P7RITz/t0mI/sh0XP6CayD2yHRc/WOucPpnE0T78EU8+ghUcP+/SYj/oUEo/wiFIP+hQSj8ahH0/AdXHPpzHDT8B1cc+9SlDP2W8Vj7KeCg//9THPqiayD3/1Mc+WuucPmW8Vj4AEk8+M91CPvUpQz9++R48xngoPzPdQj6cxw0/sh0XP9DPCD+ZxNE+TD3cPrMdFz/w2qY+fhUcPwgSTz7kUEo/qJrIPeRQSj9a65w+5lBKP9DPCD9+FRw/Sj3cPuZQSj/y2qY+Nt1CPsEhSD803UI+GoR9P375Hjzq0mI/GYR9P9DPCD+ySE8/TD3cPhmEfT/y2qY+ZbxWPu7SYj8C1cc+wiFIPwTVxz4ahH0/"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsA"),
+"material": ExtResource("2_1qpvx"),
+"name": "M_d20",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AAAAAHF4c7+sqqoxSS0wv0PE2b4AAAC/SS0wv0PE2b4AAAA/SS0wP0XE2T4AAAA/X5aGvkXE2T69G08/AAAAAHF4cz+sqqoxSS0wP0XE2T4AAAC/SS0wP0XE2T4AAAA/AAAAAHF4cz+sqqoxX5aGPkPE2b69G0+/SS0wv0PE2b4AAAC/AAAAAHF4c7+sqqoxRMRZP0PE2b6sqqoxAAAAAHF4c7+sqqoxX5aGPkPE2b69G08/AAAAAHF4cz+sqqoxX5aGvkXE2T69G0+/SS0wP0XE2T4AAAC/AAAAAHF4cz+sqqoxX5aGvkXE2T69G08/RMRZv0XE2T6sqqoxSS0wv0PE2b4AAAA/X5aGPkPE2b69G08/AAAAAHF4c7+sqqoxX5aGvkXE2T69G0+/AAAAAHF4cz+sqqoxRMRZv0XE2T6sqqoxX5aGPkPE2b69G0+/AAAAAHF4c7+sqqoxRMRZP0PE2b6sqqoxSS0wP0XE2T4AAAC/RMRZP0PE2b6sqqoxSS0wP0XE2T4AAAA/X5aGvkXE2T69G0+/X5aGPkPE2b69G0+/SS0wP0XE2T4AAAC/RMRZv0XE2T6sqqoxSS0wv0PE2b4AAAC/X5aGvkXE2T69G0+/X5aGvkXE2T69G08/SS0wP0XE2T4AAAA/X5aGPkPE2b69G08/RMRZv0XE2T6sqqoxX5aGvkXE2T69G08/SS0wv0PE2b4AAAA/X5aGPkPE2b69G08/SS0wP0XE2T4AAAA/RMRZP0PE2b6sqqoxSS0wv0PE2b4AAAC/RMRZv0XE2T6sqqoxSS0wv0PE2b4AAAA/SS0wv0PE2b4AAAC/X5aGPkPE2b69G0+/X5aGvkXE2T69G0+/X5aGPkPE2b69G0+/RMRZP0PE2b6sqqoxSS0wP0XE2T4AAAC/X5aGPkPE2b69G08/SS0wv0PE2b4AAAA/X5aGvkXE2T69G08/kEhvN3SgmbOQSG83dKCZs5BIbzd0oJmzZI83wZAcd9NkjzfBkBx302SPN8GQHHfTbrePyI/IR6Rut4/Ij8hHpG63j8iPyEekN0FlD6BJObQ3QWUPoEk5tDdBZQ+gSTm0RKYTQps93bNEphNCmz3ds0SmE0KbPd2zx76Z8PAmR87Hvpnw8CZHzse+mfDwJkfOulnrvRJQXqm6Weu9ElBeqbpZ670SUF6pmnDHPowXL5uacMc+jBcvm5pwxz6MFy+b7D252bvnzN7sPbnZu+fM3uw9udm758zeEsJFJkMYMaESwkUmQxgxoRLCRSZDGDGheOuGlEWIVap464aURYhVqnjrhpRFiFWqJu+85EUm9Z4m77zkRSb1nibvvORFJvWeZQ/HvoJUva1lD8e+glS9rWUPx76CVL2tQZvYkBNC3KxBm9iQE0LcrEGb2JATQtysxz5kj4MkvpXHPmSPgyS+lcc+ZI+DJL6VN8GacHvbQOo3wZpwe9tA6jfBmnB720DqhhR4a4aUQoqGFHhrhpRCioYUeGuGlEKK2BBCGxaGaYzYEEIbFoZpjNgQQhsWhmmMmfA3QWolfu+Z8DdBaiV+75nwN0FqJX7vvWQmb0wpJdy9ZCZvTCkl3L1kJm9MKSXc")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_l782e")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f1tn4"]
+points = PackedVector3Array(0.8073787, -0.37040722, 0.077403255, -0.828207, 0.3174054, -0.06595683, -0.769421, 0, -0.23882978, 0.6085501, 0.42813873, -0.5220049, -0.21932015, 0.4280216, 0.7911573, -0.019541642, -0.9196717, -0.036848057, 0.26839095, -0.43210915, -0.78630507, -0.64936084, -0.42931157, 0.5071303, 0.23838738, -0.42995137, 0.79469645, 0.66440827, 0.4273892, 0.5048871, -0.019583233, 0.92235136, -0.036973413, -0.27719566, 0.42912504, -0.7808323, -0.67952496, -0.43031332, -0.49595058, -0.81454426, 0.4257851, 0.04867334, 0.8143333, -0.43121684, -0.036866847, 0.6707473, 0.43143478, -0.49725917, -0.27560943, 0.42662185, 0.7885902, 0.037831645, 0.92215574, 0.02029523, 0.03766949, -0.9186863, 0.020242102, -0.6806892, -0.43105635, 0.48037967, 0.8191081, -0.26016495, -0.0950478, -0.8192926, 0.42828333, -0.036574047, 0.29403788, -0.42740446, 0.76148266, -0.19124742, 0.42902687, -0.7806523, 0.70286447, 0.3467676, 0.45427868, -0.07721669, -0.89206827, 0.049254846, -0.019499727, 0.9169711, 0.049070377, 0.18022911, -0.4279117, -0.7786071, 0.8095849, -0.42871857, 0.04896614, 0.2956797, -0.34376326, -0.7819765, 0.26782465, -0.37357557, 0.7970138, -0.27762777, 0.31508404, -0.78208286, -0.71104676, -0.28804302, 0.423936)
+
+[node name="D20" type="Node3D"]
+
+[node name="Dice_d20" type="RigidBody3D" parent="."]
+mass = 2.309
+physics_material_override = SubResource("PhysicsMaterial_l782e")
+gravity_scale = 1.5
+script = ExtResource("1_l782e")
+
+[node name="Dice_d20" type="MeshInstance3D" parent="Dice_d20"]
+mesh = SubResource("ArrayMesh_wiopf")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dice_d20"]
+shape = SubResource("ConvexPolygonShape3D_f1tn4")
+
+[node name="EdgeDetectors" type="Node3D" parent="Dice_d20"]
+
+[node name="1" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24132264, -0.11795887, 0.78980947)
+
+[node name="2" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32685277, -0.12814923, -0.86768514)
+
+[node name="3" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16430709, 0.6599295, 0.5084337)
+
+[node name="4" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4266498, -0.6815703, -0.28458488)
+
+[node name="5" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54832757, -0.6815703, -0.028190792)
+
+[node name="6" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80834806, 0.15291786, -0.028190792)
+
+[node name="7" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68967354, 0.15291786, 0.51946175)
+
+[node name="8" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18007725, 0.6455452, -0.5289137)
+
+[node name="9" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6546387, -0.15225846, 0.49095476)
+
+[node name="10" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444183, 0.6682391, -0.32217896)
+
+[node name="11" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41596973, -0.6997256, 0.3145644)
+
+[node name="12" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7206194, 0.17418882, -0.5233221)
+
+[node name="13" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16255659, -0.6873762, 0.5015492)
+
+[node name="14" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6950632, -0.12704776, -0.5530542)
+
+[node name="15" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90642977, -0.17175068, 0.064668626)
+
+[node name="16" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50796396, 0.6517892, -0.002035886)
+
+[node name="17" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4400751, 0.6517892, 0.28688073)
+
+[node name="18" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18609312, -0.6835885, -0.57629246)
+
+[node name="19" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25667202, 0.14308596, 0.8062748)
+
+[node name="20" type="Marker3D" parent="Dice_d20/EdgeDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20778471, 0.1546902, -0.87411416)

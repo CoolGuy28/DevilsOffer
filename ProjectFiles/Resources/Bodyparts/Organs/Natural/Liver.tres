@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerBodyPart_Resource" load_steps=2 format=3 uid="uid://cy8qsv2t3iucl"]
+
+[ext_resource type="Script" uid="uid://c5q5qk8j6bo76" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart_Resource.gd" id="1_qje62"]
+
+[resource]
+script = ExtResource("1_qje62")
+texturePath = "Organs/Natural/Liver"
+maxHP = 14
+metadata/_custom_type_script = "uid://c5q5qk8j6bo76"

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=9 format=3 uid="uid://b3ky81majorp7"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_y1anu"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="2_co5mq"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_g0yir"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="3_0svbh"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="4_w48lw"]
+
+[sub_resource type="Resource" id="Resource_y1anu"]
+script = ExtResource("3_0svbh")
+statusEffect = 14
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_20eiq"]
+script = ExtResource("2_g0yir")
+dCount = 0
+dDie = 0
+dBonus = 1
+dType = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_dxllw"]
+script = ExtResource("4_w48lw")
+abilityMod = 3
+critAction = Array[ExtResource("1_y1anu")]([SubResource("Resource_y1anu")])
+hitAction = Array[ExtResource("1_y1anu")]([SubResource("Resource_20eiq")])
+actionName = "Match"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("2_co5mq")
+action = SubResource("Resource_dxllw")
+bonusAction = true
+itemName = "Weak Match"
+description = "A small match found beneath the melted bars."
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

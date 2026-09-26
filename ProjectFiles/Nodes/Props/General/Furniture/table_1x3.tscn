@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhu7ejapq6vvj"]
+
+[ext_resource type="Texture2D" uid="uid://cmj8mtyns6g0t" path="res://Sprites/Props/Catacombs/Kitchen/Tables/WoodenTable_1x3.png" id="1_ojw4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgjo2"]
+size = Vector2(194, 64)
+
+[node name="Table_1x3" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 16
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(65, -12)
+texture = ExtResource("1_ojw4j")
+offset = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(65, 0)
+shape = SubResource("RectangleShape2D_jgjo2")

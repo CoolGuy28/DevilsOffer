@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1gcetdaykl53"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_tqox2"]
+[ext_resource type="Texture2D" uid="uid://civfm7j8s7q3x" path="res://Sprites/Props/Catacombs/Bug/Bug_1.png" id="2_o0usi"]
+[ext_resource type="Texture2D" uid="uid://dgr6enconvd18" path="res://Sprites/Props/Catacombs/Bug/Bug_2.png" id="3_clgu0"]
+[ext_resource type="Texture2D" uid="uid://clbc0uhq5fuj3" path="res://Sprites/Props/Catacombs/Bug/Bug_3.png" id="4_s558e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlxqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o0usi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_clgu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s558e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bug" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_tqox2")
+dialogueText = "Petru"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -4)
+sprite_frames = SubResource("SpriteFrames_xlxqq")
+autoplay = "default"
+offset = Vector2(7, -42)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-6, 1)
+polygon = PackedVector2Array(-47, -16, -36, 2, -26, 13, 5, 11, 27, 4, 43, -8, 54, -28, 40, -38, 12, -41, -25, -33)

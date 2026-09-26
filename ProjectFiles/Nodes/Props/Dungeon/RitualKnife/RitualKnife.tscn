@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bri01cr1j5gsp"]
+
+[ext_resource type="Script" uid="uid://ca8w3o56r3ktd" path="res://Nodes/Tilemaps/Scripts/Interactable_WorldItem.gd" id="1_vlxqc"]
+[ext_resource type="Resource" uid="uid://bc4iwdc22j8h6" path="res://Resources/Items/Items/Weapons/SimpleWeapons/RitualDagger.tres" id="2_vlxqc"]
+[ext_resource type="Texture2D" uid="uid://ypiecnebmg3p" path="res://Nodes/Props/Dungeon/RitualKnife/RitualKnife.png" id="3_xb444"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_aaucj"]
+[ext_resource type="AudioStream" uid="uid://csnpjn7pxbkjp" path="res://SFX/Interactions/Knife_picking up.wav" id="5_pspeb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(48, 36)
+
+[node name="RitualKnife" type="StaticBody2D" groups=["saveable"]]
+z_index = -1
+disable_mode = 2
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_vlxqc")
+item = ExtResource("2_vlxqc")
+dialogueText = "RitualDagger"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, 0)
+texture = ExtResource("3_xb444")
+offset = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_aaucj")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_pspeb")
+})

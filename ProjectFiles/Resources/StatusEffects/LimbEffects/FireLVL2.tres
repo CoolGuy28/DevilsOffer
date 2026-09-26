@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StatusEffect_Fire" load_steps=3 format=3 uid="uid://cxqloeevfbyfo"]
+
+[ext_resource type="Script" uid="uid://cuy6p7o88m4tc" path="res://Resources/StatusEffects/Scripts/StatusEffect_Fire.gd" id="1_yjads"]
+[ext_resource type="Texture2D" uid="uid://dhksny0mhkmre" path="res://Resources/StatusEffects/Sprites/Burning_2.png" id="2_hky7i"]
+
+[resource]
+script = ExtResource("1_yjads")
+spreadChance = 30
+growChance = 40
+level = 1
+sprite = ExtResource("2_hky7i")
+tags = Array[String](["Fire", "EndRound"])
+metadata/_custom_type_script = "uid://cuy6p7o88m4tc"

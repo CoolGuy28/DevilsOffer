@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cclw0mghkkpy8"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_yeay5"]
+[ext_resource type="Texture2D" uid="uid://c6fkutgeb584d" path="res://Sprites/Props/Catacombs/Sage/Petru_1.png" id="2_mip27"]
+[ext_resource type="Texture2D" uid="uid://csvi5altpiiy" path="res://Sprites/Props/Catacombs/Sage/Petru_2.png" id="3_ohd7s"]
+[ext_resource type="Texture2D" uid="uid://timufjuhqh4w" path="res://Sprites/Props/Catacombs/Sage/Petru_3.png" id="4_3ndoa"]
+[ext_resource type="Texture2D" uid="uid://donv3lpbu2x21" path="res://Sprites/Props/Catacombs/Sage/Pillow.png" id="5_svonk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glyim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mip27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ohd7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ndoa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Petru" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_yeay5")
+dialogueText = "Petru"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 11)
+sprite_frames = SubResource("SpriteFrames_glyim")
+autoplay = "default"
+offset = Vector2(2, -57)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 9)
+texture = ExtResource("5_svonk")
+offset = Vector2(0, -15)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-6, 1)
+polygon = PackedVector2Array(-47, -16, -36, 2, -24, 20, 2, 21, 48, 17, 56, -1, 52, -25, -10, -27)

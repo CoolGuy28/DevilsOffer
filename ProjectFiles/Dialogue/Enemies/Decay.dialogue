@@ -1,0 +1,112 @@
+~ Overwold
+if RelationManager.decayMet == false:
+	set RelationManager.decayMet = true
+	=> FirstEncounter
+else:
+	if RelationManager.GetDecayRep() < 0:
+		Decay Devil: You do not care for the dead.
+		Decay Devil: You must join them.
+		do player.BeginBattle(self)
+	else:
+		=> Talk2
+=> END
+
+~ FirstEncounter
+The figure grabs you by your shirt.
+Your skin burns, the cloth around its hands corrodes.
+Decay Devil: Another cultist here to ruin the sanctity of my precious garden.
+- Deny
+	{{RelationManager.GetPlayerName()}}: Believe me, I am not a part of their vicious cult.
+	The rotten beast looks you over
+	if RelationManager.GetDecayRep() >= -3:
+		do player.OpenSkillCheck(6, 2)
+		if player.GetSkillCheckSuccess() == true
+			You quickly cover the carved symbol under your eye.
+			Decay Devil: I see.. They have just been desecrating the graves so much recently.
+			The devil doesn't seem to have object permanence.
+			Decay Devil: They've been gathering human material for their rituals, You can see why I'm on edge.
+			=> MakeDeal
+		else
+			Decay Devil: You carry their sign, You cannot deceive me.
+			set RelationManager.SetDecayRep(-5)
+			do player.BeginBattle(self)
+	else:
+		Decay Devil: I have already seen you defile their graves.
+		set RelationManager.SetDecayRep(-5)
+		do player.BeginBattle(self)
+- Push Away
+	do player.OpenSkillCheck(6, 0)
+	if player.GetSkillCheckSuccess() == true
+		You easily push the rotting figure to the floor.
+	else: 
+		The devil falls to the floor.
+		It's hands graze you...
+		do player.TakeDamage(9, Global.DamageType.Poison)
+	Decay Devil: Go ahead and run...
+	Decay Devil: If I ever see you again I'll make you join my garden
+	set RelationManager.SetDecayRep(-15)
+- Attack
+	set RelationManager.SetDecayRep(-25)
+	do player.BeginBattle(self)
+=> END
+
+~ Talk2
+- Compliment [if RelationManager.decayComplimented == false]
+	- Her Skin
+		{{RelationManager.GetPlayerName()}}: Your skin rot is beautiful.
+		Decay Devil: My appearance should be disturbing.
+	- Her Passion For The Dead
+		{{RelationManager.GetPlayerName()}}: It's lovely that you care so much for the dead.
+		Decay Devil: I don't care so much for the dead.
+		Decay Devil: It's about the story of their whole lives lived, just to die painfully and forgotten in the bottom of a hole.
+		do RelationManager.AdjustDecayRep(5)
+	- The Arrangement Of The Graves
+		{{RelationManager.GetPlayerName()}}: These graves are beautiful they tell so much.
+		Decay Devil: Yesss hehe, This art is what I live for.
+		Decay Devil: Each grave in the dirt here is a cultist I found, they told me their stories as they rotted in my hands.
+		Decay Devil: Their passions, Their dreams, hopes, reasons that led them to the sea and ended up meeting me down here..
+		Decay Devil: and I recreated it all here.
+		do RelationManager.SetDecayRep(15)
+	set RelationManager.decayComplimented = true
+	=> Talk2 
+- Why do you care about humans
+	{{RelationManager.GetPlayerName()}}: Why does a devil like you care for people.
+	Decay Devil: I don't, I think you all deserve to die painful deaths.
+	Decay Devil: But it matters so much more after you live to your fullest.
+	Decay Devil: And you end up as a remnant of the past.
+	=> Talk2
+- About The Cult
+	Decay Devil: I don't know much, just that the sea cult sealed up this place and made it into their home.
+	Decay Devil: They like the easy access to human remains and the underground sea beneath here is perfect for their rituals.
+	=> Talk2
+- Make Deal [if RelationManager.GetDecayRep() >= 5] => MakeDeal
+- Leave 
+	Decay Devil: You will ferment into a lovely addition to the garden one day.
+=> END
+
+~ MakeDeal
+	Decay Devil: I believe you deserve more strength so that you can do more before your lovely death.
+	Decay Devil: I'll make you a contract, I'll lend you my power in exchange you must never desecrate a grave or corpse.
+	- Agree
+		Decay Devil: Perfect, You will be my magnum opus once you pass.
+		=> Talk2
+	- About
+		Decay Devil: My power allows you to rot organic matter with just a touch of your hands.
+		Decay Devil: Be aware using it too much may also rot your arms off.
+		=> MakeDeal
+	- Refuse
+		Decay Devil: So Be It.
+		=> Talk2
+=> END
+
+
+~ Combat
+The rotted lady throws her arms towards you.
+- I swear I'm not of the cult
+	Decay Devil: I will not listen to your crys.
+- I would never mess with any graves
+	Decay Devil: I will not listen to your lies.
+- Our battle is disturbing the dead
+	The devil is distracted looking at the graves nearby worried
+- We can make a deal
+	Decay Devil: You will make a corpse

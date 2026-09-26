@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://fjhqs0nvgj7d"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_fx2nx"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="2_n3vbv"]
+[ext_resource type="Texture2D" uid="uid://d2h8cwh53v81y" path="res://Sprites/Props/General/Furniture/Bookshelf.png" id="3_5rw44"]
+[ext_resource type="AudioStream" uid="uid://dosmov4hi25pv" path="res://SFX/Interactions/Cloths_rustling_2.wav" id="3_ntvev"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_21yd4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(112, 40)
+
+[node name="Bookshelf" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_fx2nx")
+lootTable = ExtResource("2_n3vbv")
+dialogueText = "Bookshelf"
+playInteractSFX = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(31, 11)
+texture = ExtResource("3_5rw44")
+offset = Vector2(1, -59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(31, 0)
+shape = SubResource("RectangleShape2D_iv3xd")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_21yd4")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("3_ntvev")
+})

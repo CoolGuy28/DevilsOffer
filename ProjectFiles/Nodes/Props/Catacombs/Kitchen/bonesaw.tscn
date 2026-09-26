@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://jywuniicoj1y"]
+
+[ext_resource type="Script" uid="uid://ca8w3o56r3ktd" path="res://Nodes/Tilemaps/Scripts/Interactable_WorldItem.gd" id="1_gtnon"]
+[ext_resource type="Resource" uid="uid://bc4iwdc22j8h6" path="res://Resources/Items/Items/Weapons/SimpleWeapons/RitualDagger.tres" id="2_1sho3"]
+[ext_resource type="Texture2D" uid="uid://b0fkgwpjotx0m" path="res://Sprites/Props/Catacombs/Bonesaw.png" id="3_1hnef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(48, 36)
+
+[node name="Bonesaw" type="StaticBody2D" groups=["saveable"]]
+z_index = -1
+disable_mode = 2
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_gtnon")
+item = ExtResource("2_1sho3")
+dialogueText = "RitualDagger"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, 0)
+texture = ExtResource("3_1hnef")
+offset = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["saveable"]]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f5ljr")

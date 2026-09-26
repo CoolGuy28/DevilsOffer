@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=2 format=3 uid="uid://chpj1jb05or6y"]
+
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="2_nopxs"]
+
+[resource]
+script = ExtResource("2_nopxs")
+shortDescription = "Past feelings fill your mind."
+itemName = "Ancient Hand"
+description = "Past feelings of regrets arise as you touch it."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

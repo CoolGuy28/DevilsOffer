@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=28 format=3 uid="uid://csgnlltbmkgft"]
+
+[ext_resource type="Script" uid="uid://ceu6fihrnpx2n" path="res://Resources/Items/Scripts/ItemTableSlot.gd" id="1_aqrrf"]
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="2_kb7xc"]
+[ext_resource type="Resource" uid="uid://55w826i8pac3" path="res://Resources/Items/Items/Scrolls/Scroll_Firebolt.tres" id="3_3lo5j"]
+[ext_resource type="Resource" uid="uid://bx42f8dycqlwf" path="res://Resources/Items/Items/Weapons/AdvancedWeapons/Greataxe.tres" id="5_1vyjh"]
+[ext_resource type="Resource" uid="uid://wntyln2n2uo5" path="res://Resources/Items/Items/Weapons/SimpleWeapons/Handaxe.tres" id="6_6oswe"]
+[ext_resource type="Resource" uid="uid://dona3cs6n41us" path="res://Resources/Items/Items/Usables/Damage/PoisonDart.tres" id="7_6oswe"]
+[ext_resource type="Resource" path="res://Resources/Items/Items/Weapons/Lantern.tres" id="7_vkyrr"]
+[ext_resource type="Resource" uid="uid://bhjr1wxpfyjbx" path="res://Resources/Items/Items/Weapons/AdvancedWeapons/Longsword.tres" id="8_mpo6w"]
+[ext_resource type="Resource" uid="uid://bi460hvgmk6yp" path="res://Resources/Items/Items/Weapons/AdvancedWeapons/Rapier.tres" id="9_wfbaf"]
+[ext_resource type="Resource" uid="uid://ddrhpeh7l24de" path="res://Resources/Items/Items/Weapons/SimpleWeapons/Shield.tres" id="10_2ea17"]
+[ext_resource type="Script" uid="uid://cqfvors08t00a" path="res://Resources/Items/Scripts/LootTable.gd" id="11_2ea17"]
+[ext_resource type="Resource" uid="uid://be7hqhwvjoch" path="res://Resources/Items/Items/Weapons/SimpleWeapons/Spear.tres" id="11_lhye3"]
+[ext_resource type="Resource" uid="uid://b2b20qb2ttjok" path="res://Resources/Items/Items/Equipment/ThievesTools.tres" id="12_t1s4e"]
+[ext_resource type="Resource" uid="uid://di0tki7g3gwwe" path="res://Resources/Items/Items/Equipment/Body/Chainmail.tres" id="13_wx3r7"]
+[ext_resource type="Resource" uid="uid://2bxgb54tcf7f" path="res://Resources/Items/Items/Equipment/Body/LeatherVest.tres" id="14_jlely"]
+
+[sub_resource type="Resource" id="Resource_8onfv"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("3_3lo5j")
+singleQuant = 2
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_jkx37"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("7_6oswe")
+singleQuant = 5
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_l6n3n"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("5_1vyjh")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_0x0oa"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("6_6oswe")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_nqtoi"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("7_vkyrr")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_a68mp"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("8_mpo6w")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_u7j14"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("9_wfbaf")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_h7jtp"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("10_2ea17")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_5brys"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("11_lhye3")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_s0m3a"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("12_t1s4e")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_4u1k4"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("13_wx3r7")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_fafyn"]
+script = ExtResource("1_aqrrf")
+singleItem = ExtResource("14_jlely")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[resource]
+script = ExtResource("11_2ea17")
+items = Array[ExtResource("1_aqrrf")]([SubResource("Resource_8onfv"), SubResource("Resource_jkx37"), SubResource("Resource_l6n3n"), SubResource("Resource_0x0oa"), SubResource("Resource_nqtoi"), SubResource("Resource_a68mp"), SubResource("Resource_u7j14"), SubResource("Resource_h7jtp"), SubResource("Resource_5brys"), SubResource("Resource_s0m3a"), SubResource("Resource_4u1k4"), SubResource("Resource_fafyn")])
+metadata/_custom_type_script = "uid://cqfvors08t00a"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=8 format=3 uid="uid://07k4m2rh8ew8"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_urvgc"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_kgwo2"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_ddkvg"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_v04a1"]
+
+[sub_resource type="Resource" id="Resource_urvgc"]
+script = ExtResource("2_kgwo2")
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_kgwo2"]
+script = ExtResource("2_kgwo2")
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_ddkvg"]
+script = ExtResource("3_ddkvg")
+hitAction = Array[ExtResource("1_urvgc")]([SubResource("Resource_urvgc"), SubResource("Resource_kgwo2")])
+actionName = "Morningstar"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_v04a1")
+attackAction = SubResource("Resource_ddkvg")
+equippableValue = 4
+itemName = "Morningstar"
+description = "A metal spiked ball at the end of a stick, used to pummel and pierce."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

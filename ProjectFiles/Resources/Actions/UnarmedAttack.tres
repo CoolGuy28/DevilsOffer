@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://bnttcvn315w6y"]
-
-[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Action.gd" id="1_v61g8"]
-
-[resource]
-script = ExtResource("1_v61g8")
-actionName = "Unarmed Attack"
-metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

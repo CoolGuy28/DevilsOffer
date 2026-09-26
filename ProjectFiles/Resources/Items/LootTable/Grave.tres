@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=6 format=3 uid="uid://dck1w5iwbwnlo"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_rilct"]
+[ext_resource type="Script" uid="uid://ceu6fihrnpx2n" path="res://Resources/Items/Scripts/ItemTableSlot.gd" id="2_v6482"]
+[ext_resource type="Resource" uid="uid://q6wqajwj381o" path="res://Resources/Items/Items/Usables/Healing/Bandage.tres" id="3_kw47o"]
+[ext_resource type="Script" uid="uid://cqfvors08t00a" path="res://Resources/Items/Scripts/LootTable.gd" id="4_f8wue"]
+
+[sub_resource type="Resource" id="Resource_ys0bj"]
+script = ExtResource("2_v6482")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[resource]
+script = ExtResource("4_f8wue")
+common_items = Dictionary[ExtResource("1_rilct"), ExtResource("2_v6482")]({
+ExtResource("3_kw47o"): SubResource("Resource_ys0bj")
+})
+metadata/_custom_type_script = "uid://cqfvors08t00a"

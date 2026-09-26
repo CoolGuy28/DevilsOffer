@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=5 format=3 uid="uid://bsten3wnbbpq6"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_ggklp"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_6ip45"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_4ngt0"]
+
+[sub_resource type="Resource" id="Resource_ogsau"]
+script = ExtResource("2_6ip45")
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[resource]
+script = ExtResource("3_4ngt0")
+hitAction = Array[ExtResource("1_ggklp")]([SubResource("Resource_ogsau")])
+actionName = "Shield Bash"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

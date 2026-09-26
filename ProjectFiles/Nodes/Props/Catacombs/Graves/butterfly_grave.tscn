@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb3efg4q8025m"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_tmpsg"]
+[ext_resource type="Texture2D" uid="uid://busaiijosehbg" path="res://Sprites/Props/Catacombs/Graves/ButterflyGrave.png" id="2_ri25q"]
+
+[node name="ButterflyGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_tmpsg")
+dialogueText = "ButterflyGrave"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -52)
+texture = ExtResource("2_ri25q")
+offset = Vector2(0, 36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-47, -19, -40, 10, -27, 36, -2, 43, 25, 32, 40, 7, 42, -23, 22, -44, -2, -50, -24, -46)

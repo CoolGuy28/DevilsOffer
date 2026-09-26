@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://6r463mvdbt30"]
+
+[ext_resource type="Script" uid="uid://dkhxteorngsox" path="res://Nodes/Tilemaps/Scripts/Interactable_Door.gd" id="1_qyhxy"]
+[ext_resource type="Texture2D" uid="uid://bk30qiinljvpx" path="res://Nodes/Props/General/Door/PrisonDoor.png" id="2_diwqk"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="3_pnu20"]
+[ext_resource type="AudioStream" uid="uid://db1hrcpuoyqvr" path="res://SFX/Interactions/Gate Close.wav" id="4_7v4ej"]
+[ext_resource type="AudioStream" uid="uid://dbto7t6ehhnja" path="res://SFX/Interactions/Lockpick_success.wav" id="5_7mlnk"]
+[ext_resource type="AudioStream" uid="uid://b251tvbdfc07m" path="res://SFX/Interactions/Gate Open.wav" id="6_itjs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(62, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1u7h"]
+size = Vector2(13, 35)
+
+[node name="Door" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 1
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_qyhxy")
+unlocked = true
+dialogueText = "Door"
+interacted = true
+metadata/_custom_type_script = "uid://dkhxteorngsox"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 32)
+texture = ExtResource("2_diwqk")
+offset = Vector2(0, -64)
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_pnu20")
+soundEffects = Dictionary[String, AudioStream]({
+"Close": ExtResource("4_7v4ej"),
+"Key": ExtResource("5_7mlnk"),
+"LockpickSuccess": ExtResource("5_7mlnk"),
+"Open": ExtResource("6_itjs0")
+})
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="DoorSides" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-25.5, 11.5)
+shape = SubResource("RectangleShape2D_k1u7h")
+
+[node name="DoorSides2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(27, 11)
+shape = SubResource("RectangleShape2D_k1u7h")

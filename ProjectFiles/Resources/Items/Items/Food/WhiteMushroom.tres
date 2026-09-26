@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://mgu02fynb5ha"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_fioj0"]
+
+[resource]
+script = ExtResource("1_fioj0")
+itemName = "White Mushroom"
+shortDescription = "A common mushroom."
+description = "A common mushroom. You used to forage these for dinner as a child."
+itemTags = Array[int]([6])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

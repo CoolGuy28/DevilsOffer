@@ -1,0 +1,347 @@
+[gd_scene load_steps=28 format=4 uid="uid://c38x7wt627hlo"]
+
+[ext_resource type="PackedScene" uid="uid://k4y0pl5j1a5i" path="res://Nodes/Tilemaps/Tilemap.tscn" id="1_1an28"]
+[ext_resource type="Script" uid="uid://dcs5txjkigr6a" path="res://Nodes/Maps/Cutscenes/Cutscene.gd" id="1_gdlyd"]
+[ext_resource type="PackedScene" uid="uid://dl25ugfhdhtao" path="res://Nodes/Props/General/MetalSign/MetalSign.tscn" id="2_2upyn"]
+[ext_resource type="Texture2D" uid="uid://c82p28mntbsd6" path="res://Sprites/CutsceneSprites/UnconciousRitualTable.png" id="4_lyft3"]
+[ext_resource type="Texture2D" uid="uid://x661q2bhtybt" path="res://Sprites/CutsceneSprites/MageCuttingScene_5.png" id="7_5fn8k"]
+[ext_resource type="Texture2D" uid="uid://blndlpmcgo6jp" path="res://Sprites/CutsceneSprites/TentacleWriggle_1.png" id="7_dj1su"]
+[ext_resource type="Texture2D" uid="uid://tdnd2ajpv8q6" path="res://Sprites/CutsceneSprites/MageCuttingScene_6.png" id="8_kv4es"]
+[ext_resource type="Texture2D" uid="uid://brbgu6yg8opho" path="res://Sprites/CutsceneSprites/TentacleWriggle_2.png" id="8_lx2mt"]
+[ext_resource type="Texture2D" uid="uid://bn7jktrjj83fk" path="res://Sprites/CutsceneSprites/TentacleWriggle_3.png" id="9_d7sqc"]
+[ext_resource type="Texture2D" uid="uid://dm3do4snf55ih" path="res://Sprites/CutsceneSprites/MageCuttingScene_3.png" id="9_svh1d"]
+[ext_resource type="Texture2D" uid="uid://ckwviwwx1m4ow" path="res://Sprites/CutsceneSprites/MageCuttingScene_4.png" id="10_02wuy"]
+[ext_resource type="Texture2D" uid="uid://bjv3p75fs314w" path="res://Sprites/CutsceneSprites/TentacleWriggle_4.png" id="10_geq2r"]
+[ext_resource type="Texture2D" uid="uid://1awu1p87itlg" path="res://Sprites/CutsceneSprites/MageCuttingScene_1.png" id="11_ijr61"]
+[ext_resource type="Texture2D" uid="uid://bccq3x04ysli3" path="res://LightTexture.png" id="11_qa2fx"]
+[ext_resource type="Texture2D" uid="uid://fw2onver57e1" path="res://Sprites/CutsceneSprites/MageCuttingScene_2.png" id="12_vi4l8"]
+[ext_resource type="Script" uid="uid://1cm2hrvvge3u" path="res://Nodes/Maps/Cutscenes/RandSoundPlayer.gd" id="21_3wo6d"]
+[ext_resource type="AudioStream" uid="uid://bnakfgo077lbg" path="res://SFX/Actions/Damage/Blood/Blood_squirt_4.wav" id="22_hfdk4"]
+[ext_resource type="AudioStream" uid="uid://cpnkssl5t8y2t" path="res://SFX/Actions/Damage/Blood/Blood_squirt_3.wav" id="23_tobqp"]
+[ext_resource type="AudioStream" uid="uid://chx0tp7fjywht" path="res://SFX/Actions/Damage/Blood/Blood_squirt_2.wav" id="24_bd82x"]
+[ext_resource type="AudioStream" uid="uid://cj3s2mp23j2e2" path="res://SFX/Actions/Damage/Blood/Blood_squirt_1.wav" id="25_r7qes"]
+[ext_resource type="AudioStream" uid="uid://bxt4h11qbw8uu" path="res://SFX/Actions/Damage/Blood/Blood_squirt.wav" id="26_yx4of"]
+[ext_resource type="AudioStream" uid="uid://dosmov4hi25pv" path="res://SFX/Interactions/Cloths_rustling_2.wav" id="31_tobqp"]
+
+[sub_resource type="Animation" id="Animation_kv4es"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tentacle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, -58)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carving:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tentacle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, -105)]
+}
+
+[sub_resource type="Animation" id="Animation_5fn8k"]
+resource_name = "Scene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tentacle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(223, -58), Vector2(116, -63)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carving:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.4333334, 5.433733, 5.633333, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"default", &"Grabbed", &"Grabbed", &"Dragged"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tentacle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.3999996, 5.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.7, 5.8333335, 6.2, 6.733333, 7.133333, 7.5666666, 8.066667, 8.408616, 9.147),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(54, -105), Vector2(54, -105), Vector2(71, -105), Vector2(71, -105), Vector2(105, -105), Vector2(105, -105), Vector2(190, -105), Vector2(190, -105), Vector2(312, -105)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeSceneAddPlayer"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Carving/CarvingAudio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.4333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Destroy"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tentacle/CarvingAudio2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.4333334, 9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"SetActive"
+}, {
+"args": [],
+"method": &"Destroy"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pfaij"]
+_data = {
+&"RESET": SubResource("Animation_kv4es"),
+&"Scene": SubResource("Animation_5fn8k")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5pnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5fn8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kv4es")
+}],
+"loop": true,
+"name": &"Dragged",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.51,
+"texture": ExtResource("9_svh1d")
+}, {
+"duration": 1.01,
+"texture": ExtResource("10_02wuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5fn8k")
+}],
+"loop": false,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vi4l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vi4l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vi4l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vi4l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ijr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vi4l8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj8gl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_geq2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d7sqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lx2mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dj1su")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="OpeningCutscene" type="Node2D"]
+script = ExtResource("1_gdlyd")
+dialogueAfterSceneLoad = "playerstart"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pfaij")
+}
+
+[node name="Tilemaps" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="WallLayer" parent="Tilemaps" instance=ExtResource("1_1an28")]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAEAAQAAQAPAAcAAAAFAAQAAQAPAAcAAAAGAAQAAQAPAAcAAAD+/wQAAQAPAAcAAAD//wQAAQAPAAcAAAAAAAQAAQAPAAcAAAD+/wMAAQAMAAQAAAD//wMAAQAMAAQAAAAAAAMAAQAMAAQAAAABAAMAAQAMAAQAAAABAAQAAQAPAAcAAAACAAMAAQAMAAQAAAACAAQAAQAPAAcAAAADAAMAAQAMAAQAAAADAAQAAQAPAAcAAAAEAAMAAQAMAAQAAAAFAAMAAQAMAAQAAAAGAAMAAQAPAAcAAAAGAAIAAQAPAAcAAAD8/wQAAQAPAAcAAAD9/wMAAQAMAAQAAAD9/wQAAQAPAAcAAAD8/wMAAQAPAAcAAAD8/wIAAQAPAAcAAAAGAAEAAQAPAAcAAAAGAAAAAQAPAAcAAAAGAP//AQAPAAcAAAD9//v/AQAGAAUAAAD9//z/AQAGAAYAAAD9//3/AQAGAAcAAAD+//v/AQAHAAUAAAD+//z/AQAHAAYAAAD+//3/AQAHAAcAAAD///v/AQAIAAUAAAD///z/AQAIAAYAAAD///3/AQAIAAcAAAAAAPv/AQAJAAUAAAAAAPz/AQAJAAYAAAAAAP3/AQAJAAcAAAABAPv/AQAKAAUAAAABAPz/AQAKAAYAAAABAP3/AQAKAAcAAAACAPv/AQALAAUAAAACAPz/AQALAAYAAAACAP3/AQALAAcAAAADAPv/AQAMAAUAAAADAPz/AQAMAAYAAAADAP3/AQAMAAcAAAAEAPv/AQANAAUAAAAEAPz/AQANAAYAAAAEAP3/AQANAAcAAAAFAPv/AQAOAAUAAAAFAPz/AQAOAAYAAAAFAP3/AQAOAAcAAAAGAPv/AQAPAAcAAAAGAPz/AQAPAAcAAAAGAP3/AQAPAAcAAAAGAP7/AQAPAAcAAAD8/wEAAQAPAAcAAAD8/wAAAQAPAAcAAAD8////AQAPAAcAAAD8//7/AQAPAAcAAAD8//3/AQAPAAcAAAD8//z/AQAPAAcAAAD8//v/AQAPAAcAAAAGAPr/AQAFAAAAAAAFAPr/AQAKAAAAAAAEAPr/AQAJAAAAAAADAPr/AQAJAAAAAAACAPr/AQAJAAAAAAABAPr/AQAJAAAAAAAAAPr/AQAJAAAAAAD///r/AQAJAAAAAAD+//r/AQAJAAAAAAD9//r/AQAJAAAAAAD8//r/AQAJAAAAAAA=")
+
+[node name="PropLayer" parent="Tilemaps" instance=ExtResource("1_1an28")]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAFAAIAAAAAAAAAAQAFAAEAAAAAAAAABwD9//z/AAAAAAAABAD+//7/AAAAAAAABQAAAP7/AAAAAAAAAgD9//7/AAAAAAAAAwA=")
+
+[node name="Props" type="Node2D" parent="Tilemaps/PropLayer"]
+y_sort_enabled = true
+
+[node name="MetalSign" parent="Tilemaps/PropLayer/Props" instance=ExtResource("2_2upyn")]
+position = Vector2(156, -218)
+
+[node name="FloorPropLayer" parent="Tilemaps" instance=ExtResource("1_1an28")]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wIAAwABAAMAAAAAAAIAAwADAAcAAAABAAIAAwAEAAcAAAACAAIAAwAFAAcAAAADAAIAAwAGAAcAAAABAAEAAwAEAAYAAAACAAEAAwAFAAYAAAADAAEAAwAGAAYAAAADAAAAAwAGAAUAAAACAAAAAwAFAAUAAAAAAAAAAwADAAUAAAAAAAEAAwADAAYAAAABAAAAAwAEAAUAAAD+//7/AwAAAAAAAAD+////AwAAAAEAAAD///7/AwABAAAAAAD/////AwABAAEAAAD+/wEAAwAAAAIAAAD+/wIAAwAAAAMAAAD//wEAAwABAAIAAAA=")
+
+[node name="FloorLayer" parent="Tilemaps" instance=ExtResource("1_1an28")]
+z_index = -2
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+/wMAAQAHAAoAAAD//wMAAQAIAAoAAAAAAAMAAQAGAAoAAAABAAMAAQAHAAoAAAD//wIAAQAIAAgAAAAAAAIAAQAGAAgAAAABAAIAAQAHAAgAAAACAAMAAQAIAAoAAAACAAIAAQAIAAgAAAADAAMAAQAGAAoAAAADAAIAAQAGAAgAAAAEAAMAAQAHAAoAAAAEAAIAAQAHAAgAAAABAAEAAQAHAAkAAAACAAEAAQAIAAkAAAADAAEAAQAGAAkAAAAFAAMAAQAIAAoAAAAFAAIAAQAIAAgAAAD9/wMAAQAGAAoAAAD9/wIAAQAGAAgAAAADAAAAAQAGAAgAAAAEAAAAAQAHAAgAAAAEAAEAAQAHAAkAAAACAAAAAQAGAAgAAAACAP//AQAGAAgAAAADAP//AQAGAAkAAAAEAP//AQAHAAkAAAAFAAEAAQAIAAkAAAAFAAAAAQAIAAgAAAAFAP//AQAIAAkAAAAAAAEAAQAGAAkAAAD9/wEAAQAGAAkAAAD+/wEAAQAGAAgAAAD+/wIAAQAHAAgAAAD//wEAAQAGAAgAAAD9//7/AQAGAAgAAAD9////AQAGAAgAAAD9/wAAAQAGAAgAAAD+//7/AQAGAAgAAAD+////AQAGAAgAAAD+/wAAAQAGAAgAAAD///7/AQAGAAgAAAD/////AQAGAAgAAAD//wAAAQAGAAgAAAAAAP7/AQAGAAgAAAAAAP//AQAGAAgAAAAAAAAAAQAGAAgAAAABAP7/AQAGAAgAAAABAP//AQAGAAgAAAABAAAAAQAGAAgAAAACAP7/AQAGAAgAAAADAP7/AQAGAAgAAAAEAP7/AQAHAAgAAAAFAP7/AQAIAAgAAAADAPv/AQAGAAgAAAADAPz/AQAGAAkAAAADAP3/AQAGAAoAAAAEAPv/AQAHAAgAAAAEAPz/AQAHAAkAAAAEAP3/AQAHAAoAAAAFAPv/AQAIAAgAAAAFAPz/AQAIAAkAAAAFAP3/AQAIAAoAAAD8//v/AQAIAAgAAAD8//z/AQAIAAkAAAD8//3/AQAIAAoAAAD9//v/AQAGAAgAAAD9//z/AQAGAAkAAAD9//3/AQAGAAoAAAD+//v/AQAHAAgAAAD+//z/AQAHAAkAAAD+//3/AQAHAAoAAAD///v/AQAIAAgAAAD///z/AQAIAAkAAAD///3/AQAIAAoAAAA=")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+position = Vector2(-65, -59)
+
+[node name="PlayerLight" type="PointLight2D" parent="."]
+position = Vector2(-31.000004, -94.00001)
+scale = Vector2(3.25, 3.25)
+color = Color(1, 1, 1, 0.6784314)
+texture = ExtResource("11_qa2fx")
+
+[node name="UnconciousRitualTable" type="Sprite2D" parent="."]
+position = Vector2(-61, -143)
+texture = ExtResource("4_lyft3")
+
+[node name="Carving" type="AnimatedSprite2D" parent="."]
+position = Vector2(54, -105)
+sprite_frames = SubResource("SpriteFrames_w5pnq")
+autoplay = "default"
+
+[node name="CarvingAudio" type="AudioStreamPlayer2D" parent="Carving"]
+position = Vector2(-70, 12)
+script = ExtResource("21_3wo6d")
+randSounds = Array[AudioStream]([ExtResource("22_hfdk4"), ExtResource("23_tobqp"), ExtResource("24_bd82x"), ExtResource("25_r7qes"), ExtResource("26_yx4of")])
+randTime = Vector2(0.2, 1.3)
+SetActiveAtStart = true
+
+[node name="Tentacle" type="AnimatedSprite2D" parent="."]
+position = Vector2(248, -58)
+sprite_frames = SubResource("SpriteFrames_rj8gl")
+autoplay = "default"
+frame_progress = 0.99776584
+
+[node name="CarvingAudio2" type="AudioStreamPlayer2D" parent="Tentacle"]
+position = Vector2(-132, -30)
+script = ExtResource("21_3wo6d")
+randSounds = Array[AudioStream]([ExtResource("31_tobqp")])
+randTime = Vector2(0.3, 0.7)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]

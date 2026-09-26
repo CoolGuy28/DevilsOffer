@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=22 format=3 uid="uid://dlof765yus4wy"]
+
+[ext_resource type="Script" uid="uid://ceu6fihrnpx2n" path="res://Resources/Items/Scripts/ItemTableSlot.gd" id="1_ihtsn"]
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="2_0km4q"]
+[ext_resource type="Resource" uid="uid://q6wqajwj381o" path="res://Resources/Items/Items/Usables/Healing/Bandage.tres" id="3_0km4q"]
+[ext_resource type="Resource" uid="uid://cyxvpi2jpderp" path="res://Resources/Items/Items/Misc/SilverCoin.tres" id="4_guc8a"]
+[ext_resource type="Resource" uid="uid://conqpnnmiflg4" path="res://Resources/Items/Items/Scrolls/Scroll_CureWounds.tres" id="5_xpl7j"]
+[ext_resource type="Resource" uid="uid://dona3cs6n41us" path="res://Resources/Items/Items/Usables/Damage/PoisonDart.tres" id="7_guc8a"]
+[ext_resource type="Resource" uid="uid://uu7hnq1ijy71" path="res://Resources/Items/Items/Weapons/SimpleWeapons/Stick.tres" id="8_nay67"]
+[ext_resource type="Resource" uid="uid://whiq3ofs1qeq" path="res://Resources/Items/Items/Usables/Healing/TornSheet.tres" id="8_u3mxu"]
+[ext_resource type="Resource" uid="uid://boyhy2qd7v2vw" path="res://Resources/Items/Items/Usables/Damage/Dart.tres" id="9_16slg"]
+[ext_resource type="Resource" uid="uid://knfaw4gb5ngh" path="res://Resources/Items/Items/Keys/Lockpick.tres" id="9_yyvst"]
+[ext_resource type="Script" uid="uid://cqfvors08t00a" path="res://Resources/Items/Scripts/LootTable.gd" id="10_xob74"]
+
+[sub_resource type="Resource" id="Resource_own3k"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("3_0km4q")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_u3mxu"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("3_0km4q")
+singleQuant = 2
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_16slg"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("3_0km4q")
+singleQuant = 4
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_xob74"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("8_u3mxu")
+singleQuant = 2
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_mf5g2"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("5_xpl7j")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_jvq8b"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("9_16slg")
+singleQuant = 3
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_r0i4y"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("7_guc8a")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_cufxw"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("8_nay67")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_tsg0j"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("9_yyvst")
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[sub_resource type="Resource" id="Resource_mnwqp"]
+script = ExtResource("1_ihtsn")
+singleItem = ExtResource("4_guc8a")
+singleQuant = 2
+metadata/_custom_type_script = "uid://ceu6fihrnpx2n"
+
+[resource]
+script = ExtResource("10_xob74")
+items = Array[ExtResource("1_ihtsn")]([SubResource("Resource_own3k"), SubResource("Resource_u3mxu"), SubResource("Resource_16slg"), SubResource("Resource_xob74"), SubResource("Resource_mf5g2"), SubResource("Resource_jvq8b"), SubResource("Resource_r0i4y"), SubResource("Resource_cufxw"), SubResource("Resource_tsg0j"), SubResource("Resource_mnwqp")])
+metadata/_custom_type_script = "uid://cqfvors08t00a"

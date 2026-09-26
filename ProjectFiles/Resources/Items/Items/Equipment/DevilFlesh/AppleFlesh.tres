@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://dhj32y1nxmk8u"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_og372"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_81hhp"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="2_e2g22"]
+
+[sub_resource type="Resource" id="Resource_l1uwi"]
+script = ExtResource("1_og372")
+stats = Array[int]([-2, -2, -2, 3])
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("2_e2g22")
+equippedStats = SubResource("Resource_l1uwi")
+shortDescription = "+ 3 WIS -2 STR -2 DEX -2 INT"
+itemName = "Apple Flesh"
+description = "Flesh of the apple devil. You feel slightly more enlightened, at the cost of every other sense."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

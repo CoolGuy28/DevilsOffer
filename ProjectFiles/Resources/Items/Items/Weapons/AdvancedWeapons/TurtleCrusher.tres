@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://bxj77fdofxr8w"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_ole3a"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_yprdx"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_rbryl"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_6k4ky"]
+
+[sub_resource type="Resource" id="Resource_ole3a"]
+script = ExtResource("2_yprdx")
+dCount = 3
+dDie = 12
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_yprdx"]
+script = ExtResource("3_rbryl")
+hitBonus = -3
+hitAction = Array[ExtResource("1_ole3a")]([SubResource("Resource_ole3a")])
+actionName = "Turtle Crusher"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_6k4ky")
+attackAction = SubResource("Resource_yprdx")
+weaponType = 2
+equippableValue = 5
+itemName = "Turtle Crusher"
+description = "A massive, unweildy hammer, more closely resembling a chunk of iron, fabled to have the power to shatter the shell of the great eastern turtle."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

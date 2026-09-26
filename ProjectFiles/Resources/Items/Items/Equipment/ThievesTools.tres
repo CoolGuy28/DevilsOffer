@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://b2b20qb2ttjok"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_y2dun"]
+
+[resource]
+script = ExtResource("1_y2dun")
+itemName = "Thieves Tools"
+description = "Gain a bonus +2 to lockpicking tests while in the inventory."
+itemTags = Array[int]([7])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

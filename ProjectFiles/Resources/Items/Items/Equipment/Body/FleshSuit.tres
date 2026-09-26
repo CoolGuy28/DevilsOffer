@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://gxperuquigje"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_tnt4j"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_vdblc"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_m863i"]
+
+[sub_resource type="Resource" id="Resource_ufkkr"]
+script = ExtResource("1_tnt4j")
+dmgResist = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0
+})
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("3_m863i")
+equippedStats = SubResource("Resource_ufkkr")
+equippableValue = 6
+itemName = "Flesh Suit"
+description = "An unholy, organic amalgamation of flesh that binds with your skin and toughens it against physical damages."
+itemTags = Array[int]([2])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

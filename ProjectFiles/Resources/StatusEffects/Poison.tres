@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="StatusEffect_Poison" load_steps=3 format=3 uid="uid://dowrur0wumso6"]
-
-[ext_resource type="Script" uid="uid://cfr6srnapm2h4" path="res://StatusEffect_Poison.gd" id="1_88n8q"]
-[ext_resource type="Texture2D" uid="uid://dvtt743adxop1" path="res://Resources/StatusEffects/Sprites/Poisoned.png" id="2_unefa"]
-
-[resource]
-script = ExtResource("1_88n8q")
-sprite = ExtResource("2_unefa")
-metadata/_custom_type_script = "uid://cfr6srnapm2h4"

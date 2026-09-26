@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=6 format=3 uid="uid://ddrhpeh7l24de"]
+
+[ext_resource type="Resource" uid="uid://bsten3wnbbpq6" path="res://Resources/Actions/Weapons/ShieldBash.tres" id="1_kxkoh"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="2_a3b37"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="3_kkgtw"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="4_hdhjb"]
+
+[sub_resource type="Resource" id="Resource_mqueq"]
+script = ExtResource("3_kkgtw")
+AC = 2
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("2_a3b37")
+attackAction = ExtResource("1_kxkoh")
+equippedStats = SubResource("Resource_mqueq")
+equippableValue = 3
+itemName = "Shield"
+description = "A flimsy shield that should at least help deflect some strikes."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

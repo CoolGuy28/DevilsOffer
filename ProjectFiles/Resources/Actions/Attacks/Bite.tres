@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://b8y1l4os7vn3m"]
+
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Scripts/Action.gd" id="2_udehm"]
+
+[resource]
+script = ExtResource("2_udehm")
+actionName = "Bite"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

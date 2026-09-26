@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://uu7hnq1ijy71"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_wcf2q"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_wrao6"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_tligf"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_71dsb"]
+
+[sub_resource type="Resource" id="Resource_mo3qh"]
+script = ExtResource("2_wrao6")
+dDie = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_nbro4"]
+script = ExtResource("3_tligf")
+hitAction = Array[ExtResource("1_wcf2q")]([SubResource("Resource_mo3qh")])
+actionName = "Stick"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_71dsb")
+attackAction = SubResource("Resource_nbro4")
+weaponType = 1
+itemName = "Stick"
+description = "A small but hefty wooden stick. Could be used as a weapon if nothing else."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

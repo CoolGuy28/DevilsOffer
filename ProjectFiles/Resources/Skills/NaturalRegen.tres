@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Skill_Action" load_steps=3 format=3 uid="uid://bolsvf80yv54"]
+
+[ext_resource type="Resource" uid="uid://b17rx31iwnvrl" path="res://Resources/Actions/Skills/NaturalRegen.tres" id="1_q5vk8"]
+[ext_resource type="Script" uid="uid://qj1xrqebma3" path="res://Resources/Actions/Scripts/Skill_Action.gd" id="1_u04pi"]
+
+[resource]
+script = ExtResource("1_u04pi")
+action = ExtResource("1_q5vk8")
+bonusAction = true
+cost = 25
+skillName = "Natural"
+metadata/_custom_type_script = "uid://qj1xrqebma3"

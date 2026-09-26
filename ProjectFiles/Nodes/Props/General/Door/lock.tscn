@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7hm1idxpw5y"]
+
+[ext_resource type="Script" uid="uid://bohx8klfsuwu" path="res://Nodes/Tilemaps/Scripts/Lock.gd" id="1_hb00c"]
+[ext_resource type="Resource" uid="uid://cqelxlrv13a18" path="res://Resources/Items/Items/Keys/DungeonKey.tres" id="2_r144s"]
+
+[node name="Lock" type="Node"]
+script = ExtResource("1_hb00c")
+key = ExtResource("2_r144s")
+expendKey = true
+pickLockable = true
+metadata/_custom_type_script = "uid://bohx8klfsuwu"

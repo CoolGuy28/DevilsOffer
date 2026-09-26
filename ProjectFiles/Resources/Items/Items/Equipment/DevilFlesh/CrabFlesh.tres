@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://bip00cpuxqnc"]
+
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="1_esqgn"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_v1rya"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_winqc"]
+
+[sub_resource type="Resource" id="Resource_xa7ve"]
+script = ExtResource("1_v1rya")
+physicalDmgMult = 1.0
+AC = 1
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("1_esqgn")
+equippedStats = SubResource("Resource_xa7ve")
+equippableValue = 2
+itemName = "Crab Flesh"
+description = "A piece of the crabs shell. Both physical damage and AC is improved."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7qxwsa86qih7"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_22bjc"]
+[ext_resource type="Texture2D" uid="uid://cagba8mkae22j" path="res://Sprites/Props/Catacombs/Vampire/Vampire_1.png" id="2_k4wb3"]
+[ext_resource type="Texture2D" uid="uid://ci668gc1t0va" path="res://Sprites/Props/Catacombs/Vampire/Vampire_2.png" id="3_abyul"]
+[ext_resource type="Texture2D" uid="uid://b38fv42ouyisy" path="res://Sprites/Props/Catacombs/Vampire/Vampire_3.png" id="4_j06x0"]
+[ext_resource type="Texture2D" uid="uid://h0yjxsl0lg5k" path="res://Sprites/Props/Catacombs/Kitchen/Plate.png" id="5_8k231"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glyim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k4wb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_abyul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j06x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_abyul")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnn68"]
+size = Vector2(86, 46)
+
+[node name="Vampire" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 48
+script = ExtResource("1_22bjc")
+dialogueText = "Vampire"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 37)
+sprite_frames = SubResource("SpriteFrames_glyim")
+autoplay = "default"
+frame_progress = 0.71688163
+offset = Vector2(3, -83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, 13)
+shape = SubResource("RectangleShape2D_dnn68")
+
+[node name="Plate2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0.9999999, 12.999999)
+scale = Vector2(1.0438596, 1.0573771)
+texture = ExtResource("5_8k231")

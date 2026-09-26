@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://bx42f8dycqlwf"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_vtghu"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_3kqpj"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_5ric4"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_26ijq"]
+
+[sub_resource type="Resource" id="Resource_lsun1"]
+script = ExtResource("2_3kqpj")
+dDie = 12
+dType = 1
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_14eb1"]
+script = ExtResource("3_5ric4")
+hitAction = Array[ExtResource("1_vtghu")]([SubResource("Resource_lsun1")])
+actionName = "Greataxe"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_26ijq")
+attackAction = SubResource("Resource_14eb1")
+weaponType = 2
+equippableValue = 3
+itemName = "Greataxe"
+description = "A sharp, but very heavy, axe. Judging by the style of lettering this came from a viking warship."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://jnp20i1a1vcr"]
+
+[ext_resource type="Script" uid="uid://boa7oycl3axyw" path="res://Nodes/Menu/Components/Scripts/Skill_Button.gd" id="1_670js"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="2_1awwy"]
+[ext_resource type="Texture2D" uid="uid://cc1yo8wn66a5n" path="res://Nodes/Menu/OverworldMenu/Sprites/TextSelect.png" id="3_l7h0m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttu6d"]
+texture = ExtResource("3_l7h0m")
+
+[node name="SkillButton" type="Control"]
+z_index = 10
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+focus_mode = 2
+script = ExtResource("1_670js")
+metadata/_custom_type_script = "uid://boa7oycl3axyw"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.98
+anchor_bottom = 1.0
+offset_right = -0.020004272
+theme = ExtResource("2_1awwy")
+bbcode_enabled = true
+text = "dsasddasd"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ttu6d")

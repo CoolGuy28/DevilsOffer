@@ -1,0 +1,870 @@
+[gd_scene load_steps=36 format=3 uid="uid://d4qy3lmnp5lc"]
+
+[ext_resource type="Script" uid="uid://caqn3gthbx6ex" path="res://Nodes/Menu/CombatMenu/Scripts/combat_menu.gd" id="1_p0u63"]
+[ext_resource type="Script" uid="uid://w0gh7eq7voup" path="res://Nodes/Menu/CombatMenu/Scripts/EnemySelection.gd" id="2_2yees"]
+[ext_resource type="Script" uid="uid://bnnyky4kqu87x" path="res://Nodes/Menu/CombatMenu/Scripts/ActionButton.gd" id="2_chd76"]
+[ext_resource type="PackedScene" uid="uid://jnp20i1a1vcr" path="res://Nodes/Menu/Components/SkillButton.tscn" id="2_hwjj3"]
+[ext_resource type="Texture2D" uid="uid://urri2kskumdv" path="res://Nodes/Menu/CombatMenu/Sprites/CombatMenuBackground.png" id="2_m7l2o"]
+[ext_resource type="Script" uid="uid://c08a2myrtimnm" path="res://Nodes/Menu/CombatMenu/Scripts/CombatMenuUI.gd" id="3_0au08"]
+[ext_resource type="Texture2D" uid="uid://e0vsj126yomb" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/MainHandAttack.png" id="3_tfu1n"]
+[ext_resource type="Texture2D" uid="uid://chog1sw54he3u" path="res://Nodes/Menu/CombatMenu/Sprites/TextButton.png" id="4_eo8as"]
+[ext_resource type="Texture2D" uid="uid://c30e2q5anhdp5" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Guard.png" id="5_2yees"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="5_rhslt"]
+[ext_resource type="Texture2D" uid="uid://x2mxcsq10fyn" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Dodge.png" id="6_0au08"]
+[ext_resource type="Texture2D" uid="uid://de18j035te5wv" path="res://Sprites/UI/CombatMenu/Backgrounds/Catacomb_background.png" id="6_en7s3"]
+[ext_resource type="Texture2D" uid="uid://8irybn7h3u6k" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/OffHandAttack.png" id="9_0mpsg"]
+[ext_resource type="Texture2D" uid="uid://dr0kyab3dp11y" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Skills.png" id="10_8eve8"]
+[ext_resource type="PackedScene" uid="uid://c318fca0a08cf" path="res://Nodes/Menu/Components/HealthSlider.tscn" id="12_gl1re"]
+[ext_resource type="Texture2D" uid="uid://drvgswskmr2yt" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Items.png" id="13_hwjj3"]
+[ext_resource type="Texture2D" uid="uid://qu60b7yofuga" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Talk.png" id="14_il2bk"]
+[ext_resource type="Texture2D" uid="uid://dqra3pnlaixi7" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Re-equip.png" id="15_nm1d3"]
+[ext_resource type="Texture2D" uid="uid://ck6fffpbk4dlq" path="res://Nodes/Menu/CombatMenu/Sprites/ActionButtons/Movement.png" id="16_kj70j"]
+[ext_resource type="PackedScene" uid="uid://dyoane104rjpn" path="res://Nodes/Menu/Components/Item_Button.tscn" id="19_8eve8"]
+[ext_resource type="Texture2D" uid="uid://edulo5gupdbl" path="res://Nodes/Menu/CombatMenu/Sprites/SkillsBackround.png" id="21_il2bk"]
+[ext_resource type="Texture2D" uid="uid://dy75qw6pbqwog" path="res://Sprites/UI/CombatMenu/LimbDisp/Head/HeadOutline.png" id="22_bhgoi"]
+[ext_resource type="Texture2D" uid="uid://c35u2bneljlcg" path="res://Sprites/UI/CombatMenu/LimbDisp/Head/HeadInside.png" id="23_en7s3"]
+[ext_resource type="Texture2D" uid="uid://dbdm10k10r1go" path="res://Sprites/UI/CombatMenu/LimbDisp/Torso/TorsoOutline.png" id="24_c0d1l"]
+[ext_resource type="PackedScene" uid="uid://cq2hpef781674" path="res://Resources/StatusEffects/StatusEffectIcon.tscn" id="24_en7s3"]
+[ext_resource type="Texture2D" uid="uid://cnujlom0ancyh" path="res://Sprites/UI/CombatMenu/LimbDisp/Torso/TorsoInside.png" id="25_ac5m5"]
+[ext_resource type="Texture2D" uid="uid://br3lp2hynw0jm" path="res://Sprites/UI/CombatMenu/LimbDisp/Arm/ArmOutline.png" id="26_ehd1v"]
+[ext_resource type="Texture2D" uid="uid://4rnpa05etnw6" path="res://Sprites/UI/CombatMenu/LimbDisp/Arm/ArmInside.png" id="27_gh4al"]
+[ext_resource type="Texture2D" uid="uid://xboy76h2p8rq" path="res://Sprites/UI/CombatMenu/LimbDisp/Leg/LegOutline.png" id="28_sxxu0"]
+[ext_resource type="Texture2D" uid="uid://ql0ahdh42tca" path="res://Sprites/UI/CombatMenu/LimbDisp/Leg/LegInside.png" id="29_tjc21"]
+[ext_resource type="Texture2D" uid="uid://4xex811x4h4k" path="res://Sprites/UI/OverworldMenu/StateBnsIcon.png" id="30_t8kxq"]
+[ext_resource type="Texture2D" uid="uid://b3stukhstubag" path="res://Sprites/UI/OverworldMenu/ACIcon.png" id="31_axmbr"]
+[ext_resource type="Texture2D" uid="uid://c3hmb5u8lb12c" path="res://Sprites/UI/OverworldMenu/MCIcon.png" id="32_jd430"]
+[ext_resource type="Texture2D" uid="uid://ce4oyfcl07fnr" path="res://Sprites/UI/OverworldMenu/AbilityScores/STRIcon.png" id="33_vc60w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlm0a"]
+bg_color = Color(0, 0, 0, 0.8039216)
+
+[node name="CombatMenu" type="Control" node_paths=PackedStringArray("menuButtons")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_rhslt")
+script = ExtResource("1_p0u63")
+menuButtons = [NodePath("Background/CombatPanel/ActionButtons/Attack"), NodePath("Background/CombatPanel/ActionButtons/Offhand"), NodePath("Background/CombatPanel/ActionButtons/Skills"), NodePath("Background/CombatPanel/EndTurn"), NodePath("Background/CombatPanel/ActionButtons/Guard"), NodePath("Background/CombatPanel/ActionButtons/Dodge"), NodePath("Background/CombatPanel/ActionButtons/Items"), NodePath("Background/CombatPanel/EndTurn"), NodePath("Background/CombatPanel/ActionButtons/Talk"), NodePath("Background/CombatPanel/ActionButtons/Requip"), NodePath("Background/CombatPanel/ActionButtons/Flee"), NodePath("Background/CombatPanel/EndTurn")]
+itemButtonScene = ExtResource("19_8eve8")
+skillButtonScene = ExtResource("2_hwjj3")
+metadata/_custom_type_script = "uid://caqn3gthbx6ex"
+
+[node name="BlackBackground" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlm0a")
+
+[node name="EnemySelection" type="Node" parent="."]
+script = ExtResource("2_2yees")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_en7s3")
+expand_mode = 1
+script = ExtResource("3_0au08")
+
+[node name="EnemyBox" type="Control" parent="Background"]
+layout_mode = 1
+anchor_left = 0.18100001
+anchor_top = 0.109000005
+anchor_right = 0.841
+anchor_bottom = 0.683
+offset_left = 0.19999695
+offset_top = 0.23999786
+offset_right = 0.2000122
+offset_bottom = -0.120025635
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyBox" type="HBoxContainer" parent="Background/EnemyBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 104
+alignment = 1
+
+[node name="CombatPanel" type="Sprite2D" parent="Background"]
+z_index = 150
+position = Vector2(400, 519)
+texture = ExtResource("2_m7l2o")
+
+[node name="ActionButtons" type="Node2D" parent="Background/CombatPanel"]
+
+[node name="Attack" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(-28, -36.5)
+texture = ExtResource("3_tfu1n")
+script = ExtResource("2_chd76")
+action = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Offhand" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(12, -36.5)
+texture = ExtResource("9_0mpsg")
+script = ExtResource("2_chd76")
+bonusAction = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Skills" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(52, -36.5)
+texture = ExtResource("10_8eve8")
+script = ExtResource("2_chd76")
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Guard" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(-28, -0.5)
+texture = ExtResource("5_2yees")
+script = ExtResource("2_chd76")
+bonusAction = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Dodge" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(12, -0.5)
+texture = ExtResource("6_0au08")
+script = ExtResource("2_chd76")
+action = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Items" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(52, -0.5)
+texture = ExtResource("13_hwjj3")
+script = ExtResource("2_chd76")
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Talk" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(-28, 34)
+texture = ExtResource("14_il2bk")
+script = ExtResource("2_chd76")
+action = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Requip" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(12, 34)
+texture = ExtResource("15_nm1d3")
+script = ExtResource("2_chd76")
+action = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="Flee" type="Sprite2D" parent="Background/CombatPanel/ActionButtons"]
+physics_interpolation_mode = 2
+position = Vector2(52, 34)
+texture = ExtResource("16_kj70j")
+script = ExtResource("2_chd76")
+action = true
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="EndTurn" type="Sprite2D" parent="Background/CombatPanel"]
+physics_interpolation_mode = 2
+position = Vector2(161, 41.75)
+scale = Vector2(1, 0.7051282)
+texture = ExtResource("4_eo8as")
+script = ExtResource("2_chd76")
+metadata/_custom_type_script = "uid://bnnyky4kqu87x"
+
+[node name="ActionInfo" type="RichTextLabel" parent="Background/CombatPanel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = -51.0
+offset_right = -285.0
+offset_bottom = -109.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("5_rhslt")
+bbcode_enabled = true
+text = "Hit Chance: 50%"
+scroll_active = false
+tab_size = 5
+horizontal_alignment = 1
+
+[node name="BACount" type="RichTextLabel" parent="Background/CombatPanel"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -6.0
+offset_right = -125.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "1"
+scroll_active = false
+tab_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionCount" type="RichTextLabel" parent="Background/CombatPanel"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -6.0
+offset_right = -184.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "1"
+scroll_active = false
+tab_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthSlider" parent="Background/CombatPanel" instance=ExtResource("12_gl1re")]
+offset_left = -231.0
+offset_top = -52.0
+offset_right = -57.0
+offset_bottom = -10.0
+
+[node name="BloodSlider" parent="Background/CombatPanel" instance=ExtResource("12_gl1re")]
+offset_left = -231.0
+offset_top = 3.0
+offset_right = -57.0
+offset_bottom = 45.0
+
+[node name="Label" parent="Background/CombatPanel/BloodSlider" index="1"]
+text = "Blood"
+
+[node name="SkillsBackround" type="Sprite2D" parent="Background/CombatPanel"]
+visible = false
+z_index = -1
+position = Vector2(0, -133)
+texture = ExtResource("21_il2bk")
+
+[node name="UsablesContatiner" type="VBoxContainer" parent="Background/CombatPanel/SkillsBackround"]
+z_index = 600
+custom_minimum_size = Vector2(50, 28)
+anchors_preset = -1
+anchor_left = 0.061000004
+anchor_top = -1.8590001
+anchor_right = 0.929
+anchor_bottom = 1.0
+offset_left = -189.058
+offset_top = 271.85
+offset_right = -189.16202
+offset_bottom = -88.0
+
+[node name="ItemButton" parent="Background/CombatPanel/SkillsBackround/UsablesContatiner" instance=ExtResource("19_8eve8")]
+layout_mode = 2
+
+[node name="ItemButton2" parent="Background/CombatPanel/SkillsBackround/UsablesContatiner" instance=ExtResource("19_8eve8")]
+layout_mode = 2
+
+[node name="ItemButton3" parent="Background/CombatPanel/SkillsBackround/UsablesContatiner" instance=ExtResource("19_8eve8")]
+visible = false
+layout_mode = 2
+
+[node name="TopLabel" type="Panel" parent="Background"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 12.0
+offset_right = 105.0
+offset_bottom = 52.0
+grow_horizontal = 2
+
+[node name="TextEdit" type="RichTextLabel" parent="Background/TopLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.587
+anchor_right = 1.1
+anchor_bottom = 3.6820002
+offset_left = 23.509003
+offset_top = 28.98
+offset_right = -44.60901
+offset_bottom = -112.78
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_rhslt")
+text = "Text"
+scroll_active = false
+tab_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NotesContainer" type="VBoxContainer" parent="Background"]
+z_index = 100
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.047000002
+anchor_right = 0.8
+anchor_bottom = 1.0
+offset_top = -174.58
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Info" type="Panel" parent="Background"]
+visible = false
+z_index = 150
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlm0a")
+
+[node name="BodyControl" type="Control" parent="Background/Info"]
+layout_mode = 1
+anchor_left = 0.441
+anchor_top = 0.11100001
+anchor_right = 0.887
+anchor_bottom = 0.86700004
+offset_left = -100.79997
+offset_top = 25.959991
+offset_right = -100.60004
+offset_bottom = 26.119995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.835, 0.835)
+
+[node name="HeadOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.67064
+offset_top = -65.86826
+offset_right = -58.329376
+offset_bottom = -400.86823
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bhgoi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/HeadOutline"]
+modulate = Color(0.35874408, 0, 0.006621588, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_en7s3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/HeadOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/HeadOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="TorsoOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 50.0
+offset_right = -55.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_c0d1l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/TorsoOutline"]
+modulate = Color(0.39215687, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_ac5m5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/TorsoOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/TorsoOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="RightArmOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 70.0
+offset_right = 23.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_ehd1v")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/RightArmOutline"]
+modulate = Color(0.35874408, 0, 0.006621588, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_gh4al")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/RightArmOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/RightArmOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="LeftArmOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 70.0
+offset_right = -133.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_ehd1v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/LeftArmOutline"]
+modulate = Color(0.35874408, 0, 0.006621588, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_gh4al")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/LeftArmOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/LeftArmOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="RightLegOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.57483
+offset_top = 219.16168
+offset_right = -8.42514
+offset_bottom = 50.161682
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_sxxu0")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/RightLegOutline"]
+modulate = Color(0.35874408, 0, 0.006621588, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_tjc21")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/RightLegOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/RightLegOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="LeftLegOutline" type="TextureRect" parent="Background/Info/BodyControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.161652
+offset_top = 219.16168
+offset_right = -101.83835
+offset_bottom = 50.161682
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_sxxu0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Inner" type="TextureRect" parent="Background/Info/BodyControl/LeftLegOutline"]
+modulate = Color(0.35874408, 0, 0.006621588, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_tjc21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusEffects" type="HBoxContainer" parent="Background/Info/BodyControl/LeftLegOutline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.6547997e-05
+offset_top = 23.952095
+offset_right = -3.0517578e-05
+offset_bottom = -92.71261
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="Background/Info/BodyControl/LeftLegOutline/StatusEffects" instance=ExtResource("24_en7s3")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Info"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = 141.0
+offset_right = -497.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="STATE" type="TextureRect" parent="Background/Info/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("30_t8kxq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Info/VBoxContainer/STATE"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]BNS
+[font_size=30]10"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AC" type="TextureRect" parent="Background/Info/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("31_axmbr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Background/Info/VBoxContainer/AC"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]MC
+[font_size=30]10"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC" type="TextureRect" parent="Background/Info/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("32_jd430")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Background/Info/VBoxContainer/MC"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]MC
+[font_size=30]7"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/Info"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = 61.0
+offset_right = -147.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="STR" type="TextureRect" parent="Background/Info/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("33_vc60w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Info/VBoxContainer2/STR"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]STR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Background/Info/VBoxContainer2/STR"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 54.0
+offset_right = -28.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=25]+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEX" type="TextureRect" parent="Background/Info/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("33_vc60w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Info/VBoxContainer2/DEX"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]DEX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Background/Info/VBoxContainer2/DEX"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 54.0
+offset_right = -28.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=25]+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="INT" type="TextureRect" parent="Background/Info/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("33_vc60w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Info/VBoxContainer2/INT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]INT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Background/Info/VBoxContainer2/INT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 54.0
+offset_right = -28.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=25]+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WIS" type="TextureRect" parent="Background/Info/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("33_vc60w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Info/VBoxContainer2/WIS"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=15]WIS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Background/Info/VBoxContainer2/WIS"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 54.0
+offset_right = -28.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=25]+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Attack" to="." method="_on_attack_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Offhand" to="." method="_on_offhand_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Skills" to="." method="_on_skills_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Guard" to="." method="_on_guard_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Dodge" to="." method="_on_dodge_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Items" to="." method="_on_items_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Talk" to="." method="_on_talk_press"]
+[connection signal="press" from="Background/CombatPanel/ActionButtons/Flee" to="." method="_on_flee_press"]
+[connection signal="press" from="Background/CombatPanel/EndTurn" to="." method="_on_end_turn_press"]
+
+[editable path="Background/CombatPanel/BloodSlider"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=4 uid="uid://b1a7f2hdvnio1"]
 
-[ext_resource type="PackedScene" uid="uid://cg8nnf1xf8tcj" path="res://Entity/Enemy/Guard/Guard.tscn" id="1_sasra"]
-[ext_resource type="PackedScene" uid="uid://6q62pgau4d4g" path="res://Entity/Player/player.tscn" id="1_uhqqe"]
-[ext_resource type="PackedScene" uid="uid://dftvgeb4enrap" path="res://Tilemaps/Props/Chest/Chest.tscn" id="3_coq8p"]
-[ext_resource type="PackedScene" uid="uid://k4y0pl5j1a5i" path="res://Tilemaps/DungeonTilemap.tscn" id="4_coq8p"]
-[ext_resource type="PackedScene" uid="uid://dl25ugfhdhtao" path="res://Tilemaps/Props/MetalSign/MetalSign.tscn" id="5_2nij2"]
-[ext_resource type="PackedScene" uid="uid://b41n2wk5axnq2" path="res://Tilemaps/Props/Door/PrisonDoor.tscn" id="6_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://cg8nnf1xf8tcj" path="res://Nodes/Entity/Enemy/Guard/Guard.tscn" id="1_sasra"]
+[ext_resource type="PackedScene" uid="uid://6q62pgau4d4g" path="res://Nodes/Entity/Player/player.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://dftvgeb4enrap" path="res://Nodes/Props/General/Chest/Chest.tscn" id="3_coq8p"]
+[ext_resource type="PackedScene" uid="uid://k4y0pl5j1a5i" path="res://Nodes/Tilemaps/Tilemap.tscn" id="4_coq8p"]
+[ext_resource type="PackedScene" uid="uid://dl25ugfhdhtao" path="res://Nodes/Props/General/MetalSign/MetalSign.tscn" id="5_2nij2"]
+[ext_resource type="PackedScene" uid="uid://b41n2wk5axnq2" path="res://Nodes/Props/General/Door/PrisonDoor.tscn" id="6_7cbxl"]
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true

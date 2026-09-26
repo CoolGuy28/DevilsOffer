@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqvccgr4ok1ci"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_1picc"]
+[ext_resource type="Texture2D" uid="uid://dddiwuiutuoec" path="res://Sprites/Props/Catacombs/Graves/BabyGrave.png" id="2_frf75"]
+
+[node name="BabyGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_1picc")
+dialogueText = "BabyGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-4, 19)
+texture = ExtResource("2_frf75")
+offset = Vector2(4, -35)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-80, 8, -52, 28, -21, 41, 32, 44, 62, 43, 70, 34, 50, 20, 7, 6, -32, 2, -54, 1)

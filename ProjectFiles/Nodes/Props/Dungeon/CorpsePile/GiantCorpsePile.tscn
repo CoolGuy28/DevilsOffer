@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfrhk8hvjfkmi"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_t28vv"]
+[ext_resource type="Resource" uid="uid://knfaw4gb5ngh" path="res://Resources/Items/Items/Keys/Lockpick.tres" id="2_1v8td"]
+[ext_resource type="Texture2D" uid="uid://b1vmnvarl5c2p" path="res://Nodes/Props/Dungeon/CorpsePile/RottingCorpsePile.png" id="4_ja8hv"]
+[ext_resource type="Texture2D" uid="uid://5ldja7ohytiu" path="res://Nodes/Props/Dungeon/CorpsePile/CorpseLiquid.png" id="5_1v8td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(229, 77)
+
+[node name="GiantCorpsePile" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_t28vv")
+item = ExtResource("2_1v8td")
+amount = 2
+dialogueText = "CorpsePile"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 39)
+texture = ExtResource("4_ja8hv")
+offset = Vector2(0, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(3.5, 34.5)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="CorpseLiquid" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(6, -10)
+texture = ExtResource("5_1v8td")

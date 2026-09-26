@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://yu35mqjsa5qn"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_nnue5"]
+[ext_resource type="Texture2D" uid="uid://clglq7houkula" path="res://Sprites/Props/Catacombs/Mothman/Mothman/Mothman_1.png" id="2_ibi46"]
+[ext_resource type="Texture2D" uid="uid://bpgor185jpm27" path="res://Sprites/Props/Catacombs/Mothman/Mothman/Mothman_2.png" id="3_6m1wk"]
+[ext_resource type="Texture2D" uid="uid://d33g3trblpfe1" path="res://Sprites/Props/Catacombs/Mothman/Mothman/Mothman_3.png" id="4_f68tf"]
+[ext_resource type="PackedScene" uid="uid://8vmt6a4ihhly" path="res://Nodes/Props/General/Natural/rock_moth.tscn" id="5_cfqd4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glyim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ibi46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6m1wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f68tf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnn68"]
+size = Vector2(86, 58)
+
+[node name="Mothman" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_nnue5")
+dialogueText = "Mothman"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 37)
+sprite_frames = SubResource("SpriteFrames_glyim")
+autoplay = "default"
+offset = Vector2(3, -83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 22)
+shape = SubResource("RectangleShape2D_dnn68")
+
+[node name="Rock" parent="." instance=ExtResource("5_cfqd4")]
+position = Vector2(-1, 16)

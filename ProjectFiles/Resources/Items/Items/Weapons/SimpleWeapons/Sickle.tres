@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://cvwp68yndy81a"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_0gigw"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_if7ug"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_s2gxc"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_33ey2"]
+
+[sub_resource type="Resource" id="Resource_0gigw"]
+script = ExtResource("2_if7ug")
+dDie = 4
+dType = 1
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_if7ug"]
+script = ExtResource("3_s2gxc")
+hitAction = Array[ExtResource("1_0gigw")]([SubResource("Resource_0gigw")])
+actionName = "Sickle"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_33ey2")
+attackAction = SubResource("Resource_if7ug")
+weaponType = 1
+itemName = "Stick"
+description = "A curved farming tool that may just be sharp enough to help."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=5 format=3 uid="uid://dv5r7pfb5qml1"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_l20gt"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_7vj0u"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_2mtjo"]
+
+[sub_resource type="Resource" id="Resource_67b5t"]
+script = ExtResource("2_7vj0u")
+dType = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[resource]
+script = ExtResource("3_2mtjo")
+hitAction = Array[ExtResource("1_l20gt")]([SubResource("Resource_67b5t")])
+actionName = "Lantern"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

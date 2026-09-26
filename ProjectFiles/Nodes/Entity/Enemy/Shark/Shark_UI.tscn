@@ -1,0 +1,429 @@
+[gd_scene load_steps=25 format=3 uid="uid://ch6kpssalrmfu"]
+
+[ext_resource type="Script" uid="uid://cx65x76biqrdi" path="res://Nodes/Entity/Enemy/Enemy_BattleUI.gd" id="1_xmruf"]
+[ext_resource type="AudioStream" uid="uid://c8oqp6uaxglqy" path="res://SFX/Enemies/Blender_running.wav" id="3_5t660"]
+[ext_resource type="Script" uid="uid://bq0qsy8uywvmb" path="res://Nodes/Menu/CombatMenu/Scripts/EnemyBodyPart.gd" id="3_mm3jt"]
+[ext_resource type="Texture2D" uid="uid://ck0lxsrlqym22" path="res://Nodes/Entity/Enemy/Shark/Sprites/Torso/Torso.png" id="4_0d6da"]
+[ext_resource type="Script" uid="uid://bd45tkmcvi7c5" path="res://Nodes/Entity/Enemy/EnemyBodyPartTexture.gd" id="5_8vabn"]
+[ext_resource type="Script" uid="uid://dn7alt4viptc0" path="res://Resources/Actions/Scripts/Action_Enemy.gd" id="7_ksohl"]
+[ext_resource type="Texture2D" uid="uid://bt7l7ltr5roht" path="res://Nodes/Entity/Enemy/Shark/Sprites/Head/Head_2.png" id="7_xpn7g"]
+[ext_resource type="Texture2D" uid="uid://sex3wcjgyg1w" path="res://Nodes/Entity/Enemy/Shark/Sprites/Nose/Nose.png" id="8_mutsw"]
+[ext_resource type="Texture2D" uid="uid://bqkml1hm4h3ac" path="res://Nodes/Entity/Enemy/Shark/Sprites/Head/Head_2_2.png" id="9_5t660"]
+[ext_resource type="Texture2D" uid="uid://rvsibgw5u3h7" path="res://Nodes/Entity/Enemy/Shark/Sprites/Head/Head_2_3.png" id="10_dd3nk"]
+[ext_resource type="Resource" uid="uid://cjhu20cpky5gt" path="res://Resources/Actions/Attacks/SharkBite.tres" id="10_mutsw"]
+[ext_resource type="Resource" uid="uid://c4xn2a6w3nnob" path="res://Resources/Actions/Attacks/Stab.tres" id="11_mutsw"]
+[ext_resource type="Texture2D" uid="uid://dniqkyep6umt4" path="res://Nodes/Entity/Enemy/Shark/Sprites/Legs/LLegs.png" id="11_xpn7g"]
+[ext_resource type="Texture2D" uid="uid://ia8kdoquk24f" path="res://Nodes/Entity/Enemy/Shark/Sprites/Legs/RLegs.png" id="12_mutsw"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="13_mdvfh"]
+
+[sub_resource type="Resource" id="Resource_kngu1"]
+script = ExtResource("13_mdvfh")
+stats = Array[int]([0, 0, -2, -2])
+MC = -4
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Animation" id="Animation_uru84"]
+resource_name = "Idle"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.759, -0.25803703, 0.050988376, 0.53333336, -0.10538721, -1.6, -0.36666673, 2.0936675, 0.6333333, -0.21089911, 1.759, -0.36666656, -1.4235067, 0, 0),
+"times": PackedFloat32Array(0, 1.2, 2.5)
+}
+
+[sub_resource type="Animation" id="Animation_mutsw"]
+resource_name = "Idle_2"
+length = 0.13333668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso/Head:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.06666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_xpn7g"), ExtResource("9_5t660"), ExtResource("10_dd3nk")]
+}
+
+[sub_resource type="Animation" id="Animation_swp0g"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-3.9999936, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_xpn7g")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktcpr"]
+_data = {
+&"Idle": SubResource("Animation_uru84"),
+&"Idle_2": SubResource("Animation_mutsw"),
+&"RESET": SubResource("Animation_swp0g")
+}
+
+[sub_resource type="Resource" id="Resource_0hlis"]
+script = ExtResource("13_mdvfh")
+AC = -5
+moveSpeed = -0.2
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Animation" id="Animation_5t660"]
+resource_name = "Idle"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LLegs:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.67, 0.78, 0.86, 1.88, 2.0300002, 2.1333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.07166727, 0.0, 0.069691405, 0.0041373074, 0.0, 0.0, 0.18664163, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RLegs:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 0.8333333, 0.93333334, 1.4333333, 1.6666666, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1459129, 0.0, 0.0, -0.08552113334772175, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dd3nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LLegs:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RLegs:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7ixd"]
+_data = {
+&"Idle": SubResource("Animation_5t660"),
+&"RESET": SubResource("Animation_dd3nk")
+}
+
+[node name="Battle_UI" type="Control" node_paths=PackedStringArray("enemyParts", "enemyActions")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xmruf")
+enemyParts = [NodePath("Torso"), NodePath("Torso/Torso/Head/Nose"), NodePath("Legs")]
+enemyActions = [NodePath("Torso/SharkBite"), NodePath("Legs/Stab")]
+metadata/_custom_type_script = "uid://cx65x76biqrdi"
+
+[node name="Torso" type="Control" parent="." node_paths=PackedStringArray("partTextures", "adjacentParts", "upParts", "downParts", "leftParts", "rightParts")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.2
+offset_top = -206.0
+offset_right = -208.2
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(149, 150)
+script = ExtResource("3_mm3jt")
+partTextures = [NodePath("Torso"), NodePath("Torso/Head")]
+maxPartHealth = 60
+lethalPart = true
+acBonus = -4
+maxStage = 1
+playConstStreamSound = ExtResource("3_5t660")
+adjacentParts = [NodePath("Torso/Head/Nose"), NodePath("../Legs")]
+upParts = [NodePath("Torso/Head/Nose")]
+downParts = [NodePath("../Legs")]
+leftParts = [NodePath("../Legs")]
+rightParts = [NodePath("../Legs")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="EffectSpawnPoint" type="Marker2D" parent="Torso"]
+position = Vector2(220, 159)
+
+[node name="Torso" type="TextureRect" parent="Torso"]
+layout_mode = 1
+offset_top = -3.9999936
+offset_right = 348.0
+offset_bottom = 344.0
+pivot_offset = Vector2(154, 174)
+texture = ExtResource("4_0d6da")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_8vabn")
+textureName = "Torso/Torso"
+
+[node name="Head" type="TextureRect" parent="Torso/Torso"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -146.759
+offset_right = 172.0
+offset_bottom = 120.241
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpn7g")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_8vabn")
+textureName = "Head/Head"
+changeOnStage = true
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="Nose" type="Control" parent="Torso/Torso/Head" node_paths=PackedStringArray("partTextures", "adjacentParts", "downParts", "leftParts", "rightParts")]
+z_index = 2
+anchors_preset = 0
+offset_left = 78.42322
+offset_top = 141.57336
+offset_right = 78.42322
+offset_bottom = 141.57336
+script = ExtResource("3_mm3jt")
+partTextures = [NodePath("TextureRect")]
+maxPartHealth = 7
+acBonus = 3
+destroyedStatChange = SubResource("Resource_kngu1")
+adjacentParts = [NodePath("../../..")]
+downParts = [NodePath("../../..")]
+leftParts = [NodePath("../../..")]
+rightParts = [NodePath("../../..")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="EffectSpawnPoint" type="Marker2D" parent="Torso/Torso/Head/Nose"]
+position = Vector2(20.576782, -130.57336)
+
+[node name="TextureRect" type="TextureRect" parent="Torso/Torso/Head/Nose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.423218
+offset_top = -197.33234
+offset_right = 73.57678
+offset_bottom = -71.09131
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_mutsw")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_8vabn")
+textureName = "Nose/Nose"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso/Torso/Head/Nose"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.423218
+offset_top = -170.57336
+offset_right = 74.57678
+offset_bottom = -127.573364
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Torso"]
+libraries = {
+&"": SubResource("AnimationLibrary_ktcpr")
+}
+
+[node name="SharkBite" type="Node" parent="Torso"]
+script = ExtResource("7_ksohl")
+action = ExtResource("10_mutsw")
+attackTarget = "Limb"
+screenShakeTimer = 0.22
+onlyAttackAtMaxStage = true
+missText = "You hold back its teeth"
+metadata/_custom_type_script = "uid://dn7alt4viptc0"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 223.0
+offset_right = 283.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Legs" type="Control" parent="." node_paths=PackedStringArray("partTextures", "adjacentParts", "upParts", "leftParts", "rightParts")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -10.0
+offset_right = -30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+script = ExtResource("3_mm3jt")
+partTextures = [NodePath("LLegs"), NodePath("RLegs")]
+maxPartHealth = 12
+acBonus = -3
+destroyedStatChange = SubResource("Resource_0hlis")
+adjacentParts = [NodePath("../Torso")]
+upParts = [NodePath("../Torso")]
+leftParts = [NodePath("../Torso")]
+rightParts = [NodePath("../Torso")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="EffectSpawnPoint" type="Marker2D" parent="Legs"]
+position = Vector2(-55, 43.240997)
+
+[node name="LLegs" type="TextureRect" parent="Legs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -145.759
+offset_right = 343.0
+offset_bottom = 198.241
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(294.33334, 164.92569)
+texture = ExtResource("11_xpn7g")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_8vabn")
+textureName = "Legs/LLegs"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="RLegs" type="TextureRect" parent="Legs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.8333
+offset_top = -151.66666
+offset_right = 343.1667
+offset_bottom = 192.33334
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(336, 169.09235)
+texture = ExtResource("12_mutsw")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_8vabn")
+textureName = "Legs/RLegs"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Legs"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 57.240997
+offset_right = -11.0
+offset_bottom = 100.241
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Stab" type="Node" parent="Legs"]
+script = ExtResource("7_ksohl")
+action = ExtResource("11_mutsw")
+attackTarget = "Limb"
+bonusAction = true
+critText = "The needle like leg stabs deeply"
+metadata/_custom_type_script = "uid://dn7alt4viptc0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Legs"]
+libraries = {
+&"": SubResource("AnimationLibrary_s7ixd")
+}
+autoplay = "Idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -6.56

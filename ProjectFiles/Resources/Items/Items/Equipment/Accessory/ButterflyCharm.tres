@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://c7tkgcb60lo4r"]
+
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="1_1i147"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_thgw7"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_vymxp"]
+
+[sub_resource type="Resource" id="Resource_7i66a"]
+script = ExtResource("1_thgw7")
+stateBonus = 1
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("1_1i147")
+equippedStats = SubResource("Resource_7i66a")
+itemName = "Butterfly Charm"
+description = "A golden chain connected to radient green glass in the shape of a butterfly. It looks very valuable."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

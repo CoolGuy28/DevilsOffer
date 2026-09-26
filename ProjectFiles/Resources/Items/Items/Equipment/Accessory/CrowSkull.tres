@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://cf5ds6g5q047n"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_id7nu"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_1ylk8"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_6o4aq"]
+
+[sub_resource type="Resource" id="Resource_id7nu"]
+script = ExtResource("1_id7nu")
+statusImmunities = Array[int]([17, 11])
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("3_6o4aq")
+equippedStats = SubResource("Resource_id7nu")
+itemName = "Crow Skull"
+description = "A skull of a crow-like bird, yet it is big enough to wear on your head so whatever beast this came from is far bigger than a crow. The beak is full of nice smelling herbs."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

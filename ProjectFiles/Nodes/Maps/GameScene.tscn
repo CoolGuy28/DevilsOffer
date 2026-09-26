@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://g68m0uh773nl"]
+
+[ext_resource type="Script" uid="uid://dbxyw0gw1ccg0" path="res://GameScene.gd" id="1_mnqpv"]
+[ext_resource type="PackedScene" uid="uid://b6jro48p853vn" path="res://Nodes/Maps/BeginningDungeon.tscn" id="2_x7sxn"]
+[ext_resource type="PackedScene" uid="uid://cox4siys0y1la" path="res://Nodes/Maps/CatacombsPt1.tscn" id="3_revnp"]
+
+[node name="GameScene" type="Node2D" node_paths=PackedStringArray("floors") groups=["saveable"]]
+y_sort_enabled = true
+script = ExtResource("1_mnqpv")
+floors = [NodePath("DungeonRoot"), NodePath("CatacombsRoot")]
+
+[node name="DungeonRoot" parent="." instance=ExtResource("2_x7sxn")]
+
+[node name="CatacombsRoot" parent="." instance=ExtResource("3_revnp")]
+visible = false

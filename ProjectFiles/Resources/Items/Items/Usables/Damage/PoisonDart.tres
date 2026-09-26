@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=12 format=3 uid="uid://dona3cs6n41us"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_8pj8v"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_gjly7"]
+[ext_resource type="Script" uid="uid://d4f2wmg6dsywr" path="res://AR_BleedDamage.gd" id="3_nxs37"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="4_7g5e1"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="4_jfpou"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="5_bvr0s"]
+
+[sub_resource type="Resource" id="Resource_gf0j5"]
+script = ExtResource("2_gjly7")
+dDie = 4
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_67a22"]
+script = ExtResource("3_nxs37")
+dDie = 4
+metadata/_custom_type_script = "uid://d4f2wmg6dsywr"
+
+[sub_resource type="Resource" id="Resource_vw2dm"]
+script = ExtResource("4_jfpou")
+statusEffect = 9
+applyStatusChance = 30
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_yw7hb"]
+script = ExtResource("4_jfpou")
+statusEffect = 11
+applyStatusChance = 80
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_0kmot"]
+script = ExtResource("5_bvr0s")
+abilityMod = 1
+hitAction = Array[ExtResource("1_8pj8v")]([SubResource("Resource_gf0j5"), SubResource("Resource_67a22"), SubResource("Resource_vw2dm"), SubResource("Resource_yw7hb")])
+actionName = "Poison Dart"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_7g5e1")
+action = SubResource("Resource_0kmot")
+bonusAction = true
+itemName = "Poison Dart"
+description = "A small metal dart tipped in a vile poison."
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

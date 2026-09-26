@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://45uuxadvegl0"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_oqau3"]
+[ext_resource type="Texture2D" uid="uid://duoxdho4n0bod" path="res://Nodes/Props/Dungeon/WitheredChild/ToiletBucket.png" id="3_5nens"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(28, 22)
+
+[node name="Piss Bucket" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_oqau3")
+dialogueText = "PissBucket"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, 2)
+texture = ExtResource("3_5nens")
+offset = Vector2(3, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_iv3xd")

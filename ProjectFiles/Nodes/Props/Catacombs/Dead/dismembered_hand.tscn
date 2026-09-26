@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca0x6lacacb05"]
+
+[ext_resource type="Script" uid="uid://ca8w3o56r3ktd" path="res://Nodes/Tilemaps/Scripts/Interactable_WorldItem.gd" id="1_gqlpl"]
+[ext_resource type="Resource" uid="uid://chpj1jb05or6y" path="res://Resources/Items/Items/Equipment/DevilFlesh/AncientFlesh.tres" id="2_l2fso"]
+[ext_resource type="Texture2D" uid="uid://c4yhhq3nkxr6r" path="res://Sprites/Props/Catacombs/Dead/DismemberedHand.png" id="3_jkeve"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_jkeve"]
+[ext_resource type="AudioStream" uid="uid://chx0tp7fjywht" path="res://SFX/Actions/Damage/Blood/Blood_squirt_2.wav" id="5_2p5xk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(48, 28)
+
+[node name="DismemberedHand" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_gqlpl")
+item = ExtResource("2_l2fso")
+dialogueText = "DismemberedHand"
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(3, -1)
+texture = ExtResource("3_jkeve")
+offset = Vector2(-1, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_jkeve")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_2p5xk")
+})

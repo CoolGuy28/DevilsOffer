@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ccgkjmvmcxegk"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_fqt6f"]
+
+[resource]
+script = ExtResource("1_fqt6f")
+itemName = "Moldy Bread"
+description = "Old bread."
+itemTags = Array[int]([6])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

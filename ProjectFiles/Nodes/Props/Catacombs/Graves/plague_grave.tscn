@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu6yxlb0aj2ve"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_qfkny"]
+[ext_resource type="Texture2D" uid="uid://dr7lft8g4f531" path="res://Sprites/Props/Catacombs/Graves/PlagueGrave.png" id="2_kycdp"]
+[ext_resource type="Script" uid="uid://pvngekvmtunq" path="res://SpriteTextures.gd" id="3_qfkny"]
+[ext_resource type="Texture2D" uid="uid://bchkt8865cw2n" path="res://Sprites/Props/Catacombs/Graves/PlagueGrave_2.png" id="4_r67b5"]
+
+[node name="PlagueGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_qfkny")
+dialogueText = "PlagueGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, 16)
+texture = ExtResource("2_kycdp")
+offset = Vector2(0, -50)
+script = ExtResource("3_qfkny")
+textures = Array[Texture2D]([ExtResource("2_kycdp"), ExtResource("4_r67b5")])
+metadata/_custom_type_script = "uid://pvngekvmtunq"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-56, -14, -43, -6, -18, -4, 0, 1, 22, -1, 56, -12, 42, -26, 3, -38, -22, -36, -45, -34, -57, -23)

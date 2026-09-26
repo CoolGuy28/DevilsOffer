@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Action" load_steps=7 format=3 uid="uid://d0e4biokk51d7"]
+
+[ext_resource type="Script" uid="uid://cymhwr6r6lygf" path="res://Resources/StatusEffects/Scripts/StatusEffect.gd" id="1_055op"]
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Scripts/Action.gd" id="2_0td0e"]
+[ext_resource type="AudioStream" uid="uid://6yq401lanhyo" path="res://SFX/Enemies/Gore_Wet_9.wav" id="2_orovk"]
+[ext_resource type="AudioStream" uid="uid://b8du5pr4aiatf" path="res://SFX/Enemies/Gore_Wet_5.wav" id="3_je34w"]
+[ext_resource type="AudioStream" uid="uid://lhroy22acnuq" path="res://SFX/Enemies/Gore_Wet_3.wav" id="4_rbkmh"]
+[ext_resource type="AudioStream" uid="uid://5lyn3xr05xv3" path="res://SFX/Enemies/Gore_Wet_2.wav" id="5_7ao35"]
+
+[resource]
+script = ExtResource("2_0td0e")
+actionName = "Claws"
+statMod = 1
+hitSound = Array[AudioStream]([ExtResource("2_orovk"), ExtResource("3_je34w"), ExtResource("4_rbkmh"), ExtResource("5_7ao35")])
+damageDie = 8
+damageType = 1
+attackCount = 2
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

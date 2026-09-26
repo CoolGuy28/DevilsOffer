@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq0h4onjvxu8b"]
+
+[ext_resource type="Texture2D" uid="uid://csixooghgp21n" path="res://Sprites/Props/Catacombs/Dead/BonePile_3x3.png" id="1_73yom"]
+
+[node name="BonePile" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 11)
+texture = ExtResource("1_73yom")
+offset = Vector2(0, -79)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-1, 12)
+polygon = PackedVector2Array(-40, 1, -22, 6, 16, 6, 48, -1, 85, -3, 86, -11, 79, -21, 51, -25, 0, -31, -53, -30, -75, -21, -85, -10, -72, -6)

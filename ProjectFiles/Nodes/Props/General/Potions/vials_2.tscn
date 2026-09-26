@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7dj8lc2y03e0"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_6eob5"]
+[ext_resource type="Resource" uid="uid://by7ahsrq14ldo" path="res://Resources/Items/LootTable/Vials.tres" id="2_35bfy"]
+[ext_resource type="Texture2D" uid="uid://i6n0d2innnym" path="res://Sprites/Props/General/Potions/Vial_2.png" id="3_qkj2q"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_aeb1u"]
+[ext_resource type="AudioStream" uid="uid://bom2gntgybavc" path="res://SFX/Interactions/Cabinet_shutting_4.wav" id="5_jqvky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(45, 18)
+
+[node name="Vials_2" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_6eob5")
+lootTable = ExtResource("2_35bfy")
+dialogueText = "Vials"
+playInteractSFX = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -8)
+texture = ExtResource("3_qkj2q")
+offset = Vector2(-1, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-5.5, -10)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_aeb1u")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_jqvky")
+})

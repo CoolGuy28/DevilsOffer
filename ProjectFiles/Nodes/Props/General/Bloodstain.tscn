@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwfefjt6lhs2d"]
+
+[ext_resource type="Script" uid="uid://b7bv0mmudll5y" path="res://Nodes/Props/General/Bloodstain.gd" id="1_3uwmf"]
+[ext_resource type="Texture2D" uid="uid://drjcacumyspor" path="res://Sprites/WorldDecor/Bloodstains/Bloodstains_Small.png" id="1_46oo8"]
+
+[node name="Blood" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_3uwmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+texture = ExtResource("1_46oo8")
+offset = Vector2(3, -8)
+hframes = 5
+vframes = 3

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccpnurxoomosn"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_ydb8s"]
+[ext_resource type="Texture2D" uid="uid://ca81dxds6kgc8" path="res://Sprites/Props/Catacombs/FlowerRoom/FlowerFiend_1.png" id="2_b1pse"]
+[ext_resource type="Texture2D" uid="uid://y5occ27bmm36" path="res://Sprites/Props/Catacombs/FlowerRoom/FlowerFiend_2.png" id="3_up4k5"]
+[ext_resource type="Texture2D" uid="uid://b21alat17w7no" path="res://Sprites/Props/Catacombs/FlowerRoom/FlowerFiend_3.png" id="4_npp6i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hu5r6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1pse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_up4k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_npp6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_up4k5"]
+size = Vector2(45, 23)
+
+[node name="FlowerFiend" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_ydb8s")
+dialogueText = "FlowerFiend"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 48)
+sprite_frames = SubResource("SpriteFrames_hu5r6")
+autoplay = "default"
+frame_progress = 0.845128
+offset = Vector2(-1, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 46.5)
+shape = SubResource("RectangleShape2D_up4k5")

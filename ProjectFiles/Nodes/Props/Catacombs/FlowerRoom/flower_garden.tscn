@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://i6ux2hae2eu6"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_hlo83"]
+[ext_resource type="Texture2D" uid="uid://cryb0j0y2ia2v" path="res://Sprites/Props/Catacombs/FlowerRoom/FlowerGarden.png" id="2_n5an7"]
+
+[node name="FlowerGarden" type="StaticBody2D"]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_hlo83")
+dialogueText = "FlowerGarden"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-5, 16)
+texture = ExtResource("2_n5an7")
+offset = Vector2(5, -31)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-40, 18, -54, 52, -79, 61, -106, 52, -121, 33, -109, -1, -95, -32, -42, -51, 6, -51, 67, -42, 95, -13, 119, 26, 116, 43, 90, 53, 47, 48, 44, 31, 36, 10, 20, -9, -5, -9, -28, -1)

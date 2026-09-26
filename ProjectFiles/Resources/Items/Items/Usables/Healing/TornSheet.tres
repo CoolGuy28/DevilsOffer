@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=2 format=3 uid="uid://whiq3ofs1qeq"]
+
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="2_ufc24"]
+
+[resource]
+script = ExtResource("2_ufc24")
+bonusAction = true
+itemName = "Torn Sheet"
+description = "Old cloth fragments, usable for stopping blood flow."
+itemTags = Array[int]([1])
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

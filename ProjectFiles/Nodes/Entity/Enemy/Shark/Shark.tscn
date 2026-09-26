@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnvnvuxd0pta2"]
+
+[ext_resource type="Script" uid="uid://cq3713aua1jnn" path="res://Nodes/Entity/Enemy/Enemy.gd" id="1_mbnkx"]
+[ext_resource type="Resource" uid="uid://cth4sf4g0xrn2" path="res://Dialogue/Enemies/Decay.dialogue" id="2_pluqy"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="3_yxuyr"]
+[ext_resource type="Texture2D" uid="uid://kivcxyb7hsny" path="res://icon.svg" id="4_xq86o"]
+[ext_resource type="PackedScene" uid="uid://ch6kpssalrmfu" path="res://Nodes/Entity/Enemy/Shark/Shark_UI.tscn" id="5_eq3w6"]
+[ext_resource type="PackedScene" uid="uid://cn7fwslw3fiuy" path="res://Nodes/Entity/Components/HurtBox.tscn" id="6_ubg2d"]
+
+[sub_resource type="Resource" id="Resource_dnqcu"]
+script = ExtResource("3_yxuyr")
+stats = Array[int]([6, 0, -1, 0])
+AC = 13
+MC = 10
+moveSpeed = 1.0
+actionCount = 1
+bonusActionCount = 1
+stateBonus = 3
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_ngi6m"]
+script = ExtResource("3_yxuyr")
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx7gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coq8p"]
+size = Vector2(96, 97)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coq8p"]
+radius = 68.0556
+
+[node name="Shark" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_mbnkx")
+dialogueFile = ExtResource("2_pluqy")
+baseStats = SubResource("Resource_dnqcu")
+adjustedStats = SubResource("Resource_ngi6m")
+metadata/_custom_type_script = "uid://cq3713aua1jnn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1.25)
+texture = ExtResource("4_xq86o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wx7gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_coq8p")
+
+[node name="Battle_UI" parent="." instance=ExtResource("5_eq3w6")]
+visible = false
+
+[node name="HurtBox" parent="." instance=ExtResource("6_ubg2d")]
+collision_layer = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_coq8p")

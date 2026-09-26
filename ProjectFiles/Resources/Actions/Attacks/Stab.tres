@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=9 format=3 uid="uid://c4xn2a6w3nnob"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_mnokh"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_pkyqu"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="3_3m656"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_jxd8r"]
+[ext_resource type="Script" uid="uid://d4f2wmg6dsywr" path="res://AR_BleedDamage.gd" id="4_6qkoi"]
+
+[sub_resource type="Resource" id="Resource_3m656"]
+script = ExtResource("2_pkyqu")
+dDie = 4
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_1lbjm"]
+script = ExtResource("3_3m656")
+statusEffect = 9
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_5s738"]
+script = ExtResource("4_6qkoi")
+metadata/_custom_type_script = "uid://d4f2wmg6dsywr"
+
+[resource]
+script = ExtResource("3_jxd8r")
+hitAction = Array[ExtResource("1_mnokh")]([SubResource("Resource_3m656"), SubResource("Resource_1lbjm"), SubResource("Resource_5s738")])
+actionName = "Stab"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

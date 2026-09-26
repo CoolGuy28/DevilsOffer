@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=8 format=3 uid="uid://663aixk7dqjh"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_bjj0n"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="2_cswp5"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_u3jbt"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_ok04u"]
+
+[sub_resource type="Resource" id="Resource_myn3f"]
+script = ExtResource("2_u3jbt")
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_fks02"]
+script = ExtResource("2_u3jbt")
+dCount = 0
+dDie = 0
+dBonus = 2
+dType = 5
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_eghok"]
+script = ExtResource("3_ok04u")
+hitAction = Array[ExtResource("1_bjj0n")]([SubResource("Resource_myn3f"), SubResource("Resource_fks02")])
+actionName = "Rusty Shortsword"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("2_cswp5")
+attackAction = SubResource("Resource_eghok")
+equippableValue = 2
+itemName = "Rusty Shortsword"
+description = "A shortsword, grown rusty through age. Deals +2 poison on hit."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=5 format=3 uid="uid://bmwlmas2578k8"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_r1eko"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_c7oc0"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="2_gv1ql"]
+
+[sub_resource type="Resource" id="Resource_edwsu"]
+script = ExtResource("2_c7oc0")
+dDie = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[resource]
+script = ExtResource("2_gv1ql")
+hitAction = Array[ExtResource("1_r1eko")]([SubResource("Resource_edwsu")])
+actionName = "Unarmed Attack"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"

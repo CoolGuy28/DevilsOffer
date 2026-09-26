@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq15mmwpypfo2"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_vwy2j"]
+[ext_resource type="Resource" uid="uid://dlof765yus4wy" path="res://Resources/Items/LootTable/Crate.tres" id="2_alvdt"]
+[ext_resource type="Texture2D" uid="uid://d4kaytygr8dr1" path="res://Nodes/Props/General/Crate/Crate.png" id="3_baqxe"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_alvdt"]
+[ext_resource type="AudioStream" uid="uid://bnc01lqlxjavd" path="res://SFX/Interactions/Boxed item_grabbing.wav" id="5_kka8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ljr"]
+size = Vector2(64, 63.75)
+
+[node name="Crate" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_vwy2j")
+lootTable = ExtResource("2_alvdt")
+dialogueText = "Crate"
+playInteractSFX = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 1)
+texture = ExtResource("3_baqxe")
+offset = Vector2(0, -32)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.875)
+shape = SubResource("RectangleShape2D_f5ljr")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_alvdt")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_kka8o")
+})

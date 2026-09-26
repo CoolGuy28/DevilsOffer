@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=5 format=3 uid="uid://raq636lc1irh"]
+
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_k70ea"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_6vyju"]
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_343jk"]
+
+[sub_resource type="Resource" id="Resource_5ucbo"]
+script = ExtResource("1_k70ea")
+MC = 3
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("3_343jk")
+equippedStats = SubResource("Resource_5ucbo")
+shortDescription = "Priest Robes
++3 MC"
+itemName = "Priest Robes"
+description = "Robes of one in the sea cult. It offers protection only in the spiritual."
+itemTags = Array[int]([2])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

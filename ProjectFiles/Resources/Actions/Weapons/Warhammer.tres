@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=7 format=3 uid="uid://bijo1f8ufi322"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_evjqg"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_qytbf"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_7n534"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="3_qytbf"]
+
+[sub_resource type="Resource" id="Resource_rx8fe"]
+script = ExtResource("2_qytbf")
+dDie = 8
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_qytbf"]
+script = ExtResource("3_qytbf")
+statusEffect = 9
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[resource]
+script = ExtResource("3_7n534")
+hitAction = Array[ExtResource("1_evjqg")]([SubResource("Resource_rx8fe"), SubResource("Resource_qytbf")])
+actionName = "Warhammer"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

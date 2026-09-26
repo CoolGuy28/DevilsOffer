@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=13 format=3 uid="uid://ccym4lntauhhs"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_0yk5s"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_nxmcy"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="3_gav13"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_hatal"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_gav13"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="5_307n0"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="6_gqxqr"]
+
+[sub_resource type="Resource" id="Resource_4mwum"]
+script = ExtResource("2_nxmcy")
+dType = 1
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_trpqr"]
+script = ExtResource("2_nxmcy")
+dCount = 3
+dType = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_d8ke4"]
+script = ExtResource("3_gav13")
+statusEffect = 14
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_fbxbs"]
+script = ExtResource("3_hatal")
+hitAction = Array[ExtResource("1_0yk5s")]([SubResource("Resource_4mwum"), SubResource("Resource_trpqr"), SubResource("Resource_d8ke4")])
+actionName = "Burning Scimitar"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[sub_resource type="Resource" id="Resource_77xv2"]
+script = ExtResource("5_307n0")
+viewDis = 0.025
+torchBrightness = 50
+torchStrength = 0.5
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("4_gav13")
+attackAction = SubResource("Resource_fbxbs")
+weaponType = 1
+equippedStats = SubResource("Resource_77xv2")
+equippableValue = 6
+itemName = "Burning Scimitar"
+description = "A scimitar that constantly burns with the burning devil's flames. Anything that touches these flames will burn to ash."
+metadata/_custom_type_script = "uid://basjibpr7ota1"

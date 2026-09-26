@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://knfaw4gb5ngh"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_hxc5g"]
+
+[resource]
+script = ExtResource("1_hxc5g")
+itemName = "Lockpick"
+description = "Unlock doors without a key."
+itemTags = Array[int]([7])
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

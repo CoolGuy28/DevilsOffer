@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=3 format=3 uid="uid://55w826i8pac3"]
+
+[ext_resource type="Resource" uid="uid://bl1lo7rv0vlp0" path="res://Resources/Actions/Skills/Spells/Firebolt.tres" id="1_ehuvg"]
+[ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="3_tyf1d"]
+
+[resource]
+script = ExtResource("3_tyf1d")
+action = ExtResource("1_ehuvg")
+itemName = "Firebolt Scroll"
+description = "A spell scroll that summons bright flames when cast."
+itemTags = Array[int]([0, 5])
+metadata/_custom_type_script = "uid://dvxtxyc6r2uqp"

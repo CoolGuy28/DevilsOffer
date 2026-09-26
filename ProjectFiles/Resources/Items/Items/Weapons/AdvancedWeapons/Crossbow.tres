@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=7 format=3 uid="uid://bpogtwj7oscqe"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_fsvma"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_emsqc"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_aeueq"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="4_k5eqs"]
+
+[sub_resource type="Resource" id="Resource_fsvma"]
+script = ExtResource("2_emsqc")
+dDie = 10
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_emsqc"]
+script = ExtResource("3_aeueq")
+abilityMod = 3
+hitAction = Array[ExtResource("1_fsvma")]([SubResource("Resource_fsvma")])
+actionName = "Crossbow"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[resource]
+script = ExtResource("4_k5eqs")
+attackAction = SubResource("Resource_emsqc")
+weaponType = 2
+ranged = true
+equippableValue = 4
+itemName = "Heavy Crossbow"
+description = "A highpowered bow used to defend the castle gates from the walls. Uses wisdom to aim."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

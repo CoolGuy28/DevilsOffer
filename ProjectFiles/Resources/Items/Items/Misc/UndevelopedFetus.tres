@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bithml1mnplq5"]
+
+[ext_resource type="Script" uid="uid://dn01dhcscj5p3" path="res://Resources/Items/Scripts/Item.gd" id="1_bnv6f"]
+
+[resource]
+script = ExtResource("1_bnv6f")
+itemName = "Undeveloped Fetus"
+description = "A small fetus, you roughly estimate it being 5 months old."
+metadata/_custom_type_script = "uid://dn01dhcscj5p3"

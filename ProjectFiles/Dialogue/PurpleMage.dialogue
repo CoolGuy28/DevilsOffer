@@ -1,0 +1,94 @@
+~ Combat
+You try talking some sense to the guard..
+- What is your origin?
+	Guard: . . .
+- Wait. We don't have to fight!
+	Guard: I am sorry small one.
+	Guard: I have given my all to lord . . .
+	Guard: Nothing but my diligence remains.
+- Please don't!
+	The guards eyes seem to show some sympathy.
+	Not enough to break his resolve..
+- Prepare to die.
+	You feel more courageous for saying that.
+	The guard looks saddened by what he must do.
+=> END
+
+~ Overworld
+if interacted == false:
+	Purple Mage: My my my....
+	The mage looks over you pondering
+	Purple Mage: Well isn't your faith strong, engraving the lords most precious symbol over your eye.
+	Purple Mage: I must say I'm quite impressed, where do you hail from young miss?
+	- Up north
+		Purple Mage: Oh lovely, I suppose you are one of the many spies positioned up by Etre,
+		Purple Mage: Glad to have you all returning home after all this time,
+		Purple Mage: Along with the chosen lamb of course.
+		You know Etre as your home
+		set interacted = true
+	- Where am I??
+		Purple Mage: Oh how dissapointing,
+		Purple Mage: Not even going to try to play along with the facade hmm
+		Purple Mage: Your intellect is far too feeble for this play then, dissapointing, so be it
+		do relation.SetSeaRep(-10)
+		set interacted = true
+		set allowFight = true
+		=> END
+	- Larselle
+		Purple Mage: Hmm I've never seen you about, You must be a new initiate, yes?
+		Purple Mage: Well surely someone as devoted as you will go far here.
+		A creepy smile comes over the old mans face
+		set interacted = true
+	- Fight
+		Purple Mage: Quarrelsome one arn't you
+		do relation.SetSeaRep(-10)
+		set interacted = true
+		set allowFight = true
+		=> END
+- Mage?
+	Purple Mage: Yes, obvious by my robes is it not little one?
+	Purple Mage: I study the esoteric, parse the words between hell and earth.
+	- Can you teach me?
+		Purple Mage: Heh, even if you could comprehend
+		Purple Mage: Where would be the fun in that?
+	- Scary
+		Purple Mage: Knowledge is not gained without risk
+	=> Overworld
+- Statue?
+	Purple Mage: Beautiful is it not?
+	Purple Mage: She founded the church I believe, it was before my time
+- Ritual? [if relation.knowsOfRitual]
+	The mage smiles
+	Purple Mage: Oh yes yes yes we shall all gather down below to make an offering to the great sea devil,
+	Purple Mage: I translated the words to his realm in hell myself you know..
+	Purple Mage: Anyway you'll see for yourself soon enough.
+- Fight
+	Purple Mage: Quarrelsome one arn't you
+	do relation.SetSeaRep(-10)
+	set interacted = true
+	set allowFight = true
+	=> END
+- Leave
+=> END
+
+~ FindItem
+if item == null or amount <= 0
+	You find nothing.
+	=> END
+else
+	if amount == 1
+		You find a [color=red]{{item.itemName}}[/color]!
+	else
+		You find [color=red]{{amount}} {{item.itemName}}s.[/color]
+	do player.AddItem(item, amount)
+set looted = true
+=> END
+
+~ LootBody
+if looted == false
+	You search the mage.
+	do GetLoot()
+	=> FindItem
+else
+	The mage has nothing.
+=> END

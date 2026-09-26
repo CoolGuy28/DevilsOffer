@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1s0d7r7fbsud"]
+
+[ext_resource type="PackedScene" uid="uid://bmubgwas7du85" path="res://Nodes/Menu/3DDie/D20_3D.tscn" id="1_5eopg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5eopg"]
+size = Vector3(20, 18.082382, 2.2815857)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvnx4"]
+size = Vector3(20, 3.7615967, 20)
+
+[node name="D20PhysicsRoll" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16.481974, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.03864939, 0.99925286, 0, -0.99925286, -0.03864939, -0.09575969, 8.749713, 0.023878455)
+
+[node name="D20" parent="." instance=ExtResource("1_5eopg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.558598, 0)
+
+[node name="D21" parent="." instance=ExtResource("1_5eopg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2746379, 6.611909, 0)
+
+[node name="DieBox" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.298006, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DieBox"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DieBox/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.541191, 6.079789)
+shape = SubResource("BoxShape3D_5eopg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="DieBox/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.541, -7.1930423)
+shape = SubResource("BoxShape3D_5eopg")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="DieBox"]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DieBox/StaticBody3D2"]
+transform = Transform3D(0.99999994, 0, -4.973799e-14, 0, 1, 0, 4.973799e-14, 0, 0.99999994, 1.0182893e-07, 8.541191, 6.969922)
+shape = SubResource("BoxShape3D_5eopg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="DieBox/StaticBody3D2"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.3479541e-07, 8.541, -6.4202394)
+shape = SubResource("BoxShape3D_5eopg")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="DieBox"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DieBox/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6190405, 0)
+shape = SubResource("BoxShape3D_dvnx4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="DieBox/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.35964, 0)
+shape = SubResource("BoxShape3D_dvnx4")

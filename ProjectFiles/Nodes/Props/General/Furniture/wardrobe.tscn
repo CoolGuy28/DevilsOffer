@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo53bmtwbk0fm"]
+
+[ext_resource type="Script" uid="uid://uuy6um6h4dwl" path="res://Nodes/Tilemaps/Scripts/Interactable_Loot.gd" id="1_4063q"]
+[ext_resource type="Resource" uid="uid://d3k6hfyp3f3i" path="res://Resources/Items/LootTable/Barrel.tres" id="2_uc4ds"]
+[ext_resource type="Texture2D" uid="uid://cihhgv04ohsn8" path="res://Sprites/Props/General/Furniture/Wardrobe.png" id="3_2hidt"]
+[ext_resource type="Script" uid="uid://cw61hw1ttng6t" path="res://Nodes/Props/General/Door/AudioNode.gd" id="4_2hidt"]
+[ext_resource type="AudioStream" uid="uid://bnc01lqlxjavd" path="res://SFX/Interactions/Boxed item_grabbing.wav" id="5_3f57g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3xd"]
+size = Vector2(101, 44)
+
+[node name="Wardrobe" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_4063q")
+lootTable = ExtResource("2_uc4ds")
+dialogueText = "Wardrobe"
+playInteractSFX = true
+metadata/_custom_type_script = "uid://uuy6um6h4dwl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(31, 11)
+texture = ExtResource("3_2hidt")
+offset = Vector2(1, -59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(32.5, 2)
+shape = SubResource("RectangleShape2D_iv3xd")
+
+[node name="AudioNode" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_2hidt")
+soundEffects = Dictionary[String, AudioStream]({
+"Interact": ExtResource("5_3f57g")
+})

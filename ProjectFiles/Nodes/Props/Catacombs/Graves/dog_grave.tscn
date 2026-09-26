@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3wv7ujcijfto"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_fgnas"]
+[ext_resource type="Texture2D" uid="uid://bnj251wjxcevm" path="res://Sprites/Props/Catacombs/Graves/DogGrave.png" id="2_ilkco"]
+
+[node name="DogGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_fgnas")
+dialogueText = "DogGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-16, -15)
+texture = ExtResource("2_ilkco")
+offset = Vector2(16, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-58, -12, -8, 16, 40, 20, 56, 8, 46, -8, 16, -21, -11, -33, -43, -29)

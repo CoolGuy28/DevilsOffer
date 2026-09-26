@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d4kaab8jqs6ws"]
+
+[node name="SceneRoot" type="Node2D" groups=["saveable"]]
+y_sort_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

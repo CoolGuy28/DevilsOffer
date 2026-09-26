@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerBodyPart_Resource" load_steps=2 format=3 uid="uid://dfbl8digsjymd"]
+
+[ext_resource type="Script" uid="uid://c5q5qk8j6bo76" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart_Resource.gd" id="1_waafh"]
+
+[resource]
+script = ExtResource("1_waafh")
+texturePath = "Limbs/Natural/Head"
+maxHP = 35
+metadata/_custom_type_script = "uid://c5q5qk8j6bo76"

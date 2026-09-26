@@ -1,0 +1,276 @@
+[gd_scene load_steps=22 format=3 uid="uid://dv3trva5rgf4e"]
+
+[ext_resource type="Texture2D" uid="uid://b32o37ycvgjmv" path="res://Sprites/Entity/Decay/Combat/Torso/Torso.png" id="1_pod11"]
+[ext_resource type="Script" uid="uid://bq0qsy8uywvmb" path="res://Nodes/Menu/CombatMenu/Scripts/EnemyBodyPart.gd" id="2_p3g44"]
+[ext_resource type="Script" uid="uid://dn7alt4viptc0" path="res://Resources/Actions/Scripts/Action_Enemy.gd" id="3_ivuhe"]
+[ext_resource type="Texture2D" uid="uid://b721o3fbs5gxp" path="res://Sprites/Entity/Decay/Combat/Torso/Torso_Destroyed.png" id="3_yybk3"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="6_esg3y"]
+[ext_resource type="Texture2D" uid="uid://ya6gdabbr00d" path="res://Sprites/Entity/Decay/Combat/RightLeg/Leg.png" id="10_qdrej"]
+[ext_resource type="Texture2D" uid="uid://lscfw20c8lpt" path="res://Sprites/Entity/Decay/Combat/LeftArm/Arm.png" id="10_scixa"]
+[ext_resource type="Texture2D" uid="uid://c3ns18jstxtw1" path="res://Sprites/Entity/Decay/Combat/LeftArm/Arm_Destroyed.png" id="11_5hm6f"]
+[ext_resource type="Texture2D" uid="uid://bl4nnsu35qt5e" path="res://Sprites/Entity/Decay/Combat/RightLeg/Leg_Destroyed.png" id="11_s2dui"]
+[ext_resource type="Texture2D" uid="uid://bwt5h6fxssc2s" path="res://Sprites/Entity/Decay/Combat/Head/Head.png" id="12_6rifm"]
+[ext_resource type="Texture2D" uid="uid://b73b48sr7sl0q" path="res://Sprites/Entity/Decay/Combat/RightArm/Arm.png" id="12_tjdys"]
+[ext_resource type="Texture2D" uid="uid://6yciaibnr07g" path="res://Sprites/Entity/Decay/Combat/RightArm/Arm_Destroyed.png" id="13_rqdfq"]
+[ext_resource type="Script" uid="uid://cymhwr6r6lygf" path="res://Resources/StatusEffects/Scripts/StatusEffect.gd" id="14_2giut"]
+[ext_resource type="Texture2D" uid="uid://c5v373mcxvdok" path="res://Sprites/Entity/Decay/Combat/Head/Head_Destroyed.png" id="14_mqod4"]
+[ext_resource type="Texture2D" uid="uid://dxcty8m0kgfjp" path="res://Sprites/Entity/Decay/Combat/LeftLeg/Leg.png" id="15_cv5dv"]
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Scripts/Action.gd" id="15_w1vlh"]
+[ext_resource type="Texture2D" uid="uid://pvt27rxx6xoj" path="res://Sprites/Entity/Decay/Combat/LeftLeg/Leg_Destroyed.png" id="16_0ok0h"]
+
+[sub_resource type="Resource" id="Resource_yybk3"]
+script = ExtResource("15_w1vlh")
+actionName = "Shovel"
+dieCount = 2
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"
+
+[sub_resource type="Resource" id="Resource_15xq0"]
+script = ExtResource("15_w1vlh")
+actionName = "Decayed Touch"
+statMod = 1
+dieCount = 3
+damageDie = 8
+dontAddStatDmg = true
+diceDmgBonus = 5
+damageType = 5
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"
+
+[sub_resource type="Resource" id="Resource_uqd4u"]
+script = ExtResource("6_esg3y")
+skillBonus = -3
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_2kal4"]
+script = ExtResource("6_esg3y")
+AC = -4
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[node name="BattleUI" type="Node2D"]
+scale = Vector2(0.565, 0.565)
+
+[node name="Torso" type="Sprite2D" parent="." node_paths=PackedStringArray("upParts", "leftParts", "rightParts", "downParts")]
+physics_interpolation_mode = 2
+z_index = 1
+texture_filter = 2
+position = Vector2(1.5026956, -66.1559)
+texture = ExtResource("1_pod11")
+script = ExtResource("2_p3g44")
+maxPartHealth = 34
+lethalPart = true
+upParts = [NodePath("Head")]
+leftParts = [NodePath("LeftArm")]
+rightParts = [NodePath("RightArm")]
+downParts = [NodePath("../RightLeg"), NodePath("../LeftLeg")]
+partMoveSpd = 4.0
+baseSprite = ExtResource("1_pod11")
+damagedSprite = ExtResource("3_yybk3")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.75
+offset_top = -260.0
+offset_right = -74.99998
+offset_bottom = -219.99998
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RightArm" type="Sprite2D" parent="Torso" node_paths=PackedStringArray("upParts", "leftParts", "downParts")]
+physics_interpolation_mode = 2
+texture_filter = 2
+position = Vector2(43.75, -80)
+rotation = -0.0022117721
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("12_tjdys")
+offset = Vector2(64.24999, 256.75)
+script = ExtResource("2_p3g44")
+maxPartHealth = 15
+acBonus = 3
+upParts = [NodePath("../Head")]
+leftParts = [NodePath(".."), NodePath("../LeftArm")]
+downParts = [NodePath("../../RightLeg"), NodePath("../../LeftLeg")]
+partMoveSpd = 5.0
+movementBounds = Vector2(0, -8)
+baseSprite = ExtResource("12_tjdys")
+damagedSprite = ExtResource("13_rqdfq")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Shovel" type="Node" parent="Torso/RightArm"]
+script = ExtResource("3_ivuhe")
+action = SubResource("Resource_yybk3")
+points = 0
+critText = "The shovel pummels your head"
+hitText = "The shovel deals "
+missText = "You evade the swing"
+metadata/_custom_type_script = "uid://dn7alt4viptc0"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso/RightArm"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -331.25
+offset_right = 91.250015
+offset_bottom = -291.25
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.86388475
+alignment = 1
+
+[node name="LeftArm" type="Sprite2D" parent="Torso" node_paths=PackedStringArray("upParts", "rightParts", "downParts")]
+physics_interpolation_mode = 2
+z_index = -1
+texture_filter = 2
+position = Vector2(-66.25, -73.75)
+rotation = 0.04597484
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("10_scixa")
+offset = Vector2(-8.250008, 173)
+script = ExtResource("2_p3g44")
+maxPartHealth = 15
+acBonus = 3
+upParts = [NodePath("../Head")]
+rightParts = [NodePath(".."), NodePath("../RightArm")]
+downParts = [NodePath("../../LeftLeg"), NodePath("../../RightLeg")]
+partMoveSpd = 2.0
+movementBounds = Vector2(0, 2.6)
+baseSprite = ExtResource("10_scixa")
+damagedSprite = ExtResource("11_5hm6f")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="DecayedTouch" type="Node" parent="Torso/LeftArm"]
+script = ExtResource("3_ivuhe")
+action = SubResource("Resource_15xq0")
+critText = "The hand melts your skin at its touch"
+hitText = "The necrosis deals "
+missText = "You dodge the rotting hand"
+metadata/_custom_type_script = "uid://dn7alt4viptc0"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso/LeftArm"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -101.25
+offset_right = -73.749985
+offset_bottom = -61.25
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.1002538
+alignment = 1
+
+[node name="Head" type="Sprite2D" parent="Torso" node_paths=PackedStringArray("leftParts", "rightParts", "downParts")]
+physics_interpolation_mode = 2
+z_index = 1
+texture_filter = 2
+position = Vector2(-27.499998, -146.25)
+rotation = -0.15396486
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("12_6rifm")
+offset = Vector2(-44.500015, -30.750015)
+script = ExtResource("2_p3g44")
+maxPartHealth = 6
+acBonus = 6
+destroyedStatChange = SubResource("Resource_uqd4u")
+leftParts = [NodePath("../LeftArm")]
+rightParts = [NodePath("../RightArm")]
+downParts = [NodePath("..")]
+partMoveSpd = 3.5
+movementBounds = Vector2(0, -8)
+baseSprite = ExtResource("12_6rifm")
+damagedSprite = ExtResource("14_mqod4")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Torso/Head"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -67.50001
+offset_right = -46.25
+offset_bottom = -27.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LeftLeg" type="Sprite2D" parent="." node_paths=PackedStringArray("upParts", "rightParts")]
+physics_interpolation_mode = 2
+texture_filter = 2
+position = Vector2(-14.747307, 40.094097)
+texture = ExtResource("15_cv5dv")
+offset = Vector2(-16.999998, 154)
+script = ExtResource("2_p3g44")
+maxPartHealth = 9
+acBonus = 2
+destroyedStatChange = SubResource("Resource_2kal4")
+upParts = [NodePath("../Torso"), NodePath("../Torso/LeftArm")]
+rightParts = [NodePath("../RightLeg")]
+partMoveSpd = 4.0
+movementBounds = Vector2(0, 1)
+baseSprite = ExtResource("15_cv5dv")
+damagedSprite = ExtResource("16_0ok0h")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="ConditionBox" type="HBoxContainer" parent="LeftLeg"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.5
+offset_top = -206.25
+offset_right = -66.249985
+offset_bottom = -166.25
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RightLeg" type="Sprite2D" parent="." node_paths=PackedStringArray("upParts", "leftParts")]
+physics_interpolation_mode = 2
+z_index = 1
+texture_filter = 2
+position = Vector2(42.7527, 36.344105)
+texture = ExtResource("10_qdrej")
+offset = Vector2(9.249998, 181.5)
+script = ExtResource("2_p3g44")
+maxPartHealth = 20
+acBonus = 2
+destroyedStatChange = SubResource("Resource_2kal4")
+upParts = [NodePath("../Torso"), NodePath("../Torso/RightArm")]
+leftParts = [NodePath("../LeftLeg")]
+partMoveSpd = 4.0
+movementBounds = Vector2(0, -3.5)
+baseSprite = ExtResource("10_qdrej")
+damagedSprite = ExtResource("11_s2dui")
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="ConditionBox" type="HBoxContainer" parent="RightLeg"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.5
+offset_top = -248.74998
+offset_right = -41.249985
+offset_bottom = -208.74998
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

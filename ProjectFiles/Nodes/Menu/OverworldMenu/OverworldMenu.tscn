@@ -1,0 +1,1016 @@
+[gd_scene load_steps=38 format=3 uid="uid://cajclmaq0ox8v"]
+
+[ext_resource type="Texture2D" uid="uid://d3jcx6yhw07vh" path="res://Nodes/Menu/OverworldMenu/Sprites/EquipBackground.png" id="1_sstid"]
+[ext_resource type="Script" uid="uid://b5be53du7vgsy" path="res://Nodes/Menu/OverworldMenu/OverworldMenu.gd" id="2_uy0oc"]
+[ext_resource type="Texture2D" uid="uid://dkoh63e0o3aqu" path="res://Nodes/Menu/OverworldMenu/Sprites/InventoryBackground.png" id="3_87d80"]
+[ext_resource type="PackedScene" uid="uid://dyoane104rjpn" path="res://Nodes/Menu/Components/Item_Button.tscn" id="5_s78bv"]
+[ext_resource type="Texture2D" uid="uid://byss202j3c3ns" path="res://Nodes/Menu/OverworldMenu/Sprites/BodyBackground.png" id="6_3gwnc"]
+[ext_resource type="Texture2D" uid="uid://b8fvna75gy2y4" path="res://Nodes/Menu/OverworldMenu/Sprites/Buttons/Equip.png" id="6_uqb8r"]
+[ext_resource type="Texture2D" uid="uid://bf18trdxevxvd" path="res://Nodes/Menu/OverworldMenu/Sprites/Buttons/Inventory.png" id="7_cc5fc"]
+[ext_resource type="Texture2D" uid="uid://bi4w2s8rtelve" path="res://Nodes/Menu/OverworldMenu/Sprites/Buttons/Body.png" id="8_l60ep"]
+[ext_resource type="PackedScene" uid="uid://c318fca0a08cf" path="res://Nodes/Menu/Components/HealthSlider.tscn" id="9_4swql"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="10_cacg7"]
+[ext_resource type="Script" uid="uid://c4gcua87f0ugv" path="res://Nodes/Menu/OverworldMenu/OM_InventoryPanel.gd" id="10_u1j8i"]
+[ext_resource type="PackedScene" uid="uid://bh6jkfy7235uy" path="res://Nodes/Menu/Components/SelectableText.tscn" id="11_qmuot"]
+[ext_resource type="Script" uid="uid://cvtpmdhpmqi3j" path="res://Nodes/Menu/OverworldMenu/OM_BodyPanel.gd" id="12_2c1k1"]
+[ext_resource type="PackedScene" uid="uid://bgufnhmrirjjt" path="res://Nodes/Menu/Components/SelectableEquipmentText.tscn" id="12_t2l2q"]
+[ext_resource type="Texture2D" uid="uid://bg2lphrv35ppk" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Head.png" id="14_4swql"]
+[ext_resource type="PackedScene" uid="uid://d0b7ewkuvj4q4" path="res://Nodes/Menu/OverworldMenu/InfoDisplay/InfoDisplay.tscn" id="14_m5kov"]
+[ext_resource type="Script" uid="uid://bxa2y6mkhqga2" path="res://Nodes/Menu/OverworldMenu/PlayerBodypart_MenuUI.gd" id="15_uqb8r"]
+[ext_resource type="Texture2D" uid="uid://lcsu8uown8uv" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Torso_c.png" id="17_ktw4n"]
+[ext_resource type="Texture2D" uid="uid://dr8iey5a65qe6" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Arm_Right.png" id="17_qmuot"]
+[ext_resource type="Texture2D" uid="uid://3846fbo2ptrb" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Arm_Left.png" id="18_t2l2q"]
+[ext_resource type="Texture2D" uid="uid://pw6cj3iyuj5k" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Leg_Right.png" id="19_8o1ga"]
+[ext_resource type="Texture2D" uid="uid://0mpope1olkvk" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Limbs/Natural/Leg_Left.png" id="20_jrm3a"]
+[ext_resource type="Texture2D" uid="uid://on3h6mut2lt1" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Eye.png" id="21_un4hx"]
+[ext_resource type="Texture2D" uid="uid://jcavs4umf6bx" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Lung.png" id="22_m5kov"]
+[ext_resource type="PackedScene" uid="uid://cq2hpef781674" path="res://Resources/StatusEffects/StatusEffectIcon.tscn" id="23_jovof"]
+[ext_resource type="Texture2D" uid="uid://c51ujekpj3yvh" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Heart.png" id="23_qlsjx"]
+[ext_resource type="Texture2D" uid="uid://d2iufjkeakk8s" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Liver.png" id="24_gxahk"]
+[ext_resource type="Texture2D" uid="uid://b366bcpi75mac" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Kidney_Right.png" id="25_hqdhj"]
+[ext_resource type="Texture2D" uid="uid://ccm744np16p1x" path="res://Sprites/UI/OverworldMenu/BodypartSprites/Organs/Natural/Kidney_Left.png" id="26_ln0ow"]
+[ext_resource type="Script" uid="uid://bywp8y4b25xqt" path="res://Nodes/Menu/OverworldMenu/OM_EquipmentPanel.gd" id="28_5vvrq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sstid"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jovof"]
+texture = ExtResource("3_87d80")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vh57j"]
+texture = ExtResource("6_3gwnc")
+
+[sub_resource type="Animation" id="Animation_un4hx"]
+resource_name = "Idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodypartsDisp/RightArm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(-0.09371258, 0, 0, 0.93333334, -0.00021396577, -0.02676984, -0.9333334, -0.0074187145, 0.83333325, -0.0015425012, -0.094, -1.2333331, 0.013294928, 0, 0),
+"times": PackedFloat32Array(0, 3, 6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodypartsDisp/LeftArm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.02676984, 0, 0, 0.93333334, -0.00021396577, -0.094, -0.9333334, -0.0074187145, 0.83333325, -0.0015425012, -0.02676984, -1.2333331, 0.013294928, 0, 0),
+"times": PackedFloat32Array(0, 3, 6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BodypartsDisp/RightLeg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.01, -0.25, 0, 0.25, 0, 0.009999985, -0.5, 0, 0.5, 0, -0.01, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BodypartsDisp/LeftLeg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.009999985, -0.25, 0, 0.25, 0, -0.01, -0.5, 0, 0.5, 0, 0.009999985, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 6)
+}
+
+[sub_resource type="Animation" id="Animation_m5kov"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodypartsDisp/RightArm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodypartsDisp/RightLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.04789177, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlsjx"]
+_data = {
+&"Idle": SubResource("Animation_un4hx"),
+&"RESET": SubResource("Animation_m5kov")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_py0s2"]
+texture = ExtResource("1_sstid")
+
+[node name="OverworldMenu" type="Panel" node_paths=PackedStringArray("mainButtons", "menuPanels")]
+process_mode = 3
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sstid")
+script = ExtResource("2_uy0oc")
+mainButtons = [NodePath("EquipMenu"), NodePath("InventoryMenu"), NodePath("HealthMenu")]
+mainButtonDeselectColor = Color(0.3328807, 0.33288068, 0.33288068, 1)
+menuPanels = [NodePath("EquipmentPanel"), NodePath("InventoryPanel"), NodePath("BodyPanel")]
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_87d80")
+
+[node name="EquipMenu" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(74, 89.5)
+texture = ExtResource("6_uqb8r")
+
+[node name="InventoryMenu" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(74, 184.5)
+texture = ExtResource("7_cc5fc")
+
+[node name="HealthMenu" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(74, 278.5)
+texture = ExtResource("8_l60ep")
+
+[node name="InventoryPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("invHeaderButtons", "left_list", "right_list")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jovof")
+script = ExtResource("10_u1j8i")
+invHeaderButtons = [NodePath("InvMenuControl/HBoxContainer/All"), NodePath("InvMenuControl/HBoxContainer/Healing"), NodePath("InvMenuControl/HBoxContainer/Equipment"), NodePath("InvMenuControl/HBoxContainer/Weapons"), NodePath("InvMenuControl/HBoxContainer/Books")]
+left_list = NodePath("InvMenuControl/HBoxContainer2/VBoxContainer")
+right_list = NodePath("InvMenuControl/HBoxContainer2/VBoxContainer2")
+
+[node name="InvMenuControl" type="Control" parent="InventoryPanel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPanel/InvMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185
+anchor_top = 0.063
+anchor_right = 0.94500005
+anchor_bottom = 0.13700001
+offset_left = -3.0
+offset_top = -2.3199997
+offset_right = -6.1035156e-05
+offset_bottom = 2.319992
+alignment = 1
+
+[node name="All" parent="InventoryPanel/InvMenuControl/HBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+text = "All"
+
+[node name="Healing" parent="InventoryPanel/InvMenuControl/HBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+text = "Healing"
+
+[node name="Equipment" parent="InventoryPanel/InvMenuControl/HBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+text = "Equipment"
+
+[node name="Weapons" parent="InventoryPanel/InvMenuControl/HBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+text = "Weapons"
+
+[node name="Books" parent="InventoryPanel/InvMenuControl/HBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+text = "Books"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InventoryPanel/InvMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18400002
+anchor_top = 0.16800001
+anchor_right = 0.94900006
+anchor_bottom = 0.725
+offset_left = -0.2000122
+offset_top = 0.19998932
+offset_right = -0.20007324
+offset_bottom = -5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/InvMenuControl/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="InventoryPanel/InvMenuControl/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemDescription" type="RichTextLabel" parent="InventoryPanel/InvMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18200001
+anchor_top = 0.75000006
+anchor_right = 0.95100003
+anchor_bottom = 0.94500005
+offset_left = 0.3999939
+offset_top = -3.0517578e-05
+offset_right = 0.19995117
+offset_bottom = 0.19995117
+scroll_active = false
+
+[node name="BodyPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("bodyChoices", "limbDispArray", "organDispArray")]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vh57j")
+script = ExtResource("12_2c1k1")
+bodyChoices = [NodePath("MarginContainer/BodyMenuControl/BodyButton"), NodePath("MarginContainer/BodyMenuControl/OrgansButton")]
+limbDispArray = [NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/Head"), NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/Torso"), NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightArm"), NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftArm"), NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightLeg"), NodePath("MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftLeg")]
+organDispArray = [NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/Eye"), NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/Lung"), NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/Heart"), NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/Liver"), NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/RightKidney"), NodePath("MarginContainer/BodyMenuControl/Body/OrgansDisp/LeftKidney")]
+
+[node name="MarginContainer" type="MarginContainer" parent="BodyPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 143
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="BodyMenuControl" type="Control" parent="BodyPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="BodyButton" parent="BodyPanel/MarginContainer/BodyMenuControl" instance=ExtResource("11_qmuot")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_top = 33.0
+offset_right = 137.0
+offset_bottom = 63.0
+text = "Body"
+
+[node name="OrgansButton" parent="BodyPanel/MarginContainer/BodyMenuControl" instance=ExtResource("11_qmuot")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 136.0
+offset_bottom = 110.0
+text = "Organs"
+
+[node name="InfoDisplay" parent="BodyPanel/MarginContainer/BodyMenuControl" instance=ExtResource("14_m5kov")]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 22.0
+offset_right = 595.0
+offset_bottom = 51.0
+
+[node name="Body" type="Control" parent="BodyPanel/MarginContainer/BodyMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -44.0
+offset_right = -66.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.255, 1.255)
+
+[node name="OrgansDisp" type="Control" parent="BodyPanel/MarginContainer/BodyMenuControl/Body"]
+z_index = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Eye" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("LeftPart", "DownPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 283.0
+offset_top = 54.0
+offset_right = -277.0
+offset_bottom = -444.02527
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(26.960175, 33.649403)
+texture = ExtResource("21_un4hx")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+LeftPart = NodePath("../Heart")
+DownPart = NodePath("../Lung")
+
+[node name="Lung" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart", "DownPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 281.0
+offset_top = 180.0
+offset_right = -268.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_m5kov")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 1
+UpPart = NodePath("../Eye")
+LeftPart = NodePath("../Heart")
+RightPart = NodePath("../RightKidney")
+DownPart = NodePath("../Liver")
+
+[node name="Heart" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("UpPart", "RightPart", "DownPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 281.0
+offset_top = 180.0
+offset_right = -269.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_qlsjx")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 2
+UpPart = NodePath("../Eye")
+RightPart = NodePath("../Lung")
+DownPart = NodePath("../Liver")
+
+[node name="Liver" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart", "DownPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 246.0
+offset_top = 214.0
+offset_right = -294.0
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_gxahk")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 3
+UpPart = NodePath("../Lung")
+LeftPart = NodePath("../LeftKidney")
+RightPart = NodePath("../RightKidney")
+DownPart = NodePath("../LeftKidney")
+
+[node name="RightKidney" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("UpPart", "LeftPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 279.0
+offset_top = 251.0
+offset_right = -270.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_hqdhj")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 4
+UpPart = NodePath("../Lung")
+LeftPart = NodePath("../LeftKidney")
+
+[node name="LeftKidney" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/OrgansDisp" node_paths=PackedStringArray("UpPart", "RightPart")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = 250.0
+offset_right = -309.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_ln0ow")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 5
+UpPart = NodePath("../Liver")
+RightPart = NodePath("../RightKidney")
+
+[node name="BodypartsDisp" type="Control" parent="BodyPanel/MarginContainer/BodyMenuControl/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Head" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("RightPart", "DownPart")]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47400004
+anchor_top = 0.5
+anchor_right = 0.47400004
+anchor_bottom = 0.5
+offset_left = -105.98401
+offset_top = -289.5
+offset_right = 106.01599
+offset_bottom = -86.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(106.4303, 100.22709)
+texture = ExtResource("14_4swql")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+RightPart = NodePath("../RightArm")
+DownPart = NodePath("../Torso")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/Head"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.2350707
+offset_top = 41.262947
+offset_right = 0.40638733
+offset_bottom = -133.05179
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/Head/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="Torso" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart", "DownPart")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.476
+anchor_top = 0.5
+anchor_right = 0.476
+anchor_bottom = 0.5
+offset_left = -131.216
+offset_top = -157.5
+offset_right = 131.784
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_ktw4n")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 1
+UpPart = NodePath("../Head")
+LeftPart = NodePath("../LeftArm")
+RightPart = NodePath("../RightArm")
+DownPart = NodePath("../LeftLeg")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/Torso"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.93626
+offset_top = 32.76892
+offset_right = -55.980087
+offset_bottom = -210.08766
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/Torso/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="RightArm" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart", "DownPart")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47400004
+anchor_top = 0.5
+anchor_right = 0.47400004
+anchor_bottom = 0.5
+offset_left = 39.01599
+offset_top = -144.5
+offset_right = 239.01599
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(18.003998, 36.501984)
+texture = ExtResource("17_qmuot")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 2
+UpPart = NodePath("../Head")
+LeftPart = NodePath("../Torso")
+RightPart = NodePath("../LeftArm")
+DownPart = NodePath("../RightLeg")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightArm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.039835
+offset_top = 80.32669
+offset_right = -25.86853
+offset_bottom = -175.28284
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightArm/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="LeftArm" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart", "DownPart")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48400003
+anchor_top = 0.5
+anchor_right = 0.48400003
+anchor_bottom = 0.5
+offset_left = -236.14401
+offset_top = -150.5
+offset_right = -36.144012
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.02676984
+pivot_offset = Vector2(185.80878, 38.51793)
+texture = ExtResource("18_t2l2q")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 3
+UpPart = NodePath("../Head")
+LeftPart = NodePath("../RightArm")
+RightPart = NodePath("../Torso")
+DownPart = NodePath("../LeftLeg")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftArm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.109434
+offset_top = 78.18931
+offset_right = 25.280746
+offset_bottom = -177.42023
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.008726646
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftArm/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="RightLeg" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 215.0
+offset_top = 345.0
+offset_right = -182.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.04789177
+pivot_offset = Vector2(103.7251, 24.7211)
+texture = ExtResource("19_8o1ga")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 4
+UpPart = NodePath("../Torso")
+LeftPart = NodePath("../LeftLeg")
+RightPart = NodePath("../RightArm")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightLeg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.100077
+offset_top = 59.147804
+offset_right = -4.6078796
+offset_bottom = -163.01233
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/RightLeg/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="LeftLeg" type="TextureRect" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp" node_paths=PackedStringArray("UpPart", "LeftPart", "RightPart")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 153.0
+offset_top = 338.0
+offset_right = -244.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.009999985
+pivot_offset = Vector2(109.15138, 25.346588)
+texture = ExtResource("20_jrm3a")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_uqb8r")
+bodypartNodeIndex = 5
+UpPart = NodePath("../Torso")
+LeftPart = NodePath("../LeftArm")
+RightPart = NodePath("../RightLeg")
+
+[node name="StatusEffects" type="HBoxContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftLeg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.005979
+offset_top = 62.396576
+offset_right = -4.720276
+offset_bottom = -154.16684
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StatusEffectSprite" parent="BodyPanel/MarginContainer/BodyMenuControl/Body/BodypartsDisp/LeftLeg/StatusEffects" instance=ExtResource("23_jovof")]
+layout_mode = 2
+
+[node name="BodyAnimator" type="AnimationPlayer" parent="BodyPanel/MarginContainer/BodyMenuControl/Body"]
+libraries = {
+&"": SubResource("AnimationLibrary_qlsjx")
+}
+
+[node name="HealthSlider" parent="BodyPanel/MarginContainer/BodyMenuControl" instance=ExtResource("9_4swql")]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 500.0
+offset_right = 602.0
+offset_bottom = 537.0
+
+[node name="MarginContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/HealthSlider" index="0"]
+scale = Vector2(1, 0.5218054)
+
+[node name="Label" parent="BodyPanel/MarginContainer/BodyMenuControl/HealthSlider" index="1"]
+offset_left = -5.0
+offset_top = -10.0
+offset_right = -5.0
+offset_bottom = -10.0
+
+[node name="Value" parent="BodyPanel/MarginContainer/BodyMenuControl/HealthSlider" index="2"]
+offset_left = 3.0
+offset_top = -10.0
+offset_right = 3.0
+offset_bottom = -10.0
+
+[node name="BloodSlider" parent="BodyPanel/MarginContainer/BodyMenuControl" instance=ExtResource("9_4swql")]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 531.0
+offset_right = 602.0
+offset_bottom = 568.0
+
+[node name="MarginContainer" parent="BodyPanel/MarginContainer/BodyMenuControl/BloodSlider" index="0"]
+scale = Vector2(1, 0.5218054)
+
+[node name="Label" parent="BodyPanel/MarginContainer/BodyMenuControl/BloodSlider" index="1"]
+offset_left = -5.0
+offset_top = -10.0
+offset_right = -5.0
+offset_bottom = -10.0
+text = "Blood
+"
+
+[node name="Value" parent="BodyPanel/MarginContainer/BodyMenuControl/BloodSlider" index="2"]
+offset_left = 3.0
+offset_top = -10.0
+offset_right = 3.0
+offset_bottom = -10.0
+
+[node name="EquipmentPanel" type="PanelContainer" parent="." node_paths=PackedStringArray("equipChoices", "equipSlots", "statTextUI", "acDisp", "mcDisp", "bnsDisp")]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_py0s2")
+script = ExtResource("28_5vvrq")
+equipChoices = [NodePath("EquipMenuControl/VBoxContainer/Equip"), NodePath("EquipMenuControl/VBoxContainer/Opti"), NodePath("EquipMenuControl/VBoxContainer/Clear")]
+equipSlots = [NodePath("EquipMenuControl/VBoxContainer2/Main"), NodePath("EquipMenuControl/VBoxContainer2/Second"), NodePath("EquipMenuControl/VBoxContainer2/Body"), NodePath("EquipMenuControl/VBoxContainer2/A1"), NodePath("EquipMenuControl/VBoxContainer2/A2"), NodePath("EquipMenuControl/VBoxContainer2/A3")]
+statTextUI = [NodePath("EquipMenuControl/Str"), NodePath("EquipMenuControl/Dex"), NodePath("EquipMenuControl/Knw"), NodePath("EquipMenuControl/Per")]
+acDisp = NodePath("EquipMenuControl/AC")
+mcDisp = NodePath("EquipMenuControl/MC")
+bnsDisp = NodePath("EquipMenuControl/STATE")
+
+[node name="EquipMenuControl" type="Control" parent="EquipmentPanel"]
+layout_mode = 2
+
+[node name="HealthSlider" parent="EquipmentPanel/EquipMenuControl" instance=ExtResource("9_4swql")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 379.0
+offset_top = 79.0
+offset_right = -53.0
+offset_bottom = -529.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BloodSlider" parent="EquipmentPanel/EquipMenuControl" instance=ExtResource("9_4swql")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 381.0
+offset_top = 132.0
+offset_right = -52.0
+offset_bottom = -477.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" parent="EquipmentPanel/EquipMenuControl/BloodSlider" index="1"]
+text = "Blood"
+
+[node name="Str" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 379.0
+offset_top = 232.0
+offset_right = -351.0
+offset_bottom = -334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]STR
+[font_size=30]3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dex" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 471.0
+offset_top = 232.0
+offset_right = -257.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]DEX
+[font_size=30]3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Knw" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 570.0
+offset_top = 231.0
+offset_right = -161.0
+offset_bottom = -334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]KNW
+[font_size=30]3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Per" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 666.0
+offset_top = 232.0
+offset_right = -64.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]PER
+[font_size=30]3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AC" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 274.0
+offset_right = -594.0
+offset_bottom = -293.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]AC
+[font_size=20]10"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 274.0
+offset_right = -430.0
+offset_bottom = -293.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=16]MC
+[font_size=20]10"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="STATE" type="RichTextLabel" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 219.0
+offset_top = 287.0
+offset_right = -511.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_cacg7")
+bbcode_enabled = true
+text = "[font_size=20]+3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20600002
+anchor_top = 0.57500005
+anchor_right = 0.36400002
+anchor_bottom = 0.91400003
+offset_left = 0.19998169
+offset_top = -3.0517578e-05
+offset_right = -0.2000122
+offset_bottom = 0.039978027
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equip" parent="EquipmentPanel/EquipMenuControl/VBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Equip"
+
+[node name="Opti" parent="EquipmentPanel/EquipMenuControl/VBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Optimize"
+
+[node name="Clear" parent="EquipmentPanel/EquipMenuControl/VBoxContainer" instance=ExtResource("11_qmuot")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Clear"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 0.573
+anchor_right = 0.70500004
+anchor_bottom = 0.919
+offset_left = -0.2000122
+offset_top = 0.27999878
+offset_right = -6.1035156e-05
+offset_bottom = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Main: "
+
+[node name="Second" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Offhand: "
+
+[node name="Body" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Body: "
+
+[node name="A1" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Accessory: "
+
+[node name="A2" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Accessory: "
+
+[node name="A3" parent="EquipmentPanel/EquipMenuControl/VBoxContainer2" instance=ExtResource("12_t2l2q")]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Accessory: "
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="EquipmentPanel/EquipMenuControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72400004
+anchor_top = 0.57500005
+anchor_right = 0.92
+anchor_bottom = 0.77800006
+offset_left = -0.2000122
+offset_top = -3.0517578e-05
+offset_bottom = 0.079956055
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemButton" parent="EquipmentPanel/EquipMenuControl/VBoxContainer3" instance=ExtResource("5_s78bv")]
+layout_mode = 2
+
+[node name="ItemButton2" parent="EquipmentPanel/EquipMenuControl/VBoxContainer3" instance=ExtResource("5_s78bv")]
+layout_mode = 2
+
+[node name="ItemButton3" parent="EquipmentPanel/EquipMenuControl/VBoxContainer3" instance=ExtResource("5_s78bv")]
+layout_mode = 2
+
+[editable path="BodyPanel/MarginContainer/BodyMenuControl/HealthSlider"]
+[editable path="BodyPanel/MarginContainer/BodyMenuControl/BloodSlider"]
+[editable path="EquipmentPanel/EquipMenuControl/BloodSlider"]

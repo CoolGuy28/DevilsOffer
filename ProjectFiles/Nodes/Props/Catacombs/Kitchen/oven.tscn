@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhgqxiwedr3tk"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_glyim"]
+[ext_resource type="Texture2D" uid="uid://b81q6tul1lia2" path="res://Sprites/Props/Catacombs/Kitchen/Oven.png" id="3_ur47s"]
+[ext_resource type="Texture2D" uid="uid://6sr5xmxs0gnd" path="res://Sprites/Props/Catacombs/Kitchen/OvenOn_1.png" id="4_8g3r2"]
+[ext_resource type="Texture2D" uid="uid://bi4jteos4so06" path="res://Sprites/Props/Catacombs/Kitchen/OvenOn_2.png" id="5_xweqd"]
+[ext_resource type="Texture2D" uid="uid://d0i0syogoss0k" path="res://Sprites/Props/Catacombs/Kitchen/OvenOn_3.png" id="6_8m4ew"]
+[ext_resource type="Texture2D" uid="uid://bccq3x04ysli3" path="res://LightTexture.png" id="7_higww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jueni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ur47s")
+}],
+"loop": true,
+"name": &"Off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8g3r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xweqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8m4ew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Oven" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_glyim")
+dialogueText = "Oven"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(69, 9)
+sprite_frames = SubResource("SpriteFrames_jueni")
+autoplay = "default"
+offset = Vector2(2, -102)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-19, -5, -8, 16, 27, 28, 87, 31, 152, 18, 162, -15, 151, -28, -10, -27)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(68, -1)
+color = Color(1, 0.4392157, 1, 1)
+energy = 0.68
+texture = ExtResource("7_higww")
+texture_scale = 2.55

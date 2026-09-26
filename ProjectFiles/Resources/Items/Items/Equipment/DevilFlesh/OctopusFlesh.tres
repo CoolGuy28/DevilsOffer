@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=2 format=3 uid="uid://canwviu3t5unb"]
+
+[ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_1lb42"]
+
+[resource]
+script = ExtResource("3_1lb42")
+equippableValue = 2
+itemName = "Octopus Flesh"
+description = "A fleshy tentacle. You may use this conduit to the octopus to cast darkness."
+itemTags = Array[int]([3])
+metadata/_custom_type_script = "uid://iwin8tew6yv5"

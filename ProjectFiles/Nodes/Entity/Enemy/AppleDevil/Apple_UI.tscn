@@ -1,0 +1,494 @@
+[gd_scene load_steps=21 format=3 uid="uid://dtrhlfot28jfe"]
+
+[ext_resource type="Texture2D" uid="uid://b563440ysegm2" path="res://Sprites/Entity/AppleDevil/Combat/Torso/Torso.png" id="1_23sfu"]
+[ext_resource type="Script" uid="uid://cx65x76biqrdi" path="res://Nodes/Entity/Enemy/Enemy_BattleUI.gd" id="1_dllwi"]
+[ext_resource type="Script" uid="uid://bq0qsy8uywvmb" path="res://Nodes/Menu/CombatMenu/Scripts/EnemyBodyPart.gd" id="2_tk5m1"]
+[ext_resource type="Script" uid="uid://bd45tkmcvi7c5" path="res://Nodes/Entity/Enemy/EnemyBodyPartTexture.gd" id="5_eujdi"]
+[ext_resource type="Texture2D" uid="uid://bufxllsal17sw" path="res://Sprites/Entity/AppleDevil/Combat/LeftEye/Eye.png" id="5_vaewq"]
+[ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="6_4hi1k"]
+[ext_resource type="Texture2D" uid="uid://dc5ac8mu05p4n" path="res://Sprites/Entity/AppleDevil/Combat/RightEye/Eye.png" id="8_ru2a4"]
+[ext_resource type="Texture2D" uid="uid://b6772w6p2g6vp" path="res://Sprites/Entity/AppleDevil/Combat/Leg/Leg.png" id="10_e7yvq"]
+[ext_resource type="Texture2D" uid="uid://d1ihvwivn7rgl" path="res://Sprites/Entity/AppleDevil/Combat/Arm/Arm.png" id="12_lx246"]
+
+[sub_resource type="Animation" id="Animation_ctsg0"]
+resource_name = "Idle"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.5, 5.25, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.22689280275926285, 0.0, -0.23039201, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6ogno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owwxi"]
+_data = {
+&"Idle": SubResource("Animation_ctsg0"),
+&"RESET": SubResource("Animation_6ogno")
+}
+
+[sub_resource type="Animation" id="Animation_8v4b3"]
+resource_name = "Idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.14211555, 0.0, -0.13962634015954636, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_44s73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvybx"]
+_data = {
+&"Idle": SubResource("Animation_8v4b3"),
+&"RESET": SubResource("Animation_44s73")
+}
+
+[sub_resource type="Animation" id="Animation_ukxps"]
+resource_name = "Idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 14.015), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../LeftLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.05235987755982989, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RightArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.05235987755982989, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_70xu3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../LeftLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RightArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3y7n"]
+_data = {
+&"Idle": SubResource("Animation_ukxps"),
+&"RESET": SubResource("Animation_70xu3")
+}
+
+[sub_resource type="Resource" id="Resource_owwxi"]
+script = ExtResource("6_4hi1k")
+AC = -5
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[sub_resource type="Resource" id="Resource_8v4b3"]
+script = ExtResource("6_4hi1k")
+AC = -5
+metadata/_custom_type_script = "uid://bcqsb1lxsctlf"
+
+[node name="Battle_UI" type="Control" node_paths=PackedStringArray("enemyParts")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dllwi")
+enemyParts = [NodePath("Control/Torso"), NodePath("Control/Torso/LeftEye"), NodePath("Control/Torso/RightEye"), NodePath("Control/LeftLeg"), NodePath("Control/RightArm")]
+metadata/_custom_type_script = "uid://cx65x76biqrdi"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -6.56
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 89.0
+offset_top = 1.0
+offset_right = 89.0
+offset_bottom = 1.0
+scale = Vector2(0.56, 0.56)
+
+[node name="Torso" type="Control" parent="Control" node_paths=PackedStringArray("adjacentParts", "upParts", "downParts", "leftParts", "rightParts")]
+z_index = 1
+anchors_preset = 0
+script = ExtResource("2_tk5m1")
+maxPartHealth = 60
+lethalPart = true
+acBonus = -2
+adjacentParts = [NodePath("LeftEye"), NodePath("RightEye"), NodePath("../LeftLeg"), NodePath("../RightArm")]
+upParts = [NodePath("RightEye")]
+downParts = [NodePath("../RightArm"), NodePath("../LeftLeg"), NodePath("LeftEye")]
+leftParts = [NodePath("LeftEye"), NodePath("../LeftLeg")]
+rightParts = [NodePath("RightEye"), NodePath("../RightArm")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Texture" type="TextureRect" parent="Control/Torso"]
+layout_mode = 0
+offset_left = -40.579712
+offset_top = -18.84058
+offset_right = 523.1884
+offset_bottom = 442.029
+pivot_offset = Vector2(404.46948, 287)
+texture = ExtResource("1_23sfu")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_eujdi")
+folderName = "Torso"
+textureName = "Torso"
+changeOnDestroyed = false
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="ConditionBox" type="HBoxContainer" parent="Control/Torso"]
+z_index = 10
+layout_mode = 0
+offset_left = 159.42029
+offset_top = 121.73912
+offset_right = 321.0203
+offset_bottom = 176.73912
+alignment = 1
+
+[node name="EffectSpawnPoint" type="Control" parent="Control/Torso"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.423
+anchor_right = 0.5
+anchor_bottom = 0.423
+offset_left = 244.92755
+offset_top = 218.84059
+offset_right = 244.92755
+offset_bottom = 218.84059
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftEye" type="Control" parent="Control/Torso" node_paths=PackedStringArray("adjacentParts", "downParts", "rightParts")]
+z_index = 1
+anchors_preset = 0
+pivot_offset = Vector2(155.35713, 262.57693)
+script = ExtResource("2_tk5m1")
+maxPartHealth = 19
+acBonus = 4
+adjacentParts = [NodePath("..")]
+downParts = [NodePath("../../LeftLeg")]
+rightParts = [NodePath(".."), NodePath("../../LeftLeg")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Texture" type="TextureRect" parent="Control/Torso/LeftEye"]
+layout_mode = 0
+offset_left = -126.08696
+offset_top = 94.2029
+offset_right = 343.47827
+offset_bottom = 515.942
+pivot_offset = Vector2(273.46948, 184)
+texture = ExtResource("5_vaewq")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_eujdi")
+folderName = "LeftEye"
+textureName = "Eye"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="EffectSpawnPoint" type="Control" parent="Control/Torso/LeftEye"]
+layout_mode = 1
+anchor_left = 0.272
+anchor_top = 0.48100004
+anchor_right = 0.272
+anchor_bottom = 0.48100004
+offset_left = 66.07144
+offset_top = 276.7857
+offset_right = 66.07144
+offset_bottom = 276.7857
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConditionBox" type="HBoxContainer" parent="Control/Torso/LeftEye"]
+z_index = 10
+layout_mode = 0
+offset_left = 146.0
+offset_top = 223.0
+offset_right = 250.0
+offset_bottom = 261.0
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Torso/LeftEye"]
+libraries = {
+&"": SubResource("AnimationLibrary_owwxi")
+}
+autoplay = "Idle"
+
+[node name="RightEye" type="Control" parent="Control/Torso" node_paths=PackedStringArray("adjacentParts", "upParts", "downParts", "leftParts")]
+z_index = 1
+anchors_preset = 0
+pivot_offset = Vector2(291.0714, 110.71429)
+script = ExtResource("2_tk5m1")
+maxPartHealth = 1
+adjacentParts = [NodePath("..")]
+upParts = [null]
+downParts = [NodePath("../../RightArm")]
+leftParts = [NodePath(".."), NodePath("../../RightArm")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Texture" type="TextureRect" parent="Control/Torso/RightEye"]
+layout_mode = 0
+offset_left = 84.057976
+offset_top = -181.15942
+offset_right = 576.81165
+offset_bottom = 321.73914
+pivot_offset = Vector2(548.4695, 162)
+texture = ExtResource("8_ru2a4")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_eujdi")
+folderName = "RightEye"
+textureName = "Eye"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="EffectSpawnPoint" type="Control" parent="Control/Torso/RightEye"]
+layout_mode = 1
+anchor_left = 0.75500005
+anchor_top = 0.49100003
+anchor_right = 0.75500005
+anchor_bottom = 0.49100003
+offset_left = 332.14282
+offset_top = 55.357147
+offset_right = 332.14282
+offset_bottom = 55.357147
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConditionBox" type="HBoxContainer" parent="Control/Torso/RightEye"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.317
+anchor_right = 0.86200005
+anchor_bottom = 0.384
+offset_left = 575.0
+offset_top = 179.0
+offset_right = 696.0
+offset_bottom = 225.88
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Torso/RightEye"]
+libraries = {
+&"": SubResource("AnimationLibrary_lvybx")
+}
+autoplay = "Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Torso"]
+libraries = {
+&"": SubResource("AnimationLibrary_a3y7n")
+}
+autoplay = "Idle"
+
+[node name="LeftLeg" type="Control" parent="Control" node_paths=PackedStringArray("adjacentParts", "upParts", "leftParts", "rightParts")]
+anchors_preset = 0
+pivot_offset = Vector2(155.35713, 330.35715)
+script = ExtResource("2_tk5m1")
+maxPartHealth = 10
+destroyedStatChange = SubResource("Resource_owwxi")
+adjacentParts = [NodePath("../Torso")]
+upParts = [NodePath("../Torso")]
+leftParts = [NodePath("../Torso/LeftEye")]
+rightParts = [NodePath("../RightArm")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Texture" type="TextureRect" parent="Control/LeftLeg"]
+layout_mode = 0
+offset_left = -305.79712
+offset_top = 184.05797
+offset_right = 494.20288
+offset_bottom = 747.82605
+pivot_offset = Vector2(461.15424, 151.65631)
+texture = ExtResource("10_e7yvq")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_eujdi")
+folderName = "Leg"
+textureName = "Leg"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="EffectSpawnPoint" type="Control" parent="Control/LeftLeg"]
+layout_mode = 1
+anchor_left = 0.43400002
+anchor_top = 0.72300005
+anchor_right = 0.43400002
+anchor_bottom = 0.72300005
+offset_left = 85.714264
+offset_top = 462.50003
+offset_right = 85.714264
+offset_bottom = 462.50003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConditionBox" type="HBoxContainer" parent="Control/LeftLeg"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37500003
+anchor_top = 0.70000005
+anchor_right = 0.512
+anchor_bottom = 0.767
+offset_left = 267.0
+offset_top = 445.0
+offset_right = 386.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RightArm" type="Control" parent="Control" node_paths=PackedStringArray("adjacentParts", "upParts", "leftParts", "rightParts")]
+anchors_preset = 0
+pivot_offset = Vector2(383.92853, 310.7143)
+script = ExtResource("2_tk5m1")
+maxPartHealth = 10
+destroyedStatChange = SubResource("Resource_8v4b3")
+adjacentParts = [NodePath("../Torso")]
+upParts = [NodePath("../Torso")]
+leftParts = [NodePath("../LeftLeg")]
+rightParts = [NodePath("../Torso/RightEye")]
+metadata/_custom_type_script = "uid://bq0qsy8uywvmb"
+
+[node name="Texture" type="TextureRect" parent="Control/RightArm"]
+layout_mode = 0
+offset_left = 65.21739
+offset_top = 207.24638
+offset_right = 865.2174
+offset_bottom = 727.53625
+pivot_offset = Vector2(339.46948, 431)
+texture = ExtResource("12_lx246")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_eujdi")
+folderName = "Arm"
+textureName = "Arm"
+metadata/_custom_type_script = "uid://bd45tkmcvi7c5"
+
+[node name="EffectSpawnPoint" type="Control" parent="Control/RightArm"]
+layout_mode = 1
+anchor_left = 0.665
+anchor_top = 0.744
+anchor_right = 0.665
+anchor_bottom = 0.744
+offset_left = 492.85718
+offset_top = 455.35715
+offset_right = 492.85718
+offset_bottom = 455.35715
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConditionBox" type="HBoxContainer" parent="Control/RightArm"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63000005
+anchor_top = 0.68600005
+anchor_right = 0.767
+anchor_bottom = 0.753
+offset_left = 479.0
+offset_top = 433.0
+offset_right = 605.0
+offset_bottom = 489.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

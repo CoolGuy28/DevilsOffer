@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vmt6a4ihhly"]
+
+[ext_resource type="Texture2D" uid="uid://c5qj6d8iu32y6" path="res://Sprites/Props/Catacombs/Mothman/MothRock.png" id="1_uea4c"]
+
+[node name="Rock" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_uea4c")
+offset = Vector2(0, -20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-26, 8, -14, 11, 12, 8, 38, 11, 51, 1, 36, -13, 1, -16, -41, -16, -47, -6)

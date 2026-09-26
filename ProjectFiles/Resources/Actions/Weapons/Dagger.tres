@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Action_Hit" load_steps=7 format=3 uid="uid://4hvj0b7jembv"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_fpyf3"]
+[ext_resource type="Script" uid="uid://djeksrx0yedte" path="res://AR_AddStatusEffect.gd" id="2_nkg0x"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="3_d4n57"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="4_hc1oe"]
+
+[sub_resource type="Resource" id="Resource_2iy0h"]
+script = ExtResource("2_nkg0x")
+statusEffect = 9
+metadata/_custom_type_script = "uid://djeksrx0yedte"
+
+[sub_resource type="Resource" id="Resource_fnbj2"]
+script = ExtResource("3_d4n57")
+dDie = 4
+dType = 2
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[resource]
+script = ExtResource("4_hc1oe")
+abilityMod = 1
+critAction = Array[ExtResource("1_fpyf3")]([SubResource("Resource_2iy0h")])
+hitAction = Array[ExtResource("1_fpyf3")]([SubResource("Resource_fnbj2")])
+actionName = "Ritual Dagger"
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

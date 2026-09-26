@@ -1,0 +1,76 @@
+[gd_scene load_steps=16 format=3 uid="uid://b4iktde8gr1qw"]
+
+[ext_resource type="Texture2D" uid="uid://b1x745sascsud" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0000.png" id="1_cvvo5"]
+[ext_resource type="Texture2D" uid="uid://c0sbixu5s2m0c" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0001.png" id="2_i6vct"]
+[ext_resource type="Texture2D" uid="uid://c2hu48s4poy6u" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0002.png" id="3_j33cm"]
+[ext_resource type="Texture2D" uid="uid://cg83ov7ttodix" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0003.png" id="4_4fodv"]
+[ext_resource type="Texture2D" uid="uid://dqaehkndbjroo" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0004.png" id="5_2g656"]
+[ext_resource type="Texture2D" uid="uid://46p0mpo1vwww" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0005.png" id="6_v4am8"]
+[ext_resource type="Texture2D" uid="uid://h01ns652abv0" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0006.png" id="7_3dysy"]
+[ext_resource type="Texture2D" uid="uid://buk4xm5mo58ri" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0007.png" id="8_pv3dx"]
+[ext_resource type="Texture2D" uid="uid://lvi0lrugek3e" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0010.png" id="9_xj8rs"]
+[ext_resource type="Texture2D" uid="uid://cgtbeliti1s60" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0008.png" id="10_ww8vr"]
+[ext_resource type="Texture2D" uid="uid://drovekklu5mn3" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0009.png" id="11_k2cj2"]
+[ext_resource type="Texture2D" uid="uid://bagqnmpdikyqp" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0012.png" id="12_o2x46"]
+[ext_resource type="Texture2D" uid="uid://hwc07c5r63gn" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0011.png" id="13_dnt65"]
+[ext_resource type="Texture2D" uid="uid://csqdv01185gj" path="res://Nodes/Menu/CombatMenu/Sprites/AttackAnims/Slashing/Timeline 1_0013.png" id="14_641op"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2k7s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cvvo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6vct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j33cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4fodv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2g656")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v4am8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3dysy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pv3dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xj8rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ww8vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k2cj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o2x46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dnt65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_641op")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="AttackEffect" type="AnimatedSprite2D"]
+z_index = 20
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_2k7s1")
+frame = 14
+frame_progress = 1.0

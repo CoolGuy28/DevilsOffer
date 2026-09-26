@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://k37c8pjnbdef"]
+
+[ext_resource type="Texture2D" uid="uid://da553w84g8cea" path="res://Nodes/Menu/3DDie/Sprites/RollMod.png" id="1_n1igi"]
+[ext_resource type="Script" uid="uid://ctmddeafkc7uv" path="res://Nodes/Menu/3DDie/Scripts/AbilityCheckMod.gd" id="1_srn4n"]
+[ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="2_srn4n"]
+
+[sub_resource type="Animation" id="Animation_n1igi"]
+resource_name = "Wriggle"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, -0.13742562, -0.2132922, -0.23333335, 0.14812045, 0.24666664, 0.17917436, 0.2443461, -0.2, -0.081918105, 0.19999999, -0.12888312, 0, -0.033333242, -0.014594022, 0.23333341, -0.18800333),
+"times": PackedFloat32Array(0, 0.16666667, 0.43333334, 0.5999999)
+}
+
+[sub_resource type="Animation" id="Animation_srn4n"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_un885"]
+_data = {
+&"RESET": SubResource("Animation_srn4n"),
+&"Wriggle": SubResource("Animation_n1igi")
+}
+
+[node name="AbilityCheckMod" type="Control"]
+custom_minimum_size = Vector2(90.005, 111)
+layout_mode = 3
+anchor_right = 0.13700001
+anchor_bottom = 0.17400001
+offset_top = 0.2000122
+offset_right = 0.3999939
+offset_bottom = -0.15999603
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(38, 52.799988)
+script = ExtResource("1_srn4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(47, 48.799988)
+texture = ExtResource("1_n1igi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009000001
+anchor_top = 0.187
+anchor_right = 0.70000005
+anchor_bottom = 0.89000005
+offset_left = 14.01
+offset_top = 0.042987823
+offset_right = 13.999992
+offset_bottom = 0.009979248
+theme = ExtResource("2_srn4n")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "DEX
++1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_un885")
+}

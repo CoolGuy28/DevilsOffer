@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckcg0ky0ej30a"]
+
+[ext_resource type="Texture2D" uid="uid://c7xapktd3ntxv" path="res://Sprites/Props/Catacombs/Dead/Corpse_4.png" id="1_7n5kf"]
+
+[node name="Body" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+disable_mode = 2
+collision_layer = 48
+collision_mask = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 23)
+texture = ExtResource("1_7n5kf")
+offset = Vector2(0, -23)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 12)
+polygon = PackedVector2Array(-26, 1, -5, 5, 13, 2, 29, -2, 40, -9, 25, -21, -9, -21, -25, -14)

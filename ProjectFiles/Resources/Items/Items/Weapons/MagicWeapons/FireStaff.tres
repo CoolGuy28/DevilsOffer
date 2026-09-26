@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=3 format=3 uid="uid://rou335vmkkyp"]
+
+[ext_resource type="Resource" uid="uid://b8tjkafowca5w" path="res://Resources/Actions/Weapons/Quaterstaff.tres" id="1_w53s4"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="2_pkjpk"]
+
+[resource]
+script = ExtResource("2_pkjpk")
+attackAction = ExtResource("1_w53s4")
+equippableValue = 5
+itemName = "Firestaff"
+description = "A wooden staff designed to summon "
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

@@ -1,0 +1,5 @@
+~ playerstart
+Following the dark path to your home you were suddenly struck by an occult exhaustion
+You do not know how long you've slept or where you lie unconcious now.
+do PlayAnim("Scene")
+=> END

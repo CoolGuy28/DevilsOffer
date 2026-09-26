@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbhdi47qlmhfs"]
+
+[ext_resource type="Script" uid="uid://cf708ybgms0hs" path="res://Interactable_Grave.gd" id="1_y72se"]
+[ext_resource type="Texture2D" uid="uid://tey6tgygbjyf" path="res://Sprites/Props/Catacombs/Graves/ChainGrave.png" id="2_n424s"]
+[ext_resource type="Script" uid="uid://pvngekvmtunq" path="res://SpriteTextures.gd" id="3_y72se"]
+[ext_resource type="Texture2D" uid="uid://cr2qqd1ax0nj1" path="res://Sprites/Props/Catacombs/Graves/ChainGrave_2.png" id="4_lap12"]
+
+[node name="ChainGrave" type="StaticBody2D" groups=["saveable"]]
+y_sort_enabled = true
+collision_layer = 48
+collision_mask = 32
+script = ExtResource("1_y72se")
+dialogueText = "ChainGrave"
+metadata/_custom_type_script = "uid://cf708ybgms0hs"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-15, 22)
+texture = ExtResource("2_n424s")
+offset = Vector2(15, -38)
+script = ExtResource("3_y72se")
+textures = Array[Texture2D]([ExtResource("2_n424s"), ExtResource("4_lap12")])
+metadata/_custom_type_script = "uid://pvngekvmtunq"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-48, -1, -53, 18, -39, 29, -12, 33, 17, 22, 26, -1, 40, -9, 56, -19, 47, -30, 28, -32, 3, -41, -21, -37)

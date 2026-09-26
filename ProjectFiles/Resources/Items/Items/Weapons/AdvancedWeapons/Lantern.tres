@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Item_Weapon" load_steps=10 format=3 uid="uid://cej6pkoi2x36h"]
+
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_8gibb"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="2_yyhc4"]
+[ext_resource type="Script" uid="uid://5m7ggaq3j7ar" path="res://Action_Hit.gd" id="3_8t0cb"]
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="4_7uwhj"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="5_a6sf7"]
+[ext_resource type="Script" uid="uid://basjibpr7ota1" path="res://Resources/Items/Scripts/Item_Weapon.gd" id="6_vkbo8"]
+
+[sub_resource type="Resource" id="Resource_e5xr0"]
+script = ExtResource("2_yyhc4")
+dDie = 8
+dType = 4
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
+
+[sub_resource type="Resource" id="Resource_3601f"]
+script = ExtResource("3_8t0cb")
+abilityMod = 1
+hitAction = Array[ExtResource("1_8gibb")]([SubResource("Resource_e5xr0")])
+actionName = "Lantern"
+metadata/_custom_type_script = "uid://5m7ggaq3j7ar"
+
+[sub_resource type="Resource" id="Resource_ia1il"]
+script = ExtResource("4_7uwhj")
+viewDis = 0.025
+torchBrightness = 50
+torchStrength = 0.5
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
+
+[resource]
+script = ExtResource("6_vkbo8")
+attackAction = SubResource("Resource_3601f")
+weaponType = 1
+equippedStats = SubResource("Resource_ia1il")
+equippableValue = 4
+itemName = "Lantern"
+description = "A burning flame inside a metal casket guides your way."
+itemTags = Array[int]([0])
+metadata/_custom_type_script = "uid://basjibpr7ota1"

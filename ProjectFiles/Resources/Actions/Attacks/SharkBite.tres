@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Action" load_steps=4 format=3 uid="uid://cjhu20cpky5gt"]
+
+[ext_resource type="Script" uid="uid://cymhwr6r6lygf" path="res://Resources/StatusEffects/Scripts/StatusEffect.gd" id="1_exbjk"]
+[ext_resource type="Script" uid="uid://cd4g2rrmmjtiq" path="res://Resources/Actions/Scripts/Action.gd" id="2_eunby"]
+[ext_resource type="AudioStream" uid="uid://d2hryw06lkqf3" path="res://SFX/Enemies/Blender_start.wav" id="2_weyh4"]
+
+[resource]
+script = ExtResource("2_eunby")
+actionName = "Shark Bite"
+bnsSound = Array[AudioStream]([ExtResource("2_weyh4")])
+damageDie = 10
+damageType = 1
+attackCount = 3
+bloodLifeSteal = true
+bloodDieCount = 1
+bloodDie = 10
+metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

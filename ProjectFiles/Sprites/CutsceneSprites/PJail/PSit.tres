@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TexturesArray" load_steps=5 format=3 uid="uid://6ml8n7cjux58"]
+
+[ext_resource type="Script" uid="uid://7a6m5d56ocws" path="res://TexturesArray.gd" id="1_y7byo"]
+[ext_resource type="Texture2D" uid="uid://bay8wpc6f0ev2" path="res://Sprites/CutsceneSprites/PJail/PSit_1.png" id="2_y7byo"]
+[ext_resource type="Texture2D" uid="uid://cu52otko5suj2" path="res://Sprites/CutsceneSprites/PJail/PSit_2.png" id="3_1afkd"]
+[ext_resource type="Texture2D" uid="uid://dm1nob6mchu8y" path="res://Sprites/CutsceneSprites/PJail/PSit_3.png" id="4_8umfe"]
+
+[resource]
+script = ExtResource("1_y7byo")
+textures = Array[Texture2D]([ExtResource("2_y7byo"), ExtResource("3_1afkd"), ExtResource("4_8umfe")])
+metadata/_custom_type_script = "uid://7a6m5d56ocws"

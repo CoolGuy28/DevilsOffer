@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Action_Utility" load_steps=5 format=3 uid="uid://djv0en0dyxcn5"]
+
+[ext_resource type="Script" uid="uid://bsmtxatsfqje6" path="res://Action_Utility.gd" id="1_5lmik"]
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="2_b7gg0"]
+[ext_resource type="Script" uid="uid://ckrh7mwrxa7b4" path="res://AR_Healing.gd" id="3_jtv0j"]
+
+[sub_resource type="Resource" id="Resource_5lmik"]
+script = ExtResource("3_jtv0j")
+dCount = 2
+dDie = 4
+dBonus = 2
+metadata/_custom_type_script = "uid://ckrh7mwrxa7b4"
+
+[resource]
+script = ExtResource("1_5lmik")
+useAction = Array[ExtResource("2_b7gg0")]([SubResource("Resource_5lmik")])
+focus = "Limb"
+actionName = "Blue Herb"
+metadata/_custom_type_script = "uid://bsmtxatsfqje6"
