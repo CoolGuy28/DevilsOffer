@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Skill_Action" load_steps=3 format=3 uid="uid://bl0k0x4l8rq7t"]
+
+[ext_resource type="Resource" uid="uid://dtyj08tfrcnxt" path="res://Resources/Actions/Skills/Spells/Ink.tres" id="1_4o2m1"]
+[ext_resource type="Script" uid="uid://qj1xrqebma3" path="res://Resources/Actions/Scripts/Skill_Action.gd" id="2_3o25w"]
+
+[resource]
+script = ExtResource("2_3o25w")
+action = ExtResource("1_4o2m1")
+cost = 10
+skillName = "Ink"
+skillDesc = "Create a cloud of ink around your foe blinding them."
+metadata/_custom_type_script = "uid://qj1xrqebma3"

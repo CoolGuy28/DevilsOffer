@@ -2,9 +2,11 @@ class_name StatComponent extends SaveKitResource
 @export var stats : Array[int] = [0,0,0,0] #str, dex, knw, wis
 @export var AC : int = 0
 @export var MC : int = 0
+@export var exhaustion : int = 0
 @export var legs = 0
 @export var moveSpeed : float = 0
 @export var crawlSpeed : float = 0
+@export var swimSpeed : float = 0
 @export var sprintSpeed : float = 0
 @export var actionCount : int = 0
 @export var bonusActionCount : int = 0
@@ -15,9 +17,11 @@ func CopyStatComponent(i : StatComponent):
 	stats = i.stats.duplicate(true)
 	AC = i.GetAC()
 	MC = i.GetMC()
+	exhaustion = i.exhaustion
 	legs = i.legs
 	moveSpeed = i.GetMoveSpeed()
 	crawlSpeed = i.crawlSpeed
+	swimSpeed = i.swimSpeed
 	sprintSpeed = i.sprintSpeed
 	actionCount = i.actionCount
 	bonusActionCount = i.bonusActionCount
@@ -30,9 +34,11 @@ func AddStatComponent(i : StatComponent):
 			stats[j] += i.stats[j]
 		AC += i.GetAC()
 		MC += i.GetMC()
+		exhaustion += i.exhaustion
 		legs += i.legs
 		moveSpeed += i.moveSpeed
 		crawlSpeed += i.crawlSpeed
+		swimSpeed += i.swimSpeed
 		sprintSpeed += i.sprintSpeed
 		actionCount += i.actionCount
 		bonusActionCount += i.bonusActionCount
@@ -43,6 +49,7 @@ func AddStatComponent(i : StatComponent):
 func UpdateValues():
 	AC = AC + stats[1]
 	MC = MC + stats[2]
+	stateBonus = stateBonus - (exhaustion*2)
 
 func SetStat(index : int, i : int):
 	stats[index] = i;
@@ -55,12 +62,14 @@ func SetZero():
 		stats[j] = 0
 	AC = 0
 	MC = 0
+	exhaustion = 0
 	actionCount = 0
 	bonusActionCount = 0
 	stateBonus = 0
 	dmgResist.clear()
-	moveSpeed += 0.0
-	crawlSpeed += 0.0
+	moveSpeed = 0.0
+	crawlSpeed = 0.0
+	swimSpeed = 0.0
 	sprintSpeed = 0.0
 	legs = 0
 
@@ -102,14 +111,20 @@ func GetAC():
 	return AC
 func GetMC():
 	return MC
-func GetMoveSpeed(sprinting : bool = false):
+func GetMoveSpeed(sprinting : bool = false, swimming : bool = false):
 	var curSpeed = moveSpeed
 	if legs <= 0 : curSpeed = crawlSpeed
 	if sprinting : curSpeed *= sprintSpeed
+	if swimming : curSpeed *= swimSpeed
 	return curSpeed
 
 func GetStateBonus():
 	return stateBonus
+func GetExhaustion():
+	return exhaustion
+func AdjustExhaustion(i : int):
+	exhaustion += i
+	if exhaustion < 0 : exhaustion = 0
 func GetDamageResist(type : Global.DamageType):
 	return 1.0
 func HasSkill(_search : String):

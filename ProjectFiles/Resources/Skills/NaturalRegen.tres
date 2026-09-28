@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_u04pi")
 action = ExtResource("1_q5vk8")
+OOCAction = ExtResource("1_q5vk8")
 bonusAction = true
-cost = 25
-skillName = "Natural"
+cost = 1
+costType = "Exhaustion"
+skillName = "Natural Healing"
 metadata/_custom_type_script = "uid://qj1xrqebma3"

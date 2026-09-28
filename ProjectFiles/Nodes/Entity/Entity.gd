@@ -9,7 +9,6 @@ var currentMoveSpeed : float = 1
 @export var statusImmunities : Array[Global.StatusEffectTypes]
 @export var tags : Array[String]
 @export var defaultDir : Vector2 = Vector2(0, 1)
-@export_storage var exhaustion : int
 var maxBloodLevel : int = 100
 @export_storage var currentBloodLevel : int
 @export_storage var firstLoad : bool = true
@@ -91,9 +90,8 @@ func AddStatusEffect(_statusEffect : StatusEffect, _target): pass
 func RemoveStatusEffect(_statusEffectTag : String, _target): pass
 
 func AdjustExhaustion(i : int):
-	exhaustion += i
-	if exhaustion < 0 : exhaustion = 0
-	if exhaustion >= 6 : print("Kill")
+	adjustedStats.exhaustion = AdjustExhaustion(i)
+	if adjustedStats.GetExhaustion() >= 6 : TakeDamage({Global.DamageType.Bleed : 999})
 
 func PlaySFX(s : String, p : float = 1.0):
 	audioNode.PlaySFX(s, p)
@@ -118,10 +116,10 @@ func GetStat(i : int):
 	return adjustedStats.GetStat(i)
 
 func GetStateBonus():
-	return adjustedStats.stateBonus - (exhaustion * 2)
+	return adjustedStats.GetStateBonus()
 
 func GetExhaustion():
-	return exhaustion
+	return adjustedStats.GetExhaustion()
 
 func GetCritStat():
 	return adjustedStats.GetStat(3)
@@ -131,6 +129,12 @@ func GetHitMod(i : int, _occultAction : bool):
 
 func GetDamageMod(i : int):
 	return adjustedStats.GetStat(i)
+
+func GetSaveMod(i : int):
+	return adjustedStats.GetStat(i) + adjustedStats.GetStateBonus()
+
+func GetSaveDCMod(i : int):
+	return adjustedStats.GetStat(i) + adjustedStats.GetStateBonus()
 
 func AdjustOutgoingDamage(i : Dictionary[Global.DamageType, int]):
 	var newDamage = i.duplicate()

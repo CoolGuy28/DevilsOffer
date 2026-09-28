@@ -10,6 +10,8 @@ func OnUse(player : Player):
 		match costType:
 			"Flesh":
 				player.TakeDamage({Global.DamageType.Bleed : cost})
+			"Exhaustion":
+				player.AdjustExhaustion(-cost)
 			"Blood", _:
 				player.AdjustBlood(-cost)
 
@@ -17,6 +19,8 @@ func CanUse(player : Player):
 	if action == null: return false
 	if cost > 0:
 		match costType:
+			"Exhaustion":
+				return true
 			"Blood","Flesh",_:
 				if player.currentHealth > 0 + cost:
 					return true

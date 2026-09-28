@@ -1,10 +1,22 @@
-[gd_resource type="Resource" script_class="Action_Save" load_steps=3 format=3 uid="uid://cc0rffdwky0k8"]
+[gd_resource type="Resource" script_class="Action_Save" load_steps=5 format=3 uid="uid://cc0rffdwky0k8"]
 
 [ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="1_g701r"]
+[ext_resource type="Script" uid="uid://ix81u1dt4akl" path="res://AR_DamageRoll.gd" id="1_h3teo"]
 [ext_resource type="Script" uid="uid://bh8nwwttfdirj" path="res://Action_Save.gd" id="2_h3teo"]
+
+[sub_resource type="Resource" id="Resource_c6tfe"]
+script = ExtResource("1_h3teo")
+dCount = 5
+dDie = 8
+dType = 5
+metadata/_custom_type_script = "uid://ix81u1dt4akl"
 
 [resource]
 script = ExtResource("2_h3teo")
+abilityMod = 3
+saveAbility = 1
+damages = Array[ExtResource("1_h3teo")]([SubResource("Resource_c6tfe")])
+halfDamageOnSave = true
 actionName = "Cyanide Seed"
 occultAction = true
 metadata/_custom_type_script = "uid://cd4g2rrmmjtiq"

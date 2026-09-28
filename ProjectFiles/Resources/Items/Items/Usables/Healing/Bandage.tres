@@ -1,34 +1,12 @@
-[gd_resource type="Resource" script_class="Item_Usable" load_steps=10 format=3 uid="uid://q6wqajwj381o"]
+[gd_resource type="Resource" script_class="Item_Usable" load_steps=3 format=3 uid="uid://q6wqajwj381o"]
 
-[ext_resource type="Script" uid="uid://bsmtxatsfqje6" path="res://Action_Utility.gd" id="1_f207d"]
+[ext_resource type="Resource" uid="uid://cyy8pmnmbcmbq" path="res://Resources/Actions/Items/Healing/Bandage_Action.tres" id="1_rp5fy"]
 [ext_resource type="Script" uid="uid://dvxtxyc6r2uqp" path="res://Resources/Items/Scripts/Item_Usable.gd" id="1_s1t26"]
-[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="2_fnsia"]
-[ext_resource type="Script" uid="uid://ckrh7mwrxa7b4" path="res://AR_Healing.gd" id="3_fnsia"]
-[ext_resource type="Script" uid="uid://bgxb177htxrye" path="res://AR_RemoveStatusEffect.gd" id="4_t1kt1"]
-
-[sub_resource type="Resource" id="Resource_fnsia"]
-script = ExtResource("3_fnsia")
-dBonus = 3
-metadata/_custom_type_script = "uid://ckrh7mwrxa7b4"
-
-[sub_resource type="Resource" id="Resource_u1fo1"]
-script = ExtResource("4_t1kt1")
-metadata/_custom_type_script = "uid://bgxb177htxrye"
-
-[sub_resource type="Resource" id="Resource_t1kt1"]
-script = ExtResource("1_f207d")
-useAction = Array[ExtResource("2_fnsia")]([SubResource("Resource_fnsia"), SubResource("Resource_u1fo1")])
-focus = "All"
-metadata/_custom_type_script = "uid://bsmtxatsfqje6"
-
-[sub_resource type="Resource" id="Resource_r5gtg"]
-script = ExtResource("1_f207d")
-metadata/_custom_type_script = "uid://bsmtxatsfqje6"
 
 [resource]
 script = ExtResource("1_s1t26")
-action = SubResource("Resource_r5gtg")
-OOCAction = SubResource("Resource_t1kt1")
+action = ExtResource("1_rp5fy")
+OOCAction = ExtResource("1_rp5fy")
 OOCUseBodyMenu = true
 bonusAction = true
 itemName = "Bandage"

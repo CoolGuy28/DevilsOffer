@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="StatComponent_Player" load_steps=3 format=3 uid="uid://bqsxbaka2d2kx"]
+[gd_resource type="Resource" script_class="StatComponent_Player" load_steps=4 format=3 uid="uid://bqsxbaka2d2kx"]
 
 [ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_l4rb5"]
 [ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_qkft2"]
+[ext_resource type="Resource" uid="uid://bolsvf80yv54" path="res://Resources/Skills/NaturalRegen.tres" id="3_y7uaw"]
 
 [resource]
 script = ExtResource("1_l4rb5")
@@ -10,6 +11,7 @@ physicalDmgMult = 1.0
 occultDmgMult = 1.0
 coldDmgMult = 1.0
 torchStrength = 1.0
+skills = Array[ExtResource("2_qkft2")]([ExtResource("3_y7uaw")])
 statusImmunities = Array[int]([14])
 guardDamageReduction = 1
 AC = 8
@@ -17,6 +19,7 @@ MC = 8
 legs = 2
 moveSpeed = 1.0
 crawlSpeed = 0.3
+swimSpeed = 0.5
 sprintSpeed = 1.6
 actionCount = 1
 bonusActionCount = 1

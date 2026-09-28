@@ -160,26 +160,26 @@ func SetMainActionDesc(i : int):
 	match i:
 		0:
 			var _viewedAction := GetPlayerArmAction(false)
-			combatMenuUI.SetActionInfo("[font_size=19]Attack - 1A\n[font_size=12]")
+			combatMenuUI.SetActionInfo("[font_size=19]Attack\n[font_size=12]" + _viewedAction.GetActionInfo(player))
 		1:
 			var _viewedAction := GetPlayerArmAction(true)
-			combatMenuUI.SetActionInfo("[font_size=19]OffHand - 1BA\n[font_size=12]")
+			combatMenuUI.SetActionInfo("[font_size=19]OffHand\n[font_size=12]" + _viewedAction.GetActionInfo(player))
 		2:
 			combatMenuUI.SetActionInfo("[font_size=19]Skills")
 		3, 7, 11:
 			combatMenuUI.SetActionInfo("[font_size=19]End Turn")
 		4:
-			combatMenuUI.SetActionInfo("[font_size=19]Guard - 1BA")
+			combatMenuUI.SetActionInfo("[font_size=19]Guard\n[font_size=12]Reduction\n" + str(player.GetGuardReduction()))
 		5:
-			combatMenuUI.SetActionInfo("[font_size=19]Dodge - 1A")
+			combatMenuUI.SetActionInfo("[font_size=19]Dodge")
 		6:
 			combatMenuUI.SetActionInfo("[font_size=19]Items")
 		8:
-			combatMenuUI.SetActionInfo("[font_size=19]Talk - 1A")
+			combatMenuUI.SetActionInfo("[font_size=19]Talk")
 		9:
-			combatMenuUI.SetActionInfo("[font_size=19]Re-Equip - 1A")
+			combatMenuUI.SetActionInfo("[font_size=19]Observe")
 		10:
-			combatMenuUI.SetActionInfo("[font_size=19]Flee - 1A\n[font_size=12]Chance\n" + str(GetFleeChance(player.GetSpeed(), enemy[0].GetSpeed())) + "%")
+			combatMenuUI.SetActionInfo("[font_size=19]Flee\n[font_size=12]Chance\n" + str(GetFleeChance(player.GetSpeed(), enemy[0].GetSpeed())) + "%")
 		_:
 			combatMenuUI.SetActionInfo("")
 

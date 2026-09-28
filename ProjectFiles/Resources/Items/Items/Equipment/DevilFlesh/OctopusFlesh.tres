@@ -1,9 +1,18 @@
-[gd_resource type="Resource" script_class="Item_Equippable" load_steps=2 format=3 uid="uid://canwviu3t5unb"]
+[gd_resource type="Resource" script_class="Item_Equippable" load_steps=6 format=3 uid="uid://canwviu3t5unb"]
 
+[ext_resource type="Script" uid="uid://pfdljcj84wxm" path="res://StatComponent_Player.gd" id="1_vrysm"]
+[ext_resource type="Script" uid="uid://pvye8unpi4as" path="res://Resources/Actions/Scripts/Skill.gd" id="2_1lb42"]
 [ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="3_1lb42"]
+[ext_resource type="Resource" uid="uid://bl0k0x4l8rq7t" path="res://Resources/Skills/Ink.tres" id="3_jl2lf"]
+
+[sub_resource type="Resource" id="Resource_fq8bh"]
+script = ExtResource("1_vrysm")
+skills = Array[ExtResource("2_1lb42")]([ExtResource("3_jl2lf")])
+metadata/_custom_type_script = "uid://pfdljcj84wxm"
 
 [resource]
 script = ExtResource("3_1lb42")
+equippedStats = SubResource("Resource_fq8bh")
 equippableValue = 2
 itemName = "Octopus Flesh"
 description = "A fleshy tentacle. You may use this conduit to the octopus to cast darkness."

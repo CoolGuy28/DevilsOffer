@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Action_Utility" load_steps=7 format=3 uid="uid://cyy8pmnmbcmbq"]
+
+[ext_resource type="Script" uid="uid://bsmtxatsfqje6" path="res://Action_Utility.gd" id="1_c4vy4"]
+[ext_resource type="Script" uid="uid://dsaxrloxx4vaa" path="res://ActionResource.gd" id="2_tf1x7"]
+[ext_resource type="Script" uid="uid://ckrh7mwrxa7b4" path="res://AR_Healing.gd" id="3_6cfkh"]
+[ext_resource type="Script" uid="uid://bgxb177htxrye" path="res://AR_RemoveStatusEffect.gd" id="4_0bdd2"]
+
+[sub_resource type="Resource" id="Resource_fnsia"]
+script = ExtResource("3_6cfkh")
+dBonus = 3
+metadata/_custom_type_script = "uid://ckrh7mwrxa7b4"
+
+[sub_resource type="Resource" id="Resource_u1fo1"]
+script = ExtResource("4_0bdd2")
+metadata/_custom_type_script = "uid://bgxb177htxrye"
+
+[resource]
+script = ExtResource("1_c4vy4")
+useAction = Array[ExtResource("2_tf1x7")]([SubResource("Resource_fnsia"), SubResource("Resource_u1fo1")])
+focus = "All"
+metadata/_custom_type_script = "uid://bsmtxatsfqje6"

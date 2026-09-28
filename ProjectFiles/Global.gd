@@ -6,6 +6,14 @@ enum CombatActivation{OnBeginCombat, OnEndTurn, OnEndCombat, OnEnemyMiss, OnEnem
 const BLOODSTAIN = preload("uid://cwfefjt6lhs2d")
 const GLOBAL_DIALOGUE = preload("uid://6n7cay6mpivt")
 
+static func GetAbilityNameFromInt(i : int) -> String:
+	match i:
+		0 : return "STR"
+		1 : return "DEX"
+		2 : return "INT"
+		3 : return "WIS"
+		_ : return "UNK"
+
 static func GetGlobalDialogue():
 	return GLOBAL_DIALOGUE
 

@@ -3,6 +3,7 @@ class_name EntityAnimController extends AnimatedSprite2D
 @export var omniMovement : bool
 @export var crawlMovement : bool
 @export var sprintMovement : bool
+@export var swimMovement : bool
 @export var disallowMovementAnim : bool
 
 func DisallowMovementAnim(b : bool):
@@ -29,6 +30,13 @@ func SetCrawlAnim(dir: Vector2, velocity : Vector2):
 	if disallowMovementAnim : return
 	var targetAnim = GetAnimDir(dir)
 	if crawlMovement: targetAnim += "_Crawl"
+	if velocity == Vector2.ZERO: targetAnim += "_Idle"
+	animation = targetAnim
+
+func SetSwimAnim(dir: Vector2, velocity : Vector2):
+	if disallowMovementAnim : return
+	var targetAnim = GetAnimDir(dir)
+	if swimMovement: targetAnim += "_Swim"
 	if velocity == Vector2.ZERO: targetAnim += "_Idle"
 	animation = targetAnim
 

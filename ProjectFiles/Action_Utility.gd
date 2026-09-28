@@ -34,3 +34,20 @@ func RunActionResources(arr : Array[ActionResource], user : Entity, target):
 							healing += amount
 						"Bleed":
 							bloodDamage += amount
+
+func GetActionInfo(_user : Entity) -> String:
+	var rString : String = actionName
+	rString += "\n" + "Used On: " + focus
+	rString += "\n" + GetHealText()
+	rString += "\n" + smallDescription
+	return rString
+
+func GetHealText() -> String:
+	var rString : String = "Heal: "
+	for i in useAction:
+		if i is AR_HealRoll:
+			if i.dCount > 0 && i.dDie > 0:
+				rString += str(i.dCount) + "d" + str(i.dDie)
+			var dBonusVal : int = i.dBonus
+			if dBonusVal > 0 : rString += "+" + str(dBonusVal)
+	return rString

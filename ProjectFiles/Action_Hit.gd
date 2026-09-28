@@ -64,7 +64,7 @@ func GetMainDType() -> Global.DamageType:
 	for i in hitAction:
 		if i is AR_DamageRoll:
 			return i.dType
-	return Global.DamageType
+	return Global.DamageType.Bleed
 
 func GetHitChance(user : Entity, target):
 	if occultAction : return target.GetMC() - user.GetHitMod(abilityMod, occultAction) + hitBonus
@@ -73,13 +73,13 @@ func GetHitChance(user : Entity, target):
 func RollD20(user : Entity, target):
 	if hitBonus >= 20 : return 1
 	var d20 : int = Global.RollD20(0, 0)
-	print(" Hit: " + str(d20))
+	#print(" Hit: " + str(d20))
 	var crit : bool = false
 	if d20 >= 20 - user.GetCritStat() : crit = true
 	#print("crit: " + str(crit))
 	var rollValue : int = d20 + user.GetHitMod(abilityMod, occultAction) + hitBonus
 	var toHitDC = 0
-	print(rollValue)
+	#print(rollValue)
 	if occultAction : toHitDC = target.GetMC()
 	else : toHitDC = target.GetAC()
 	if rollValue >= toHitDC:
@@ -89,3 +89,40 @@ func RollD20(user : Entity, target):
 			return 1
 	else:
 		return 0
+
+func GetActionInfo(user : Entity) -> String:
+	var rString : String = actionName + "\n"
+	rString += GetHitModText(user)
+	rString += "[font_size=10]"
+	if extraAttacks > 0:
+		rString += "\nAttacks: " + str(extraAttacks + 1)
+	rString += "\n" + GetDamageText(user)
+	rString += "\n" + smallDescription
+	return rString
+
+func GetHitModText(user : Entity) -> String:
+	var rString : String = ""
+	if hitBonus >= 20:
+		rString = "Certain Hit"
+	else :
+		var val : int = user.GetHitMod(abilityMod, occultAction) + hitBonus
+		rString = "Hit: "
+		if val > 0: 
+			rString += "+"
+		rString += str(val)
+	return rString
+
+func GetDamageText(user : Entity) -> String:
+	var rString : String = ""
+	var firstDamage : bool = true
+	for i in hitAction:
+		if i is AR_DamageRoll:
+			if !firstDamage : rString += " + "
+			if i.dCount > 0 && i.dDie > 0:
+				rString += str(i.dCount) + "d" + str(i.dDie)
+			var dBonusVal : int = i.dBonus
+			if addDamageMod && firstDamage: dBonusVal += user.GetDamageMod(abilityMod)
+			if dBonusVal > 0 : rString += "+" + str(dBonusVal)
+			rString += " " + Global.GetDamageType(i.dType)
+			if firstDamage : firstDamage = false
+	return rString

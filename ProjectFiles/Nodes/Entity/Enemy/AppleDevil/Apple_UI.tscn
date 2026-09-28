@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtrhlfot28jfe"]
+[gd_scene load_steps=23 format=3 uid="uid://dtrhlfot28jfe"]
 
 [ext_resource type="Texture2D" uid="uid://b563440ysegm2" path="res://Sprites/Entity/AppleDevil/Combat/Torso/Torso.png" id="1_23sfu"]
 [ext_resource type="Script" uid="uid://cx65x76biqrdi" path="res://Nodes/Entity/Enemy/Enemy_BattleUI.gd" id="1_dllwi"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://bd45tkmcvi7c5" path="res://Nodes/Entity/Enemy/EnemyBodyPartTexture.gd" id="5_eujdi"]
 [ext_resource type="Texture2D" uid="uid://bufxllsal17sw" path="res://Sprites/Entity/AppleDevil/Combat/LeftEye/Eye.png" id="5_vaewq"]
 [ext_resource type="Script" uid="uid://bcqsb1lxsctlf" path="res://Nodes/Entity/Components/StatComponent.gd" id="6_4hi1k"]
+[ext_resource type="Script" uid="uid://dn7alt4viptc0" path="res://Resources/Actions/Scripts/Action_Enemy.gd" id="7_lrc3u"]
 [ext_resource type="Texture2D" uid="uid://dc5ac8mu05p4n" path="res://Sprites/Entity/AppleDevil/Combat/RightEye/Eye.png" id="8_ru2a4"]
+[ext_resource type="Resource" uid="uid://cc0rffdwky0k8" path="res://Resources/Actions/Attacks/AppleSeed.tres" id="8_uggqh"]
 [ext_resource type="Texture2D" uid="uid://b6772w6p2g6vp" path="res://Sprites/Entity/AppleDevil/Combat/Leg/Leg.png" id="10_e7yvq"]
 [ext_resource type="Texture2D" uid="uid://d1ihvwivn7rgl" path="res://Sprites/Entity/AppleDevil/Combat/Arm/Arm.png" id="12_lx246"]
 
@@ -380,6 +382,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_a3y7n")
 }
 autoplay = "Idle"
+
+[node name="Action_Enemy" type="Node" parent="Control/Torso"]
+script = ExtResource("7_lrc3u")
+action = ExtResource("8_uggqh")
+metadata/_custom_type_script = "uid://dn7alt4viptc0"
 
 [node name="LeftLeg" type="Control" parent="Control" node_paths=PackedStringArray("adjacentParts", "upParts", "leftParts", "rightParts")]
 anchors_preset = 0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci528mmcletik"]
+
+[ext_resource type="Script" uid="uid://dkh67rsuc8k35" path="res://Nodes/Tilemaps/Scripts/Interactable.gd" id="1_1jwdo"]
+[ext_resource type="Texture2D" uid="uid://bxe6ggegqgitw" path="res://Sprites/Props/Catacombs/Hole.png" id="2_vl1pe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxlr"]
+size = Vector2(54, 18.5)
+
+[node name="Hole" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_1jwdo")
+dialogueText = "OccultHole"
+metadata/_custom_type_script = "uid://dkh67rsuc8k35"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 90)
+texture = ExtResource("2_vl1pe")
+offset = Vector2(1, -65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 90.75)
+shape = SubResource("RectangleShape2D_2hxlr")

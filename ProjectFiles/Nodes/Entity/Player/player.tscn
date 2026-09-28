@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://6q62pgau4d4g"]
+[gd_scene load_steps=126 format=3 uid="uid://6q62pgau4d4g"]
 
 [ext_resource type="Script" uid="uid://6glc6145h1bw" path="res://Nodes/Entity/Player/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://j2wquyy448wy" path="res://Sprites/Entity/Player/Girl_spritesheet.png" id="2_gwnis"]
@@ -28,14 +28,17 @@
 [ext_resource type="Theme" uid="uid://bnwpd2najerqb" path="res://Nodes/Menu/MenuTheme.tres" id="14_ff4qf"]
 [ext_resource type="Texture2D" uid="uid://bw5dyfv2x2v2w" path="res://Sprites/Entity/Player/Idle/IdlePlayer_left_3.png" id="14_fqabr"]
 [ext_resource type="Texture2D" uid="uid://b4frynbkaj6fc" path="res://Sprites/Entity/Player/Idle/IdlePlayer_right_3.png" id="14_qgstm"]
+[ext_resource type="Texture2D" uid="uid://cgvpebd5fo1xa" path="res://Sprites/Entity/Player/Swim/SwimPlayer_down_1.png" id="15_a11ye"]
 [ext_resource type="Texture2D" uid="uid://7r6et03d72vn" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Soul.png" id="15_eggcg"]
 [ext_resource type="Texture2D" uid="uid://d1rwrcwnhvp6y" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_1.png" id="15_fqabr"]
 [ext_resource type="Texture2D" uid="uid://tumyhp4w1fsd" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_2.png" id="16_0q30f"]
 [ext_resource type="Texture2D" uid="uid://cxdnb4mfn2j4g" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Int.png" id="16_8l768"]
 [ext_resource type="Texture2D" uid="uid://bmd13wny6wfgt" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_1.png" id="16_n6bsm"]
+[ext_resource type="Texture2D" uid="uid://dec6amw85gpfs" path="res://Sprites/Entity/Player/Swim/SwimPlayer_down_2.png" id="16_qhotk"]
 [ext_resource type="Texture2D" uid="uid://c7lodyldxa7qf" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Perc.png" id="17_al5gi"]
 [ext_resource type="Texture2D" uid="uid://nml0eud82f17" path="res://Sprites/Entity/Player/Idle/IdlePlayer_up_3.png" id="17_cxvol"]
 [ext_resource type="Texture2D" uid="uid://5hpj28bem2p5" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_2.png" id="17_lrbcj"]
+[ext_resource type="Texture2D" uid="uid://47q5b4ivk38h" path="res://Sprites/Entity/Player/Swim/SwimPlayer_down_3.png" id="17_piqgi"]
 [ext_resource type="Texture2D" uid="uid://bbniqk5qpb7hp" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_left_3.png" id="18_4vyhe"]
 [ext_resource type="Texture2D" uid="uid://dre7nwkgn555c" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Str.png" id="18_qpjtw"]
 [ext_resource type="Texture2D" uid="uid://uxtuq2hak6ba" path="res://Nodes/Menu/3DDie/Sprites/RollSymb_Dex.png" id="19_qn7d7"]
@@ -47,8 +50,11 @@
 [ext_resource type="Script" uid="uid://iwin8tew6yv5" path="res://Resources/Items/Scripts/Item_Equippable.gd" id="23_g1r4u"]
 [ext_resource type="Texture2D" uid="uid://ovoqsqdjr4fg" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_2.png" id="24_84yig"]
 [ext_resource type="Texture2D" uid="uid://r2laxfb6sucs" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_3.png" id="25_648un"]
+[ext_resource type="Texture2D" uid="uid://cjh43xpi807tx" path="res://Sprites/Entity/Player/Swim/SwimPlayer_left_1.png" id="25_650lp"]
 [ext_resource type="Resource" uid="uid://bt8vmymv77yb" path="res://Resources/Items/Items/Equipment/Body/RattyClothes.tres" id="25_r8d8k"]
 [ext_resource type="Texture2D" uid="uid://vx2aosic41xg" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_right_4.png" id="26_bwgel"]
+[ext_resource type="Texture2D" uid="uid://cqtclnn6menjj" path="res://Sprites/Entity/Player/Swim/SwimPlayer_left_2.png" id="26_kshnj"]
+[ext_resource type="Texture2D" uid="uid://ye8le132pjq" path="res://Sprites/Entity/Player/Swim/SwimPlayer_left_3.png" id="27_sv57d"]
 [ext_resource type="PackedScene" uid="uid://d1s0d7r7fbsud" path="res://Nodes/Menu/3DDie/D20PhysicsRoll.tscn" id="27_tfwu5"]
 [ext_resource type="Texture2D" uid="uid://bc4wrinmm4d6n" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_1.png" id="30_a11ye"]
 [ext_resource type="Texture2D" uid="uid://oao4wpfdre7d" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_2.png" id="31_qhotk"]
@@ -56,14 +62,20 @@
 [ext_resource type="Texture2D" uid="uid://bru3dewpw3dm2" path="res://Sprites/Entity/Player/Crawl/CrawlPlayer_up_4.png" id="33_650lp"]
 [ext_resource type="Resource" uid="uid://dfbl8digsjymd" path="res://Resources/Bodyparts/Limbs/Natural/Head.tres" id="33_qpjtw"]
 [ext_resource type="Resource" uid="uid://cijnjg0c584g0" path="res://Resources/Bodyparts/Limbs/Natural/Torso.tres" id="34_qn7d7"]
+[ext_resource type="Texture2D" uid="uid://dt5ih0qmyqefx" path="res://Sprites/Entity/Player/Swim/SwimPlayer_right_1.png" id="35_3ucua"]
 [ext_resource type="Resource" uid="uid://d4aqwq68f813c" path="res://Resources/Bodyparts/Limbs/Natural/Arm.tres" id="35_oosj2"]
+[ext_resource type="Texture2D" uid="uid://bhd1ftmrgdrrx" path="res://Sprites/Entity/Player/Swim/SwimPlayer_right_2.png" id="36_m8ryh"]
 [ext_resource type="Resource" uid="uid://7ef1oie8itai" path="res://Resources/Bodyparts/Limbs/Natural/Leg.tres" id="36_n0gdt"]
 [ext_resource type="Resource" uid="uid://c5spjrbetahwg" path="res://Resources/Bodyparts/Organs/Natural/Kidney.tres" id="37_f3utc"]
+[ext_resource type="Texture2D" uid="uid://bktx2jt77r3wf" path="res://Sprites/Entity/Player/Swim/SwimPlayer_right_3.png" id="37_vf65x"]
 [ext_resource type="Resource" uid="uid://dt7ykgvahdf3f" path="res://Resources/Bodyparts/Organs/Natural/Lung.tres" id="38_rfo2f"]
 [ext_resource type="Script" uid="uid://reuyc16fiq4c" path="res://Nodes/Entity/Player/game_ui.gd" id="39_n6bsm"]
 [ext_resource type="Texture2D" uid="uid://deanxh8mh75iy" path="res://Sprites/CutsceneSprites/PJail/PStare_1.png" id="40_lrbcj"]
 [ext_resource type="Script" uid="uid://byi70ptd67jfg" path="res://Resources/Bodyparts/Scripts/PlayerBodyPart.gd" id="43_88acc"]
 [ext_resource type="Resource" uid="uid://bdfrl86cj3j14" path="res://Resources/Bodyparts/Organs/Natural/Eye.tres" id="43_j1j43"]
+[ext_resource type="Texture2D" uid="uid://d15qvtbspjhg0" path="res://Sprites/Entity/Player/Swim/SwimPlayer_up_1.png" id="45_f3ql1"]
+[ext_resource type="Texture2D" uid="uid://g81ipu4bdio0" path="res://Sprites/Entity/Player/Swim/SwimPlayer_up_2.png" id="46_h5i8f"]
+[ext_resource type="Texture2D" uid="uid://fpupgupatg5r" path="res://Sprites/Entity/Player/Swim/SwimPlayer_up_3.png" id="47_7gb7b"]
 [ext_resource type="Resource" uid="uid://bo0e7xdvp3kcd" path="res://Resources/Bodyparts/Organs/Natural/Heart.tres" id="47_88acc"]
 [ext_resource type="Resource" uid="uid://cy8qsv2t3iucl" path="res://Resources/Bodyparts/Organs/Natural/Liver.tres" id="49_hwgvk"]
 [ext_resource type="Script" uid="uid://dfec0ajewgnig" path="res://Nodes/Entity/Components/hit_box.gd" id="50_ctkt3"]
@@ -219,6 +231,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_a11ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qhotk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a11ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_piqgi")
+}],
+"loop": true,
+"name": &"Down_Swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_a11ye")
+}],
+"loop": true,
+"name": &"Down_Swim_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lj4m2")
 }, {
 "duration": 1.0,
@@ -289,6 +326,31 @@ animations = [{
 "loop": true,
 "name": &"Left_Sprint",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_650lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kshnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_650lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sv57d")
+}],
+"loop": true,
+"name": &"Left_Swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_650lp")
+}],
+"loop": true,
+"name": &"Left_Swim_Idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -365,6 +427,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("35_3ucua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_m8ryh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3ucua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vf65x")
+}],
+"loop": true,
+"name": &"Right_Swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_3ucua")
+}],
+"loop": true,
+"name": &"Right_Swim_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_eo8dx")
 }, {
 "duration": 1.0,
@@ -435,6 +522,31 @@ animations = [{
 "loop": true,
 "name": &"Up_Sprint",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_f3ql1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_h5i8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_f3ql1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7gb7b")
+}],
+"loop": true,
+"name": &"Up_Swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_f3ql1")
+}],
+"loop": true,
+"name": &"Up_Swim_Idle",
+"speed": 5.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vyhe"]
@@ -596,13 +708,15 @@ shape = SubResource("CircleShape2D_qcfbo")
 y_sort_enabled = true
 position = Vector2(0, 9)
 sprite_frames = SubResource("SpriteFrames_eo8dx")
-animation = &"Up_Sprint"
+animation = &"Down_Swim"
 autoplay = "Down_Idle"
+frame_progress = 0.2530443
 offset = Vector2(0, -54)
 script = ExtResource("8_c8657")
 dirMovement = true
 crawlMovement = true
 sprintMovement = true
+swimMovement = true
 metadata/_custom_type_script = "uid://byrkf8kjdftqn"
 
 [node name="Camera2D" type="Camera2D" parent="."]

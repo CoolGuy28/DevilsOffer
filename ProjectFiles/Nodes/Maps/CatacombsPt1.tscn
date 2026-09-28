@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://cox4siys0y1la"]
+[gd_scene load_steps=114 format=4 uid="uid://cox4siys0y1la"]
 
 [ext_resource type="Script" uid="uid://dgx3je3tcwx6g" path="res://Nodes/Maps/Map.gd" id="1_wfko3"]
 [ext_resource type="PackedScene" uid="uid://bl4fiyug8s8h4" path="res://Nodes/Props/Catacombs/Graves/corpse_hole_1.tscn" id="3_1apla"]
@@ -112,6 +112,7 @@
 [ext_resource type="PackedScene" uid="uid://0dvo3mct1qmj" path="res://Nodes/Props/Catacombs/Dead/bone_pile_2x2.tscn" id="106_bjtp6"]
 [ext_resource type="PackedScene" uid="uid://d1gcetdaykl53" path="res://Nodes/Props/Catacombs/bug.tscn" id="107_qr4l1"]
 [ext_resource type="Texture2D" uid="uid://dl2bqqybe14bt" path="res://Sprites/Props/General/Doors/HandDoor.png" id="108_fhjix"]
+[ext_resource type="PackedScene" uid="uid://ci528mmcletik" path="res://Nodes/Props/Catacombs/hole.tscn" id="109_a27wh"]
 
 [node name="CatacombsRoot" type="Node2D"]
 y_sort_enabled = true
@@ -1738,6 +1739,9 @@ position = Vector2(-3200, -1560)
 
 [node name="BonePile_2x12" parent="Tilemaps/BoneHall" instance=ExtResource("106_bjtp6")]
 position = Vector2(-2960, -1832)
+
+[node name="Hole" parent="Tilemaps/BoneHall" instance=ExtResource("109_a27wh")]
+position = Vector2(-3589, -2325)
 
 [node name="Door" parent="Tilemaps/BoneHall" instance=ExtResource("9_uk6u3")]
 position = Vector2(-3584, -1568)
